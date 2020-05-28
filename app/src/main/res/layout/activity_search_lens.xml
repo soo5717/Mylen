@@ -46,5 +46,4 @@
             android:layout_marginRight="24dp"
             android:id="@+id/lv_lens_list"/>
     </FrameLayout>
-
 </androidx.constraintlayout.widget.ConstraintLayout>
