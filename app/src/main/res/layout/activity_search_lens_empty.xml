@@ -11,7 +11,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="100dp"
-        app:srcCompat="@drawable/ic_iv_logo" />
+        android:src="@drawable/ic_iv_logo" />
 
     <TextView
         android:layout_width="wrap_content"

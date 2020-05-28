@@ -19,7 +19,8 @@
             android:layout_height="wrap_content"
             android:lineSpacingExtra="8sp"
             android:paddingLeft="24dp"
-            android:textColor="#333333"
+            android:textColor="@color/soft_black"
+            android:fontFamily="@font/notosans_regular"
             android:textSize="16sp"
             tools:text="4월 20일 월요일" />
 
@@ -41,7 +42,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:lineSpacingExtra="6sp"
-                android:textColor="#959595"
+                android:textColor="@color/soft_grey"
+                android:fontFamily="@font/notosans_demilight"
                 android:textSize="14sp"
                 tools:text="From" />
 
@@ -50,7 +52,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:lineSpacingExtra="8sp"
-                android:textColor="#333333"
+                android:textColor="@color/soft_black"
+                android:fontFamily="@font/notosans_regular"
                 android:textSize="16sp"
                 tools:text="오전 10:00" />
         </LinearLayout>
@@ -65,7 +68,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:lineSpacingExtra="6sp"
-                android:textColor="#959595"
+                android:textColor="@color/soft_grey"
+                android:fontFamily="@font/notosans_demilight"
                 android:textSize="14sp"
                 tools:text="To" />
 
@@ -74,7 +78,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:lineSpacingExtra="8sp"
-                android:textColor="#333333"
+                android:textColor="@color/soft_black"
+                android:fontFamily="@font/notosans_regular"
                 android:textSize="16sp"
                 tools:text="오후 6:00" />
         </LinearLayout>
@@ -91,7 +96,8 @@
                 android:layout_height="wrap_content"
                 android:gravity="end"
                 android:lineSpacingExtra="8sp"
-                android:textColor="#138bff"
+                android:textColor="@color/clear_blue"
+                android:fontFamily="@font/notosans_medium"
                 android:textSize="16sp"
                 tools:text="8시간" />
         </LinearLayout>

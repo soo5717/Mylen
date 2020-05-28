@@ -9,12 +9,6 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="80dp"
-        android:orientation="vertical">
-
-    </LinearLayout>
-    <LinearLayout
-        android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
 
@@ -30,8 +24,9 @@
                 android:lineSpacingExtra="6sp"
                 android:paddingLeft="24dp"
                 android:paddingTop="8dp"
-                android:textColor="#959595"
-                android:textSize="32sp"
+                android:textColor="@color/clear_blue"
+                android:fontFamily="@font/notosans_medium"
+                android:textSize="33sp"
                 tools:text="알림" />
 
             <TextView
@@ -41,8 +36,9 @@
                 android:layout_weight="1"
                 android:lineSpacingExtra="6sp"
                 android:paddingTop="8dp"
-                android:textColor="#959595"
+                android:textColor="@color/soft_grey"
                 android:textSize="14sp"
+                android:fontFamily="@font/notosans_regular"
                 tools:text="알림 전체 삭제" />
 
         </LinearLayout>
@@ -58,15 +54,16 @@
                 android:layout_gravity="center"
                 android:layout_marginTop="156dp"
                 android:layout_marginBottom="24dp"
-                android:src="@drawable/ic_logo"/>
+                android:src="@drawable/ic_iv_logo"/>
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textSize="16sp"
-                android:textColor="#666666"
                 android:lineSpacingExtra="8sp"
                 android:layout_gravity="center"
                 tools:text="아직 알림이 없습니다"
+                android:textColor="@color/deep_grey"
+                android:textSize="16sp"
+                android:fontFamily="@font/notosans_light"
                 />
         </LinearLayout>
 

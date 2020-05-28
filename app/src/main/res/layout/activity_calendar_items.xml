@@ -17,8 +17,7 @@
             android:id="@+id/calendar_dday"
             android:layout_width="48dp"
             android:layout_height="48dp"
-            android:layout_margin="5dp"
-            android:icon="@drawable/btn_color_check_48dp" />
+            android:src="@drawable/ic_btn_color_check_48dp"  />
 
         <LinearLayout
             android:layout_width="wrap_content"
@@ -33,7 +32,8 @@
                 android:layout_marginBottom="16dp"
                 android:lineSpacingExtra="8sp"
                 android:text="렌즈 유통기한 만료"
-                android:textColor="#333333"
+                android:textColor="@color/soft_black"
+                android:fontFamily="@font/notosans_regular"
                 android:textSize="16sp" />
             <!--        TextView textView = (TextView)findViewById(R.id.textView);-->
 
@@ -41,7 +41,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:lineSpacingExtra="6sp"
-                android:textColor="#959595"
+                android:textColor="@color/soft_grey"
+                android:fontFamily="@font/notosans_demilight"
                 android:textSize="14sp"
                 tools:text="4월22일 수요일" />
             <!--        TextView textView = (TextView)findViewById(R.id.textView);-->
@@ -54,7 +55,8 @@
             android:layout_height="wrap_content"
             android:lineSpacingExtra="8sp"
             android:text="D-DAY"
-            android:textColor="#333333"
+            android:textColor="@color/soft_black"
+            android:fontFamily="@font/notosans_regular"
             android:textSize="16sp" />
         <!--        TextView textView = (TextView)findViewById(R.id.textView);-->
 
