@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--렌즈 타입-->
+<resources>
+    <string-array name="lens_type">
+        <item>종류</item>
+        <item>투명렌즈</item>
+        <item>컬러렌즈</item>
+    </string-array>
+
+</resources>
