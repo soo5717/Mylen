@@ -1,0 +1,22 @@
+<svg id="ic_backspace_48dp" xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: none;
+      }
+
+      .cls-2 {
+        fill: #1a1919;
+      }
+    </style>
+  </defs>
+  <g id="ic_backspace" transform="translate(12 12)">
+    <g id="Container">
+      <rect id="view-box" class="cls-1" width="24" height="24"/>
+    </g>
+    <path id="Shape" class="cls-2" d="M4.771,12.7.248,7.226.234,7.208.228,7.2.219,7.189.212,7.178.206,7.17.2,7.158l0-.007L.184,7.138l0-.006L.171,7.118l0-.005L.158,7.1l0,0L.147,7.077l0-.006L.136,7.057l0-.008L.125,7.037l0-.01L.115,7.017.109,7,.106,7,.1,6.98l0,0A1.2,1.2,0,0,1,0,6.5a1.136,1.136,0,0,1,.266-.747L4.771.3a.748.748,0,0,1,1.2,0,1.187,1.187,0,0,1,0,1.452L2.9,5.473H16.674A.951.951,0,0,1,17.522,6.5a.95.95,0,0,1-.848,1.026H2.895l3.075,3.722a1.185,1.185,0,0,1,0,1.451.747.747,0,0,1-1.2,0Z" transform="translate(3 5)"/>
+  </g>
+  <g id="_48dp_Container" data-name="48dp / Container">
+    <rect id="사각형_392" data-name="사각형 392" class="cls-1" width="48" height="48"/>
+  </g>
+</svg>
