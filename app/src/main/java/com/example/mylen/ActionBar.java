@@ -15,6 +15,8 @@ public class ActionBar extends AppCompatActivity {
         setContentView(R.layout.activity_action_bar);
         myToolbar = (Toolbar)findViewById(R.id.toolbar);
         setSupportActionBar(myToolbar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setHomeAsUpIndicator(R.drawable.ic_menu_48dp);
     }
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
