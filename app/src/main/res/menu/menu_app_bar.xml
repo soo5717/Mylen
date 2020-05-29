@@ -1,17 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    >
+    tools:context=".ActionBar">
+
     <item
         android:id="@+id/appbar_left"
         android:icon="@drawable/ic_notification_48dp"
         app:showAsAction="always"
         android:title="공지" />
-
-    <item
-        android:id="@+id/appbar_right"
-        android:icon="@drawable/ic_menu_48dp"
-        app:showAsAction="always"
-        android:title="메뉴"/>
-
 </menu>
