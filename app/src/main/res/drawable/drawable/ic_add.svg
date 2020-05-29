@@ -1,0 +1,17 @@
+<svg id="ic_add" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: none;
+      }
+
+      .cls-2 {
+        fill: #1a1919;
+      }
+    </style>
+  </defs>
+  <g id="Container">
+    <rect id="view-box" class="cls-1" width="24" height="24"/>
+  </g>
+  <path id="Shape" class="cls-2" d="M5.653,12.152v-4.8H.847a.847.847,0,0,1,0-1.695H5.653V.847a.847.847,0,0,1,1.695,0V5.653h4.8a.847.847,0,1,1,0,1.695h-4.8v4.8a.847.847,0,1,1-1.695,0Z" transform="translate(6 6)"/>
+</svg>

@@ -1,0 +1,33 @@
+<svg id="btn_color_uncheck_48dp" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="48" height="48" viewBox="0 0 48 48">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: url(#linear-gradient);
+      }
+
+      .cls-2 {
+        fill: none;
+      }
+
+      .cls-3 {
+        fill: #fff;
+      }
+    </style>
+    <linearGradient id="linear-gradient" y1="0.451" x2="0.966" y2="0.433" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#138bff"/>
+      <stop offset="1" stop-color="#5edae3"/>
+    </linearGradient>
+  </defs>
+  <g id="btn_color_checked" transform="translate(12 12)">
+    <path id="btn_color_uncheck" class="cls-1" d="M1299-989a12,12,0,0,1,12-12,12,12,0,0,1,12,12,12,12,0,0,1-12,12A12,12,0,0,1,1299-989Z" transform="translate(-1299 1001)"/>
+    <g id="ic_done">
+      <g id="Container">
+        <rect id="view-box" class="cls-2" width="24" height="24"/>
+      </g>
+      <path id="Shape" class="cls-3" d="M4.578,10.5a.857.857,0,1,0,1.129,1.29l3.429-3A.857.857,0,0,0,9.16,7.52L1.446.234A.857.857,0,0,0,.269,1.48L7.3,8.119Z" transform="translate(17.714 7.286) rotate(90)"/>
+    </g>
+  </g>
+  <g id="_48dp_Container" data-name="48dp / Container">
+    <rect id="사각형_392" data-name="사각형 392" class="cls-2" width="48" height="48"/>
+  </g>
+</svg>

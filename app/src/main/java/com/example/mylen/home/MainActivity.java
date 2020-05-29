@@ -1,4 +1,4 @@
-package com.example.mylen.home.search;
+package com.example.mylen.home;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -6,11 +6,12 @@ import android.os.Bundle;
 
 import com.example.mylen.R;
 
-public class SearchLensItem extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.item_activity_search_lens);
+        setContentView(R.layout.activity_main);
+
     }
 }

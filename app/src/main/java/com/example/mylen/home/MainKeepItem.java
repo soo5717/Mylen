@@ -1,15 +1,16 @@
-package com.example.mylen;
+package com.example.mylen.home;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
-public class MainActivity extends AppCompatActivity {
+import com.example.mylen.R;
+
+public class MainKeepItem extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-        //test
+        setContentView(R.layout.item_activity_main_keep);
     }
 }

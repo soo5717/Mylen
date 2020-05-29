@@ -1,10 +1,19 @@
 <resources>
     <string name="app_name">Mylen</string>
-    <string name="lens_empty">브랜드를 선택 후, \n검색어를 입력해 주세요!</string>
+    <string name="lens_empty">브랜드를 선택 후,\n검색어를 입력해 주세요!</string>
     <string name="lens_add_1">찾으시는 렌즈가 없나요?</string>
     <string name="lens_add">직접 추가</string>
     <string name="lens_add_2">하세요!</string>
     <string name="home">홈</string>
     <string name="main_1">안녕하세요</string>
     <string name="main_2">오늘도 MYLEN과 함께 하세요!</string>
+    <string name="main_initial">착용 중인 렌즈가\n없습니다.</string>
+    <string name="lens_case">렌즈 케이스 교체</string>
+    <string name="today_washing">오늘의 세척 여부</string>
+    <string name="fine_dust">미세</string>
+    <string name="ultra_fine_dust">초미세</string>
+    <string name="use">사용하기</string>
+    <string name="open">개봉함</string>
+    <string name="keep">보관함</string>
+    <string name="add">추가 버튼</string>
 </resources>
