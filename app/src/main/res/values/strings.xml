@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">Mylen</string>
+    <string name="lens_empty">브랜드를 선택 후, \n검색어를 입력해 주세요!</string>
+    <string name="lens_add_1">찾으시는 렌즈가 없나요?</string>
+    <string name="lens_add">직접 추가</string>
+    <string name="lens_add_2">하세요!</string>
+    <string name="home">홈</string>
+    <string name="main_1">안녕하세요</string>
+    <string name="main_2">오늘도 MYLEN과 함께 하세요!</string>
 </resources>
