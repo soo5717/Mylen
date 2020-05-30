@@ -17,6 +17,7 @@ public class ActionBar extends AppCompatActivity {
         setSupportActionBar(myToolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setHomeAsUpIndicator(R.drawable.ic_menu_48dp);
+        getSupportActionBar().setTitle("");
     }
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {

@@ -1,0 +1,131 @@
+Index: app/src/main/AndroidManifest.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/AndroidManifest.xml	(date 1590818975000)
++++ app/src/main/AndroidManifest.xml	(date 1590823001180)
+@@ -5,18 +5,18 @@
+     <application
+         android:allowBackup="true"
+         android:icon="@mipmap/ic_launcher"
+-        android:label="@string/app_name"
++        android:label="Mylen"
+         android:roundIcon="@mipmap/ic_launcher_round"
+         android:supportsRtl="true"
+         android:theme="@style/AppTheme">
+         <activity android:name=".home.MainOpenItem"></activity>
+         <activity android:name=".home.MainKeepItem" />
+         <activity android:name=".ActionBar" >
+-        <intent-filter>
+-            <action android:name="android.intent.action.MAIN" />
++            <intent-filter>
++                <action android:name="android.intent.action.MAIN" />
+ 
+-            <category android:name="android.intent.category.LAUNCHER" />
+-        </intent-filter>
++              <category android:name="android.intent.category.LAUNCHER" />
++            </intent-filter>
+         </activity>
+         <activity android:name=".home.search.SearchLensItem" />
+         <activity android:name=".home.search.SearchLensActivity">
+Index: app/src/main/java/com/example/mylen/ActionBar.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/java/com/example/mylen/ActionBar.java	(date 1590818975000)
++++ app/src/main/java/com/example/mylen/ActionBar.java	(date 1590823001182)
+@@ -17,6 +17,7 @@
+         setSupportActionBar(myToolbar);
+         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+         getSupportActionBar().setHomeAsUpIndicator(R.drawable.ic_menu_48dp);
++        getSupportActionBar().setTitle("");
+     }
+     @Override
+     public boolean onCreateOptionsMenu(Menu menu) {
+Index: app/src/main/java/com/example/mylen/SplashActivity.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/java/com/example/mylen/SplashActivity.java	(date 1590818975000)
++++ app/src/main/java/com/example/mylen/SplashActivity.java	(date 1590823001183)
+@@ -11,7 +11,7 @@
+     @Override
+     protected void onCreate(Bundle savedInstanceState) {
+         super.onCreate(savedInstanceState);
+-        Intent intent = new Intent(this, MainActivity.class);
++        Intent intent = new Intent(this, com.example.mylen.home.MainActivity.class);
+         intent.putExtra("state","launch");
+         startActivity(intent);
+         finish();
+Index: app/src/main/res/layout/activity_eyeaddfriend_item.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/res/layout/activity_eyeaddfriend_item.xml	(date 1590818975000)
++++ app/src/main/res/layout/activity_eyeaddfriend_item.xml	(date 1590823001253)
+@@ -4,7 +4,7 @@
+     xmlns:tools="http://schemas.android.com/tools"
+     android:layout_width="match_parent"
+     android:layout_height="match_parent"
+-    tools:context=".MainActivity">
++    tools:context=".home.MainActivity">
+ 
+     <ImageView
+         android:id="@+id/imageView6"
+@@ -51,9 +51,14 @@
+         android:layout_marginTop="24dp"
+         android:layout_marginEnd="20dp"
+         android:layout_marginRight="20dp"
++<<<<<<< HEAD
+         android:background="none"
+         android:shadowColor="none"
+         android:fontFamily="@font/notosans_demilight"
++=======
++        android:background="@android:color/transparent"
++        android:shadowColor="@android:color/transparent"
++>>>>>>> origin/master
+         android:text="추가"
+         android:textColor="@color/clear_blue"
+         app:layout_constraintEnd_toEndOf="parent"
+Index: app/src/main/res/drawable/splash.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/res/drawable/splash.xml	(date 1590818975000)
++++ app/src/main/res/drawable/splash.xml	(date 1590823001185)
+@@ -3,13 +3,12 @@
+     xmlns:app="http://schemas.android.com/apk/res-auto">
+     <!-- 배경 -->
+     <item
+-        android:drawable="splash_gradient">
++        android:drawable="@drawable/splash_gradient">
+     <!-- 로고 -->
+     </item>
+     <item>
+         <bitmap
+             android:gravity="center"
+-            app:srcCompat="@drawable/ic_iv_logo_mylen"
+             android:src="@mipmap/iv_logo_mylen" />
+     </item>
+ 
+Index: app/src/main/res/layout/activity_action_bar.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/res/layout/activity_action_bar.xml	(date 1590818975000)
++++ app/src/main/res/layout/activity_action_bar.xml	(date 1590823001187)
+@@ -9,7 +9,7 @@
+         android:id="@+id/toolbar"
+         android:layout_width="match_parent"
+         android:layout_height="wrap_content"
+-        android:background="?attr/colorPrimary"
++        android:background="@color/white"
+         android:minHeight="?attr/actionBarSize"
+         android:theme="?attr/actionBarTheme"
+         tools:ignore="MissingConstraints" />
