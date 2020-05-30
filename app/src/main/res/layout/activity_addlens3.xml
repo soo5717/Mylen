@@ -6,30 +6,40 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <androidx.appcompat.widget.Toolbar
-        android:id="@+id/toolbar"
-        android:layout_width="0dp"
-        android:layout_height="61dp"
-        android:background="?attr/colorPrimary"
-        android:minHeight="?attr/actionBarSize"
-        android:theme="?attr/actionBarTheme"
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="28dp"
+        android:layout_marginRight="4dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_clear_48dp" />
+
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="4dp"
+        android:layout_marginTop="28dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_backspace_48dp" />
 
     <TextView
         android:id="@+id/textView1"
-        android:layout_width="104.3dp"
-        android:layout_height="25dp"
-        android:layout_marginStart="24dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_marginLeft="24dp"
-        android:layout_marginTop="8dp"
-        android:text="세척액 등록"
-        android:textSize="20sp"
+        android:layout_marginTop="12dp"
+        android:fontFamily="@font/notosans_medium"
+        android:text="렌즈 등록"
+        android:textColor="@color/clear_blue"
+        android:textSize="33sp"
         android:textStyle=""
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/toolbar" />
+        app:layout_constraintTop_toBottomOf="@+id/imageView4" />
 
     <TextView
         android:id="@+id/textView4"
@@ -38,7 +48,8 @@
         android:layout_marginLeft="24dp"
         android:layout_marginTop="16dp"
         android:textColor="#959595"
-        android:text="브랜드와 제품명을"
+        android:fontFamily="@font/notosans_demilight"
+        android:text="유통기한과 개봉일을"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView1" />
 
@@ -48,6 +59,7 @@
         android:layout_height="24dp"
         android:layout_marginLeft="24dp"
         android:textColor="#959595"
+        android:fontFamily="@font/notosans_demilight"
         android:text="입력해주세요!"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView4" />
@@ -59,7 +71,8 @@
         android:layout_marginLeft="24dp"
         android:layout_marginTop="60dp"
         android:textColor="#333333"
-        android:text="브랜드"
+        android:fontFamily="@font/notosans_demilight"
+        android:text="유통기한"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView5" />
 
@@ -78,7 +91,8 @@
         android:layout_marginLeft="24dp"
         android:layout_marginTop="40dp"
         android:textColor="#333333"
-        android:text="제품명"
+        android:fontFamily="@font/notosans_demilight"
+        android:text="개봉일"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/spinner" />
 
@@ -96,11 +110,10 @@
         android:layout_height="56dp"
         android:background="@drawable/gradient"
         android:textColor="#ffffff"
-        android:text="세척액 등록"
+        android:fontFamily="@font/notosans_demilight"
+        android:text="완료"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
-
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>
