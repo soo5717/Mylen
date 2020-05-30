@@ -5,30 +5,34 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentStatePagerAdapter;
 
+import com.example.mylen.FragmentInfo.FragmentInfo;
+
+import java.util.ArrayList;
+
 public class ViewPagerAdapter extends FragmentStatePagerAdapter {
-    private int tabcount;
-    public ViewPagerAdapter(FragmentManager fm, int tabcount){
+    private ArrayList<FragmentInfo> items = new ArrayList<FragmentInfo>();
+
+    public ViewPagerAdapter(FragmentManager fm) {
         super(fm);
-        this.tabcount = tabcount;
+
     }
 
+    public void addFragment(int iconResld, Fragment fragment) {
+        FragmentInfo info = new FragmentInfo(iconResld, fragment);
+        items.add(info);
+    }
+
+    public FragmentInfo getFragmentInfo(int position){
+        return items.get(position);
+    }
     @NonNull
     @Override
     public Fragment getItem(int position) {
-        switch(position){
-            case 0:
-                FragmentViewpagerFirst Fragment1 = new FragmentViewpagerFirst();
-            case 1:
-                FragmentViewpagerSecond Fragment2 = new FragmentViewpagerSecond();
-            case 2:
-                FragmentViewpagerThird Fragment3 = new FragmentViewpagerThird();
-            default:
-                return null;
-        }
+        return items.get(position).getFragment();
     }
 
     @Override
     public int getCount() {
-        return tabcount;
+        return items.size();
     }
 }

@@ -1,5 +1,4 @@
 package com.example.mylen;
-
 import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -8,42 +7,27 @@ import androidx.viewpager.widget.ViewPager;
 import com.google.android.material.tabs.TabLayout;
 
 public class BottomNavigation extends AppCompatActivity {
-
-    private ViewPager viewPager;
-    private TabLayout tabLayout;
-
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_bottom_navigation);
-        tabLayout = findViewById(R.id.tab_layout);
-        viewPager = (ViewPager) findViewById(R.id.viewpager);
 
-        TabLayout tabLayout = (TabLayout) findViewById(R.id.tab_layout);
-        tabLayout.addTab(tabLayout.newTab().setIcon(R.drawable.ic_home));
-        tabLayout.addTab(tabLayout.newTab().setIcon(R.drawable.ic_calendar));
-        tabLayout.addTab(tabLayout.newTab().setIcon(R.drawable.ic_play));
-        tabLayout.setTabGravity(TabLayout.GRAVITY_FILL);
+        ViewPager vp = findViewById(R.id.viewpager);
+        TabLayout tl = findViewById(R.id.tabLayout);
+        ViewPagerAdapter adapter = new ViewPagerAdapter(getSupportFragmentManager());
 
-        ViewPagerAdapter pagerAdapter = new ViewPagerAdapter(getSupportFragmentManager(), tabLayout.getTabCount());
-        viewPager.setAdapter(pagerAdapter);
-        viewPager.addOnAdapterChangeListener((ViewPager.OnAdapterChangeListener) new TabLayout.TabLayoutOnPageChangeListener(tabLayout));
-        tabLayout.setTabGravity(TabLayout.GRAVITY_FILL);
+        adapter.addFragment(R.drawable.ic_home,  new FragmentViewpagerFirst());
+        adapter.addFragment(R.drawable.ic_calendar, new FragmentViewpagerSecond());
+        adapter.addFragment(R.drawable.ic_play,  new FragmentViewpagerThird());
+        vp.setAdapter(adapter);
 
-        tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
-            @Override
-            public void onTabSelected(TabLayout.Tab tab) {
-                viewPager.setCurrentItem(tab.getPosition());
-            }
+        tl.setupWithViewPager(vp);
 
-            @Override
-            public void onTabUnselected(TabLayout.Tab tab) {
+        for (int i = 0; i < vp.getAdapter().getCount(); i++) {
+            tl.getTabAt(i).setIcon(adapter.getFragmentInfo(i).getIconResId());
+        }
+        vp.setAdapter(adapter);
+        tl.setupWithViewPager(vp);
 
-            }
-
-            @Override
-            public void onTabReselected(TabLayout.Tab tab) {
-
-            }
-        });
+        for(int i=0; i<vp.getAdapter().getCount(); i++) tl.getTabAt(i).setIcon(adapter.getFragmentInfo(i).getIconResId());
     }
 }
