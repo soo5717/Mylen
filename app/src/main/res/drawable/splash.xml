@@ -3,13 +3,12 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <!-- 배경 -->
     <item
-        android:drawable="splash_gradient">
+        android:drawable="@drawable/splash_gradient">
     <!-- 로고 -->
     </item>
     <item>
         <bitmap
             android:gravity="center"
-            app:srcCompat="@drawable/ic_iv_logo_mylen"
             android:src="@mipmap/iv_logo_mylen" />
     </item>
 

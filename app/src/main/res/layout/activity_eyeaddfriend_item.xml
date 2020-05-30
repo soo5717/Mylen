@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".home.MainActivity">
 
     <ImageView
         android:id="@+id/imageView6"
@@ -44,13 +44,13 @@
 
     <Button
         android:id="@+id/button2"
-        android:layout_width="26"
-        android:layout_height="20"
+        android:layout_width="26dp"
+        android:layout_height="20dp"
         android:layout_marginTop="24dp"
         android:layout_marginEnd="20dp"
         android:layout_marginRight="20dp"
-        android:background="none"
-        android:shadowColor="none"
+        android:background="@android:color/transparent"
+        android:shadowColor="@android:color/transparent"
         android:text="추가"
         android:textColor="@color/clear_blue"
         app:layout_constraintEnd_toEndOf="parent"
