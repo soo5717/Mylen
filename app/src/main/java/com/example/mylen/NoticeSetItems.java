@@ -9,6 +9,6 @@ public class NoticeSetItems extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_notice_set_items);
+        setContentView(R.layout.item_activity_notice_set);
     }
 }
