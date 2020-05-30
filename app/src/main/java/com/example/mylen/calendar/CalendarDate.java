@@ -1,8 +1,10 @@
-package com.example.mylen;
+package com.example.mylen.calendar;
 
 import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.example.mylen.R;
 
 public class CalendarDate extends AppCompatActivity {
 

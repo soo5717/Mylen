@@ -1,4 +1,4 @@
-package com.example.mylen;
+package com.example.mylen.calendar;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -7,6 +7,8 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.example.mylen.R;
 
 import java.util.ArrayList;
 
@@ -27,7 +29,7 @@ public class CalendarItems extends RecyclerView.Adapter<CalendarItems.ViewHolder
     }
 
     // 생성자에서 데이터 리스트 객체를 전달받음.
-    CalendarItems(ArrayList<String> list) {
+    public CalendarItems(ArrayList<String> list) {
         mData = list;
     }
 

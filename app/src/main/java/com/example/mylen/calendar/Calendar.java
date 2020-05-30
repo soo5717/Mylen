@@ -1,10 +1,12 @@
-package com.example.mylen;
+package com.example.mylen.calendar;
 
 import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.example.mylen.R;
 
 import java.util.ArrayList;
 
@@ -27,5 +29,14 @@ public class Calendar extends AppCompatActivity {
         CalendarItems adapter = new CalendarItems(list) ;
         recyclerView.setAdapter(adapter) ;
 
+    }
+
+    public static class CalendarDateItems extends AppCompatActivity {
+
+        @Override
+        protected void onCreate(Bundle savedInstanceState) {
+            super.onCreate(savedInstanceState);
+            setContentView(R.layout.item_activity_calendar_date);
+        }
     }
 }
