@@ -1,14 +1,16 @@
-package com.example.mylen;
+package com.example.mylen.notice;
 
 import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-public class NoticeItems extends AppCompatActivity {
+import com.example.mylen.R;
+
+public class EmptyNotice extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.item_activity_notice);
+        setContentView(R.layout.activity_empty_notice);
     }
 }

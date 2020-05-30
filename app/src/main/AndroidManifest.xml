@@ -11,14 +11,15 @@
         android:theme="@style/AppTheme">
         <activity android:name=".home.MainOpenItem"></activity>
         <activity android:name=".home.MainKeepItem" />
-        <activity android:name=".ActionBar" />
+        <activity android:name=".ActionBar" >
+        <intent-filter>
+            <action android:name="android.intent.action.MAIN" />
+
+            <category android:name="android.intent.category.LAUNCHER" />
+        </intent-filter>
+        </activity>
         <activity android:name=".home.search.SearchLensItem" />
         <activity android:name=".home.search.SearchLensActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity android:name=".home.MainActivity" />
     </application>
