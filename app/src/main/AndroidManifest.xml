@@ -5,20 +5,13 @@
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
-        android:label="Mylen"
+        android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".BottomNavigation"/>
-        <activity android:name=".SplashActivity"
-            android:theme="@style/SplashTheme">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+        <activity android:name=".BottomNavigation">
         </activity>
-        <activity android:name=".FragmentViewpagerThird" />
+        <activity android:name=".FragmentViewpagerThird"></activity>
         <activity android:name=".FragmentViewpagerSecond" />
         <activity android:name=".FragmentViewpagerFirst" />
         <activity android:name=".home.MainOpenItem" />
@@ -27,6 +20,11 @@
         </activity>
         <activity android:name=".home.search.SearchLensItem" />
         <activity android:name=".home.search.SearchLensActivity" />
-        <activity android:name=".home.MainActivity" />
+        <activity android:name=".home.MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
     </application>
 </manifest>
