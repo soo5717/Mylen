@@ -6,10 +6,8 @@
         android:drawable="@drawable/splash_gradient">
     <!-- 로고 -->
     </item>
-    <item>
-        <bitmap
-            android:gravity="center"
-            android:src="@mipmap/iv_logo_mylen" />
+    <item android:drawable="@drawable/ic_iv_logo_mylen"
+        android:gravity="center">
     </item>
 
 </layer-list>
