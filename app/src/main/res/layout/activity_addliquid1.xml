@@ -57,8 +57,8 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView5" />
 
-    <com.weiwangcn.betterspinner.library.material.MaterialBetterSpinner
-        android:id="@+id/spinner"
+    <EditText
+        android:id="@+id/editText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
@@ -66,13 +66,12 @@
         android:layout_marginTop="16dp"
         android:layout_marginEnd="24dp"
         android:layout_marginRight="24dp"
-        android:entries="@array/lens_brand"
-        android:hint="브랜드를 입력해주세요"
         android:fontFamily="@font/notosans_light"
+        android:hint="브랜드를 입력해주세요"
         android:textSize="16dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView6"/>
+        app:layout_constraintTop_toBottomOf="@+id/textView6" />
 
     <TextView
         android:id="@+id/textView7"
@@ -80,14 +79,14 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="24dp"
         android:layout_marginTop="40dp"
-        android:textColor="@color/soft_black"
         android:fontFamily="@font/notosans_demilight"
-        android:textSize="16sp"
         android:text="제품명"
+        android:textColor="@color/soft_black"
+        android:textSize="16sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/spinner" />
+        app:layout_constraintTop_toBottomOf="@+id/editText" />
 
-    <com.weiwangcn.betterspinner.library.material.MaterialBetterSpinner
+    <EditText
         android:id="@+id/spinner2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -96,7 +95,6 @@
         android:layout_marginTop="16dp"
         android:layout_marginEnd="24dp"
         android:layout_marginRight="24dp"
-        android:entries="@array/lens_name"
         android:fontFamily="@font/notosans_light"
         android:hint="제품명을 입력해주세요"
         android:textSize="16dp"

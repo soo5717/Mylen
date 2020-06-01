@@ -98,7 +98,7 @@
         android:layout_marginRight="24dp"
         android:entries="@array/lens_name"
         android:fontFamily="@font/notosans_light"
-        android:hint="개봉일을 입력해주세요"
+        android:hint="개봉일을 입력해주세요 (생략가능)"
         android:textSize="16dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
