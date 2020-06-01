@@ -14,7 +14,7 @@
         android:layout_marginLeft="24dp"
         android:layout_marginTop="64dp"
         android:fontFamily="@font/notosans_medium"
-        android:text="프로필 수정"
+        android:text="프로필"
         android:textColor="@color/clear_blue"
         android:textSize="33sp"
         app:layout_constraintStart_toStartOf="parent"
@@ -62,9 +62,9 @@
         android:backgroundTint="#eeeeee"
         android:ems="10"
         android:fontFamily="@font/notosans_demilight"
-        android:hint="백서윤"
+        android:text="백서윤"
         android:inputType="textEmailAddress"
-        android:textColorHint="@color/hint_grey"
+        android:textColor="@color/deep_grey"
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -76,9 +76,9 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="24dp"
         android:layout_marginTop="40dp"
-        android:fontFamily="@font/notosans_demilight"
         android:text="생년월일"
         android:textColor="@color/soft_black"
+        android:fontFamily="@font/notosans_demilight"
         android:textSize="16sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editText" />
@@ -88,9 +88,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView7">
+        tools:layout_editor_absoluteY="367dp">
 
         <com.weiwangcn.betterspinner.library.material.MaterialBetterSpinner
             android:id="@+id/spinner2"
@@ -99,10 +97,6 @@
             android:layout_marginStart="24dp"
             android:layout_marginTop="16dp"
             android:layout_marginEnd="24dp"
-            android:entries="@array/lens_name"
-            android:fontFamily="@font/notosans_light"
-            android:hint="1997"
-            android:textSize="16dp"
             android:calendarViewShown="false"
             android:datePickerMode="spinner" />
 
@@ -114,8 +108,6 @@
             android:layout_marginTop="16dp"
             android:layout_marginEnd="24dp"
             android:layout_weight="1"
-            android:fontFamily="@font/notosans_light"
-            android:hint="08"
             android:calendarViewShown="false"
             android:datePickerMode="spinner" />
 
@@ -127,8 +119,6 @@
             android:layout_marginTop="16dp"
             android:layout_marginEnd="24dp"
             android:layout_weight="1"
-            android:fontFamily="@font/notosans_light"
-            android:hint="02"
             android:calendarViewShown="false"
             android:datePickerMode="spinner" />
     </LinearLayout>
@@ -155,8 +145,7 @@
         android:layout_marginRight="16dp"
         android:entries="@array/lens_name"
         android:fontFamily="@font/notosans_light"
-        android:hint="-3.5"
-        android:textColorHint="@color/deep_grey"
+        android:hint="SPH-L"
         android:textSize="16dp"
         app:layout_constraintEnd_toStartOf="@+id/spinner4"
         app:layout_constraintHorizontal_bias="0.615"
@@ -171,7 +160,7 @@
         android:layout_marginRight="24dp"
         android:entries="@array/lens_name"
         android:fontFamily="@font/notosans_light"
-        android:hint="-2.0"
+        android:hint="SPH-R"
         android:textSize="16dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView" />
@@ -194,7 +183,7 @@
         android:layout_height="56dp"
         android:background="@drawable/gradient"
         android:fontFamily="@font/notosans_demilight"
-        android:text="저장"
+        android:text="프로필 수정"
         android:textColor="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

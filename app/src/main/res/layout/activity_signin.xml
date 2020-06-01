@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:foregroundTint="#00B43232"
-    tools:context=".login.SignIn">
+    tools:context=".sign.SignIn">
 
 
     <TextView
