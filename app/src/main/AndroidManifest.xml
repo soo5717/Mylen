@@ -10,6 +10,10 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".BottomNavigation">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
         <activity android:name=".FragmentViewpagerThird"></activity>
         <activity android:name=".FragmentViewpagerSecond" />
@@ -21,10 +25,6 @@
         <activity android:name=".home.search.SearchLensItem" />
         <activity android:name=".home.search.SearchLensActivity" />
         <activity android:name=".home.MainActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
     </application>
 </manifest>
