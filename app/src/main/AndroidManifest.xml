@@ -26,5 +26,4 @@
         <activity android:name=".home.search.SearchLensActivity" />
         <activity android:name=".home.MainActivity" />
     </application>
-
 </manifest>
