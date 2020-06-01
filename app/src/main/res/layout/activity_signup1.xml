@@ -4,43 +4,22 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".login.SignUp">
 
-
-    <ImageView
-        android:id="@+id/imageView4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="4dp"
-        android:layout_marginTop="28dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/ic_backspace_48dp" />
-
-    <ImageView
-        android:id="@+id/imageView3"
-        android:layout_width="48dp"
-        android:layout_height="48dp"
-        android:layout_marginTop="28dp"
-        android:layout_marginRight="4dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/ic_clear_48dp" />
 
     <TextView
         android:id="@+id/textView1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="24dp"
-        android:layout_marginTop="12dp"
+        android:layout_marginTop="64dp"
         android:fontFamily="@font/notosans_medium"
         android:text="회원가입"
         android:textAllCaps="false"
         android:textColor="@color/clear_blue"
         android:textSize="33sp"
-        android:textStyle=""
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView4" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/textView4"
@@ -51,7 +30,7 @@
         android:layout_marginTop="16dp"
         android:fontFamily="@font/notosans_demilight"
         android:text="아이디와 비밀번호를"
-        android:textColor="#959595"
+        android:textColor="@color/soft_grey"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView1" />
 
@@ -60,9 +39,9 @@
         android:layout_width="93dp"
         android:layout_height="24dp"
         android:layout_marginLeft="24dp"
-        android:textColor="#959595"
         android:fontFamily="@font/notosans_demilight"
         android:text="입력해주세요!"
+        android:textColor="@color/soft_grey"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView4" />
 
@@ -72,24 +51,28 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="24dp"
         android:layout_marginTop="60dp"
-        android:textColor="#333333"
         android:fontFamily="@font/notosans_demilight"
+        android:textSize="16sp"
         android:text="아이디"
+        android:textColor="@color/soft_black"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView5" />
 
     <EditText
         android:id="@+id/editText"
-        android:layout_width="312dp"
+        android:layout_width="0dp"
         android:layout_height="42dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginLeft="24dp"
         android:layout_marginTop="16dp"
-        android:backgroundTint="#eeeeee"
-        android:ems="10"
-        android:fontFamily="@font/notosans_demilight"
+        android:layout_marginEnd="24dp"
+        android:layout_marginRight="24dp"
+        android:backgroundTint="@color/hint_grey"
+        android:textColorHint="@color/hint_grey"
+        android:fontFamily="@font/notosans_light"
+        android:textSize="16sp"
         android:hint="이메일 형식으로 입력해 주세요"
         android:inputType="textEmailAddress"
-        android:textColorHint="#dedede"
-        android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView6" />
@@ -101,23 +84,28 @@
         android:layout_marginLeft="24dp"
         android:layout_marginTop="48dp"
         android:fontFamily="@font/notosans_demilight"
+        android:textSize="16sp"
+        android:textColor="@color/soft_black"
         android:text="비밀번호"
-        android:textColor="#333333"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editText" />
 
     <EditText
         android:id="@+id/editText2"
-        android:layout_width="312dp"
+        android:layout_width="0dp"
         android:layout_height="42dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginLeft="24dp"
         android:layout_marginTop="16dp"
-        android:backgroundTint="#eeeeee"
+        android:layout_marginEnd="24dp"
+        android:layout_marginRight="24dp"
+        android:backgroundTint="@color/hint_grey"
+        android:fontFamily="@font/notosans_light"
+        android:textSize="16sp"
         android:ems="10"
-        android:fontFamily="@font/notosans_demilight"
         android:hint="6자리 이상 입력해 주세요"
         android:inputType="numberPassword"
         android:textColorHint="#dedede"
-        android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView7" />
@@ -129,7 +117,7 @@
         android:background="@drawable/gradient"
         android:fontFamily="@font/notosans_demilight"
         android:text="다음"
-        android:textColor="#ffffff"
+        android:textColor="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />

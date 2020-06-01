@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:foregroundTint="#00B43232">
+    tools:context=".MainActivity">
 
 
     <TextView
@@ -14,7 +14,7 @@
         android:layout_marginLeft="24dp"
         android:layout_marginTop="64dp"
         android:fontFamily="@font/notosans_medium"
-        android:text="로그인"
+        android:text="세척액 등록"
         android:textColor="@color/clear_blue"
         android:textSize="33sp"
         android:textStyle=""
@@ -23,13 +23,13 @@
 
     <TextView
         android:id="@+id/textView4"
-        android:layout_width="156dp"
+        android:layout_width="136dp"
         android:layout_height="24dp"
         android:layout_marginLeft="24dp"
         android:layout_marginTop="16dp"
+        android:textColor="#959595"
         android:fontFamily="@font/notosans_demilight"
-        android:text="아이디를 이메일 형식으로"
-        android:textColor="@color/soft_grey"
+        android:text="유통기한과 개봉일을"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView1" />
 
@@ -38,9 +38,9 @@
         android:layout_width="93dp"
         android:layout_height="24dp"
         android:layout_marginLeft="24dp"
+        android:textColor="#959595"
         android:fontFamily="@font/notosans_demilight"
         android:text="입력해주세요!"
-        android:textColor="@color/soft_grey"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView4" />
 
@@ -50,27 +50,26 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="24dp"
         android:layout_marginTop="60dp"
-        android:fontFamily="@font/notosans_demilight"
-        android:text="아이디"
-        android:textSize="16sp"
         android:textColor="@color/soft_black"
+        android:fontFamily="@font/notosans_demilight"
+        android:textSize="16sp"
+        android:text="유통기한"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView5" />
 
-    <EditText
-        android:id="@+id/editText"
-        android:layout_width="0dp"
-        android:layout_height="42dp"
+    <com.weiwangcn.betterspinner.library.material.MaterialBetterSpinner
+        android:id="@+id/spinner"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginLeft="24dp"
+        android:layout_marginTop="12dp"
         android:layout_marginEnd="24dp"
-        android:backgroundTint="#eeeeee"
-        android:ems="10"
-        android:fontFamily="@font/notosans_demilight"
-        android:hint="이메일 형식으로 입력해 주세요"
-        android:inputType="textEmailAddress"
-        android:textColorHint="@color/hint_grey"
-        android:textSize="16sp"
+        android:layout_marginRight="24dp"
+        android:entries="@array/lens_name"
+        android:fontFamily="@font/notosans_light"
+        android:hint="유통기간을 입력해주세요"
+        android:textSize="16dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView6" />
@@ -80,69 +79,41 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="24dp"
-        android:fontFamily="@font/notosans_demilight"
-        android:layout_marginTop="48dp"
-        android:text="비밀번호"
-        android:textSize="16sp"
+        android:layout_marginTop="40dp"
         android:textColor="@color/soft_black"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText" />
-
-    <EditText
-        android:id="@+id/editText2"
-        android:layout_width="0dp"
-        android:layout_height="42dp"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="24dp"
-        android:layout_marginEnd="24dp"
-        android:backgroundTint="#eeeeee"
-        android:ems="10"
         android:fontFamily="@font/notosans_demilight"
-        android:hint="6자리 이상 입력해 주세요"
-        android:inputType="numberPassword"
-        android:textColorHint="@color/hint_grey"
         android:textSize="16sp"
+        android:text="개봉일"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/spinner" />
+
+    <com.weiwangcn.betterspinner.library.material.MaterialBetterSpinner
+        android:id="@+id/spinner2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginLeft="24dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginRight="24dp"
+        android:entries="@array/lens_name"
+        android:fontFamily="@font/notosans_light"
+        android:hint="개봉일을 입력해주세요"
+        android:textSize="16dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView7" />
-
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="24dp"
-        android:layout_marginTop="24dp"
-        android:fontFamily="@font/notosans_demilight"
-        android:text="아직 회원이 아니신가요?"
-        android:textColor="@color/soft_black"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText2" />
 
     <Button
         android:id="@+id/button"
         android:layout_width="0dp"
         android:layout_height="56dp"
         android:background="@drawable/gradient"
-        android:text="로그인"
-        android:textColor="@color/white"
+        android:textColor="#ffffff"
         android:fontFamily="@font/notosans_demilight"
+        android:text="완료"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
-
-    <Button
-        android:id="@+id/button3"
-        android:layout_width="56dp"
-        android:layout_height="24dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginTop="24dp"
-        android:background="none"
-        android:fontFamily="@font/notosans_medium"
-        android:shadowColor="none"
-        android:text="회원가입"
-        android:textColor="@color/clear_blue"
-        app:layout_constraintStart_toEndOf="@+id/textView"
-        app:layout_constraintTop_toBottomOf="@+id/editText2" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

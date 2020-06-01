@@ -3,8 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".home.add.AddLens">
+    android:layout_height="match_parent">
 
 
     <TextView
@@ -16,7 +15,7 @@
         android:fontFamily="@font/notosans_medium"
         android:text="렌즈 등록"
         android:textColor="@color/clear_blue"
-        android:textSize="33sp"
+        android:textSize="33dp"
         android:textStyle=""
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -29,7 +28,7 @@
         android:layout_marginTop="16dp"
         android:textColor="#959595"
         android:fontFamily="@font/notosans_demilight"
-        android:text="브랜드와 제품명을"
+        android:text="수량과 착용기간을"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView1" />
 
@@ -50,29 +49,11 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="24dp"
         android:layout_marginTop="60dp"
-        android:textColor="@color/soft_black"
-        android:fontFamily="@font/notosans_demilight"
-        android:textSize="16sp"
-        android:text="브랜드"
+        android:textColor="#333333"
+        android:text="수량"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView5" />
 
-    <com.weiwangcn.betterspinner.library.material.MaterialBetterSpinner
-        android:id="@+id/spinner"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginLeft="24dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="24dp"
-        android:layout_marginRight="24dp"
-        android:entries="@array/lens_brand"
-        android:hint="브랜드를 입력해주세요"
-        android:fontFamily="@font/notosans_light"
-        android:textSize="16dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView6"/>
 
     <TextView
         android:id="@+id/textView7"
@@ -80,12 +61,12 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="24dp"
         android:layout_marginTop="40dp"
-        android:textColor="@color/soft_black"
         android:fontFamily="@font/notosans_demilight"
-        android:textSize="16sp"
-        android:text="제품명"
+        android:text="착용기간"
+        android:textColor="#333333"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/spinner" />
+        app:layout_constraintTop_toBottomOf="@+id/editText3" />
+
 
     <com.weiwangcn.betterspinner.library.material.MaterialBetterSpinner
         android:id="@+id/spinner2"
@@ -98,7 +79,7 @@
         android:layout_marginRight="24dp"
         android:entries="@array/lens_name"
         android:fontFamily="@font/notosans_light"
-        android:hint="제품명을 입력해주세요"
+        android:hint="착용기간을 입력해주세요"
         android:textSize="16dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -115,5 +96,23 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
+
+    <EditText
+        android:id="@+id/editText3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginLeft="24dp"
+        android:layout_marginTop="16dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:backgroundTint="@color/hint_grey"
+        android:textColor="@color/hint_grey"
+        android:entries="@array/lens_brand"
+        android:hint="수량을 입력해주세요"
+        android:fontFamily="@font/notosans_light"
+        android:textSize="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView6" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
