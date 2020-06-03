@@ -9,22 +9,23 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".NavigationDrawer"></activity>
         <activity android:name=".BottomNavigation">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".FragmentViewpagerThird"></activity>
+        <activity android:name=".FragmentViewpagerThird" />
         <activity android:name=".FragmentViewpagerSecond" />
         <activity android:name=".FragmentViewpagerFirst" />
         <activity android:name=".home.MainOpenItem" />
         <activity android:name=".home.MainKeepItem" />
-        <activity android:name=".ActionBar">
-        </activity>
+        <activity android:name=".ActionBar"></activity>
         <activity android:name=".home.search.SearchLensItem" />
         <activity android:name=".home.search.SearchLensActivity" />
-        <activity android:name=".home.MainActivity">
-        </activity>
+        <activity android:name=".home.MainActivity"></activity>
     </application>
+
 </manifest>

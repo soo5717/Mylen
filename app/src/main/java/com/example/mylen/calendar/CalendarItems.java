@@ -39,7 +39,7 @@ public class CalendarItems extends RecyclerView.Adapter<CalendarItems.ViewHolder
         Context context = parent.getContext();
         LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 
-        View view = inflater.inflate(R.layout.activity_calendar_items, parent, false);
+        View view = inflater.inflate(R.layout.item_activity_calendar, parent, false);
         CalendarItems.ViewHolder vh = new CalendarItems.ViewHolder(view);
 
         return vh;

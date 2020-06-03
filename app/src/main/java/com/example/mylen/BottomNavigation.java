@@ -1,4 +1,5 @@
 package com.example.mylen;
+
 import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -15,9 +16,9 @@ public class BottomNavigation extends AppCompatActivity {
         TabLayout tl = findViewById(R.id.tabLayout);
         ViewPagerAdapter adapter = new ViewPagerAdapter(getSupportFragmentManager());
 
-        adapter.addFragment(R.drawable.ic_home,  new FragmentViewpagerFirst());
+        adapter.addFragment(R.drawable.ic_home, new FragmentViewpagerFirst());
         adapter.addFragment(R.drawable.ic_calendar, new FragmentViewpagerSecond());
-        adapter.addFragment(R.drawable.ic_play,  new FragmentViewpagerThird());
+        adapter.addFragment(R.drawable.ic_play, new FragmentViewpagerThird());
         vp.setAdapter(adapter);
 
         tl.setupWithViewPager(vp);
@@ -28,6 +29,8 @@ public class BottomNavigation extends AppCompatActivity {
         vp.setAdapter(adapter);
         tl.setupWithViewPager(vp);
 
-        for(int i=0; i<vp.getAdapter().getCount(); i++) tl.getTabAt(i).setIcon(adapter.getFragmentInfo(i).getIconResId());
+        for(int i=0; i<vp.getAdapter().getCount(); i++)
+            tl.getTabAt(i).setIcon(adapter.getFragmentInfo(i).getIconResId());
+
     }
 }
