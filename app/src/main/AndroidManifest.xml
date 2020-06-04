@@ -9,14 +9,14 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".NavigationDrawer"></activity>
-        <activity android:name=".BottomNavigation">
+        <activity android:name=".NavigationDrawer">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".BottomNavigation"/>
         <activity android:name=".FragmentViewpagerThird" />
         <activity android:name=".FragmentViewpagerSecond" />
         <activity android:name=".FragmentViewpagerFirst" />

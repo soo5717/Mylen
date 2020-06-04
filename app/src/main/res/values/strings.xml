@@ -18,4 +18,6 @@
     <string name="add">추가 버튼</string>
     <string name="lens_start">착용하기</string>
     <string name="lens_end">착용 종료</string>
+    <string name="openactionbar">액션바 열기</string>
+    <string name="closeactionbar">액션바 닫기</string>
 </resources>

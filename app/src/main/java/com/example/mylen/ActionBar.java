@@ -18,11 +18,10 @@ public class ActionBar extends AppCompatActivity {
         myToolbar = (Toolbar)findViewById(R.id.toolbar);
         setSupportActionBar(myToolbar);
         androidx.appcompat.app.ActionBar actionBar = getSupportActionBar();
-        actionBar.setDisplayShowHomeEnabled(false); //ㅣ기존 타이틀 지우기
+        actionBar.setTitle(""); //ㅣ기존 타이틀 지우기
         actionBar.setDisplayHomeAsUpEnabled(true); // 뒤로가기 버튼 만들기
         actionBar.setHomeAsUpIndicator(R.drawable.ic_backspace_48dp);
-//        actionBar.setHomeAsUpIndicator(R.drawable.ic_menu_48dp); //메뉴 버튼 만들기
-//        getSupportActionBar().setTitle("");
+
     }
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {

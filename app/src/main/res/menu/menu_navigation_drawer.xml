@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/lense_search"
+            android:title="렌즈 검색"
+            style="@style/TabTheme"
+            >
+        </item>
+        <item
+            android:id="@+id/lense_manage"
+            android:title="렌즈 관리 정보"
+            style="@style/TabTheme">
+        </item>
+        <item
+            android:id="@+id/eye_health_manage"
+            android:title="눈 건강 관리 정보"
+            style="@style/TabTheme">
+        </item>
+        <item
+            android:id="@+id/lense_glasses_store"
+            android:title="주변 렌즈/안경점"
+            style="@style/TabTheme">
+        </item>
+    </group>
+</menu>
