@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="com.example.mylen.BottomNavigation">
+    tools:context="com.example.mylen.others.BottomNavigation">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -20,13 +20,14 @@
         </androidx.viewpager.widget.ViewPager>
 
         <com.google.android.material.tabs.TabLayout
+            android:background="@color/white"
             android:id="@+id/tabLayout"
-            app:tabIndicatorHeight="0dp"
+            app:tabIndicatorHeight="2dp"
             android:layout_alignParentBottom="true"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            app:tabIndicatorGravity="top"
             app:tabIndicatorColor="@color/tiffany_blue"
-            android:theme="@style/TabTheme"
             >
 
             <com.google.android.material.tabs.TabItem

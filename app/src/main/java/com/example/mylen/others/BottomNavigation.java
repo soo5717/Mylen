@@ -1,10 +1,14 @@
-package com.example.mylen;
+package com.example.mylen.others;
 
 import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.viewpager.widget.ViewPager;
 
+import com.example.mylen.FragmentViewpagerFirst;
+import com.example.mylen.FragmentViewpagerSecond;
+import com.example.mylen.FragmentViewpagerThird;
+import com.example.mylen.R;
 import com.google.android.material.tabs.TabLayout;
 
 public class BottomNavigation extends AppCompatActivity {

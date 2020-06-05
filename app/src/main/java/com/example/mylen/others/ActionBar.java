@@ -1,4 +1,4 @@
-package com.example.mylen;
+package com.example.mylen.others;
 
 import android.os.Bundle;
 import android.view.Menu;
@@ -6,6 +6,8 @@ import android.view.MenuItem;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+
+import com.example.mylen.R;
 
 public class ActionBar extends AppCompatActivity {
     private Toolbar myToolbar;

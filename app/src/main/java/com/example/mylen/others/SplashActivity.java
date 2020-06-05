@@ -1,4 +1,4 @@
-package com.example.mylen;
+package com.example.mylen.others;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
