@@ -6,10 +6,10 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.mylen.R;
 
-public class SignIn extends AppCompatActivity{
+public class SignUp2Activity  extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_signin);
+        setContentView(R.layout.activity_signup2);
     }
 }

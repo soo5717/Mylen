@@ -1,5 +1,7 @@
 <resources>
     <string name="app_name">Mylen</string>
+
+    <!--    수연 텍스트 부분-->
     <string name="lens_empty">브랜드를 선택 후,\n검색어를 입력해 주세요!</string>
     <string name="lens_add_1">찾으시는 렌즈가 없나요?</string>
     <string name="lens_add">직접 추가</string>
@@ -20,4 +22,15 @@
     <string name="lens_end">착용 종료</string>
     <string name="openactionbar">액션바 열기</string>
     <string name="closeactionbar">액션바 닫기</string>
+    <string name="liquid_type">렌즈 세척액</string>
+
+    <!--    로그인 페이지 텍스트-->
+    <string name="sign_in">로그인</string>
+    <string name="sign_up">회원가입</string>
+    <string name="id">아이디</string>
+    <string name="id_hint">이메일 형식으로 입력해 주세요</string>
+    <string name="pwd">비밀번호</string>
+    <string name="pwd_hint">6자리 이상 입력해 주세요</string>
+    <string name="sign_in_sub_text">아이디를 이메일 형식으로\n입력해주세요!</string>
+    <string name="sign_in_text">아직 회원이 아니신가요?</string>
 </resources>

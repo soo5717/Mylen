@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:foregroundTint="#00B43232"
-    tools:context=".sign.SignIn">
+    tools:context=".sign.SignInActivity">
 
 
     <TextView
@@ -15,7 +15,7 @@
         android:layout_marginLeft="24dp"
         android:layout_marginTop="64dp"
         android:fontFamily="@font/notosans_medium"
-        android:text="로그인"
+        android:text="@string/sign_in"
         android:textColor="@color/clear_blue"
         android:textSize="33sp"
         android:textStyle=""
@@ -24,26 +24,15 @@
 
     <TextView
         android:id="@+id/textView4"
-        android:layout_width="156dp"
-        android:layout_height="24dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_marginLeft="24dp"
         android:layout_marginTop="16dp"
         android:fontFamily="@font/notosans_demilight"
-        android:text="아이디를 이메일 형식으로"
+        android:text="@string/sign_in_sub_text"
         android:textColor="@color/soft_grey"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView1" />
-
-    <TextView
-        android:id="@+id/textView5"
-        android:layout_width="93dp"
-        android:layout_height="24dp"
-        android:layout_marginLeft="24dp"
-        android:fontFamily="@font/notosans_demilight"
-        android:text="입력해주세요!"
-        android:textColor="@color/soft_grey"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView4" />
 
     <TextView
         android:id="@+id/textView6"
@@ -52,23 +41,23 @@
         android:layout_marginLeft="24dp"
         android:layout_marginTop="60dp"
         android:fontFamily="@font/notosans_demilight"
-        android:text="아이디"
-        android:textSize="16sp"
+        android:text="@string/id"
         android:textColor="@color/soft_black"
+        android:textSize="16sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView5" />
+        app:layout_constraintTop_toBottomOf="@+id/textView4" />
 
     <EditText
-        android:id="@+id/editText"
-        android:layout_width="0dp"
-        android:layout_height="42dp"
+        android:id="@+id/et_email"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="24dp"
         android:backgroundTint="#eeeeee"
         android:ems="10"
         android:fontFamily="@font/notosans_demilight"
-        android:hint="이메일 형식으로 입력해 주세요"
+        android:hint="@string/id_hint"
         android:inputType="textEmailAddress"
         android:textColorHint="@color/hint_grey"
         android:textSize="16sp"
@@ -83,23 +72,23 @@
         android:layout_marginLeft="24dp"
         android:fontFamily="@font/notosans_demilight"
         android:layout_marginTop="48dp"
-        android:text="비밀번호"
+        android:text="@string/pwd"
         android:textSize="16sp"
         android:textColor="@color/soft_black"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText" />
+        app:layout_constraintTop_toBottomOf="@+id/et_email" />
 
     <EditText
-        android:id="@+id/editText2"
-        android:layout_width="0dp"
-        android:layout_height="42dp"
+        android:id="@+id/et_pwd"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
         android:layout_marginTop="24dp"
         android:layout_marginEnd="24dp"
-        android:backgroundTint="#eeeeee"
+        android:backgroundTint="@color/linear_grey"
         android:ems="10"
         android:fontFamily="@font/notosans_demilight"
-        android:hint="6자리 이상 입력해 주세요"
+        android:hint="@string/pwd_hint"
         android:inputType="numberPassword"
         android:textColorHint="@color/hint_grey"
         android:textSize="16sp"
@@ -114,35 +103,39 @@
         android:layout_marginLeft="24dp"
         android:layout_marginTop="24dp"
         android:fontFamily="@font/notosans_demilight"
-        android:text="아직 회원이 아니신가요?"
+        android:text="@string/sign_in_text"
         android:textColor="@color/soft_black"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText2" />
+        app:layout_constraintTop_toBottomOf="@+id/et_pwd" />
 
     <Button
         android:id="@+id/button"
-        android:layout_width="0dp"
+        android:layout_width="match_parent"
         android:layout_height="56dp"
         android:background="@drawable/gradient"
-        android:text="로그인"
-        android:textColor="@color/white"
         android:fontFamily="@font/notosans_demilight"
+        android:onClick="signInButtonClick"
+        android:text="@string/sign_in"
+        android:textColor="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
-        android:id="@+id/button3"
-        android:layout_width="56dp"
-        android:layout_height="24dp"
+        android:id="@+id/button2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
         android:layout_marginTop="24dp"
+        android:minHeight="0dp"
+        android:minWidth="0dp"
         android:background="@null"
         android:fontFamily="@font/notosans_medium"
-        android:text="회원가입"
+        android:onClick="signUpButtonClick"
+        android:text="@string/sign_up"
         android:textColor="@color/clear_blue"
         app:layout_constraintStart_toEndOf="@+id/textView"
-        app:layout_constraintTop_toBottomOf="@+id/editText2" />
+        app:layout_constraintTop_toBottomOf="@+id/et_pwd" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
