@@ -96,7 +96,7 @@
         android:layout_marginTop="16dp"
         android:layout_marginEnd="24dp"
         android:layout_marginRight="24dp"
-        android:entries="@array/lens_name"
+        android:entries="@array/lens_brand"
         android:fontFamily="@font/notosans_light"
         android:hint="제품명을 입력해주세요"
         android:textSize="16dp"

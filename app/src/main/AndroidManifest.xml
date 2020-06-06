@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.mylen">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -12,21 +14,26 @@
         <activity android:name=".others.ActionBar" />
         <activity android:name=".others.NavigationDrawer" />
         <activity android:name=".others.BottomNavigation">
+        </activity>
+        <activity android:name=".FragmentViewpagerThird" />
+        <activity android:name=".FragmentViewpagerSecond" />
+        <activity android:name=".FragmentViewpagerFirst" />
+
+
+        <activity android:name=".sign.SignInActivity" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".FragmentViewpagerThird" />
-        <activity android:name=".FragmentViewpagerSecond" />
-        <activity android:name=".FragmentViewpagerFirst" />
+        <activity android:name=".sign.SignUp1Activity" >
+        </activity>
+        <activity android:name=".sign.SignUp2Activity">
+        </activity>
 
-        <activity android:name=".sign.SignUp1Activity" />
-        <activity android:name=".sign.SignUp2Activity" />
-        <activity android:name=".sign.SignInActivity" />
-
-        <activity android:name=".home.MainActivity" />
+        <activity android:name=".home.MainActivity" >
+        </activity>
         <activity android:name=".home.MainLensOpenItem" />
         <activity android:name=".home.MainLensKeepItem" />
         <activity android:name=".home.MainLiquidOpenItem" />

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android" >
+    <!--    editText 밑줄 유효성 검사 실패-->
+    <item
+        android:bottom="1dp"
+        android:left="-2dp"
+        android:right="-2dp"
+        android:top="-2dp">
+        <shape android:shape="rectangle" >
+            <stroke
+                android:width="0.5dp"
+                android:color="@color/coral_red" />
+
+            <solid android:color="#00FFFFFF" />
+
+            <padding
+                android:top="16dp"
+                android:bottom="8dp" />
+        </shape>
+    </item>
+</layer-list>
