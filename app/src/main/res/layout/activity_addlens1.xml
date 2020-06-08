@@ -8,7 +8,7 @@
 
 
     <TextView
-        android:id="@+id/textView1"
+        android:id="@+id/tv_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="24dp"
@@ -16,8 +16,9 @@
         android:fontFamily="@font/notosans_medium"
         android:text="렌즈 등록"
         android:textColor="@color/clear_blue"
+        android:backgroundTint="@color/hint_grey"
         android:textSize="33sp"
-        android:textStyle=""
+        android:includeFontPadding="false"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -30,8 +31,9 @@
         android:textColor="#959595"
         android:fontFamily="@font/notosans_demilight"
         android:text="브랜드와 제품명을"
+        android:includeFontPadding="false"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView1" />
+        app:layout_constraintTop_toBottomOf="@+id/tv_title" />
 
     <TextView
         android:id="@+id/textView5"
@@ -41,6 +43,7 @@
         android:textColor="#959595"
         android:fontFamily="@font/notosans_demilight"
         android:text="입력해주세요!"
+        android:includeFontPadding="false"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView4" />
 
@@ -54,11 +57,12 @@
         android:fontFamily="@font/notosans_demilight"
         android:textSize="16sp"
         android:text="브랜드"
+        android:includeFontPadding="false"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView5" />
 
-    <com.weiwangcn.betterspinner.library.material.MaterialBetterSpinner
-        android:id="@+id/spinner"
+    <EditText
+        android:id="@+id/et_brand"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
@@ -68,8 +72,11 @@
         android:layout_marginRight="24dp"
         android:entries="@array/lens_brand"
         android:hint="브랜드를 입력해주세요"
+        android:includeFontPadding="false"
         android:fontFamily="@font/notosans_light"
         android:textSize="16dp"
+        android:textColorHint="@color/hint_grey"
+        android:textColor="@color/deep_grey"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView6"/>
@@ -84,11 +91,12 @@
         android:fontFamily="@font/notosans_demilight"
         android:textSize="16sp"
         android:text="제품명"
+        android:includeFontPadding="false"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/spinner" />
+        app:layout_constraintTop_toBottomOf="@+id/et_brand" />
 
-    <com.weiwangcn.betterspinner.library.material.MaterialBetterSpinner
-        android:id="@+id/spinner2"
+    <EditText
+        android:id="@+id/dt_name"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
@@ -99,19 +107,24 @@
         android:entries="@array/lens_brand"
         android:fontFamily="@font/notosans_light"
         android:hint="제품명을 입력해주세요"
+        android:backgroundTint="@color/hint_grey"
         android:textSize="16dp"
+        android:includeFontPadding="false"
+        android:textColorHint="@color/hint_grey"
+        android:textColor="@color/deep_grey"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView7" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/bt_bottom"
         android:layout_width="0dp"
         android:layout_height="56dp"
         android:background="@drawable/gradient"
         android:textColor="#ffffff"
         android:fontFamily="@font/notosans_demilight"
         android:text="다음"
+        android:includeFontPadding="false"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />

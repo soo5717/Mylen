@@ -17,6 +17,7 @@
         app:layout_constraintTop_toTopOf="parent"
         android:backgroundTint="@color/bg_grey"
         android:background="@drawable/badge_round"
+        android:includeFontPadding="false"
         />
 
     <TextView
@@ -30,6 +31,7 @@
         android:text="박윤경"
         android:textColor="@color/soft_black"
         android:textSize="16sp"
+        android:includeFontPadding="false"
         app:layout_constraintStart_toEndOf="@+id/imageView6"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -43,6 +45,7 @@
         android:fontFamily="@font/notosans_demilight"
         android:text="bsj8993@naver.com"
         android:textColor="@color/soft_grey"
+        android:includeFontPadding="false"
         app:layout_constraintStart_toEndOf="@+id/imageView6"
         app:layout_constraintTop_toBottomOf="@+id/textView11" />
 
@@ -56,6 +59,7 @@
         android:background="@null"
         android:fontFamily="@font/notosans_demilight"
         android:text="추가"
+        android:includeFontPadding="false"
         android:textColor="@color/clear_blue"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />

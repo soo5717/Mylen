@@ -8,7 +8,7 @@
 
 
     <TextView
-        android:id="@+id/tv_"
+        android:id="@+id/tv_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="24dp"
@@ -53,7 +53,7 @@
         app:layout_constraintBottom_toTopOf="@+id/textView2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_" />
+        app:layout_constraintTop_toBottomOf="@+id/tv_title" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rc_friendRank"

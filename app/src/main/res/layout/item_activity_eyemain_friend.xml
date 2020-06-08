@@ -17,6 +17,7 @@
         android:text="1위"
         android:textColor="#138bff"
         android:textSize="16sp"
+        android:includeFontPadding="false"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -27,6 +28,7 @@
         android:layout_marginStart="16dp"
         android:layout_marginLeft="16dp"
         android:layout_marginTop="24dp"
+        android:includeFontPadding="false"
         app:layout_constraintStart_toEndOf="@+id/textView10"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/gradient" />
@@ -42,6 +44,7 @@
         android:text="박윤경"
         android:textColor="@color/soft_black"
         android:textSize="16sp"
+        android:includeFontPadding="false"
         app:layout_constraintStart_toEndOf="@+id/imageView6"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -55,6 +58,7 @@
         android:fontFamily="@font/notosans_demilight"
         android:text="bsj8993@naver.com"
         android:textColor="@color/soft_grey"
+        android:includeFontPadding="false"
         app:layout_constraintStart_toEndOf="@+id/imageView6"
         app:layout_constraintTop_toBottomOf="@+id/textView11" />
 
@@ -66,7 +70,8 @@
         android:layout_marginEnd="24dp"
         android:layout_marginRight="24dp"
         android:fontFamily="@font/notosans_demilight"
-        android:text="120 P"
+        android:text="120dp"
+        android:includeFontPadding="false"
         android:textColor="@color/soft_black"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />

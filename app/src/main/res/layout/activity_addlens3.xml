@@ -8,7 +8,7 @@
 
 
     <TextView
-        android:id="@+id/textView1"
+        android:id="@+id/tv_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="24dp"
@@ -17,7 +17,7 @@
         android:text="렌즈 등록"
         android:textColor="@color/clear_blue"
         android:textSize="33sp"
-        android:textStyle=""
+        android:includeFontPadding="false"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -30,8 +30,9 @@
         android:textColor="#959595"
         android:fontFamily="@font/notosans_demilight"
         android:text="유통기한과 개봉일을"
+        android:includeFontPadding="false"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView1" />
+        app:layout_constraintTop_toBottomOf="@+id/tv_title" />
 
     <TextView
         android:id="@+id/textView5"
@@ -41,6 +42,7 @@
         android:textColor="#959595"
         android:fontFamily="@font/notosans_demilight"
         android:text="입력해주세요!"
+        android:includeFontPadding="false"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView4" />
 
@@ -54,11 +56,12 @@
         android:fontFamily="@font/notosans_demilight"
         android:textSize="16sp"
         android:text="유통기한"
+        android:includeFontPadding="false"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView5" />
 
     <com.weiwangcn.betterspinner.library.material.MaterialBetterSpinner
-        android:id="@+id/spinner"
+        android:id="@+id/spn_expdate"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
@@ -68,8 +71,11 @@
         android:layout_marginRight="24dp"
         android:entries="@array/lens_name"
         android:fontFamily="@font/notosans_light"
-        android:hint="유통기간을 입력해주세요"
+        android:hint="유통기한을 입력해주세요"
         android:textSize="16dp"
+        android:textColorHint="@color/hint_grey"
+        android:textColor="@color/deep_grey"
+        android:includeFontPadding="false"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView6" />
@@ -80,15 +86,16 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="24dp"
         android:layout_marginTop="40dp"
-        android:textColor="@color/soft_black"
         android:fontFamily="@font/notosans_demilight"
-        android:textSize="16sp"
+        android:includeFontPadding="false"
         android:text="개봉일"
+        android:textColor="@color/soft_black"
+        android:textSize="16sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/spinner" />
+        app:layout_constraintTop_toBottomOf="@+id/spn_expdate" />
 
     <com.weiwangcn.betterspinner.library.material.MaterialBetterSpinner
-        android:id="@+id/spinner2"
+        android:id="@+id/spn_opendate"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
@@ -100,18 +107,22 @@
         android:fontFamily="@font/notosans_light"
         android:hint="개봉일을 입력해주세요"
         android:textSize="16dp"
+        android:textColorHint="@color/hint_grey"
+        android:textColor="@color/deep_grey"
+        android:includeFontPadding="false"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView7" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/bt_bottom"
         android:layout_width="0dp"
         android:layout_height="56dp"
         android:background="@drawable/gradient"
         android:textColor="#ffffff"
         android:fontFamily="@font/notosans_demilight"
         android:text="완료"
+        android:includeFontPadding="false"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
