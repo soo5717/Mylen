@@ -26,11 +26,12 @@
         android:layout_width="80dp"
         android:layout_height="80dp"
         android:layout_marginTop="80dp"
+        android:layout_marginEnd="24dp"
         android:layout_marginRight="24dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        android:background="@drawable/badge_round"
         android:backgroundTint="@color/bg_grey"
-        android:background="@drawable/badge_round"/>
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
         android:id="@+id/imageButton"
@@ -56,18 +57,18 @@
 
     <EditText
         android:id="@+id/et_userName"
-        android:layout_width="361dp"
-        android:layout_height="42dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="24dp"
         android:backgroundTint="@color/hint_grey"
         android:ems="10"
         android:fontFamily="@font/notosans_demilight"
+        android:includeFontPadding="false"
         android:inputType="textEmailAddress"
         android:textColor="@color/deep_grey"
         android:textSize="16sp"
-        android:includeFontPadding="false"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView6" />
@@ -97,17 +98,17 @@
 
         <com.weiwangcn.betterspinner.library.material.MaterialBetterSpinner
             android:id="@+id/spn_birthyear"
-            android:layout_width="117dp"
+            android:layout_width="123dp"
             android:layout_height="42dp"
             android:layout_marginStart="24dp"
             android:layout_marginTop="16dp"
             android:layout_marginEnd="24dp"
+            android:calendarViewShown="false"
+            android:datePickerMode="spinner"
             android:entries="@array/lens_name"
             android:fontFamily="@font/notosans_light"
-            android:textSize="16dp"
             android:includeFontPadding="false"
-            android:calendarViewShown="false"
-            android:datePickerMode="spinner" />
+            android:textSize="16dp" />
 
         <com.weiwangcn.betterspinner.library.material.MaterialBetterSpinner
             android:id="@+id/spn_birthmonth"
@@ -156,32 +157,32 @@
 
     <com.weiwangcn.betterspinner.library.material.MaterialBetterSpinner
         android:id="@+id/et_sphL"
-        android:layout_width="174dp"
-        android:layout_height="42dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_marginLeft="24dp"
         android:layout_marginTop="16dp"
-        android:layout_marginRight="16dp"
         android:entries="@array/lens_name"
         android:fontFamily="@font/notosans_light"
+        android:includeFontPadding="false"
         android:textColorHint="@color/deep_grey"
         android:textSize="16dp"
-        android:includeFontPadding="false"
-        app:layout_constraintEnd_toStartOf="@+id/spinner4"
-        app:layout_constraintHorizontal_bias="0.615"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView" />
 
     <com.weiwangcn.betterspinner.library.material.MaterialBetterSpinner
         android:id="@+id/et_sphR"
-        android:layout_width="174dp"
-        android:layout_height="42dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
         android:layout_marginTop="16dp"
         android:layout_marginRight="24dp"
         android:entries="@array/lens_name"
         android:fontFamily="@font/notosans_light"
-        android:textSize="16dp"
         android:includeFontPadding="false"
+        android:textSize="16dp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/et_sphL"
         app:layout_constraintTop_toBottomOf="@+id/textView" />
 
     <TextView
