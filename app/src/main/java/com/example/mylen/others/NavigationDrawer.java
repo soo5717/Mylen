@@ -1,6 +1,7 @@
 package com.example.mylen.others;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -13,36 +14,64 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
+import androidx.viewpager.widget.ViewPager;
 
+import com.example.mylen.FragmentViewpagerFirst;
+import com.example.mylen.FragmentViewpagerSecond;
+import com.example.mylen.FragmentViewpagerThird;
 import com.example.mylen.R;
+import com.example.mylen.mypage.Profile;
 import com.google.android.material.navigation.NavigationView;
+import com.google.android.material.tabs.TabLayout;
 
 public class NavigationDrawer extends AppCompatActivity {
+    //필요한 변수 선언
     private Toolbar myToolbar;
     private DrawerLayout mDrawerLayout;
     private Context context = this;
     View headerview;
-    LinearLayout header;
-    private Button mButton;
+    private Button mButton_logout;
+    private Button mButton_profile;
+    NavigationView navigationView;
+    LinearLayout container;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        //뷰페이저 구현
         setContentView(R.layout.activity_navigation_drawer);
-        NavigationView navigationView = (NavigationView) findViewById(R.id.navi_view);
+
+        ViewPager vp = findViewById(R.id.viewpager);
+        TabLayout tl = findViewById(R.id.tabLayout);
+        ViewPagerAdapter adapter = new ViewPagerAdapter(getSupportFragmentManager());
+
+        adapter.addFragment(R.drawable.ic_home, new FragmentViewpagerFirst());
+        adapter.addFragment(R.drawable.ic_calendar, new FragmentViewpagerSecond());
+        adapter.addFragment(R.drawable.ic_play, new FragmentViewpagerThird());
+        vp.setAdapter(adapter);
+
+        tl.setupWithViewPager(vp);
+
+        for (int i = 0; i < vp.getAdapter().getCount(); i++) {
+            tl.getTabAt(i).setIcon(adapter.getFragmentInfo(i).getIconResId());
+        }
+        vp.setAdapter(adapter);
+        tl.setupWithViewPager(vp);
+
+        for(int i=0; i<vp.getAdapter().getCount(); i++)
+            tl.getTabAt(i).setIcon(adapter.getFragmentInfo(i).getIconResId());
+
+        //네비게이션 구현
+        navigationView = (NavigationView) findViewById(R.id.navi_view);
         mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
         myToolbar = (Toolbar) findViewById(R.id.toolbar);
-/*
-        headerview = navigationView.getHeaderView(0);
-        mButton = (Button) headerview.findViewById(R.id.btn_navi_pic);
-        header = (LinearLayout) headerview.findViewById(R.id.header);
- */
+        //툴바 구현
         setSupportActionBar(myToolbar);
         androidx.appcompat.app.ActionBar actionBar = getSupportActionBar();
         actionBar.setTitle("");
         actionBar.setDisplayHomeAsUpEnabled(true); // 뒤로가기 버튼 만들기
         actionBar.setHomeAsUpIndicator(R.drawable.ic_menu_48dp);
-
+        //네비게이션 동작
         navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(MenuItem menuItem) {
@@ -65,24 +94,28 @@ public class NavigationDrawer extends AppCompatActivity {
                 return true;
             }
         });
-/*
-        Button mButton = (Button) findViewById(R.id.btn_navi_pic);
-        mButton.setOnClickListener(new View.OnClickListener() {
+
+        //네비게이션 헤더 로그아웃버튼 구현
+        headerview = navigationView.getHeaderView(0);
+        mButton_logout = headerview.findViewById(R.id.logout_navi_button);
+        mButton_logout.setOnClickListener(new View.OnClickListener(){
+
             @Override
             public void onClick(View v) {
-                Intent buttonIntent = new Intent(getApplicationContext(), Profile.class);
-                startActivity(buttonIntent);
+                Toast.makeText(context, "로그아웃", Toast.LENGTH_SHORT).show();
             }
         });
 
-        mButton = (Button) findViewById(R.id.logout_navi_button);
-        mButton.setOnClickListener(new View.OnClickListener() {
+        //네비게이션 이미지 누르면 프로필 화면으로 전환
+        mButton_profile = headerview.findViewById(R.id.btn_navi_pic);
+        mButton_profile.setOnClickListener(new View.OnClickListener(){
+
             @Override
             public void onClick(View v) {
-                Toast.makeText(NavigationDrawer.this, "로그아웃", Toast.LENGTH_SHORT).show();
+                Intent profile_intent = new Intent(getApplicationContext(), Profile.class);
+                startActivity(profile_intent);
             }
         });
-        */
 
     }
 

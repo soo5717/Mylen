@@ -10,7 +10,8 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:orientation="vertical">
         <androidx.appcompat.widget.Toolbar
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
@@ -19,6 +20,14 @@
             android:minHeight="?attr/actionBarSize"
             android:theme="?attr/actionBarTheme"
             />
+
+        <include
+            android:id="@+id/tab_layout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            layout="@layout/activity_bottom_navigation"
+            />
+
     </LinearLayout>
     <com.google.android.material.navigation.NavigationView
         android:id="@+id/navi_view"
@@ -29,4 +38,5 @@
         app:headerLayout="@layout/activity_navigation_header"
         app:menu="@menu/menu_navigation_drawer">
     </com.google.android.material.navigation.NavigationView>
+
 </androidx.drawerlayout.widget.DrawerLayout>
