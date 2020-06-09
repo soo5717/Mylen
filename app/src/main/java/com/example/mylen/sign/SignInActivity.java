@@ -15,7 +15,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.example.mylen.R;
 import com.example.mylen.data.user.SignInData;
 import com.example.mylen.data.user.SignInResponse;
-import com.example.mylen.home.MainActivity;
+import com.example.mylen.home.FragmentMainActivity;
 import com.example.mylen.network.RetrofitClient;
 
 import retrofit2.Call;
@@ -85,7 +85,7 @@ public class SignInActivity extends AppCompatActivity {
                 //네트워킹 부분 추가 예정
 
                 //메인 페이지로 이동
-                Intent intent = new Intent(SignInActivity.this, MainActivity.class);
+                Intent intent = new Intent(SignInActivity.this, FragmentMainActivity.class);
                 //스택 비우고 로그인만 남김
                 intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 startActivity(intent);

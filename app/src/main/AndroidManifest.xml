@@ -18,13 +18,12 @@
         <activity android:name=".others.BottomNavigation">
         </activity>
         <activity android:name=".mypage.Profile"/>
-        <activity android:name=".FragmentViewpagerThird" />
-        <activity android:name=".FragmentViewpagerSecond" />
-        <activity android:name=".FragmentViewpagerFirst" />
+        <activity android:name=".exercise.FragmentEyeMain" />
+        <activity android:name=".calendar.FragmentCalendar" />
+        <activity android:name=".home.FragmentMainActivity" />
         <activity android:name=".others.ActionBar" />
         <activity android:name=".home.search.SearchLensItem" />
         <activity android:name=".home.search.SearchLensActivity" />
-        <activity android:name=".home.MainActivity" />
     </application>
 
 </manifest>

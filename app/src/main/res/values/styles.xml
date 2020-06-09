@@ -13,6 +13,7 @@
             name="android:windowBackground">@drawable/splash
         </item>
     </style>
+    <!-- For TabLayout Viewpager theme-->
     <style name="TabTheme" parent="Theme.AppCompat.Light.DarkActionBar">
         <item name="colorPrimary">@android:color/white</item>
         <item name="colorPrimaryDark">@color/clear_blue</item>

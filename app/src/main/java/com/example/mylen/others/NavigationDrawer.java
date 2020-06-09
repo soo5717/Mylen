@@ -16,9 +16,9 @@ import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.viewpager.widget.ViewPager;
 
-import com.example.mylen.FragmentViewpagerFirst;
-import com.example.mylen.FragmentViewpagerSecond;
-import com.example.mylen.FragmentViewpagerThird;
+import com.example.mylen.home.FragmentMainActivity;
+import com.example.mylen.calendar.FragmentCalendar;
+import com.example.mylen.exercise.FragmentEyeMain;
 import com.example.mylen.R;
 import com.example.mylen.mypage.Profile;
 import com.google.android.material.navigation.NavigationView;
@@ -45,9 +45,9 @@ public class NavigationDrawer extends AppCompatActivity {
         TabLayout tl = findViewById(R.id.tabLayout);
         ViewPagerAdapter adapter = new ViewPagerAdapter(getSupportFragmentManager());
 
-        adapter.addFragment(R.drawable.ic_home, new FragmentViewpagerFirst());
-        adapter.addFragment(R.drawable.ic_calendar, new FragmentViewpagerSecond());
-        adapter.addFragment(R.drawable.ic_play, new FragmentViewpagerThird());
+        adapter.addFragment(R.drawable.ic_home, new FragmentMainActivity());
+        adapter.addFragment(R.drawable.ic_calendar, new FragmentCalendar());
+        adapter.addFragment(R.drawable.ic_play, new FragmentEyeMain());
         vp.setAdapter(adapter);
 
         tl.setupWithViewPager(vp);

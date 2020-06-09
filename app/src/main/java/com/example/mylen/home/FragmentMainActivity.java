@@ -1,19 +1,21 @@
 package com.example.mylen.home;
 
 import android.os.Bundle;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
 import android.widget.TextView;
 
-import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
 
 import com.example.mylen.R;
 
-public class MainActivity extends AppCompatActivity {
+public class FragmentMainActivity extends Fragment {
     TextView tv_home;
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-        tv_home = (TextView)findViewById(R.id.tv_home);
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        return inflater.inflate(R.layout.fragment_activity_main, container, false);
+    }
 
 //        TextPaint paint = tv_home.getPaint();
 //        float width = paint.measureText(tv_home.getText().toString());
@@ -24,5 +26,5 @@ public class MainActivity extends AppCompatActivity {
 //                        Color.parseColor("#5edae3")
 //                }, null, Shader.TileMode.CLAMP);
 //        tv_home.getPaint().setShader(textShader);
-    }
+
 }
