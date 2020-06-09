@@ -43,4 +43,23 @@
     <string name="name_hint">이름 또는 닉네임을 입력해주세요</string>
     <string name="birth">생년월일</string>
     <string name="birth_hint">생년월일을 입력해주세요</string>
+
+    <!--    렌즈추가 페이지 텍스트-->
+    <string name="add_lens">렌즈 등록</string>
+    <string name="add_lens1_sub_text">브랜드와 제품명을\n입력해주세요!</string>
+    <string name="add_lens2_sub_text">수량과 착용기한을\n입력해주세요!</string>
+    <string name="add_lens3_sub_text">유통기한과 개봉일을\n입력해주세요!</string>
+    <string name="lens_brand">브랜드</string>
+    <string name="lens_brand_hint">브랜드를 입력해주세요</string>
+    <string name="lens_name">제품명</string>
+    <string name="lens_name_hint">제품명를 입력해주세요</string>
+    <string name="lens_quantitiy">수량</string>
+    <string name="lens_quantitiy_hint">수량을 입력해주세요</string>
+    <string name="lens_weardate">착용기한</string>
+    <string name="lens_weardate_hint">착용기한을 입력해주세요</string>
+    <string name="lens_expdate">유통기한</string>
+    <string name="lens_expdate_hint">유통기한을 입력해주세요</string>
+    <string name="lens_opendate">개봉일</string>
+    <string name="lens_opendate_hint">개봉일을 입력해주세요</string>
+
 </resources>
