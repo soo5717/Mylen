@@ -92,8 +92,12 @@ public class SignUp2Activity  extends AppCompatActivity {
 
         //이름, 생년월일 유효성 검사 통과
         if (name.length() != 0 && birth.length() != 0){
+            //비밀번호 암호화
+            String encrypt_pwd  = EncryptSHA512.encryptSHA512(pwd);
+            Log.d("Password: ", encrypt_pwd);
+
             //회원가입 요청 메소드 호출
-            requestSignUp(new SignUpData(email, pwd, name, birth));
+            requestSignUp(new SignUpData(email, encrypt_pwd, name, birth));
         }
         else if (name.length() != 0) { //이름만 유효성 검사 통과
             Toast.makeText(getApplicationContext(), "생년월일을 입력해주세요!", Toast.LENGTH_LONG).show();

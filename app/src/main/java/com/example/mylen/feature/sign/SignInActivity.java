@@ -110,8 +110,13 @@ public class SignInActivity extends AppCompatActivity {
         if(is_valid_email && is_valid_pwd) {
             email = et_email.getText().toString();
             pwd = et_pwd.getText().toString();
+
+            //비밀번호 암호화
+            String encrypt_pwd  = EncryptSHA512.encryptSHA512(pwd);
+            Log.d("Password: ", encrypt_pwd);
+
             //로그인 요청 메소드 호출
-            requestSignIn(new SignInData(email, pwd));
+            requestSignIn(new SignInData(email, encrypt_pwd));
         }
         else if (is_valid_email) { //이메일만 유효성 검사 통과
             Toast.makeText(getApplicationContext(), "비밀번호를 6자리 이상 입력해주세요!", Toast.LENGTH_LONG).show();
