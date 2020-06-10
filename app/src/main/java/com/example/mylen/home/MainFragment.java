@@ -10,11 +10,11 @@ import androidx.fragment.app.Fragment;
 
 import com.example.mylen.R;
 
-public class FragmentMainActivity extends Fragment {
+public class MainFragment extends Fragment {
     TextView tv_home;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.fragment_activity_main, container, false);
+        return inflater.inflate(R.layout.fragment_main, container, false);
     }
 
 //        TextPaint paint = tv_home.getPaint();

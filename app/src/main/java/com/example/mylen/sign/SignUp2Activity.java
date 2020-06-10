@@ -25,6 +25,7 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 public class SignUp2Activity  extends AppCompatActivity {
+
     private DatePickerDialog.OnDateSetListener callbackMethod;
 
     EditText et_name;
@@ -38,7 +39,6 @@ public class SignUp2Activity  extends AppCompatActivity {
 
         et_name = (EditText)findViewById(R.id.et_name);
         btn_birth = (Button)findViewById(R.id.btn_birth);
-
     }
 
     //회원가입 요청 : Retrofit2

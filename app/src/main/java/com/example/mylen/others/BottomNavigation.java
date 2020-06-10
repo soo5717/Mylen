@@ -5,7 +5,7 @@ import android.os.Bundle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.viewpager.widget.ViewPager;
 
-import com.example.mylen.home.FragmentMainActivity;
+import com.example.mylen.home.MainFragment;
 import com.example.mylen.calendar.FragmentCalendar;
 import com.example.mylen.exercise.FragmentEyeMain;
 import com.example.mylen.R;
@@ -20,7 +20,7 @@ public class BottomNavigation extends AppCompatActivity {
         TabLayout tl = findViewById(R.id.tabLayout);
         ViewPagerAdapter adapter = new ViewPagerAdapter(getSupportFragmentManager());
 
-        adapter.addFragment(R.drawable.ic_home, new FragmentMainActivity());
+        adapter.addFragment(R.drawable.ic_home, new MainFragment());
         adapter.addFragment(R.drawable.ic_calendar, new FragmentCalendar());
         adapter.addFragment(R.drawable.ic_play, new FragmentEyeMain());
         vp.setAdapter(adapter);
