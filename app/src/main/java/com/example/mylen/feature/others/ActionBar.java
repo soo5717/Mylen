@@ -5,13 +5,14 @@ import android.view.Menu;
 import android.view.MenuItem;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.SearchView;
 import androidx.appcompat.widget.Toolbar;
 
 import com.example.mylen.R;
 
 public class ActionBar extends AppCompatActivity {
     private Toolbar myToolbar;
-
+    private SearchView searchView;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -25,9 +26,22 @@ public class ActionBar extends AppCompatActivity {
         actionBar.setHomeAsUpIndicator(R.drawable.ic_backspace_48dp);
 
     }
+
+    //SearchView 구현 실패
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.menu_app_bar, menu);
+        getMenuInflater().inflate(R.menu.menu_app_bar_search, menu);
+        /*MenuItem searchItem = menu.findItem(R.id.action_search);
+        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String s) {
+                return false;
+            }
+            @Override
+            public boolean onQueryTextChange(String s) {
+                return false;
+            }
+        });*/
         return true;
     }
     @Override

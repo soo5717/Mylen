@@ -20,9 +20,9 @@ public class BottomNavigation extends AppCompatActivity {
         TabLayout tl = findViewById(R.id.tabLayout);
         ViewPagerAdapter adapter = new ViewPagerAdapter(getSupportFragmentManager());
 
-        adapter.addFragment(R.drawable.ic_home, new MainFragment());
-        adapter.addFragment(R.drawable.ic_calendar, new FragmentCalendar());
-        adapter.addFragment(R.drawable.ic_play, new FragmentEyeMain());
+        adapter.addFragment(R.drawable.ic_home_color, new MainFragment());
+        adapter.addFragment(R.drawable.ic_calendar_grey, new FragmentCalendar());
+        adapter.addFragment(R.drawable.ic_play_grey, new FragmentEyeMain());
         vp.setAdapter(adapter);
 
         tl.setupWithViewPager(vp);
@@ -35,6 +35,39 @@ public class BottomNavigation extends AppCompatActivity {
 
         for(int i=0; i<vp.getAdapter().getCount(); i++)
             tl.getTabAt(i).setIcon(adapter.getFragmentInfo(i).getIconResId());
+
+        vp.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
+            @Override
+            public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
+
+            }
+
+            @Override
+            public void onPageSelected(int position) {
+                switch (position) {
+                    case 0:
+                        tl.getTabAt(0).setIcon(R.drawable.ic_home_color);
+                        tl.getTabAt(1).setIcon(R.drawable.ic_calendar_grey);
+                        tl.getTabAt(2).setIcon(R.drawable.ic_play_grey);
+                        break;
+                    case 1:
+                        tl.getTabAt(0).setIcon(R.drawable.ic_home_grey);
+                        tl.getTabAt(1).setIcon(R.drawable.ic_calendar_color);
+                        tl.getTabAt(2).setIcon(R.drawable.ic_play_grey);
+                        break;
+                    case 2:
+                        tl.getTabAt(0).setIcon(R.drawable.ic_home_grey);
+                        tl.getTabAt(1).setIcon(R.drawable.ic_calendar_grey);
+                        tl.getTabAt(2).setIcon(R.drawable.ic_play_color);
+                        break;
+                }
+            }
+
+            @Override
+            public void onPageScrollStateChanged(int state) {
+
+            }
+        });
 
     }
 }
