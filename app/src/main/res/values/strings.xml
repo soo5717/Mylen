@@ -44,7 +44,7 @@
     <string name="birth">생년월일</string>
     <string name="birth_hint">생년월일을 입력해주세요</string>
 
-    <!--    렌즈추가 페이지 텍스트-->
+    <!--렌즈추가 페이지 텍스트-->
     <string name="add_lens">렌즈 등록</string>
     <string name="add_lens1_sub_text">브랜드와 제품명을\n입력해주세요!</string>
     <string name="add_lens2_sub_text">수량과 착용기한을\n입력해주세요!</string>
@@ -61,5 +61,30 @@
     <string name="lens_expdate_hint">유통기한을 입력해주세요</string>
     <string name="lens_opendate">개봉일</string>
     <string name="lens_opendate_hint">개봉일을 입력해주세요</string>
+
+    <!--세척액추가 페이지 텍스트-->
+    <string name="add_liquid">세척액 등록</string>
+    <string name="add_liquid1_sub_text">브랜드와 제품명을\n입력해주세요!</string>
+    <string name="add_liquid2_sub_text">유통기한과 개봉일을\n입력해주세요!</string>
+    <string name="liquid_brand">브랜드</string>
+    <string name="liquid_brand_hint">브랜드를 입력해주세요</string>
+    <string name="liquid_name">제품명</string>
+    <string name="liquid_name_hint">제품명를 입력해주세요</string>
+    <string name="liquid_expdate">유통기한</string>
+    <string name="liquid_expdate_hint">유통기한을 입력해주세요</string>
+    <string name="liquid_opendate">개봉일</string>
+    <string name="liquid_opendate_hint">개봉일을 입력해주세요 (생략가능)</string>
+
+    <!-- 프로필 페이지-->
+    <string name="profile">프로필</string>
+    <string name="to_edit">프로필 수정</string>
+    <string name="sph">SPH</string>
+    <string name="sph_describe">SPH: 눈의 도수량</string>
+
+    <string name="profile_edit">프로필 수정</string>
+    <string name="store">저장</string>
+
+
+
 
 </resources>

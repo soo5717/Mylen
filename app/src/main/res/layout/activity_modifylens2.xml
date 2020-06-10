@@ -14,46 +14,38 @@
         android:layout_marginLeft="24dp"
         android:layout_marginTop="64dp"
         android:fontFamily="@font/notosans_medium"
-        android:text="렌즈 등록"
+        android:text="@string/add_lens"
         android:textColor="@color/clear_blue"
-        android:textSize="33dp"
-        android:textStyle=""
+        android:textSize="33sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginStart="24dp" />
 
     <TextView
         android:id="@+id/textView4"
-        android:layout_width="136dp"
-        android:layout_height="24dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_marginLeft="24dp"
-        android:layout_marginTop="16dp"
-        android:textColor="#959595"
+        android:layout_marginTop="8dp"
         android:fontFamily="@font/notosans_demilight"
-        android:text="수량과 착용기간을"
+        android:text="@string/add_lens2_sub_text"
+        android:textColor="@color/deep_grey"
+        android:textSize="16sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_title" />
-
-    <TextView
-        android:id="@+id/textView5"
-        android:layout_width="93dp"
-        android:layout_height="24dp"
-        android:layout_marginLeft="24dp"
-        android:textColor="#959595"
-        android:fontFamily="@font/notosans_demilight"
-        android:text="입력해주세요!"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView4" />
+        app:layout_constraintTop_toBottomOf="@+id/tv_title"
+        android:layout_marginStart="24dp" />
 
     <TextView
         android:id="@+id/textView6"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
         android:layout_marginLeft="24dp"
         android:layout_marginTop="60dp"
-        android:textColor="#333333"
-        android:text="수량"
+        android:text="@string/lens_quantitiy"
+        android:textColor="@color/soft_black"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView5" />
+        app:layout_constraintTop_toBottomOf="@+id/textView4" />
 
 
     <EditText
@@ -62,7 +54,6 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
         android:layout_marginLeft="24dp"
-        android:layout_marginTop="16dp"
         android:layout_marginEnd="24dp"
         android:layout_marginRight="24dp"
         android:backgroundTint="@color/hint_grey"
@@ -70,10 +61,9 @@
         android:entries="@array/lens_brand"
         android:fontFamily="@font/notosans_light"
         android:inputType="textPersonName"
-        android:text="20"
-        android:textColorHint="@color/hint_grey"
         android:textColor="@color/deep_grey"
-        android:textSize="16dp"
+        android:textColorHint="@color/hint_grey"
+        android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView6" />
@@ -83,12 +73,13 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="24dp"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="24dp"
         android:fontFamily="@font/notosans_demilight"
-        android:text="착용기간"
-        android:textColor="#333333"
+        android:text="@string/lens_weardate"
+        android:textColor="@color/soft_black"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/et_quantity" />
+        app:layout_constraintTop_toBottomOf="@+id/et_quantity"
+        android:layout_marginStart="24dp" />
 
 
     <com.weiwangcn.betterspinner.library.material.MaterialBetterSpinner
@@ -97,16 +88,15 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
         android:layout_marginLeft="24dp"
-        android:layout_marginTop="16dp"
         android:layout_marginEnd="24dp"
         android:layout_marginRight="24dp"
-        android:entries="@array/lens_name"
         android:fontFamily="@font/notosans_light"
-        android:text="1 month"
-        android:textSize="16dp"
+        android:includeFontPadding="false"
+        android:textColor="@color/soft_black"
         android:textColorHint="@color/hint_grey"
-        android:textColor="@color/deep_grey"
+        android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView7" />
 
@@ -115,11 +105,12 @@
         android:layout_width="0dp"
         android:layout_height="56dp"
         android:background="@drawable/gradient"
-        android:textColor="#ffffff"
+        android:textColor="@color/white"
         android:fontFamily="@font/notosans_demilight"
-        android:text="다음"
+        android:text="@string/next"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -84,21 +84,17 @@
         android:layout_marginStart="24dp" />
 
 
-    <Button
-        android:id="@+id/btn_weardate"
+    <com.weiwangcn.betterspinner.library.material.MaterialBetterSpinner
+        android:id="@+id/spn_weardate"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
         android:layout_marginLeft="24dp"
         android:layout_marginEnd="24dp"
         android:layout_marginRight="24dp"
-        android:background="@drawable/et_underline_valid_success"
         android:fontFamily="@font/notosans_light"
-        android:gravity="start"
-        android:hint="@string/lens_weardate_hint"
         android:includeFontPadding="false"
-        android:maxWidth="0dp"
-        android:minHeight="0dp"
+        android:hint="@string/lens_weardate_hint"
         android:textColor="@color/soft_black"
         android:textColorHint="@color/hint_grey"
         android:textSize="16sp"
