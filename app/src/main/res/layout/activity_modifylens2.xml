@@ -93,7 +93,7 @@
         android:fontFamily="@font/notosans_light"
         android:includeFontPadding="false"
         android:textColor="@color/soft_black"
-        android:textColorHint="@color/hint_grey"
+        app:met_textColorHint = "@color/hint_grey"
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"

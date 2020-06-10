@@ -135,7 +135,8 @@
         android:entries="@array/lens_name"
         android:fontFamily="@font/notosans_light"
         android:includeFontPadding="false"
-        android:textColorHint="@color/deep_grey"
+        app:met_textColorHint = "@color/hint_grey"
+        android:textColor="@color/deep_grey"
         android:textSize="16sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView" />
@@ -152,6 +153,8 @@
         android:fontFamily="@font/notosans_light"
         android:includeFontPadding="false"
         android:textSize="16sp"
+        android:textColor="@color/deep_grey"
+        app:met_textColorHint = "@color/hint_grey"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/et_sphL"
         app:layout_constraintTop_toBottomOf="@+id/textView" />
