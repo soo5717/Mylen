@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".home.search.SearchLensItem">
+    tools:context=".feature.home.search.SearchLensItem">
 
     <!--그라데이션 필요!-->
     <TextView

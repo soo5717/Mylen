@@ -11,33 +11,32 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".others.NavigationDrawer">
+        <activity android:name=".feature.others.NavigationDrawer">
         </activity>
-        <activity android:name=".others.BottomNavigation">
+        <activity android:name=".feature.others.BottomNavigation">
         </activity>
-        <activity android:name=".mypage.Profile"/>
-        <activity android:name=".exercise.FragmentEyeMain" />
-        <activity android:name=".calendar.FragmentCalendar" />
-        <activity android:name=".others.ActionBar" />
+        <activity android:name=".feature.mypage.Profile"/>
+        <activity android:name=".feature.exercise.FragmentEyeMain" />
+        <activity android:name=".feature.calendar.FragmentCalendar" />
+        <activity android:name=".feature.others.ActionBar" />
 
 
-        <activity android:name=".sign.SignInActivity">
+        <activity android:name=".feature.sign.SignInActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".sign.SignUp1Activity" ></activity>
-        <activity android:name=".sign.SignUp2Activity"></activity>
+        <activity android:name=".feature.sign.SignUp1Activity" ></activity>
+        <activity android:name=".feature.sign.SignUp2Activity"></activity>
 
-        <activity android:name=".home.MainFragment" />
-        <activity android:name=".home.MainLensOpenItem" />
-        <activity android:name=".home.MainLensKeepItem" />
-        <activity android:name=".home.MainLiquidOpenItem" />
-        <activity android:name=".home.MainLiquidKeepItem" />
+        <activity android:name=".feature.home.MainFragment" />
+        <activity android:name=".feature.home.MainLensOpenItem" />
+        <activity android:name=".feature.home.MainLensKeepItem" />
+        <activity android:name=".feature.home.MainLiquidOpenItem" />
+        <activity android:name=".feature.home.MainLiquidKeepItem" />
 
-        <activity android:name=".home.search.SearchLensActivity" />
-        <activity android:name=".home.search.SearchLensItem" />
+        <activity android:name=".feature.home.search.SearchLensActivity" />
+        <activity android:name=".feature.home.search.SearchLensItem" />
     </application>
-
 </manifest>
