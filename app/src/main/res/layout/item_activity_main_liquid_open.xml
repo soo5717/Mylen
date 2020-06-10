@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/white"
     tools:context=".feature.home.MainLiquidOpenItem">
 
     <ImageButton
@@ -23,6 +24,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
         android:fontFamily="@font/notosans_regular"
+        android:includeFontPadding="false"
         android:textColor="@color/soft_black"
         android:textSize="16sp"
         app:layout_constraintStart_toEndOf="@+id/btn_today_clean"
@@ -36,6 +38,7 @@
         android:layout_marginLeft="8dp"
         android:layout_marginTop="24dp"
         android:fontFamily="@font/notosans_regular"
+        android:includeFontPadding="false"
         android:textColor="@color/soft_black"
         android:textSize="16sp"
         app:layout_constraintStart_toEndOf="@+id/tv_name"
@@ -49,6 +52,7 @@
         android:layout_marginLeft="48dp"
         android:layout_marginTop="16dp"
         android:fontFamily="@font/notosans_demilight"
+        android:includeFontPadding="false"
         android:text="@string/liquid_type"
         android:textColor="@color/soft_grey"
         android:textSize="14sp"
@@ -63,6 +67,7 @@
         android:layout_marginLeft="8dp"
         android:layout_marginTop="16dp"
         android:fontFamily="@font/notosans_demilight"
+        android:includeFontPadding="false"
         android:textColor="@color/soft_grey"
         android:textSize="14sp"
         app:layout_constraintStart_toEndOf="@+id/tv_type"

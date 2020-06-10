@@ -3,7 +3,8 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@color/white">
 
     <TextView
         android:id="@+id/textView"
@@ -12,6 +13,7 @@
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="120dp"
         android:fontFamily="@font/notosans_light"
+        android:includeFontPadding="false"
         android:text="@string/lens_add_1"
         android:textColor="@color/deep_grey"
         android:textSize="16sp"
@@ -36,6 +38,7 @@
             android:text="@string/lens_add"
             android:textColor="@color/clear_blue"
             android:textSize="16sp"
+            android:includeFontPadding="false"
             android:fontFamily="@font/notosans_medium"
             android:minHeight="0dp"
             android:minWidth="0dp"
@@ -48,6 +51,7 @@
             android:text="@string/lens_add_2"
             android:textColor="@color/deep_grey"
             android:textSize="16sp"
+            android:includeFontPadding="false"
             android:fontFamily="@font/notosans_light" />
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

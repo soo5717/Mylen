@@ -80,11 +80,7 @@
     <string name="to_edit">프로필 수정</string>
     <string name="sph">SPH</string>
     <string name="sph_describe">SPH: 눈의 도수량</string>
-
     <string name="profile_edit">프로필 수정</string>
     <string name="store">저장</string>
-
-
-
 
 </resources>

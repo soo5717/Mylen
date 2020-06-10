@@ -9,7 +9,8 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:background="@color/white">
 
 
         <TextView
@@ -20,6 +21,7 @@
             android:layout_marginLeft="24dp"
             android:layout_marginTop="8dp"
             android:fontFamily="@font/notosans_medium"
+            android:includeFontPadding="false"
             android:text="@string/home"
             android:textColor="@color/clear_blue"
             android:textSize="33sp"
@@ -34,6 +36,7 @@
             android:layout_marginLeft="24dp"
             android:layout_marginTop="16dp"
             android:fontFamily="@font/notosans_demilight"
+            android:includeFontPadding="false"
             android:text="@string/main_1"
             android:textColor="@color/soft_grey"
             android:textSize="16sp"
@@ -49,6 +52,7 @@
             android:layout_marginTop="16dp"
             android:textColor="@color/soft_black"
             android:textSize="16sp"
+            android:includeFontPadding="false"
             android:fontFamily="@font/notosans_demilight"
             app:layout_constraintStart_toEndOf="@+id/tv_title"
             app:layout_constraintTop_toBottomOf="@+id/tv_home" />
@@ -60,6 +64,7 @@
             android:layout_marginStart="24dp"
             android:layout_marginLeft="24dp"
             android:text="@string/main_2"
+            android:includeFontPadding="false"
             android:textColor="@color/soft_grey"
             android:textSize="16sp"
             android:fontFamily="@font/notosans_demilight"
@@ -98,6 +103,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/lens_case"
+                android:includeFontPadding="false"
                 android:textColor="@color/deep_grey"
                 android:textSize="14sp"
                 android:fontFamily="@font/notosans_demilight" />
@@ -111,6 +117,7 @@
                 android:background="@drawable/btn_color_small_checked"
                 android:textColor="@color/white"
                 android:textSize="14sp"
+                android:includeFontPadding="false"
                 android:fontFamily="@font/notosans_regular" />
         </LinearLayout>
 
@@ -129,6 +136,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/today_clean"
+                android:includeFontPadding="false"
                 android:textColor="@color/deep_grey"
                 android:textSize="14sp"
                 android:fontFamily="@font/notosans_demilight" />
@@ -142,6 +150,7 @@
                 android:background="@drawable/btn_color_small_unchecked"
                 android:textColor="@color/clear_blue"
                 android:textSize="14sp"
+                android:includeFontPadding="false"
                 android:fontFamily="@font/notosans_regular" />
         </LinearLayout>
 
@@ -164,6 +173,7 @@
                 android:drawablePadding="4dp"
                 android:textColor="@color/soft_black"
                 android:textSize="16sp"
+                android:includeFontPadding="false"
                 android:fontFamily="@font/notosans_demilight" />
 
             <TextView
@@ -174,6 +184,7 @@
                 android:text="@string/fine_dust"
                 android:textColor="@color/soft_grey"
                 android:textSize="16sp"
+                android:includeFontPadding="false"
                 android:fontFamily="@font/notosans_demilight" />
 
             <TextView
@@ -184,6 +195,7 @@
                 android:layout_marginLeft="4dp"
                 android:textColor="@color/soft_black"
                 android:textSize="16sp"
+                android:includeFontPadding="false"
                 android:fontFamily="@font/notosans_demilight" />
 
             <TextView
@@ -197,6 +209,7 @@
                 android:text="@string/ultra_fine_dust"
                 android:textColor="@color/soft_grey"
                 android:textSize="16sp"
+                android:includeFontPadding="false"
                 android:fontFamily="@font/notosans_demilight" />
 
             <TextView
@@ -207,35 +220,44 @@
                 android:layout_marginLeft="4dp"
                 android:textColor="@color/soft_black"
                 android:textSize="16sp"
+                android:includeFontPadding="false"
                 android:fontFamily="@font/notosans_demilight" />
         </LinearLayout>
 
-        <TextView
-            android:id="@+id/tv_open"
+        <Button
+            android:id="@+id/btn_open"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="24dp"
             android:layout_marginLeft="24dp"
             android:layout_marginTop="48dp"
             android:fontFamily="@font/notosans_medium"
+            android:includeFontPadding="false"
             android:text="@string/open"
             android:textColor="@color/soft_black"
             android:textSize="16sp"
+            android:background="@null"
+            android:minWidth="0dp"
+            android:minHeight="0dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/linearLayout3" />
 
-        <TextView
-            android:id="@+id/tv_keep"
+        <Button
+            android:id="@+id/btn_keep"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
             android:layout_marginLeft="16dp"
             android:layout_marginTop="48dp"
             android:fontFamily="@font/notosans_medium"
+            android:includeFontPadding="false"
             android:text="@string/keep"
             android:textColor="@color/hint_grey"
             android:textSize="16sp"
-            app:layout_constraintStart_toEndOf="@+id/tv_open"
+            android:background="@null"
+            android:minWidth="0dp"
+            android:minHeight="0dp"
+            app:layout_constraintStart_toEndOf="@+id/btn_open"
             app:layout_constraintTop_toBottomOf="@+id/linearLayout3" />
 
         <Spinner
@@ -260,6 +282,6 @@
             android:layout_marginRight="16dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tv_open" />
+            app:layout_constraintTop_toBottomOf="@+id/btn_open" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>

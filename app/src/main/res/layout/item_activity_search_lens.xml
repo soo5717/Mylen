@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/white"
     tools:context=".feature.home.search.SearchLensItem">
 
     <!--그라데이션 필요!-->
@@ -16,6 +17,7 @@
         android:layout_marginTop="24dp"
         android:textSize="14sp"
         android:textColor="@color/clear_blue"
+        android:includeFontPadding="false"
         android:fontFamily="@font/notosans_medium"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -29,6 +31,7 @@
         android:layout_marginTop="16dp"
         android:textSize="16sp"
         android:textColor="@color/soft_black"
+        android:includeFontPadding="false"
         android:fontFamily="@font/notosans_regular"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv_brand" />
@@ -42,6 +45,7 @@
         android:layout_marginTop="16dp"
         android:textSize="14sp"
         android:textColor="@color/soft_grey"
+        android:includeFontPadding="false"
         android:fontFamily="@font/notosans_demilight"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv_name" />
@@ -55,6 +59,7 @@
         android:layout_marginTop="16dp"
         android:textSize="14sp"
         android:textColor="@color/soft_grey"
+        android:includeFontPadding="false"
         android:fontFamily="@font/notosans_demilight"
         app:layout_constraintStart_toEndOf="@+id/tv_wear_date"
         app:layout_constraintTop_toBottomOf="@+id/tv_name" />
@@ -68,6 +73,7 @@
         android:layout_marginTop="16dp"
         android:textSize="14sp"
         android:textColor="@color/soft_grey"
+        android:includeFontPadding="false"
         android:fontFamily="@font/notosans_demilight"
         app:layout_constraintStart_toEndOf="@+id/tv_quantity"
         app:layout_constraintTop_toBottomOf="@+id/tv_name" />

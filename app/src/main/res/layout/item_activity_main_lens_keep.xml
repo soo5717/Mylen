@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/white"
     tools:context=".feature.home.MainLensKeepItem">
 
     <!--그라데이션 필요!-->
@@ -15,6 +16,7 @@
         android:layout_marginLeft="8dp"
         android:layout_marginTop="24dp"
         android:fontFamily="@font/notosans_medium"
+        android:includeFontPadding="false"
         android:textColor="@color/clear_blue"
         android:textSize="14sp"
         app:layout_constraintStart_toStartOf="parent"
@@ -28,6 +30,7 @@
         android:layout_marginLeft="8dp"
         android:layout_marginTop="16dp"
         android:fontFamily="@font/notosans_regular"
+        android:includeFontPadding="false"
         android:textColor="@color/soft_black"
         android:textSize="16sp"
         app:layout_constraintStart_toStartOf="parent"
@@ -40,9 +43,10 @@
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
         android:layout_marginTop="16dp"
+        android:fontFamily="@font/notosans_medium"
+        android:includeFontPadding="false"
         android:textColor="@color/soft_black"
         android:textSize="16sp"
-        android:fontFamily="@font/notosans_medium"
         app:layout_constraintStart_toEndOf="@+id/tv_name"
         app:layout_constraintTop_toBottomOf="@+id/tv_brand" />
 
@@ -54,6 +58,7 @@
         android:layout_marginLeft="8dp"
         android:layout_marginTop="16dp"
         android:fontFamily="@font/notosans_demilight"
+        android:includeFontPadding="false"
         android:textColor="@color/soft_grey"
         android:textSize="14sp"
         app:layout_constraintStart_toStartOf="parent"
@@ -66,10 +71,11 @@
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
         android:layout_marginTop="16dp"
-        android:textSize="14sp"
-        android:textColor="@color/soft_grey"
         android:fontFamily="@font/notosans_demilight"
-        app:layout_constraintStart_toEndOf="@+id/tv_wear_date"
+        android:includeFontPadding="false"
+        android:textColor="@color/soft_grey"
+        android:textSize="14sp"
+        app:layout_constraintStart_toEndOf="@+id/tv_type"
         app:layout_constraintTop_toBottomOf="@+id/tv_name" />
 
     <TextView
@@ -79,9 +85,10 @@
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
         android:layout_marginTop="16dp"
+        android:fontFamily="@font/notosans_demilight"
+        android:includeFontPadding="false"
         android:textColor="@color/soft_grey"
         android:textSize="14sp"
-        android:fontFamily="@font/notosans_demilight"
         app:layout_constraintStart_toEndOf="@+id/tv_exp_date"
         app:layout_constraintTop_toBottomOf="@+id/tv_name" />
 
@@ -99,6 +106,7 @@
         android:textColor="@color/clear_blue"
         android:textSize="16sp"
         android:fontFamily="@font/notosans_medium"
+        android:includeFontPadding="false"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toEndOf="@+id/tv_d_day"

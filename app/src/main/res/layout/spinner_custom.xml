@@ -6,7 +6,8 @@
     android:gravity="center_vertical"
     android:paddingLeft="4dp"
     android:paddingRight="4dp"
-    android:orientation="horizontal">
+    android:orientation="horizontal"
+    android:background="@color/white">
 
     <TextView
         android:id="@+id/spinnerText"
@@ -15,6 +16,7 @@
         android:textSize="14sp"
         android:textColor="@color/soft_black"
         android:fontFamily="@font/notosans_regular"
+        android:includeFontPadding="false"
         android:drawableEnd="@drawable/ic_view"
         android:drawableRight="@drawable/ic_view"
         android:drawablePadding="4dp"/>

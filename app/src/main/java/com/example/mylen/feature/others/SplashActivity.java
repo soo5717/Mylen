@@ -5,7 +5,7 @@ import android.os.Handler;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.mylen.feature.home.MainFragment;
+import com.example.mylen.feature.sign.SignInActivity;
 
 public class SplashActivity extends AppCompatActivity {
 
@@ -16,7 +16,7 @@ public class SplashActivity extends AppCompatActivity {
         handler.postDelayed(new Runnable() {
             @Override
             public void run() {
-                Intent intent = new Intent(getApplicationContext(), MainFragment.class);
+                Intent intent = new Intent(getApplicationContext(), SignInActivity.class);
                 startActivity(intent);
                 finish();
             }

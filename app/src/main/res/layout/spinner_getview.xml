@@ -6,7 +6,8 @@
     android:gravity="center_vertical"
     android:paddingLeft="4dp"
     android:paddingRight="4dp"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:background="@color/white">
 
     <TextView
         android:id="@+id/spinnerText"
@@ -16,5 +17,6 @@
         android:textSize="14sp"
         android:textColor="@color/soft_black"
         android:fontFamily="@font/notosans_regular"
+        android:includeFontPadding="false"
         android:paddingBottom="4dp" />
 </LinearLayout>
