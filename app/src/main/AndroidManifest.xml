@@ -11,6 +11,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".feature.others.SplashActivity"/>
         <activity android:name=".feature.others.NavigationDrawer">
         </activity>
         <activity android:name=".feature.others.BottomNavigation">
@@ -22,13 +23,14 @@
 
 
         <activity android:name=".feature.sign.SignInActivity">
+        </activity>
+        <activity android:name=".feature.sign.SignUp1Activity" ></activity>
+        <activity android:name=".feature.sign.SignUp2Activity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".feature.sign.SignUp1Activity" ></activity>
-        <activity android:name=".feature.sign.SignUp2Activity"></activity>
 
         <activity android:name=".feature.home.MainFragment" />
         <activity android:name=".feature.home.MainLensOpenItem" />
@@ -39,4 +41,5 @@
         <activity android:name=".feature.home.search.SearchLensActivity" />
         <activity android:name=".feature.home.search.SearchLensItem" />
     </application>
+
 </manifest>

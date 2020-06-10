@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".feature.calendar.Calendar" >
+    tools:context=".feature.calendar.FragmentCalendar">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -33,38 +33,37 @@
                 android:textSize="33sp"
                 />
         </LinearLayout>
-
-        <LinearLayout
+        <ScrollView
             android:layout_width="match_parent"
-            android:layout_height="368dp"
-            android:orientation="vertical">
-            <com.prolificinteractive.materialcalendarview.MaterialCalendarView
-                xmlns:app="http://schemas.android.com/apk/res-auto"
-                android:id="@+id/calendarView"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                app:mcv_showOtherDates="all"
-                app:mcv_selectionColor="@color/tiffany_blue"
-                />
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical">
-
+            android:layout_height="wrap_content">
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
                 android:orientation="vertical">
-
-                <androidx.recyclerview.widget.RecyclerView
-                    android:id="@+id/recycler_calendar"
+                <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent" />
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+                        <com.prolificinteractive.materialcalendarview.MaterialCalendarView
+                            xmlns:app="http://schemas.android.com/apk/res-auto"
+                            android:id="@+id/calendarView"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            app:mcv_showOtherDates="all"
+                            app:mcv_selectionColor="@color/tiffany_blue"
+                            />
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/recycler_calendar"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent" />
+                </LinearLayout>
             </LinearLayout>
-
-        </LinearLayout>
+        </ScrollView>
 
     </LinearLayout>
 
