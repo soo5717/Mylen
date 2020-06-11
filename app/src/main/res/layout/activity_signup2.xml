@@ -85,8 +85,8 @@
 
     <ImageView
         android:id="@+id/imageButton"
-        android:layout_width="24dp"
-        android:layout_height="24dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:contentDescription="@string/app_name"
         app:layout_constraintBottom_toBottomOf="@+id/iv_picture"
         app:layout_constraintEnd_toEndOf="@+id/iv_picture"
