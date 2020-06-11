@@ -11,13 +11,13 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".feature.others.SplashActivity">
+        <activity android:name=".feature.others.SplashActivity" android:theme="@style/SplashTheme">
+        </activity>
+        <activity android:name=".feature.others.NavigationDrawer">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity>
-        <activity android:name=".feature.others.NavigationDrawer">
         </activity>
         <activity android:name=".feature.others.BottomNavigation">
         </activity>
@@ -37,7 +37,8 @@
         <activity android:name=".feature.home.MainLiquidOpenItem" />
         <activity android:name=".feature.home.MainLiquidKeepItem" />
 
-        <activity android:name=".feature.home.search.SearchLensActivity" />
+        <activity android:name=".feature.home.search.SearchLensActivity" >
+        </activity>
         <activity android:name=".feature.home.search.SearchLensItem" />
     </application>
 

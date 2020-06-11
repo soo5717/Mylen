@@ -5,8 +5,8 @@
 <!--    //tools:context=".feature.others.ActionBar"-->
 
     <item
-        android:id="@+id/appbar_left"
+        android:id="@+id/appbar_right"
         android:icon="@drawable/ic_notification"
-        android:title="공지"
-        app:showAsAction="always" />
+        app:showAsAction="always"
+        android:title="공지" />
 </menu>

@@ -1,8 +1,8 @@
 package com.example.mylen.feature.home.search;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
@@ -13,12 +13,12 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
 import com.example.mylen.R;
-import com.example.mylen.feature.mypage.Profile;
 
 import java.util.ArrayList;
 
 public class SearchLensActivity extends AppCompatActivity {
-
+    Menu menu_change;
+    MenuInflater menuInflater;
     Spinner spn_brand, spn_type;
     AdapterSpinner adapterSpinner;
     private Toolbar myToolbar;
@@ -65,7 +65,7 @@ public class SearchLensActivity extends AppCompatActivity {
         });
 
         setContentView(R.layout.activity_action_bar);
-
+        //툴바 구현
         myToolbar = (Toolbar)findViewById(R.id.toolbar);
         setSupportActionBar(myToolbar);
         androidx.appcompat.app.ActionBar actionBar = getSupportActionBar();
@@ -75,11 +75,13 @@ public class SearchLensActivity extends AppCompatActivity {
 
 
     }
+
+    //앱바에 있는 돋보기
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        Intent profile_intent = new Intent(getApplicationContext(), Profile.class);
-        startActivity(profile_intent);
-        getMenuInflater().inflate(R.menu.menu_app_bar_search, menu);
+        menu_change = menu;
+        menuInflater = getMenuInflater();
+        menuInflater.inflate(R.menu.menu_app_bar_search, menu);
         return true;
     }
     @Override

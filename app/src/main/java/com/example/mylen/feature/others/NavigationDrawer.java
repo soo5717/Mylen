@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
@@ -16,10 +17,10 @@ import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.viewpager.widget.ViewPager;
 
-import com.example.mylen.feature.home.MainFragment;
+import com.example.mylen.R;
 import com.example.mylen.feature.calendar.FragmentCalendar;
 import com.example.mylen.feature.exercise.FragmentEyeMain;
-import com.example.mylen.R;
+import com.example.mylen.feature.home.MainFragment;
 import com.example.mylen.feature.mypage.Profile;
 import com.google.android.material.navigation.NavigationView;
 import com.google.android.material.tabs.TabLayout;
@@ -34,6 +35,11 @@ public class NavigationDrawer extends AppCompatActivity {
     private Button mButton_profile;
     NavigationView navigationView;
     LinearLayout container;
+    TabLayout tl;
+    ViewPager vp;
+    ViewPagerAdapter adapter;
+    Menu menu_change;
+    MenuInflater menuInflater;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,9 +47,9 @@ public class NavigationDrawer extends AppCompatActivity {
         //뷰페이저 구현
         setContentView(R.layout.activity_navigation_drawer);
 
-        ViewPager vp = findViewById(R.id.viewpager);
-        TabLayout tl = findViewById(R.id.tabLayout);
-        ViewPagerAdapter adapter = new ViewPagerAdapter(getSupportFragmentManager());
+        vp = findViewById(R.id.viewpager);
+        tl = findViewById(R.id.tabLayout);
+        adapter = new ViewPagerAdapter(getSupportFragmentManager());
 
         adapter.addFragment(R.drawable.ic_home_color, new MainFragment());
         adapter.addFragment(R.drawable.ic_calendar_grey, new FragmentCalendar());
@@ -70,21 +76,33 @@ public class NavigationDrawer extends AppCompatActivity {
             @Override
             public void onPageSelected(int position) {
                 switch (position) {
+
                     case 0:
                         tl.getTabAt(0).setIcon(R.drawable.ic_home_color);
                         tl.getTabAt(1).setIcon(R.drawable.ic_calendar_grey);
                         tl.getTabAt(2).setIcon(R.drawable.ic_play_grey);
+                        //앱바 아이콘 바꾸기
+                        myToolbar.getMenu().clear();
+                        menuInflater.inflate(R.menu.menu_app_bar, menu_change);
+
                         break;
                     case 1:
                         tl.getTabAt(0).setIcon(R.drawable.ic_home_grey);
                         tl.getTabAt(1).setIcon(R.drawable.ic_calendar_color);
                         tl.getTabAt(2).setIcon(R.drawable.ic_play_grey);
+                        myToolbar.getMenu().clear();
+                        menuInflater.inflate(R.menu.menu_app_bar, menu_change);
+
                         break;
                     case 2:
                         tl.getTabAt(0).setIcon(R.drawable.ic_home_grey);
                         tl.getTabAt(1).setIcon(R.drawable.ic_calendar_grey);
                         tl.getTabAt(2).setIcon(R.drawable.ic_play_color);
+                        myToolbar.getMenu().clear();
+                        menuInflater.inflate(R.menu.menu_app_bar_report, menu_change);
                         break;
+                    default:
+                        throw new IllegalStateException("Unexpected value: " + position);
                 }
             }
 
@@ -152,9 +170,12 @@ public class NavigationDrawer extends AppCompatActivity {
 
     }
 
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.menu_app_bar, menu);
+        menu_change = menu;
+        menuInflater = getMenuInflater();
+        menuInflater.inflate(R.menu.menu_app_bar, menu);
         return true;
     }
     @Override
