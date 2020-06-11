@@ -14,6 +14,10 @@
         <activity android:name=".feature.others.SplashActivity" android:theme="@style/SplashTheme">
         </activity>
         <activity android:name=".feature.others.NavigationDrawer">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
         <activity android:name=".feature.others.BottomNavigation">
         </activity>
@@ -21,10 +25,6 @@
         <activity android:name=".feature.calendar.FragmentCalendar" />
         <activity android:name=".feature.others.ActionBar" />
         <activity android:name=".feature.calendar.CalendarDate">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
 
         <!--  로그인/회원가입  -->
