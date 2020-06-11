@@ -12,6 +12,8 @@
         android:id="@+id/btn_today_clean"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
         android:layout_marginTop="12dp"
         android:background="@null"
         android:contentDescription="@string/today_clean"
@@ -49,14 +51,12 @@
         android:id="@+id/tv_brand"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="48dp"
-        android:layout_marginLeft="48dp"
         android:layout_marginTop="16dp"
         android:fontFamily="@font/notosans_demilight"
         android:includeFontPadding="false"
         android:textColor="@color/soft_grey"
         android:textSize="14sp"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/btn_today_clean"
         app:layout_constraintTop_toBottomOf="@+id/tv_name" />
 
     <TextView
@@ -78,16 +78,26 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginRight="24dp"
         android:background="@null"
+        android:fontFamily="@font/notosans_medium"
+        android:includeFontPadding="false"
         android:minWidth="0dp"
         android:minHeight="0dp"
         android:text="@string/lens_start"
         android:textColor="@color/clear_blue"
         android:textSize="16sp"
-        android:includeFontPadding="false"
-        android:fontFamily="@font/notosans_medium"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <View
+        android:id="@+id/view"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="16dp"
+        android:background="@color/linear_grey"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_brand" />
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -17,7 +17,6 @@
         </activity>
         <activity android:name=".feature.others.BottomNavigation">
         </activity>
-        <activity android:name=".feature.mypage.Profile"/>
         <activity android:name=".feature.exercise.FragmentEyeMain" />
         <activity android:name=".feature.calendar.FragmentCalendar" />
         <activity android:name=".feature.others.ActionBar" />
@@ -28,10 +27,16 @@
             </intent-filter>
         </activity>
 
+        <!--  로그인/회원가입  -->
         <activity android:name=".feature.sign.SignInActivity"></activity>
         <activity android:name=".feature.sign.SignUp1Activity" ></activity>
         <activity android:name=".feature.sign.SignUp2Activity"></activity>
 
+        <!--  프로필  -->
+        <activity android:name=".feature.profile.ProfileActivity"></activity>
+        <activity android:name=".feature.profile.ProfileModifyActivity"></activity>
+
+        <!--  메인  -->
         <activity android:name=".feature.home.MainFragment" />
         <activity android:name=".feature.home.MainLensOpenItem" />
         <activity android:name=".feature.home.MainLensKeepItem" />

@@ -46,12 +46,9 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginTop="80dp"
-        android:layout_marginLeft="24dp"
-        android:layout_marginRight="24dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-    </FrameLayout>
+        app:layout_constraintTop_toTopOf="parent"></FrameLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

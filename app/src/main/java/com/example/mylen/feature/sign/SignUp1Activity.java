@@ -103,10 +103,7 @@ public class SignUp1Activity extends AppCompatActivity {
 
     //back 버튼 클릭 이벤트: 로그인 페이지로 이동
     public void backButtonClick(View view) {
-        Intent intent = new Intent(this, SignInActivity.class);
-        //스택에 있는 것을 위로 올리기
-        intent.addFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP);
-        startActivity(intent);
+        finish();
     }
 
     //clear 버튼 클릭 이벤트: 로그인 페이지로 이동

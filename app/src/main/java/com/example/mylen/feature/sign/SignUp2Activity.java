@@ -66,7 +66,7 @@ public class SignUp2Activity  extends AppCompatActivity {
     }
 
     //생년월일 설정 메소드
-    public void setBirth(){
+    public void setDatePicker(){
         Calendar cal = Calendar.getInstance();
         //DatePicker 사용 : API24에서는 스피너 작동 안함
         DatePickerDialog dialog = new DatePickerDialog(this, AlertDialog.THEME_HOLO_LIGHT,
@@ -114,15 +114,12 @@ public class SignUp2Activity  extends AppCompatActivity {
 
     //birth 버튼 클릭 이벤트 : 생년월일 설정 메소드 호출
     public void birthButtonClick(View view) {
-        setBirth();
+        setDatePicker();
     }
 
     //back 버튼 클릭 이벤트: 회원가입1 페이지로 이동
     public void backButtonClick(View view) {
-        Intent intent = new Intent(this, SignUp1Activity.class);
-        //스택에 있는 것을 위로 올리기
-        intent.addFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP);
-        startActivity(intent);
+        finish();
     }
 
     //clear 버튼 클릭 이벤트: 로그인 페이지로 이동

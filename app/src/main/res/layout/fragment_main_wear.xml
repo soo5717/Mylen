@@ -1,46 +1,38 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
     android:background="@color/white">
 
-    <LinearLayout
+    <TextView
+        android:id="@+id/tv_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:gravity="center"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        android:fontFamily="@font/notosans_regular"
+        android:includeFontPadding="false"
+        android:textColor="@color/soft_grey"
+        android:textSize="14sp" />
 
-        <TextView
-            android:id="@+id/tv_name"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/notosans_regular"
-            android:includeFontPadding="false"
-            android:textColor="@color/soft_grey"
-            android:textSize="14sp" />
+    <TextView
+        android:id="@+id/tv_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:fontFamily="@font/notosans_regular"
+        android:includeFontPadding="false"
+        android:textColor="@color/soft_black"
+        android:textSize="33sp" />
 
-        <TextView
-            android:id="@+id/tv_time"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/notosans_regular"
-            android:includeFontPadding="false"
-            android:textColor="@color/soft_black"
-            android:textSize="33sp" />
-
-        <TextView
-            android:id="@+id/tv_d_day"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/notosans_regular"
-            android:includeFontPadding="false"
-            android:textColor="@color/soft_grey"
-            android:textSize="14sp" />
-    </LinearLayout>
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <TextView
+        android:id="@+id/tv_d_day"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="2dp"
+        android:fontFamily="@font/notosans_regular"
+        android:includeFontPadding="false"
+        android:textColor="@color/soft_grey"
+        android:textSize="14sp" />
+</LinearLayout>

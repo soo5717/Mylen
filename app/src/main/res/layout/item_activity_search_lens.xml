@@ -12,13 +12,13 @@
         android:id="@+id/tv_brand"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="0dp"
-        android:layout_marginLeft="0dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginLeft="24dp"
         android:layout_marginTop="24dp"
-        android:textSize="14sp"
-        android:textColor="@color/clear_blue"
-        android:includeFontPadding="false"
         android:fontFamily="@font/notosans_medium"
+        android:includeFontPadding="false"
+        android:textColor="@color/clear_blue"
+        android:textSize="14sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -26,13 +26,13 @@
         android:id="@+id/tv_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="0dp"
-        android:layout_marginLeft="0dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginLeft="24dp"
         android:layout_marginTop="16dp"
-        android:textSize="16sp"
-        android:textColor="@color/soft_black"
-        android:includeFontPadding="false"
         android:fontFamily="@font/notosans_regular"
+        android:includeFontPadding="false"
+        android:textColor="@color/soft_black"
+        android:textSize="16sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv_brand" />
 
@@ -40,13 +40,13 @@
         android:id="@+id/tv_wear_date"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="0dp"
-        android:layout_marginLeft="0dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginLeft="24dp"
         android:layout_marginTop="16dp"
-        android:textSize="14sp"
-        android:textColor="@color/soft_grey"
-        android:includeFontPadding="false"
         android:fontFamily="@font/notosans_demilight"
+        android:includeFontPadding="false"
+        android:textColor="@color/soft_grey"
+        android:textSize="14sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv_name" />
 
@@ -77,4 +77,14 @@
         android:fontFamily="@font/notosans_demilight"
         app:layout_constraintStart_toEndOf="@+id/tv_quantity"
         app:layout_constraintTop_toBottomOf="@+id/tv_name" />
+
+    <View
+        android:id="@+id/view"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="16dp"
+        android:background="@color/linear_grey"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_wear_date" />
 </androidx.constraintlayout.widget.ConstraintLayout>

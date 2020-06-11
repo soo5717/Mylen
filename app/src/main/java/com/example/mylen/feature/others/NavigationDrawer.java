@@ -21,7 +21,7 @@ import com.example.mylen.R;
 import com.example.mylen.feature.calendar.FragmentCalendar;
 import com.example.mylen.feature.exercise.FragmentEyeMain;
 import com.example.mylen.feature.home.MainFragment;
-import com.example.mylen.feature.mypage.Profile;
+import com.example.mylen.feature.profile.ProfileActivity;
 import com.google.android.material.navigation.NavigationView;
 import com.google.android.material.tabs.TabLayout;
 
@@ -163,7 +163,7 @@ public class NavigationDrawer extends AppCompatActivity {
 
             @Override
             public void onClick(View v) {
-                Intent profile_intent = new Intent(getApplicationContext(), Profile.class);
+                Intent profile_intent = new Intent(getApplicationContext(), ProfileActivity.class);
                 startActivity(profile_intent);
             }
         });

@@ -86,7 +86,7 @@ public class SignInActivity extends AppCompatActivity {
 
                 //메인 페이지로 이동
                 Intent intent = new Intent(SignInActivity.this, MainFragment.class);
-                //스택 비우고 로그인만 남김
+                //스택 비우고 메인만 남김
                 intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 startActivity(intent);
             }
