@@ -6,6 +6,7 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.SearchView;
 import android.widget.Spinner;
 import android.widget.Toast;
 
@@ -22,6 +23,8 @@ public class SearchLensActivity extends AppCompatActivity {
     Spinner spn_brand, spn_type;
     AdapterSpinner adapterSpinner;
     private Toolbar myToolbar;
+    SearchView searchView;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -64,7 +67,6 @@ public class SearchLensActivity extends AppCompatActivity {
             public void onNothingSelected(AdapterView<?> parent) { }
         });
 
-        setContentView(R.layout.activity_action_bar);
         //툴바 구현
         myToolbar = (Toolbar)findViewById(R.id.toolbar);
         setSupportActionBar(myToolbar);
@@ -82,6 +84,12 @@ public class SearchLensActivity extends AppCompatActivity {
         menu_change = menu;
         menuInflater = getMenuInflater();
         menuInflater.inflate(R.menu.menu_app_bar_search, menu);
+        //search 돋보기 아이콘 누르면 검색
+        searchView = (SearchView)menu.findItem(R.id.action_search).getActionView();
+        //검색 버튼 클릭했을 때 searchview에 꽉차게
+        searchView.setMaxWidth(Integer.MAX_VALUE);
+        //검색 버튼 클릭했을 때 searchview에 대한 힌트 추가
+        searchView.setQueryHint("검색어를 입력해주세요");
         return true;
     }
     @Override
@@ -90,14 +98,6 @@ public class SearchLensActivity extends AppCompatActivity {
             case android.R.id.home: { // 뒤로가기 버튼 눌렀을 때
                 finish();
                 return true;
-            }
-
-            //검색기능 구현
-            case R.id.action_search:{
-                //Intent intent = new Intent(getApplicationContext(), Profile.class);
-                //startActivity(intent);
-                //overridePendingTransition(0, 0);
-                Toast.makeText(this, "검색기능을 구현하세요", Toast.LENGTH_SHORT).show();
             }
         }
         return super.onOptionsItemSelected(item);
