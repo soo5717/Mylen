@@ -14,7 +14,7 @@ import com.google.android.material.tabs.TabLayout;
 public class BottomNavigation extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_bottom_navigation);
+        setContentView(R.layout.activity_navigation_bottom);
 
         ViewPager vp = findViewById(R.id.viewpager);
         TabLayout tl = findViewById(R.id.tabLayout);

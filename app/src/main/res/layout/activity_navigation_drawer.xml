@@ -25,7 +25,7 @@
             android:id="@+id/tab_layout"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            layout="@layout/activity_bottom_navigation"
+            layout="@layout/activity_navigation_bottom"
             />
 
     </LinearLayout>
