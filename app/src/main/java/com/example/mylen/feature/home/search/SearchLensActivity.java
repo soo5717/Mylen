@@ -22,6 +22,8 @@ import com.example.mylen.feature.util.AdapterSpinner;
 import java.util.ArrayList;
 import java.util.Arrays;
 
+import static android.graphics.Color.WHITE;
+
 public class SearchLensActivity extends AppCompatActivity {
 
     //프래그먼트 관련 선언
@@ -95,9 +97,15 @@ public class SearchLensActivity extends AppCompatActivity {
         //search 돋보기 아이콘 누르면 검색
         searchView = (SearchView)menu.findItem(R.id.action_search).getActionView();
         //검색 버튼 클릭했을 때 searchview에 꽉차게
-        searchView.setMaxWidth(Integer.MAX_VALUE);
+        //searchView.setMaxWidth(Integer.MAX_VALUE);
         //검색 버튼 클릭했을 때 searchview에 대한 힌트 추가
-        searchView.setQueryHint("검색어를 입력해주세요");
+        //searchView.setQueryHint("검색어를 입력해주세요");
+        int searchPlateId = searchView.getContext().getResources()
+                .getIdentifier("android:id/search_plate", null, null);
+        View searchPlateView = searchView.findViewById(searchPlateId);
+        if (searchPlateView != null) {
+            searchPlateView.setBackgroundColor(WHITE); //depand you can set
+        }
         return true;
     }
     @Override

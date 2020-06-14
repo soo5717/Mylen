@@ -14,17 +14,17 @@
         <activity android:name=".feature.others.SplashActivity" android:theme="@style/SplashTheme">
         </activity>
         <activity android:name=".feature.others.NavigationDrawer">
+        </activity>
+        <activity android:name=".feature.others.BottomNavigation"/>
+        <activity android:name=".feature.others.ActionBar"/>
+        <activity android:name=".feature.exercise.FragmentEyeMain" />
+        <activity android:name=".feature.calendar.FragmentCalendar" />
+        <activity android:name=".feature.calendar.CalendarDate"/>
+        <activity android:name=".feature.exercise.EyeAddFriend">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity>
-        <activity android:name=".feature.others.BottomNavigation"/>
-        <activity android:name=".feature.exercise.FragmentEyeMain" />
-        <activity android:name=".feature.calendar.FragmentCalendar" />
-        <activity android:name=".feature.others.ActionBar" />
-        <activity android:name=".feature.calendar.CalendarDate"/>
-        <activity android:name=".feature.exercise.EyeAddFriend">
         </activity>
 
         <!--  로그인/회원가입  -->
