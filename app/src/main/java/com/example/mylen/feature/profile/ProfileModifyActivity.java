@@ -11,14 +11,13 @@ import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.Spinner;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.ListPopupWindow;
 
 import com.example.mylen.R;
 import com.example.mylen.feature.util.AdapterSpinner;
 
-import java.lang.reflect.Field;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Calendar;
@@ -118,8 +117,23 @@ public class ProfileModifyActivity extends AppCompatActivity {
 
     //프로필 저장 버튼 클릭 이벤트 : 프로필 저장 페이지로 이동
     public void profileSaveButtonClick(View v){
-        //프로필 수정 요청 메소드 호출
-        requestProfileModify();
+
+        //이름, 생년월일 유효성 검사 통과
+        if (name.length() != 0 && birth.length() != 0){
+            //프로필 수정 요청 메소드 호출
+            requestProfileModify();
+        }
+        else if (name.length() != 0) { //이름만 유효성 검사 통과
+            Toast.makeText(getApplicationContext(), "생년월일을 입력해주세요!", Toast.LENGTH_LONG).show();
+        }
+        else if (birth.length() != 0) { //생년월일만 유효성 검사 통과
+            Toast.makeText(getApplicationContext(), "이름을 입력해주세요!", Toast.LENGTH_LONG).show();
+            et_name.requestFocus(); //포커스 주기
+        }
+        else { //유효성 검사 실패
+            Toast.makeText(getApplicationContext(), "이름과 생년월일을 입력해주세요!", Toast.LENGTH_LONG).show();
+            et_name.requestFocus(); //포커스 주기
+        }
     }
 
     //birth 버튼 클릭 이벤트 : 생년월일 설정 메소드 호출
