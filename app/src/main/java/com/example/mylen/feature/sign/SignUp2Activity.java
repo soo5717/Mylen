@@ -26,8 +26,7 @@ import retrofit2.Response;
 
 public class SignUp2Activity  extends AppCompatActivity {
 
-    private DatePickerDialog.OnDateSetListener callbackMethod;
-
+    //전역변수 선언
     EditText et_name;
     Button btn_birth;
     String email, pwd, name, birth;
@@ -37,11 +36,11 @@ public class SignUp2Activity  extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_signup2);
 
-        et_name = (EditText)findViewById(R.id.et_name);
-        btn_birth = (Button)findViewById(R.id.btn_birth);
+        et_name = findViewById(R.id.et_name);
+        btn_birth = findViewById(R.id.btn_birth);
     }
 
-    //회원가입 요청 : Retrofit2
+    //회원가입 요청 - POST : Retrofit2
     private void requestSignUp(SignUpData data) {
         RetrofitClient.service.userSignUp(data).enqueue(new Callback<SignUpResponse>() {
             @Override
@@ -53,8 +52,6 @@ public class SignUp2Activity  extends AppCompatActivity {
                 //회원가입 엑티비티 스택에서 제거하고 로그인만 남김
                 intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 startActivity(intent);
-                //전환 애니메이션 없애기
-                overridePendingTransition(0, 0);
             }
 
             @Override

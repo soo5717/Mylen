@@ -1,4 +1,4 @@
-package com.example.mylen.feature.home.search;
+package com.example.mylen.feature.util;
 
 import android.content.Context;
 import android.view.LayoutInflater;

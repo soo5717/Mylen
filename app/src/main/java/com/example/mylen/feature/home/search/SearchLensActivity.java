@@ -14,32 +14,31 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
 import com.example.mylen.R;
+import com.example.mylen.feature.util.AdapterSpinner;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 
 public class SearchLensActivity extends AppCompatActivity {
-    Menu menu_change;
-    MenuInflater menuInflater;
+
+    //전역변수 선언
     Spinner spn_brand, spn_type;
     AdapterSpinner adapterSpinner;
+
     private Toolbar myToolbar;
     SearchView searchView;
+    Menu menu_change;
+    MenuInflater menuInflater;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_search_lens);
 
-        spn_brand = findViewById(R.id.spn_brand);
-        spn_type = findViewById(R.id.spn_type);
-
-        //브랜드 스피너
-        String[] brand = getResources().getStringArray(R.array.lens_brand);
-        ArrayList<String> arr_brand = new ArrayList<>();
-        for(int i=0; i<brand.length; i++) {
-            arr_brand.add(brand[i]);
-        }
+        //브랜드 스피너 구현
+        ArrayList<String> arr_brand = new ArrayList<>(Arrays.asList(getResources().getStringArray(R.array.lens_brand)));
         adapterSpinner = new AdapterSpinner(this, arr_brand);
+        spn_brand = findViewById(R.id.spn_brand);
         spn_brand.setAdapter(adapterSpinner);
         spn_brand.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
@@ -50,13 +49,10 @@ public class SearchLensActivity extends AppCompatActivity {
             public void onNothingSelected(AdapterView<?> parent) { }
         });
 
-        //타입 스피너
-        String[] type = getResources().getStringArray(R.array.lens_type);
-        ArrayList<String> arr_type = new ArrayList<>();
-        for(int i=0; i<type.length; i++) {
-            arr_type.add(type[i]);
-        }
+        //타입 스피너 구현
+        ArrayList<String> arr_type = new ArrayList<>(Arrays.asList(getResources().getStringArray(R.array.lens_type)));
         adapterSpinner = new AdapterSpinner(this, arr_type);
+        spn_type = findViewById(R.id.spn_type);
         spn_type.setAdapter(adapterSpinner);
         spn_type.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
@@ -74,8 +70,6 @@ public class SearchLensActivity extends AppCompatActivity {
         actionBar.setTitle(""); //ㅣ기존 타이틀 지우기
         actionBar.setDisplayHomeAsUpEnabled(true); // 뒤로가기 버튼 만들기
         actionBar.setHomeAsUpIndicator(R.drawable.ic_backspace_48dp);
-
-
     }
 
     //앱바에 있는 돋보기

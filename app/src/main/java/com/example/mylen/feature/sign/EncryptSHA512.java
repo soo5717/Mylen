@@ -16,6 +16,7 @@ class EncryptSHA512 {
             for(byte b : sh.digest())
                 sb.append(Integer.toHexString(0xff & b));
 
+            //암호화 된 문자열 반환
             return sb.toString();
 
         } catch (NoSuchAlgorithmException e){

@@ -80,11 +80,11 @@
         <View
             android:id="@+id/navi_view"
             android:layout_width="match_parent"
-            android:layout_height="2dp"
+            android:layout_height="1dp"
             android:layout_centerInParent="true"
             android:layout_marginLeft="24dp"
             android:layout_marginRight="24dp"
-            android:background="@color/hint_grey" />
+            android:background="@color/linear_grey" />
 
         <Button
             android:id="@+id/logout_navi_button"

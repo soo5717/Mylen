@@ -24,6 +24,7 @@ import retrofit2.Response;
 
 public class SignInActivity extends AppCompatActivity {
 
+    //전역변수 선언
     EditText et_email, et_pwd;
     String email, pwd;
     Boolean is_valid_email = false, is_valid_pwd = false;
@@ -77,7 +78,7 @@ public class SignInActivity extends AppCompatActivity {
         });
     }
 
-    //로그인 요청 : Retrofit2
+    //로그인 요청 - POST : Retrofit2
     private void requestSignIn(SignInData data){
         RetrofitClient.service.userSignIn(data).enqueue(new Callback<SignInResponse>() {
             @Override

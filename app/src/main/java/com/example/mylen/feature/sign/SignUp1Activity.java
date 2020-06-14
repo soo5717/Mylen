@@ -15,6 +15,7 @@ import com.example.mylen.R;
 
 public class SignUp1Activity extends AppCompatActivity {
 
+    //전역변수 선언
     EditText et_email, et_pwd;
     String email, pwd;
     Boolean is_valid_email = false, is_valid_pwd = false;
@@ -25,7 +26,7 @@ public class SignUp1Activity extends AppCompatActivity {
         setContentView(R.layout.activity_signup1);
 
         //이메일 EditText 입력 변화 이벤트
-        et_email = (EditText)findViewById(R.id.et_email);
+        et_email = findViewById(R.id.et_email);
         et_email.addTextChangedListener(new TextWatcher() {
             @Override //입력 중
             public void beforeTextChanged(CharSequence s, int start, int count, int after) { }
@@ -46,7 +47,7 @@ public class SignUp1Activity extends AppCompatActivity {
         });
 
         //비밀번호 EditText 입력 변화 이벤트
-        et_pwd = (EditText)findViewById(R.id.et_pwd);
+        et_pwd = findViewById(R.id.et_pwd);
         et_pwd.addTextChangedListener(new TextWatcher() {
             @Override //입력 중
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
@@ -79,11 +80,13 @@ public class SignUp1Activity extends AppCompatActivity {
         if(is_valid_email && is_valid_pwd) {
             email = et_email.getText().toString();
             pwd = et_pwd.getText().toString();
+
             //회원가입2 페이지로 이메일, 비밀번호 전달
             Intent intent = new Intent(this, SignUp2Activity.class);
             intent.putExtra("signUpEmail", email);
             intent.putExtra("signUpPwd", pwd);
             startActivity(intent);
+
             //전환 애니메이션 없애기
             overridePendingTransition(0, 0);
         }

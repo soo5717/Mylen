@@ -13,17 +13,18 @@
         android:theme="@style/AppTheme">
         <activity android:name=".feature.others.SplashActivity" android:theme="@style/SplashTheme">
         </activity>
-        <activity android:name=".feature.others.NavigationDrawer"/>
+        <activity android:name=".feature.others.NavigationDrawer">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <activity android:name=".feature.others.BottomNavigation"/>
         <activity android:name=".feature.exercise.FragmentEyeMain" />
         <activity android:name=".feature.calendar.FragmentCalendar" />
         <activity android:name=".feature.others.ActionBar" />
         <activity android:name=".feature.calendar.CalendarDate"/>
         <activity android:name=".feature.exercise.EyeAddFriend">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
 
         <!--  로그인/회원가입  -->
@@ -32,8 +33,10 @@
         <activity android:name=".feature.sign.SignUp2Activity"></activity>
 
         <!--  프로필  -->
-        <activity android:name=".feature.profile.ProfileActivity"></activity>
-        <activity android:name=".feature.profile.ProfileModifyActivity"></activity>
+        <activity android:name=".feature.profile.ProfileActivity">
+        </activity>
+        <activity android:name=".feature.profile.ProfileModifyActivity">
+        </activity>
 
         <!--  메인  -->
         <activity android:name=".feature.home.MainFragment" />
@@ -41,7 +44,10 @@
         <activity android:name=".feature.home.MainLensKeepItem" />
         <activity android:name=".feature.home.MainLiquidOpenItem" />
         <activity android:name=".feature.home.MainLiquidKeepItem" />
-        <activity android:name=".feature.home.search.SearchLensActivity"/>
+
+        <!-- 렌즈 검색 -->
+        <activity android:name=".feature.home.search.SearchLensActivity">
+        </activity>
         <activity android:name=".feature.home.search.SearchLensItem" />
     </application>
 
