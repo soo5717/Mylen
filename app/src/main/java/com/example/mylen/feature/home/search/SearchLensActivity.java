@@ -12,6 +12,9 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 
 import com.example.mylen.R;
 import com.example.mylen.feature.util.AdapterSpinner;
@@ -20,6 +23,11 @@ import java.util.ArrayList;
 import java.util.Arrays;
 
 public class SearchLensActivity extends AppCompatActivity {
+
+    //프래그먼트 관련 선언
+    Fragment SearchLensChild1Fragment, SearchLensChild2Fragment;
+    FragmentManager fragmentManager;
+    FragmentTransaction transaction;
 
     //전역변수 선언
     Spinner spn_brand, spn_type;
@@ -62,6 +70,12 @@ public class SearchLensActivity extends AppCompatActivity {
             @Override
             public void onNothingSelected(AdapterView<?> parent) { }
         });
+
+        //프래그먼트 구현 : 렌즈 추가 초기 화면
+        SearchLensChild1Fragment = new SearchLensChild1Fragment();
+        fragmentManager = getSupportFragmentManager();
+        transaction = fragmentManager.beginTransaction();
+        transaction.replace(R.id.container, SearchLensChild1Fragment).commit();
 
         //툴바 구현
         myToolbar = (Toolbar)findViewById(R.id.toolbar);

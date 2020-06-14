@@ -111,10 +111,7 @@ public class SignUp1Activity extends AppCompatActivity {
 
     //clear 버튼 클릭 이벤트: 로그인 페이지로 이동
     public void clearButtonClick(View view) {
-        Intent intent = new Intent(this, SignInActivity.class);
-        //스택 비우고 로그인만 남김
-        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-        startActivity(intent);
+        finish();
     }
 }
 

@@ -65,6 +65,7 @@ public class ProfileActivity extends AppCompatActivity {
 
     //back 버튼 클릭 이벤트: 이전 페이지로 이동
     public void backButtonClick(View view) {
+        _ProfileActivity = null;
         finish();
     }
 }

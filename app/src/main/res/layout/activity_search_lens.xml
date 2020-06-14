@@ -39,13 +39,13 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="20dp"
             android:layout_marginTop="16dp"
-            android:background="@null"
             android:dropDownWidth="100dp"
+            android:background="@null"
             app:layout_constraintStart_toEndOf="@+id/spn_brand"
             app:layout_constraintTop_toTopOf="parent" />
 
         <FrameLayout
-            android:id="@+id/framLayout"
+            android:id="@+id/container"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginTop="80dp"
