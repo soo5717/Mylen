@@ -35,7 +35,7 @@ public class SignInActivity extends AppCompatActivity {
         setContentView(R.layout.activity_signin);
 
         //이메일 EditText 입력 변화 이벤트
-        et_email = (EditText)findViewById(R.id.et_email);
+        et_email = findViewById(R.id.et_email);
         et_email.addTextChangedListener(new TextWatcher() {
             @Override //입력 중
             public void beforeTextChanged(CharSequence s, int start, int count, int after) { }
@@ -56,7 +56,7 @@ public class SignInActivity extends AppCompatActivity {
         });
 
         //비밀번호 EditText 입력 변화 이벤트
-        et_pwd = (EditText)findViewById(R.id.et_pwd);
+        et_pwd = findViewById(R.id.et_pwd);
         et_pwd.addTextChangedListener(new TextWatcher() {
             @Override //입력 중
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
@@ -117,7 +117,7 @@ public class SignInActivity extends AppCompatActivity {
             Log.d("Password: ", encrypt_pwd);
 
             //로그인 요청 메소드 호출
-            requestSignIn(new SignInData(email, encrypt_pwd));
+//            requestSignIn(new SignInData(email, encrypt_pwd));
         }
         else if (is_valid_email) { //이메일만 유효성 검사 통과
             Toast.makeText(getApplicationContext(), "비밀번호를 6자리 이상 입력해주세요!", Toast.LENGTH_LONG).show();

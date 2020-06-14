@@ -14,6 +14,7 @@ import java.util.Arrays;
 
 
 public class ProfileActivity extends AppCompatActivity {
+    //다른 방법 고민해보자!
     public static Activity _ProfileActivity;
 
     //전역변수 선언

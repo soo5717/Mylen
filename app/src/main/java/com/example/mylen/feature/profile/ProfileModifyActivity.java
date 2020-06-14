@@ -1,14 +1,13 @@
 package com.example.mylen.feature.profile;
 
+import android.annotation.SuppressLint;
 import android.app.AlertDialog;
 import android.app.DatePickerDialog;
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Button;
-import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
@@ -104,19 +103,16 @@ public class ProfileModifyActivity extends AppCompatActivity {
     public void setDatePicker(){
         Calendar cal = Calendar.getInstance();
         //DatePicker 사용 : API24에서는 스피너 작동 안함
-        DatePickerDialog dialog = new DatePickerDialog(this, AlertDialog.THEME_HOLO_LIGHT,
-                new DatePickerDialog.OnDateSetListener() {
-                    @Override
-                    public void onDateSet(DatePicker view, int year, int monthOfYear, int dayOfMonth) {
-                        btn_birth.setText(year + "/" + monthOfYear + "/" + dayOfMonth);
-                    }
-                }
+        @SuppressLint("SetTextI18n") DatePickerDialog dialog = new DatePickerDialog(this, AlertDialog.THEME_HOLO_LIGHT,
+                (view, year, monthOfYear, dayOfMonth) -> btn_birth.setText(year + "/" + monthOfYear + "/" + dayOfMonth)
                 , cal.get(Calendar.YEAR), cal.get(Calendar.MONTH), cal.get(Calendar.DAY_OF_MONTH));
         dialog.show();
     }
 
     //프로필 저장 버튼 클릭 이벤트 : 프로필 저장 페이지로 이동
     public void profileSaveButtonClick(View v){
+        name = et_name.getText().toString();
+        birth = btn_birth.getText().toString();
 
         //이름, 생년월일 유효성 검사 통과
         if (name.length() != 0 && birth.length() != 0){
