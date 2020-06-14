@@ -20,6 +20,5 @@ public class RetrofitClient {
         return retrofit;
     }
 
-    //static -> 이렇게 해도 괜찮은건가?
     public static ServiceApi service = RetrofitClient.getClient().create(ServiceApi.class);
 }

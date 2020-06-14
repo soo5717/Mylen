@@ -14,14 +14,11 @@
         android:fullBackupContent="@xml/backup_descriptor">
 
         <!-- 스플래쉬 -->
-        <activity android:name=".feature.others.SplashActivity" android:theme="@style/SplashTheme"/>
+        <activity android:name=".feature.others.SplashActivity" android:theme="@style/SplashTheme">
+        </activity>
 
         <!-- 네비게이션 -->
         <activity android:name=".feature.others.NavigationDrawer">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity android:name=".feature.others.BottomNavigation"/>
         <activity android:name=".feature.others.ActionBar"/>
@@ -32,7 +29,12 @@
 
         <!--  로그인/회원가입  -->
         <activity android:name=".feature.sign.SignInActivity" />
-        <activity android:name=".feature.sign.SignUp1Activity" />
+        <activity android:name=".feature.sign.SignUp1Activity" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <activity android:name=".feature.sign.SignUp2Activity" />
 
         <!--  프로필  -->

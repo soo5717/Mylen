@@ -47,13 +47,16 @@ public class SignUp2Activity  extends AppCompatActivity {
         RetrofitClient.service.userSignUp(data).enqueue(new Callback<SignUpResponse>() {
             @Override
             public void onResponse(Call<SignUpResponse> call, Response<SignUpResponse> response) {
-                //네트워킹 부분 추가 예정
-
-                //로그인 페이지로 이동
-                Intent intent = new Intent(SignUp2Activity.this, SignInActivity.class);
-                //회원가입 엑티비티 스택에서 제거하고 로그인만 남김
-                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-                startActivity(intent);
+                SignUpResponse result = response.body();
+                Toast.makeText(SignUp2Activity.this, result.getMessage(), Toast.LENGTH_SHORT).show();
+                //회원가입 요청 성공 시
+                if(result.getCode() == 200) {
+                    //로그인 페이지로 이동
+                    Intent intent = new Intent(SignUp2Activity.this, SignInActivity.class);
+                    //회원가입 엑티비티 스택에서 제거하고 로그인만 남김
+                    intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                    startActivity(intent);
+                }
             }
 
             @Override
@@ -88,7 +91,10 @@ public class SignUp2Activity  extends AppCompatActivity {
 
             //비밀번호 암호화
             String encrypt_pwd  = EncryptSHA512.encryptSHA512(pwd);
-            Log.d("Password: ", encrypt_pwd);
+//            Log.d("Email    : ", email);
+//            Log.d("Password : ", encrypt_pwd);
+//            Log.d("Name     : ", name);
+//            Log.d("Birth    : ", birth);
 
             //회원가입 요청 메소드 호출
             requestSignUp(new SignUpData(email, encrypt_pwd, name, birth));
