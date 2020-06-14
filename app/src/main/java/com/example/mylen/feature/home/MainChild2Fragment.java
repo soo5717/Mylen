@@ -14,7 +14,7 @@ import com.example.mylen.R;
 public class MainChild2Fragment extends Fragment {
 
     @Nullable
-    @Override
+    @Override //메인 렌즈 착용 시 프래그먼트
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         return inflater.inflate(R.layout.fragment_main_child1, container, false);
     }

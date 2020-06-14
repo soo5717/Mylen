@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<ScrollView xmlns:tools="http://schemas.android.com/tools"
+<ScrollView
     android:id="@+id/scrollView"
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -247,13 +247,13 @@
             android:layout_marginTop="16dp"
             android:layout_marginBottom="12dp"
             android:background="@color/linear_grey"
-            app:layout_constraintBottom_toTopOf="@+id/rv_main_lens_list"
+            app:layout_constraintBottom_toTopOf="@+id/rv_main_lens"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/btn_open" />
 
         <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/rv_main_lens_list"
+            android:id="@+id/rv_main_lens"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginTop="16dp"
@@ -262,14 +262,14 @@
             app:layout_constraintTop_toBottomOf="@+id/view" />
 
         <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/rv_main_liquid_list"
+            android:id="@+id/rv_main_liquid"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginBottom="56dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/rv_main_lens_list" />
+            app:layout_constraintTop_toBottomOf="@+id/rv_main_lens" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>

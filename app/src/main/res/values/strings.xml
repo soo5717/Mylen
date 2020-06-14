@@ -1,7 +1,8 @@
 <resources>
-    <string name="app_name">Mylen</string>
+    <!-- 앱 이름 -->
+    <string name="app_name">mylen</string>
 
-    <!--    수연 텍스트 부분-->
+    <!-- 메인 페이지 텍스트  -->
     <string name="lens_empty">브랜드를 선택 후,\n검색어를 입력해 주세요!</string>
     <string name="lens_add_1">찾으시는 렌즈가 없나요?</string>
     <string name="lens_add">직접 추가</string>
@@ -24,7 +25,7 @@
     <string name="closeactionbar">액션바 닫기</string>
     <string name="liquid_type">렌즈 세척액</string>
 
-    <!--    로그인 페이지 텍스트-->
+    <!--  로그인 페이지 텍스트  -->
     <string name="sign_in">로그인</string>
     <string name="sign_up">회원가입</string>
     <string name="id">아이디</string>
@@ -34,7 +35,7 @@
     <string name="sign_in_sub_text">아이디를 이메일 형식으로\n입력해주세요!</string>
     <string name="sign_in_text">아직 회원이 아니신가요?</string>
 
-    <!--    회원가입 페이지 텍스트-->
+    <!-- 회원가입 페이지 텍스트  -->
     <string name="sign_up1_sub_text">아이디와 비밀번호를\n입력해주세요!</string>
     <string name="sign_up2_sub_text">이름과 생년월일을\n입력해주세요!</string>
     <string name="next">다음</string>
@@ -44,7 +45,7 @@
     <string name="birth">생년월일</string>
     <string name="birth_hint">생년월일을 입력해주세요</string>
 
-    <!--렌즈추가 페이지 텍스트-->
+    <!--  렌즈추가 페이지 텍스트  -->
     <string name="add_lens">렌즈 등록</string>
     <string name="add_lens1_sub_text">브랜드와 제품명을\n입력해주세요!</string>
     <string name="add_lens2_sub_text">수량과 착용기한을\n입력해주세요!</string>
@@ -62,7 +63,7 @@
     <string name="lens_opendate">개봉일</string>
     <string name="lens_opendate_hint">개봉일을 입력해주세요</string>
 
-    <!--세척액추가 페이지 텍스트-->
+    <!--  세척액추가 페이지 텍스트  -->
     <string name="add_liquid">세척액 등록</string>
     <string name="add_liquid1_sub_text">브랜드와 제품명을\n입력해주세요!</string>
     <string name="add_liquid2_sub_text">유통기한과 개봉일을\n입력해주세요!</string>
@@ -75,7 +76,7 @@
     <string name="liquid_opendate">개봉일</string>
     <string name="liquid_opendate_hint">개봉일을 입력해주세요 (생략가능)</string>
 
-    <!-- 프로필 페이지-->
+    <!-- 프로필 페이지  -->
     <string name="profile">프로필</string>
     <string name="to_edit">프로필 수정</string>
     <string name="sph">SPH</string>

@@ -24,6 +24,8 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
+import static android.app.AlertDialog.THEME_HOLO_LIGHT;
+
 public class SignUp2Activity  extends AppCompatActivity {
 
     //전역변수 선언
@@ -65,8 +67,8 @@ public class SignUp2Activity  extends AppCompatActivity {
     //생년월일 설정 메소드
     public void setDatePicker(){
         Calendar cal = Calendar.getInstance();
-        //DatePicker 사용 : API24에서는 스피너 작동 안함
-        @SuppressLint("SetTextI18n") DatePickerDialog dialog = new DatePickerDialog(this, AlertDialog.THEME_HOLO_LIGHT,
+        //DatePicker 사용 : API-24에서는 스피너 작동 안함
+        @SuppressLint("SetTextI18n") DatePickerDialog dialog = new DatePickerDialog(this, THEME_HOLO_LIGHT,
                 (view, year, monthOfYear, dayOfMonth) -> btn_birth.setText(year + "/" + monthOfYear + "/" + dayOfMonth)
                 , cal.get(Calendar.YEAR), cal.get(Calendar.MONTH), cal.get(Calendar.DAY_OF_MONTH));
         dialog.show();
@@ -74,16 +76,16 @@ public class SignUp2Activity  extends AppCompatActivity {
 
     //완료 버튼 클릭 이벤트
     public void completeButtonClick(View view) {
-        //회원가입1 페이지 데이터 받기
-        Intent intent = getIntent();
-        email = intent.getStringExtra("signUpEmail");
-        pwd = intent.getStringExtra("signUpPwd");
-
         name = et_name.getText().toString();
         birth = btn_birth.getText().toString();
 
         //이름, 생년월일 유효성 검사 통과
         if (name.length() != 0 && birth.length() != 0){
+            //회원가입1 페이지 데이터 받기
+            Intent intent = getIntent();
+            email = intent.getStringExtra("signUpEmail");
+            pwd = intent.getStringExtra("signUpPwd");
+
             //비밀번호 암호화
             String encrypt_pwd  = EncryptSHA512.encryptSHA512(pwd);
             Log.d("Password: ", encrypt_pwd);

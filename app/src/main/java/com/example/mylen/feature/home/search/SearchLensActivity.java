@@ -8,7 +8,6 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.SearchView;
 import android.widget.Spinner;
-import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
@@ -27,7 +26,7 @@ import static android.graphics.Color.WHITE;
 public class SearchLensActivity extends AppCompatActivity {
 
     //프래그먼트 관련 선언
-    Fragment SearchLensChild1Fragment, SearchLensChild2Fragment;
+    Fragment SearchLensChild1Fragment, SearchLensChild2Fragment, SearchLensChild3Fragment;
     FragmentManager fragmentManager;
     FragmentTransaction transaction;
 
@@ -59,6 +58,7 @@ public class SearchLensActivity extends AppCompatActivity {
             public void onNothingSelected(AdapterView<?> parent) { }
         });
 
+
         //타입 스피너 구현
         ArrayList<String> arr_type = new ArrayList<>(Arrays.asList(getResources().getStringArray(R.array.lens_type)));
         adapterSpinner = new AdapterSpinner(this, arr_type);
@@ -73,11 +73,16 @@ public class SearchLensActivity extends AppCompatActivity {
             public void onNothingSelected(AdapterView<?> parent) { }
         });
 
-        //프래그먼트 구현 : 렌즈 추가 초기 화면
+
+        //프래그먼트 객체 생성
         SearchLensChild1Fragment = new SearchLensChild1Fragment();
+        SearchLensChild2Fragment = new SearchLensChild2Fragment();
+        SearchLensChild3Fragment = new SearchLensChild3Fragment();
+        //프래그먼트 구현 : 렌즈 추가 초기 화면
         fragmentManager = getSupportFragmentManager();
         transaction = fragmentManager.beginTransaction();
-        transaction.replace(R.id.container, SearchLensChild1Fragment).commit();
+        transaction.replace(R.id.container, SearchLensChild3Fragment).commit();
+
 
         //툴바 구현
         myToolbar = (Toolbar)findViewById(R.id.toolbar);

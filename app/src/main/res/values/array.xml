@@ -1,5 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <!-- 메인 : 렌즈 등록 -->
+    <string-array name="lens_add">
+        <item>렌즈 등록</item>
+        <item>세척액 등록</item>
+    </string-array>
+
+    <!-- 렌즈 추가 : 브랜드 -->
+    <string-array name="lens_brand">
+        <item>브랜드</item>
+        <item>아큐브</item>
+        <item>클라렌</item>
+        <item>알콘</item>
+        <item>렌즈타운</item>
+        <item>렌즈미</item>
+        <item>오렌즈</item>
+    </string-array>
+
+    <!-- 렌즈 추가 : 타입 -->
+    <string-array name="lens_type">
+        <item>종류</item>
+        <item>투명렌즈</item>
+        <item>컬러렌즈</item>
+    </string-array>
+
+    <!-- 프로필 : SPH -->
     <string-array name="eye_sph">
         <item>0.00</item>
         <item>-0.25</item>

@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".feature.home.add.AddLiquid1Activity">
+    tools:context=".feature.home.add.AddLiquid2Activity">
 
     <ImageButton
         android:id="@+id/btn_back"
@@ -85,9 +85,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
-        android:layout_marginLeft="24dp"
         android:layout_marginEnd="24dp"
-        android:layout_marginRight="24dp"
         android:background="@drawable/et_underline_valid_success"
         android:fontFamily="@font/notosans_light"
         android:gravity="start"
@@ -95,6 +93,7 @@
         android:includeFontPadding="false"
         android:maxWidth="0dp"
         android:minHeight="0dp"
+        android:onClick="expDateButtonClick"
         android:textColor="@color/deep_grey"
         android:textColorHint="@color/hint_grey"
         android:textSize="16sp"
@@ -123,9 +122,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
-        android:layout_marginLeft="24dp"
         android:layout_marginEnd="24dp"
-        android:layout_marginRight="24dp"
         android:background="@drawable/et_underline_valid_success"
         android:fontFamily="@font/notosans_light"
         android:gravity="start"
@@ -133,6 +130,7 @@
         android:includeFontPadding="false"
         android:maxWidth="0dp"
         android:minHeight="0dp"
+        android:onClick="openDateButtonClick"
         android:textColor="@color/deep_grey"
         android:textColorHint="@color/hint_grey"
         android:textSize="16sp"
@@ -146,10 +144,11 @@
         android:layout_width="0dp"
         android:layout_height="56dp"
         android:background="@drawable/gradient"
-        android:textColor="@color/white"
         android:fontFamily="@font/notosans_demilight"
         android:includeFontPadding="false"
+        android:onClick="completeButtonClick"
         android:text="@string/complete"
+        android:textColor="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />

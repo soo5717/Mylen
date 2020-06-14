@@ -16,12 +16,12 @@ public class AddLens3Activity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_lens3);
     }
-    //back 버튼 클릭 이벤트: 로그인 페이지로 이동
+    //back 버튼 클릭 이벤트: 이전 페이지로 이동
     public void backButtonClick(View view) {
         finish();
     }
 
-    //clear 버튼 클릭 이벤트: 로그인 페이지로 이동
+    //clear 버튼 클릭 이벤트: 메인 페이지로 이동
     public void clearButtonClick(View view) {
         Intent intent = new Intent(this, NavigationDrawer.class);
         //스택 비우고 로그인만 남김

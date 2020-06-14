@@ -6,14 +6,22 @@
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent" >@color/colorAccent</item>
-        <!-- For Splash Screen -->
+        <item name="searchViewStyle">@style/AppTheme.SearchView</item>
     </style>
+
+    <!-- For SearchView them -->
+    <style name="AppTheme.SearchView" parent="Widget.AppCompat.SearchView">
+        <item name="searchHintIcon">@null</item>
+    </style>
+
+    <!-- For Splash Screen -->
     <style name="SplashTheme" parent="Theme.AppCompat.NoActionBar">
         <item
             name="android:windowBackground">@drawable/splash
         </item>
     </style>
-    <!-- For TabLayout Viewpager theme-->
+
+    <!-- For TabLayout Viewpager theme -->
     <style name="TabTheme" parent="Theme.AppCompat.Light.DarkActionBar">
         <item name="colorPrimary">@android:color/white</item>
         <item name="colorPrimaryDark">@color/clear_blue</item>

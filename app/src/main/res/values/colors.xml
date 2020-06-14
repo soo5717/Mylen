@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <!-- 기본 컬러 -->
     <color name="colorPrimary">#138bff</color>
     <color name="colorPrimaryDark">#138bff</color>
     <color name="colorAccent">#138bff</color>
     <color name="textColorPrimary">#000000</color>
 
-    <!--app colors-->
+    <!-- 앱 컬러 -->
     <color name="tiffany_blue">#5edae3</color>
     <color name="clear_blue">#138bff</color>
     <color name="white">#ffffff</color>

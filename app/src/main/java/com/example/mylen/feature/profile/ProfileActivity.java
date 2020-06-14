@@ -1,5 +1,6 @@
 package com.example.mylen.feature.profile;
 
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
@@ -14,7 +15,8 @@ import java.util.Arrays;
 
 
 public class ProfileActivity extends AppCompatActivity {
-    //다른 방법 고민해보자!
+    //프로필 엑티비티 다른 엑티비티에서 종료 가능하도록 static 선언 : 다른 방법 고민해보자!
+    @SuppressLint("StaticFieldLeak")
     public static Activity _ProfileActivity;
 
     //전역변수 선언

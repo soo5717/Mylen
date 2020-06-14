@@ -30,9 +30,8 @@ public class AdapterSpinner extends BaseAdapter {
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) { //처음에 클릭전에 보여지는 레이아웃
-        if(convertView==null) {
+        if(convertView==null)
             convertView = Inflater.inflate(R.layout.spinner_custom, parent, false);
-        }
 
         if(Data!=null){
             String text = Data.get(position);

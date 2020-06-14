@@ -123,7 +123,6 @@
         android:layout_marginStart="24dp"
         android:layout_marginEnd="24dp"
         android:background="@drawable/et_underline_valid_success"
-        android:entries="@array/lens_name"
         android:fontFamily="@font/notosans_light"
         android:hint="@string/liquid_name_hint"
         android:importantForAutofill="no"
@@ -142,11 +141,12 @@
         android:layout_width="0dp"
         android:layout_height="56dp"
         android:background="@drawable/gradient"
-        android:textColor="@color/white"
         android:fontFamily="@font/notosans_demilight"
+        android:includeFontPadding="false"
+        android:onClick="nextButtonClick"
         android:text="@string/next"
+        android:textColor="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        android:includeFontPadding="false"/>
+        app:layout_constraintStart_toStartOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

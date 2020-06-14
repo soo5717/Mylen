@@ -51,37 +51,32 @@ public class MainFragment extends Fragment implements View.OnClickListener{
 
         //다이얼로그 구현 : 렌즈 등록 / 세척액 등록
         AlertDialog.Builder builder = new AlertDialog.Builder(this.getActivity());
-        builder.setItems(R.array.lens_add, new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialog, int which) {
-                Intent intent;
-                switch (which){
-                    case 0: //렌즈 검색 페이지로 이동
-                        intent = new Intent(getActivity(), SearchLensActivity.class);
-                        startActivity(intent);
-                        break;
-                    case 1: //세척액 등록1 페이지로 이동
-                        intent = new Intent(getActivity(), AddLiquid1Activity.class);
-                        startActivity(intent);
-                        break;
-                }
+        builder.setItems(R.array.lens_add, (dialog, which) -> {
+            Intent intent;
+            switch (which){
+                case 0: //렌즈 검색 페이지로 이동
+                    intent = new Intent(getActivity(), SearchLensActivity.class);
+                    startActivity(intent);
+                    break;
+                case 1: //세척액 등록1 페이지로 이동
+                    intent = new Intent(getActivity(), AddLiquid1Activity.class);
+                    startActivity(intent);
+                    break;
             }
         });
         //추가 버튼 이벤트 : 선택 다이얼로그
         btn_add = rootView.findViewById(R.id.btn_add);
-        btn_add.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                AlertDialog alertDialog = builder.create();
-                alertDialog.show();
-            }
+        btn_add.setOnClickListener(v -> {
+            AlertDialog alertDialog = builder.create();
+            alertDialog.show();
         });
 
         //버튼 리스너 등록
         btn_open = rootView.findViewById(R.id.btn_open);
+        btn_open.setOnClickListener(this);
+
         btn_keep = rootView.findViewById(R.id.btn_keep);
         btn_keep.setOnClickListener(this);
-        btn_open.setOnClickListener(this);
 
         return rootView;
     }

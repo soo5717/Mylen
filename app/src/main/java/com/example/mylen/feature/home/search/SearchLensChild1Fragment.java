@@ -13,7 +13,7 @@ import com.example.mylen.R;
 
 public class SearchLensChild1Fragment extends Fragment {
     @Nullable
-    @Override
+    @Override //렌즈 검색 초기 프래그먼트
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         return inflater.inflate(R.layout.fragment_search_lens_child1, container, false);
     }

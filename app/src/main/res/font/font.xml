@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!--폰트-->
 <font-family xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- 폰트 설정 -->
     <font android:font="@font/notosans_bold"/>
     <font android:font="@font/notosans_medium"/>
     <font android:font="@font/notosans_regular"/>
