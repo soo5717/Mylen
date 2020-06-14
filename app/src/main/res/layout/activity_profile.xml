@@ -111,7 +111,7 @@
         android:background="@drawable/et_underline_valid_success"
         android:fontFamily="@font/notosans_light"
         android:includeFontPadding="false"
-        android:textColor="@color/soft_black"
+        android:textColor="@color/deep_grey"
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"

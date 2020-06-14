@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".feature.home.add.AddLens">
+    tools:context=".feature.home.add.AddLens2Activity">
     <ImageButton
         android:id="@+id/btn_back"
         android:layout_width="wrap_content"
@@ -28,13 +28,13 @@
         android:layout_marginEnd="4dp"
         android:background="@null"
         android:contentDescription="@string/app_name"
+        android:cropToPadding="false"
         android:minWidth="0dp"
         android:minHeight="0dp"
         android:onClick="clearButtonClick"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/ic_clear_48dp" />
-
 
     <TextView
         android:id="@+id/tv_title"
@@ -44,13 +44,10 @@
         android:fontFamily="@font/notosans_medium"
         android:text="@string/add_lens"
         android:textColor="@color/clear_blue"
-        android:backgroundTint="@color/hint_grey"
         android:textSize="33sp"
-        android:includeFontPadding="false"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginStart="24dp"
-        tools:ignore="UnusedAttribute" />
+        android:layout_marginStart="24dp" />
 
     <TextView
         android:id="@+id/textView4"
@@ -58,44 +55,44 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:fontFamily="@font/notosans_demilight"
-        android:includeFontPadding="false"
-        android:text="@string/add_lens1_sub_text"
+        android:text="@string/add_lens2_sub_text"
         android:textColor="@color/deep_grey"
         android:textSize="16sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_title" />
+        app:layout_constraintTop_toBottomOf="@+id/tv_title"
+        android:layout_marginStart="24dp" />
+
 
     <TextView
         android:id="@+id/textView6"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
         android:layout_marginTop="60dp"
-        android:fontFamily="@font/notosans_demilight"
-        android:includeFontPadding="false"
-        android:text="@string/lens_brand"
+        android:text="@string/lens_quantitiy"
         android:textColor="@color/soft_black"
-        android:textSize="16sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView4" />
 
     <EditText
-        android:id="@+id/et_brand"
-        android:layout_width="match_parent"
+        android:id="@+id/et_quantity"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
-        android:layout_marginLeft="24dp"
         android:layout_marginEnd="24dp"
-        android:layout_marginRight="24dp"
-        android:entries="@array/lens_brand"
+        android:background="@drawable/et_underline_valid_success"
+        android:backgroundTint="@color/hint_grey"
+        android:ems="10"
         android:fontFamily="@font/notosans_light"
-        android:hint="@string/lens_brand_hint"
-        android:includeFontPadding="false"
+        android:hint="@string/lens_quantitiy_hint"
+        android:inputType="textPersonName"
         android:textColor="@color/deep_grey"
         android:textColorHint="@color/hint_grey"
+        android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView6"
-        tools:ignore="Autofill" />
+        android:importantForAutofill="no" />
 
     <TextView
         android:id="@+id/textView7"
@@ -103,27 +100,24 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
         android:fontFamily="@font/notosans_demilight"
-        android:includeFontPadding="false"
-        android:text="@string/lens_name"
+        android:text="@string/lens_weardate"
         android:textColor="@color/soft_black"
-        android:textSize="16sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/et_brand" />
+        app:layout_constraintTop_toBottomOf="@+id/et_quantity"
+        android:layout_marginStart="24dp" />
 
-    <EditText
-        android:id="@+id/dt_name"
+
+    <Spinner
+        android:id="@+id/spn_wear_date"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
-        android:layout_marginLeft="24dp"
         android:layout_marginEnd="24dp"
-        android:layout_marginRight="24dp"
-        android:entries="@array/lens_brand"
+        android:background="@drawable/et_underline_valid_success"
         android:fontFamily="@font/notosans_light"
-        android:hint="@string/lens_name_hint"
+        android:hint="@string/lens_weardate_hint"
         android:includeFontPadding="false"
         android:textColor="@color/deep_grey"
-        android:textColorHint="@color/hint_grey"
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -134,12 +128,12 @@
         android:layout_width="0dp"
         android:layout_height="56dp"
         android:background="@drawable/gradient"
+        android:textColor="#ffffff"
         android:fontFamily="@font/notosans_demilight"
-        android:includeFontPadding="false"
         android:text="@string/next"
-        android:textColor="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -97,7 +97,7 @@
         android:inputType="textEmailAddress"
         android:textColorHint="@color/hint_grey"
         android:textSize="16sp"
-        android:textColor="@color/soft_black"
+        android:textColor="@color/deep_grey"
         android:importantForAutofill="no"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -134,7 +134,7 @@
         android:inputType="textPassword"
         android:textColorHint="@color/hint_grey"
         android:textSize="16sp"
-        android:textColor="@color/soft_black"
+        android:textColor="@color/deep_grey"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView7" />

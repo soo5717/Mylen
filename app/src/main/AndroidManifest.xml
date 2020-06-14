@@ -10,10 +10,15 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
+        android:theme="@style/AppTheme"
+        android:fullBackupContent="@xml/backup_descriptor">
         <activity android:name=".feature.others.SplashActivity" android:theme="@style/SplashTheme">
         </activity>
         <activity android:name=".feature.others.NavigationDrawer">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
         <activity android:name=".feature.others.BottomNavigation"/>
         <activity android:name=".feature.others.ActionBar"/>
@@ -21,18 +26,14 @@
         <activity android:name=".feature.calendar.FragmentCalendar" />
         <activity android:name=".feature.calendar.CalendarDate"/>
         <activity android:name=".feature.exercise.EyeAddFriend">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
 
         <!--  로그인/회원가입  -->
         <activity android:name=".feature.sign.SignInActivity">
 
         </activity>
-        <activity android:name=".feature.sign.SignUp1Activity" ></activity>
-        <activity android:name=".feature.sign.SignUp2Activity"></activity>
+        <activity android:name=".feature.sign.SignUp1Activity" />
+        <activity android:name=".feature.sign.SignUp2Activity" />
 
         <!--  프로필  -->
         <activity android:name=".feature.profile.ProfileActivity">
@@ -51,6 +52,15 @@
         <activity android:name=".feature.home.search.SearchLensActivity">
         </activity>
         <activity android:name=".feature.home.search.SearchLensItem" />
+
+        <!-- 렌즈 추가 -->
+        <activity android:name=".feature.home.add.AddLens1Activity" />
+        <activity android:name=".feature.home.add.AddLens2Activity" />
+        <activity android:name=".feature.home.add.AddLens3Activity" />
+
+        <!-- 세척액 추가 -->
+        <activity android:name=".feature.home.add.AddLiquid1Activity" />
+        <activity android:name=".feature.home.add.AddLiquid2Activity" />
     </application>
 
 </manifest>

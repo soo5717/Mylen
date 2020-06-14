@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".feature.home.modify.Modifylens">
+    tools:context=".feature.home.add.AddLiquid1Activity">
 
     <ImageButton
         android:id="@+id/btn_back"
@@ -43,7 +43,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="64dp"
         android:fontFamily="@font/notosans_medium"
-        android:text="@string/add_lens"
+        android:text="@string/add_liquid"
         android:textColor="@color/clear_blue"
         android:textSize="33sp"
         android:includeFontPadding="false"
@@ -58,13 +58,12 @@
         android:layout_marginTop="8dp"
         android:fontFamily="@font/notosans_demilight"
         android:includeFontPadding="false"
-        android:text="@string/add_lens3_sub_text"
+        android:text="@string/add_liquid1_sub_text"
         android:textColor="@color/deep_grey"
         android:textSize="16sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv_title"
         android:layout_marginStart="24dp" />
-
 
     <TextView
         android:id="@+id/textView6"
@@ -73,34 +72,35 @@
         android:layout_marginTop="60dp"
         android:fontFamily="@font/notosans_demilight"
         android:includeFontPadding="false"
-        android:text="@string/lens_expdate"
+        android:text="@string/liquid_brand"
         android:textColor="@color/soft_black"
         android:textSize="16sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView4"
         android:layout_marginStart="24dp" />
 
-    <Button
-        android:id="@+id/btn_expdate"
-        android:layout_width="match_parent"
+
+    <EditText
+        android:id="@+id/et_brand"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
-        android:layout_marginLeft="24dp"
         android:layout_marginEnd="24dp"
-        android:layout_marginRight="24dp"
         android:background="@drawable/et_underline_valid_success"
+        android:entries="@array/lens_brand"
         android:fontFamily="@font/notosans_light"
-        android:gravity="start"
+        android:hint="@string/liquid_brand_hint"
+        android:importantForAutofill="no"
         android:includeFontPadding="false"
-        android:maxWidth="0dp"
-        android:minHeight="0dp"
-        android:textColor="@color/soft_black"
+        android:inputType="textNoSuggestions"
+        android:shadowColor="@color/white"
+        android:textColor="@color/deep_grey"
         android:textColorHint="@color/hint_grey"
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView6" />
+
 
     <TextView
         android:id="@+id/textView7"
@@ -110,35 +110,32 @@
         android:layout_marginTop="24dp"
         android:fontFamily="@font/notosans_demilight"
         android:includeFontPadding="false"
-        android:text="@string/lens_opendate"
+        android:text="@string/liquid_name"
         android:textColor="@color/soft_black"
         android:textSize="16sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_expdate" />
+        app:layout_constraintTop_toBottomOf="@+id/et_brand" />
 
-
-
-    <Button
-        android:id="@+id/btn_opendate"
+    <EditText
+        android:id="@+id/et_name"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
-        android:layout_marginLeft="24dp"
         android:layout_marginEnd="24dp"
-        android:layout_marginRight="24dp"
         android:background="@drawable/et_underline_valid_success"
+        android:entries="@array/lens_name"
         android:fontFamily="@font/notosans_light"
-        android:gravity="start"
+        android:hint="@string/liquid_name_hint"
+        android:importantForAutofill="no"
         android:includeFontPadding="false"
-        android:maxWidth="0dp"
-        android:minHeight="0dp"
-        android:textColor="@color/soft_black"
+        android:inputType="textNoSuggestions"
+        android:textColor="@color/deep_grey"
         android:textColorHint="@color/hint_grey"
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView7" />
+
 
     <Button
         android:id="@+id/bt_bottom"
@@ -147,10 +144,9 @@
         android:background="@drawable/gradient"
         android:textColor="@color/white"
         android:fontFamily="@font/notosans_demilight"
-        android:text="@string/complete"
-        android:includeFontPadding="false"
+        android:text="@string/next"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
+        app:layout_constraintStart_toStartOf="parent"
+        android:includeFontPadding="false"/>
 </androidx.constraintlayout.widget.ConstraintLayout>

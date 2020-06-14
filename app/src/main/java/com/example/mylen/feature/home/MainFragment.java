@@ -18,6 +18,7 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 
 import com.example.mylen.R;
+import com.example.mylen.feature.home.add.AddLiquid1Activity;
 import com.example.mylen.feature.home.search.SearchLensActivity;
 import com.example.mylen.feature.sign.SignInActivity;
 import com.example.mylen.feature.sign.SignUp1Activity;
@@ -60,7 +61,7 @@ public class MainFragment extends Fragment implements View.OnClickListener{
                         startActivity(intent);
                         break;
                     case 1: //세척액 등록1 페이지로 이동
-                        intent = new Intent(getActivity(), SignUp1Activity.class);
+                        intent = new Intent(getActivity(), AddLiquid1Activity.class);
                         startActivity(intent);
                         break;
                 }
