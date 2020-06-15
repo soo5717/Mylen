@@ -3,13 +3,13 @@ package com.example.mylen.data.user;
 import com.google.gson.annotations.SerializedName;
 
 public class SignInData {
-    @SerializedName("userEmail")
-    String userEmail;
-    @SerializedName("userPwd")
-    String userPwd;
+    @SerializedName("email")
+    String email;
+    @SerializedName("pwd")
+    String pwd;
 
-    public SignInData(String userEmail, String userPwd) {
-        this.userEmail = userEmail;
-        this.userPwd = userPwd;
+    public SignInData(String email, String pwd) {
+        this.email = email;
+        this.pwd = pwd;
     }
 }

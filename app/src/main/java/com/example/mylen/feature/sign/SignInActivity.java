@@ -15,7 +15,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.example.mylen.R;
 import com.example.mylen.data.user.SignInData;
 import com.example.mylen.data.user.SignInResponse;
+import com.example.mylen.data.user.SignUpResponse;
 import com.example.mylen.feature.home.MainFragment;
+import com.example.mylen.feature.others.NavigationDrawer;
 import com.example.mylen.network.RetrofitClient;
 
 import retrofit2.Call;
@@ -83,13 +85,17 @@ public class SignInActivity extends AppCompatActivity {
         RetrofitClient.service.userSignIn(data).enqueue(new Callback<SignInResponse>() {
             @Override
             public void onResponse(Call<SignInResponse> call, Response<SignInResponse> response) {
-                //네트워킹 부분 추가 예정
-
-                //메인 페이지로 이동
-                Intent intent = new Intent(SignInActivity.this, MainFragment.class);
-                //스택 비우고 메인만 남김
-                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-                startActivity(intent);
+                SignInResponse result = response.body();
+                Toast.makeText(SignInActivity.this, result.getMessage(), Toast.LENGTH_SHORT).show();
+                //회원가입 요청 성공 시
+                if(result.getCode() == 200) {
+                    Log.d("TOKEN    :   ", result.getToken());
+                    //메인 페이지로 이동
+                    Intent intent = new Intent(SignInActivity.this, NavigationDrawer.class);
+                    //스택 비우고 메인만 남김
+                    intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                    startActivity(intent);
+                }
             }
 
             @Override

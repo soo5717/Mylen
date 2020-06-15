@@ -7,6 +7,8 @@ public class SignInResponse {
     private int code;
     @SerializedName("message")
     private String message;
+    @SerializedName("token")
+    private String token;
 
     public int getCode() {
         return code;
@@ -16,4 +18,7 @@ public class SignInResponse {
         return message;
     }
 
+    public String getToken() {
+        return token;
+    }
 }
