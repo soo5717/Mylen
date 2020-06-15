@@ -14,28 +14,32 @@
         android:fullBackupContent="@xml/backup_descriptor">
 
         <!-- 스플래쉬 -->
-        <activity android:name=".feature.others.SplashActivity" android:theme="@style/SplashTheme">
+        <activity android:name=".feature.others.SplashActivity" android:theme="@style/SplashTheme"/>
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity>
 
         <!-- 네비게이션 -->
         <activity android:name=".feature.others.NavigationDrawer">
         </activity>
         <activity android:name=".feature.others.BottomNavigation"/>
         <activity android:name=".feature.others.ActionBar"/>
-        <activity android:name=".feature.exercise.FragmentEyeMain" />
         <activity android:name=".feature.calendar.FragmentCalendar" />
         <activity android:name=".feature.calendar.CalendarDate" />
-        <activity android:name=".feature.exercise.EyeAddFriend"></activity> <!-- 로그인/회원가입 -->
+
+        <!-- 로그인/회원가입 -->
         <activity android:name=".feature.sign.SignInActivity"></activity>
         <activity android:name=".feature.sign.SignUp1Activity" />
-        <activity android:name=".feature.sign.SignUp2Activity" /> <!-- 프로필 -->
+        <activity android:name=".feature.sign.SignUp2Activity" />
+
+        <!-- 프로필 -->
         <activity android:name=".feature.profile.ProfileActivity"></activity>
-        <activity android:name=".feature.profile.ProfileModifyActivity"></activity> <!-- 메인 -->
+        <activity android:name=".feature.profile.ProfileModifyActivity"></activity>
+
+        <!-- 메인 -->
         <activity android:name=".feature.home.MainFragment" />
         <activity android:name=".feature.home.MainLensOpenItem" />
         <activity android:name=".feature.home.MainLensKeepItem" />
@@ -54,6 +58,18 @@
         <!-- 세척액 추가 -->
         <activity android:name=".feature.home.add.AddLiquid1Activity" />
         <activity android:name=".feature.home.add.AddLiquid2Activity" />
+
+
+        <!-- 눈운동 -->
+        <activity android:name=".feature.exercise.main.EyeMainFragment"/>
+        <activity android:name=".feature.exercise.add.EyeAddFriend">
+        </activity>
+        <activity android:name=".feature.exercise.main.EyeFriendAdapter" />
+        <activity android:name=".feature.exercise.main.EyeMainFriendItem" />
+
+
+
+
     </application>
 
 </manifest>

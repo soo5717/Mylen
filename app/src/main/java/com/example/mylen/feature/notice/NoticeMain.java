@@ -20,7 +20,7 @@ public class NoticeMain extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_notice_main);
+        //setContentView(R.layout.activity_notice_main);
         //툴바 구현
         myToolbar = (Toolbar)findViewById(R.id.toolbar);
         setSupportActionBar(myToolbar);

@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".feature.exercise.EyeAddFriend">
+    tools:context=".feature.exercise.add.EyeAddFriend">
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
@@ -18,16 +18,18 @@
         android:contentInsetLeft="0dp"
         app:contentInsetStartWithNavigation= "0dp"
         >
-       >
 
     </androidx.appcompat.widget.Toolbar>
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rv_searchfriend"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
+
+    <FrameLayout
+        android:id="@+id/fl_container"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         android:layout_marginTop="120dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="@+id/toolbar">
+
+    </FrameLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

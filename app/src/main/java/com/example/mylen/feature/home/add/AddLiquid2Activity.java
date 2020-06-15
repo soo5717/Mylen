@@ -106,4 +106,25 @@ public class AddLiquid2Activity extends AppCompatActivity {
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
         startActivity(intent);
     }
+
+    //*서윤*
+    //등록완료버튼 누를 때
+    //유통기한, 개봉일 정보 notice로 넘기기
+    /*
+    Intent addNoticeIntent = new Intent(this, AddNoticeData.class);
+    //expdate : 0000/00/00(String)
+    addNoticeIntent.putExtra("lens_expdate", lens_expdate);
+    if (liquid_opendate != null){
+        Boolean boolOpenData = true;
+        addNoticeIntent.putExtra("boolOpenData", boolOpenData);
+        //opendate : 0000/00/00(String)
+        addNoticeIntent.putExtra("liquid_opendate", liquid_opendate);
+        //weardate : String
+        addNoticeIntent.putExtra("liquid_weardate", liquid_weardate);
+    } else{
+        Boolean boolOpenData = false;
+        addNoticeIntent.putExtra("boolOpenData", boolOpenData);
+    }
+    startActivityForResult(addNoticeIntent, 102);
+    */
 }

@@ -96,6 +96,24 @@ public class SignInActivity extends AppCompatActivity {
                     intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                     startActivity(intent);
                 }
+                //네트워킹 부분 추가 예정
+
+                //*서윤*
+                //서버 response.body(=result)로 user_id받기
+                /*
+                Intent getNoticeIntent = new Intent(this, GetNoticeData.class);
+                getNoticeIntent.putExtra("userid", String.valueOf(result.getUserId()));
+                Intent addNoticeIntent = new Intent(this, AddNoticeData.class);
+                addNoticeIntent.putExtra("userid", String.valueOf(result.getUserId()));
+
+                //user_id는 어디든지 다 필요하지 않아..?
+                 */
+
+                //메인 페이지로 이동
+                Intent intent = new Intent(SignInActivity.this, MainFragment.class);
+                //스택 비우고 메인만 남김
+                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                startActivity(intent);
             }
 
             @Override

@@ -5,9 +5,9 @@ import android.os.Bundle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.viewpager.widget.ViewPager;
 
+import com.example.mylen.feature.exercise.main.EyeMainFragment;
 import com.example.mylen.feature.home.MainFragment;
 import com.example.mylen.feature.calendar.FragmentCalendar;
-import com.example.mylen.feature.exercise.FragmentEyeMain;
 import com.example.mylen.R;
 import com.google.android.material.tabs.TabLayout;
 
@@ -22,7 +22,7 @@ public class BottomNavigation extends AppCompatActivity {
 
         adapter.addFragment(R.drawable.ic_home_color, new MainFragment());
         adapter.addFragment(R.drawable.ic_calendar_grey, new FragmentCalendar());
-        adapter.addFragment(R.drawable.ic_play_grey, new FragmentEyeMain());
+        adapter.addFragment(R.drawable.ic_play_grey, new EyeMainFragment());
         vp.setAdapter(adapter);
 
         tl.setupWithViewPager(vp);
@@ -70,4 +70,5 @@ public class BottomNavigation extends AppCompatActivity {
         });
 
     }
+
 }
