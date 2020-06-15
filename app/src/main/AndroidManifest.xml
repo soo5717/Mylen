@@ -6,6 +6,7 @@
 
     <application
         android:allowBackup="true"
+        android:fullBackupContent="@xml/backup_descriptor"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
@@ -15,6 +16,11 @@
 
         <!-- 스플래쉬 -->
         <activity android:name=".feature.others.SplashActivity" android:theme="@style/SplashTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
 
         <!-- 네비게이션 -->
@@ -24,25 +30,13 @@
         <activity android:name=".feature.others.ActionBar"/>
         <activity android:name=".feature.exercise.FragmentEyeMain" />
         <activity android:name=".feature.calendar.FragmentCalendar" />
-        <activity android:name=".feature.calendar.CalendarDate"/>
-        <activity android:name=".feature.exercise.EyeAddFriend" />
-
-        <!--  로그인/회원가입  -->
-        <activity android:name=".feature.sign.SignInActivity" >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
-        <activity android:name=".feature.sign.SignUp1Activity" >
-        </activity>
-        <activity android:name=".feature.sign.SignUp2Activity" />
-
-        <!--  프로필  -->
-        <activity android:name=".feature.profile.ProfileActivity" />
-        <activity android:name=".feature.profile.ProfileModifyActivity" />
-
-        <!--  메인  -->
+        <activity android:name=".feature.calendar.CalendarDate" />
+        <activity android:name=".feature.exercise.EyeAddFriend"></activity> <!-- 로그인/회원가입 -->
+        <activity android:name=".feature.sign.SignInActivity"></activity>
+        <activity android:name=".feature.sign.SignUp1Activity" />
+        <activity android:name=".feature.sign.SignUp2Activity" /> <!-- 프로필 -->
+        <activity android:name=".feature.profile.ProfileActivity"></activity>
+        <activity android:name=".feature.profile.ProfileModifyActivity"></activity> <!-- 메인 -->
         <activity android:name=".feature.home.MainFragment" />
         <activity android:name=".feature.home.MainLensOpenItem" />
         <activity android:name=".feature.home.MainLensKeepItem" />
