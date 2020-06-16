@@ -1,4 +1,4 @@
-package com.example.mylen.feature.exercise.main;
+package com.example.mylen.feature.eye.main;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -15,6 +15,6 @@ public class EyeMainFriendFragment2 extends Fragment {
     @Nullable
     @Override //리사이클러뷰 fragment
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.fragment_eyeaddfriend_2, container, false);
+        return inflater.inflate(R.layout.fragment_eyeadd_friend_2, container, false);
     }
 }

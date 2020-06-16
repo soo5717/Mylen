@@ -84,4 +84,13 @@
     <string name="profile_edit">프로필 수정</string>
     <string name="store">저장</string>
 
+    <!-- 눈운동 페이지  -->
+    <string name="eye_end">운동 완료</string>
+    <string name="eye_end_1">+</string>
+    <string name="eye_end_2">포인트를 획득하셨습니다</string>
+    <string name="eye_end_point">point</string>
+    <string name="check_report">결과 보고서 확인하기</string>
+    <string name="eye_end_content_des">eye_end_oval</string>
+
+
 </resources>

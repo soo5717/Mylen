@@ -17,6 +17,5 @@ public class AddNoticeData {
         this.userId = userId;
         this.setId = setId;
         this.noticeDatetime = noticeDatetime;
-
     }
 }

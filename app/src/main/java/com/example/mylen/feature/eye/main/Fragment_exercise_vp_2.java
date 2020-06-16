@@ -1,4 +1,4 @@
-package com.example.mylen.feature.exercise.add;
+package com.example.mylen.feature.eye.main;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -11,10 +11,13 @@ import androidx.fragment.app.Fragment;
 
 import com.example.mylen.R;
 
-public class EyeAddFriendFragment1 extends Fragment {
+public class Fragment_exercise_vp_2 extends Fragment {
     @Nullable
-    @Override //친구추가 검색 초기 fragment
+    @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.fragment_eyeaddfriend_1, container, false);
+        ViewGroup rootView = (ViewGroup) inflater.inflate(R.layout.fragment_exercise_2, container, false);
+
+        return  rootView;
+        //xml layout이 inflation되고, 이 java소스와 연결됨
     }
 }

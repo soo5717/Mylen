@@ -1,15 +1,26 @@
-package com.example.mylen.feature.exercise.add;
+package com.example.mylen.feature.eye.main;
 
-public class EyeAddFriendItem {
-
+public class EyeMainFriendItem {
+    String rank;
     //Image picture;
     String name;
     String email;
+    String point;
 
-    public EyeAddFriendItem(String name, String email) {
+    public EyeMainFriendItem(String rank, String name, String email, String point) {
+        this.rank = rank;
         //this.picture = picture;
         this.name = name;
         this.email = email;
+        this.point = point;
+    }
+
+    public String getRank() {
+        return rank;
+    }
+
+    public void setRank(String rank) {
+        this.rank = rank;
     }
 
    /* public Image getPicture() {
@@ -19,6 +30,7 @@ public class EyeAddFriendItem {
     public void setPicture(Image picture) {
         this.picture = picture;
     }
+
     */
 
     public String getName() {
@@ -37,4 +49,11 @@ public class EyeAddFriendItem {
         this.email = email;
     }
 
+    public String getPoint() {
+        return point;
+    }
+
+    public void setPoint(String point) {
+        this.point = point;
+    }
 }

@@ -1,6 +1,5 @@
-package com.example.mylen.feature.exercise.main;
+package com.example.mylen.feature.eye.main;
 
-import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -19,8 +18,8 @@ import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewpager.widget.ViewPager;
 
 import com.example.mylen.R;
-import com.example.mylen.data.exercise.FriendMainData;
-import com.example.mylen.feature.exercise.add.EyeAddFriend;
+import com.example.mylen.data.eye.FriendMainData;
+import com.example.mylen.feature.eye.add.EyeAddFriend;
 
 import java.util.ArrayList;
 
@@ -40,10 +39,10 @@ public class EyeMainFragment extends Fragment implements View.OnClickListener{
     private Button bt_add;
     private View empty_view;
 
-    @Override
-    public void onAttach(@NonNull Context context) {
-        super.onAttach(context);
-    }
+//    @Override
+//    public void onAttach(@NonNull Context context) {
+//        super.onAttach(context);
+//    }
 
 
     @Override

@@ -1,9 +1,11 @@
 package com.example.mylen.network;
 
-import com.example.mylen.data.exercise.FriendMainData;
-import com.example.mylen.data.exercise.FriendMainResponse;
-import com.example.mylen.data.exercise.SearchFriendData;
-import com.example.mylen.data.exercise.SearchFriendResponse;
+import com.example.mylen.data.eye.AddFriendData;
+import com.example.mylen.data.eye.AddFriendResponse;
+import com.example.mylen.data.eye.FriendMainData;
+import com.example.mylen.data.eye.FriendMainResponse;
+import com.example.mylen.data.eye.SearchFriendData;
+import com.example.mylen.data.eye.SearchFriendResponse;
 import com.example.mylen.data.notice.NoticeData;
 import com.example.mylen.data.notice.AddNoticeData;
 import com.example.mylen.data.notice.AddNoticeResponse;
@@ -29,16 +31,22 @@ public interface ServiceApi {
     //get noticedata
     @POST("/user/notice")
     Call<NoticeResponse> userNotice(@Body NoticeData data);
+
     //insert noticedata to notices table
     @POST("/user/notice/add")
     Call<AddNoticeResponse> addLensNotice(@Body AddNoticeData data);
 
-    //exercise_friend_rank_data
+    //eye_friend_main_data
     @POST("/user/eye/friend/main")
     Call<FriendMainResponse> RankFriendMain(@Body FriendMainData data);
 
-    //exercise_friend_search and add
-    @POST("/user/eye/friend/add")
+    //eye_friend_search add
+    //변경했음
+    @POST("/user/eye/friend/add/search")
     Call<SearchFriendResponse> SearchFrienAdd(@Body SearchFriendData data);
+
+    //eye_friend_add
+    @POST("/user/eye/friend/add/add")
+    Call<AddFriendResponse> AddFriendAdd(@Body AddFriendData data);
 
 }

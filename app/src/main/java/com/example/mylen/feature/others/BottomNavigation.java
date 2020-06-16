@@ -5,7 +5,7 @@ import android.os.Bundle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.viewpager.widget.ViewPager;
 
-import com.example.mylen.feature.exercise.main.EyeMainFragment;
+import com.example.mylen.feature.eye.main.EyeMainFragment;
 import com.example.mylen.feature.home.MainFragment;
 import com.example.mylen.feature.calendar.FragmentCalendar;
 import com.example.mylen.R;

@@ -1,4 +1,4 @@
-package com.example.mylen.data.exercise;
+package com.example.mylen.data.eye;
 
 import com.google.gson.annotations.SerializedName;
 
