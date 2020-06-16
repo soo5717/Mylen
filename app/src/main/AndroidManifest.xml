@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.mylen">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:fullBackupContent="@xml/backup_descriptor"
@@ -10,12 +12,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".feature.eye.exercise.EyeEnd"></activity>
-        <!-- 스플래쉬 -->
+        <activity android:name=".feature.eye.exercise.EyeExercise"></activity>
+        <activity android:name=".feature.eye.exercise.EyeEnd" /> <!-- 스플래쉬 -->
         <activity
             android:name=".feature.others.SplashActivity"
             android:theme="@style/SplashTheme" /> <!-- 네비게이션 -->
-        <activity android:name=".feature.others.NavigationDrawer"></activity>
+        <activity android:name=".feature.others.NavigationDrawer" />
         <activity android:name=".feature.others.BottomNavigation">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -44,11 +46,9 @@
         <activity android:name=".feature.home.add.AddLiquid1Activity" />
         <activity android:name=".feature.home.add.AddLiquid2Activity" /> <!-- 눈운동 -->
         <activity android:name=".feature.eye.main.EyeMainFragment" />
-        <activity android:name=".feature.eye.add.EyeAddFriend"></activity>
+        <activity android:name=".feature.eye.add.EyeAddFriend" />
         <activity android:name=".feature.eye.main.EyeFriendAdapter" />
         <activity android:name=".feature.eye.main.EyeMainFriendItem" />
     </application>
-
-    <uses-permission android:name="android.permission.INTERNET" />
 
 </manifest>

@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_grey"
+    tools:context=".feature.eye.exercise.EyeExercise">
+
+    <ImageView
+        android:id="@+id/fix_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_fix_bar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_change_bar"
+        app:layout_constraintStart_toStartOf="@id/fix_bar"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:background="@color/white"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="504dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/exercise_ment"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="눈을 시계반대 방향으로 5번 돌리세요"
+            android:textSize="16sp"
+            android:textColor="@color/soft_black"
+            android:fontFamily="@font/notosans_demilight"
+            android:layout_marginTop="32dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/exercise_count"
+            android:layout_width="24dp"
+            android:layout_height="50dp"
+            android:fontFamily="@font/notosans_regular"
+            android:text="3"
+            android:textColor="@color/soft_black"
+            android:textSize="30sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/exercise_ment" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <Button
+        android:id="@+id/bt_bottom"
+        android:layout_width="0dp"
+        android:layout_height="56dp"
+        android:background="@drawable/gradient"
+        android:textColor="@color/white"
+        android:textSize="14sp"
+        android:fontFamily="@font/notosans_demilight"
+        android:text="다음"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:includeFontPadding="false"/>
+</androidx.constraintlayout.widget.ConstraintLayout>
