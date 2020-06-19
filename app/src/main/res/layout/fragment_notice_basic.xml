@@ -20,7 +20,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recycler_notice"
+        android:id="@+id/rv_notice"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
@@ -31,17 +31,16 @@
         android:id="@+id/view1"
         android:layout_width="match_parent"
         android:layout_height="1dp"
-        android:layout_marginTop="16dp"
-        app:layout_constraintTop_toBottomOf="@+id/recycler_notice"
-        tools:layout_editor_absoluteX="0dp" />
+        android:layout_marginTop="8dp"
+        app:layout_constraintTop_toBottomOf="@+id/rv_notice"
+        tools:layout_editor_absoluteX="-72dp" />
 
     <TextView
         android:id="@+id/readnotice"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        android:layout_marginBottom="16dp"
         android:layout_marginLeft="24dp"
+        android:layout_marginTop="16dp"
         android:fontFamily="@font/notosans_medium"
         android:text="읽은 알림"
         android:textColor="@color/soft_black"

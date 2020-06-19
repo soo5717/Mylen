@@ -7,17 +7,19 @@
     <application
         android:allowBackup="true"
         android:fullBackupContent="@xml/backup_descriptor"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@drawable/ic_launcher_color"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:roundIcon="@drawable/ic_launcher_color"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".feature.eye.exercise.EyeExercise"></activity>
-        <activity android:name=".feature.eye.exercise.EyeEnd" /> <!-- 스플래쉬 -->
+
+        <!-- 스플래쉬 -->
         <activity
             android:name=".feature.others.SplashActivity"
-            android:theme="@style/SplashTheme" /> <!-- 네비게이션 -->
-        <activity android:name=".feature.others.NavigationDrawer" />
+            android:theme="@style/SplashTheme" />
+
+        <!-- 네비게이션 -->
+        <activity android:name=".feature.others.NavigationDrawer"></activity>
         <activity android:name=".feature.others.BottomNavigation">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -27,28 +29,60 @@
         </activity>
         <activity android:name=".feature.others.ActionBar" />
         <activity android:name=".feature.calendar.FragmentCalendar" />
-        <activity android:name=".feature.calendar.CalendarDate" /> <!-- 로그인/회원가입 -->
+        <activity android:name=".feature.calendar.CalendarDate" />
+
+        <!-- 로그인/회원가입 -->
         <activity android:name=".feature.sign.SignInActivity" />
         <activity android:name=".feature.sign.SignUp1Activity" />
-        <activity android:name=".feature.sign.SignUp2Activity" /> <!-- 프로필 -->
+        <activity android:name=".feature.sign.SignUp2Activity" />
+
+        <!-- 프로필 -->
         <activity android:name=".feature.profile.ProfileActivity" />
-        <activity android:name=".feature.profile.ProfileModifyActivity" /> <!-- 메인 -->
+        <activity android:name=".feature.profile.ProfileModifyActivity" />
+
+        <!-- 메인 -->
         <activity android:name=".feature.home.MainFragment" />
         <activity android:name=".feature.home.MainLensOpenItem" />
         <activity android:name=".feature.home.MainLensKeepItem" />
         <activity android:name=".feature.home.MainLiquidOpenItem" />
-        <activity android:name=".feature.home.MainLiquidKeepItem" /> <!-- 렌즈 검색 -->
+        <activity android:name=".feature.home.MainLiquidKeepItem" />
+
+        <!-- 렌즈 검색 -->
         <activity android:name=".feature.home.search.SearchLensActivity" />
-        <activity android:name=".feature.home.search.SearchLensItem" /> <!-- 렌즈 추가 -->
+        <activity android:name=".feature.home.search.SearchLensItem" />
+
+        <!-- 렌즈 추가 -->
         <activity android:name=".feature.home.add.AddLens1Activity" />
         <activity android:name=".feature.home.add.AddLens2Activity" />
-        <activity android:name=".feature.home.add.AddLens3Activity" /> <!-- 세척액 추가 -->
+        <activity android:name=".feature.home.add.AddLens3Activity" />
+
+        <!-- 세척액 추가 -->
         <activity android:name=".feature.home.add.AddLiquid1Activity" />
-        <activity android:name=".feature.home.add.AddLiquid2Activity" /> <!-- 눈운동 -->
+        <activity android:name=".feature.home.add.AddLiquid2Activity" />
+
+        <!-- 눈운동 -->
         <activity android:name=".feature.eye.main.EyeMainFragment" />
-        <activity android:name=".feature.eye.add.EyeAddFriend" />
+        <activity android:name=".feature.eye.add.EyeAddFriend"></activity>
         <activity android:name=".feature.eye.main.EyeFriendAdapter" />
         <activity android:name=".feature.eye.main.EyeMainFriendItem" />
+        <activity android:name=".feature.eye.exercise.EyeEnd"></activity>
+        <activity android:name=".feature.eye.report.EyeReportFragmentPoint">
+        </activity>
+        <activity android:name=".feature.eye.report.EyeReportMain">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+
+        <!-- 알림 -->
+        <activity android:name=".feature.notice.main.NoticeMain" >
+        </activity>
+        <activity android:name=".feature.notice.NoticeSet" >
+        </activity>
+
+
     </application>
 
 </manifest>

@@ -91,6 +91,12 @@
     <string name="eye_end_point">point</string>
     <string name="check_report">결과 보고서 확인하기</string>
     <string name="eye_end_content_des">eye_end_oval</string>
+    <string name="eye_report">레포트</string>
+    <string name="eye_point_graph">눈 운동 포인트</string>
+    <string name="eye_count_graph">눈 운동 횟수</string>
+    <string name="eye_point_total">총 보유 포인트</string>
+    <string name="eye_point_average">하루 평균 운동 횟수</string>
+    <string name="eye_count_total">총 운동 횟수</string>
 
 
 </resources>

@@ -3,23 +3,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     tools:context=".feature.eye.main.EyeMainFragment">
-
-    <TextView
-        android:id="@+id/tv_rank"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:layout_marginLeft="32dp"
-        android:layout_marginTop="35dp"
-        android:fontFamily="@font/notosans_demilight"
-        android:text="1위"
-        android:textColor="#138bff"
-        android:textSize="16sp"
-        android:includeFontPadding="false"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
         android:id="@+id/iv_picture"
@@ -35,17 +20,28 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
+        android:id="@+id/tv_rank"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="35dp"
+        android:fontFamily="@font/notosans_demilight"
+        android:includeFontPadding="false"
+        android:textColor="#138bff"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
         android:id="@+id/tv_user_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
         android:layout_marginTop="24dp"
         android:fontFamily="@font/notosans_demilight"
-        android:text="박윤경"
+        android:includeFontPadding="false"
         android:textColor="@color/soft_black"
         android:textSize="16sp"
-        android:includeFontPadding="false"
         app:layout_constraintStart_toEndOf="@+id/iv_picture"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -54,12 +50,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
         android:layout_marginTop="8dp"
         android:fontFamily="@font/notosans_demilight"
-        android:text="bsj8993@naver.com"
-        android:textColor="@color/soft_grey"
         android:includeFontPadding="false"
+        android:textColor="@color/soft_grey"
         app:layout_constraintStart_toEndOf="@+id/iv_picture"
         app:layout_constraintTop_toBottomOf="@+id/tv_user_name" />
 
@@ -69,9 +63,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
         android:layout_marginEnd="24dp"
-        android:layout_marginRight="24dp"
         android:fontFamily="@font/notosans_demilight"
-        android:text="120dp"
         android:includeFontPadding="false"
         android:textColor="@color/soft_black"
         app:layout_constraintEnd_toEndOf="parent"

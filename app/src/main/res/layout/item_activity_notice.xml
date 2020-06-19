@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     tools:context=".feature.notice.NoticeItem">
 
     <ImageView
@@ -11,34 +11,36 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="24dp"
+        android:layout_marginTop="16dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/ic_notice_logo" />
 
     <TextView
-        android:id="@+id/textView_ment"
+        android:id="@+id/tv_message"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
         android:fontFamily="@font/notosans_regular"
-        android:text="렌즈 권장 착용시간을 초과하셨어요! \n다음엔 잘 할 수 있죠?"
+        android:includeFontPadding="false"
         android:textColor="@color/soft_black"
         android:textSize="14sp"
         app:layout_constraintStart_toEndOf="@+id/iv_notcie_logo"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/textView_date"
+        android:id="@+id/tv_msg_date"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="88dp"
-        android:layout_marginTop="4dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
         android:fontFamily="@font/notosans_demilight"
+        android:includeFontPadding="false"
         android:textColor="@color/deep_grey"
-        android:textSize="14sp"
-        android:text="2020.04.21"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView_ment" />
+        android:textSize="12sp"
+        app:layout_constraintStart_toEndOf="@+id/iv_notcie_logo"
+        app:layout_constraintTop_toBottomOf="@+id/tv_message" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

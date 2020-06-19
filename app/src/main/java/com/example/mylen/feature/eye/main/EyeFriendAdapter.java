@@ -17,7 +17,7 @@ import java.util.ArrayList;
 public class EyeFriendAdapter extends RecyclerView.Adapter<EyeFriendAdapter.ViewHolder> {
     Context context;
 
-    private ArrayList<EyeMainFriendItem> items = new ArrayList<EyeMainFriendItem>();
+    private ArrayList<EyeMainFriendItem> items = new ArrayList<>();
 
     //생성자
    public EyeFriendAdapter(Context context){

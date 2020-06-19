@@ -32,7 +32,7 @@ public interface ServiceApi {
     @POST("/user/notice")
     Call<NoticeResponse> userNotice(@Body NoticeData data);
 
-    //insert noticedata to notices table
+    //insert notice data to notices table
     @POST("/user/notice/add")
     Call<AddNoticeResponse> addLensNotice(@Body AddNoticeData data);
 

@@ -11,6 +11,6 @@ public class EyeEnd extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_eye_end);
+        setContentView(R.layout.activity_eyeexercise_end);
     }
 }

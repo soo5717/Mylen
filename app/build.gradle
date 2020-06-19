@@ -21,11 +21,15 @@ android {
         }
     }
 
+
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
 }
+
+//그래프 : MPAndroidChart
+repositories { maven { url 'https://jitpack.io' } }
 
 dependencies {
     //캘린더
@@ -59,4 +63,7 @@ dependencies {
     implementation 'com.google.code.gson:gson:2.8.6'
 
     implementation 'com.google.android.material:material:1.1.0'
+
+    //graph
+    implementation 'com.github.PhilJay:MPAndroidChart:v3.1.0'
 }
