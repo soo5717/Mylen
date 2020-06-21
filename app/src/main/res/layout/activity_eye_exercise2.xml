@@ -72,3 +72,5 @@
         app:layout_constraintGuide_percent=".70" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
+
+<!--2초마다-->

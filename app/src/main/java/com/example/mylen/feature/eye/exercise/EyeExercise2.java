@@ -53,7 +53,7 @@ import com.google.firebase.ml.vision.face.FirebaseVisionFaceDetectorOptions;
 import com.google.firebase.ml.vision.face.FirebaseVisionFaceLandmark;
 
 public class EyeExercise2 extends AppCompatActivity {
-
+//yg
     private int REQUEST_CODE_PERMISSIONS = 101;
     private final String[] REQUIRED_PERMISSIONS = new String[]{"android.permission.CAMERA", "android.permission.WRITE_EXTERNAL_STORAGE"};
     TextView textView;
