@@ -4,12 +4,16 @@ import com.example.mylen.data.eye.AddFriendData;
 import com.example.mylen.data.eye.AddFriendResponse;
 import com.example.mylen.data.eye.FriendMainData;
 import com.example.mylen.data.eye.FriendMainResponse;
-import com.example.mylen.data.eye.SearchFriendData;
-import com.example.mylen.data.eye.SearchFriendResponse;
+import com.example.mylen.data.eye.SearchAddFriendData;
+import com.example.mylen.data.eye.SearchAddFriendResponse;
 import com.example.mylen.data.notice.NoticeData;
 import com.example.mylen.data.notice.AddNoticeData;
 import com.example.mylen.data.notice.AddNoticeResponse;
 import com.example.mylen.data.notice.NoticeResponse;
+import com.example.mylen.data.notice.NoticeSetData;
+import com.example.mylen.data.notice.NoticeSetResponse;
+import com.example.mylen.data.notice.UpdateNoticeSetData;
+import com.example.mylen.data.notice.UpdateNoticeSetResponse;
 import com.example.mylen.data.user.SignInData;
 import com.example.mylen.data.user.SignInResponse;
 import com.example.mylen.data.user.SignUpData;
@@ -38,15 +42,23 @@ public interface ServiceApi {
 
     //eye_friend_main_data
     @POST("/user/eye/friend/main")
-    Call<FriendMainResponse> RankFriendMain(@Body FriendMainData data);
+    Call<FriendMainResponse> rankFriendMain(@Body FriendMainData data);
 
     //eye_friend_search add
     //변경했음
     @POST("/user/eye/friend/add/search")
-    Call<SearchFriendResponse> SearchFrienAdd(@Body SearchFriendData data);
+    Call<SearchAddFriendResponse> searchAddFriend(@Body SearchAddFriendData data);
 
     //eye_friend_add
     @POST("/user/eye/friend/add/add")
-    Call<AddFriendResponse> AddFriendAdd(@Body AddFriendData data);
+    Call<AddFriendResponse> addFriend(@Body AddFriendData data);
+
+    //noticeSet setting
+    @POST("/user/notice/set")
+    Call<NoticeSetResponse> userNoticeSet(@Body NoticeSetData data);
+
+    //update changes to noticeSet
+    @POST("/user/notice/set")
+    Call<UpdateNoticeSetResponse> updateNoticeSet(@Body UpdateNoticeSetData data);
 
 }

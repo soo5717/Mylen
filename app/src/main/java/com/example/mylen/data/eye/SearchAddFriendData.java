@@ -3,11 +3,11 @@ package com.example.mylen.data.eye;
 
 import com.google.gson.annotations.SerializedName;
 
-public class SearchFriendData {
+public class SearchAddFriendData {
     @SerializedName("userEmail")
-    String userEmail;
+    String userId;
 
-    public SearchFriendData(String userEmail) {
-        this.userEmail = userEmail;
+    public SearchAddFriendData(String userEmail) {
+        this.userId = userId;
     }
 }

@@ -18,7 +18,7 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
 import com.example.mylen.R;
-import com.example.mylen.data.eye.SearchFriendData;
+import com.example.mylen.data.eye.SearchAddFriendData;
 
 import static android.graphics.Color.*;
 
@@ -125,7 +125,7 @@ public class EyeAddFriend extends AppCompatActivity {
     private void searchFriend(String search){
         int friendId = 1;
         String friendEmail = search;
-        SearchFriendData data = new SearchFriendData(friendEmail);
+        SearchAddFriendData data = new SearchAddFriendData(friendEmail);
 
 
         String friendName = "백서윤";

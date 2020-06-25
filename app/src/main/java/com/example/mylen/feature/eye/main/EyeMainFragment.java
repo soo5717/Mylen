@@ -58,7 +58,7 @@ public class EyeMainFragment extends Fragment implements View.OnClickListener{
         //page갯수 limit정하기
         pager.setOffscreenPageLimit(3);
 
-        adapter_exercise = new ExercisePagerAdapter(getFragmentManager(), 3);
+        adapter_exercise = new ExercisePagerAdapter(getChildFragmentManager(), 3);
 
         Fragment fragment1 = new Fragment_exercise_vp_1();
         adapter_exercise.addItem(fragment1);
@@ -71,6 +71,7 @@ public class EyeMainFragment extends Fragment implements View.OnClickListener{
 
 
         pager.setAdapter(adapter_exercise);
+        pager.setActivated(true);
 
 
         // 리사이클러뷰에 LinearLayoutManager 객체 지정

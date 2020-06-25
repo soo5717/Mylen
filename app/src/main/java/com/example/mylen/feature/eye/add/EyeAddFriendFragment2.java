@@ -17,8 +17,6 @@ import androidx.fragment.app.Fragment;
 import com.example.mylen.R;
 import com.example.mylen.data.eye.AddFriendData;
 import com.example.mylen.data.eye.AddFriendResponse;
-import com.example.mylen.data.eye.SearchFriendData;
-import com.example.mylen.data.eye.SearchFriendResponse;
 import com.example.mylen.network.RetrofitClient;
 
 import retrofit2.Call;
@@ -99,7 +97,7 @@ public class EyeAddFriendFragment2 extends Fragment implements View.OnClickListe
 
         AddFriendData data = new AddFriendData(userId, friendId);
 
-        RetrofitClient.service.AddFriendAdd(data).enqueue(new Callback<AddFriendResponse>() {
+        RetrofitClient.service.addFriend(data).enqueue(new Callback<AddFriendResponse>() {
 
             @Override
             public void onResponse(Call<AddFriendResponse> call, Response<AddFriendResponse> response) {
