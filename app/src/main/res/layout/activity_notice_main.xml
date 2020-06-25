@@ -7,39 +7,12 @@
     android:background="@color/white"
     tools:context=".feature.notice.main.NoticeMain">
 
-    <androidx.appcompat.widget.Toolbar
-        android:id="@+id/toolbar"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:minHeight="?attr/actionBarSize"
-        android:theme="?attr/actionBarTheme"
-        tools:ignore="MissingConstraints"
-        android:background="@drawable/actionbar_underline"
-        android:contentInsetStart="0dp"
-        android:contentInsetLeft="0dp"
-        app:contentInsetStartWithNavigation= "0dp"
-        />
-
-    <TextView
-        android:id="@+id/notice_text"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="24dp"
-        android:layout_marginTop="64dp"
-        android:fontFamily="@font/notosans_medium"
-        android:includeFontPadding="false"
-        android:text="알림"
-        android:textColor="@color/clear_blue"
-        android:textSize="33sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
     <Button
         android:id="@+id/btn_all_delete"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="80dp"
-        android:layout_marginRight="24dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="24dp"
         android:background="@null"
         android:fontFamily="@font/notosans_demilight"
         android:includeFontPadding="false"
@@ -48,17 +21,17 @@
         android:text="알림 전체 삭제"
         android:textColor="@color/soft_grey"
         android:textSize="14sp"
-        app:layout_constraintEnd_toEndOf="@+id/toolbar"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_notice"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="32dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/notice_text" />
+        app:layout_constraintTop_toBottomOf="@+id/btn_all_delete" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -78,6 +78,7 @@ public class EyeReportFragmentPoint extends Fragment {
         xAxis.setDrawGridLines(true);
         xAxis.setGridColor(getResources().getColor(R.color.white, null));
         xAxis.setGridLineWidth(3);
+        xAxis.setValueFormatter(new GraphAxisValueFormatter(mDays));
 
         //YAxis yAxis = chart.getRendererLeftYAxis();
 
@@ -106,8 +107,6 @@ public class EyeReportFragmentPoint extends Fragment {
         //set.setValueTextColor(getColor(R.color.deep_grey));
         set.setFillDrawable(ContextCompat.getDrawable(getContext(), R.drawable.graph_gradient));
         //set.setValueTextSize(6);
-
-
 
         return view;
 
