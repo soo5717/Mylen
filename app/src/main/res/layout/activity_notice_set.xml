@@ -18,112 +18,6 @@
             android:layout_width="60dp"
             android:layout_height="24dp"
             android:layout_marginTop="32dp"
-            android:layout_marginRight="24dp"
-            android:background="@drawable/btn_color_small_unchecked"
-            android:fontFamily="@font/notosans_regular"
-            android:includeFontPadding="false"
-            android:text="OFF"
-            android:textColor="@color/tiffany_blue"
-            android:textSize="14sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/noticeset_text" />
-
-        <Button
-            android:id="@+id/btn_lens_use_date"
-            android:layout_width="60dp"
-            android:layout_height="24dp"
-            android:layout_marginTop="48dp"
-            android:layout_marginRight="24dp"
-            android:background="@drawable/btn_color_small_unchecked"
-            android:fontFamily="@font/notosans_regular"
-            android:includeFontPadding="false"
-            android:text="OFF"
-            android:textColor="@color/tiffany_blue"
-            android:textSize="14sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/lens_wear_over" />
-
-        <Button
-            android:id="@+id/btn_lens_exp_date"
-            android:layout_width="60dp"
-            android:layout_height="24dp"
-            android:layout_marginTop="48dp"
-            android:layout_marginRight="24dp"
-            android:background="@drawable/btn_color_small_unchecked"
-            android:fontFamily="@font/notosans_regular"
-            android:includeFontPadding="false"
-            android:text="OFF"
-            android:textColor="@color/tiffany_blue"
-            android:textSize="14sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/lens_use_date" />
-
-        <Button
-            android:id="@+id/btn_lens_clean"
-            android:layout_width="60dp"
-            android:layout_height="24dp"
-            android:layout_marginTop="48dp"
-            android:layout_marginRight="24dp"
-            android:background="@drawable/btn_color_small_unchecked"
-            android:fontFamily="@font/notosans_regular"
-            android:includeFontPadding="false"
-            android:text="OFF"
-            android:textColor="@color/tiffany_blue"
-            android:textSize="14sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/lens_exp_date" />
-
-        <Button
-            android:id="@+id/btn_liquid_use_date"
-            android:layout_width="60dp"
-            android:layout_height="24dp"
-            android:layout_marginTop="48dp"
-            android:layout_marginRight="24dp"
-            android:background="@drawable/btn_color_small_unchecked"
-            android:fontFamily="@font/notosans_regular"
-            android:includeFontPadding="false"
-            android:text="OFF"
-            android:textColor="@color/tiffany_blue"
-            android:textSize="14sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/lens_clean" />
-
-        <Button
-            android:id="@+id/btn_liquid_exp_date"
-            android:layout_width="60dp"
-            android:layout_height="24dp"
-            android:layout_marginTop="48dp"
-            android:layout_marginRight="24dp"
-            android:background="@drawable/btn_color_small_unchecked"
-            android:fontFamily="@font/notosans_regular"
-            android:includeFontPadding="false"
-            android:text="OFF"
-            android:textColor="@color/tiffany_blue"
-            android:textSize="14sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/liquid_use_date" />
-
-        <Button
-            android:id="@+id/btn_fin_dust_time"
-            android:layout_width="60dp"
-            android:layout_height="24dp"
-            android:layout_marginTop="48dp"
-            android:layout_marginRight="24dp"
-            android:background="@drawable/btn_color_small_unchecked"
-            android:fontFamily="@font/notosans_regular"
-            android:includeFontPadding="false"
-            android:text="OFF"
-            android:textColor="@color/tiffany_blue"
-            android:textSize="14sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/liquid_exp_date" />
-
-
-        <Button
-            android:id="@+id/btn_case_replace"
-            android:layout_width="60dp"
-            android:layout_height="24dp"
-            android:layout_marginTop="48dp"
             android:layout_marginEnd="24dp"
             android:background="@drawable/btn_color_small_unchecked"
             android:fontFamily="@font/notosans_regular"
@@ -132,7 +26,113 @@
             android:textColor="@color/tiffany_blue"
             android:textSize="14sp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/fin_dust_time" />
+            app:layout_constraintTop_toBottomOf="@+id/btn_back" />
+
+        <Button
+            android:id="@+id/btn_lens_use_date"
+            android:layout_width="60dp"
+            android:layout_height="24dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginRight="24dp"
+            android:background="@drawable/btn_color_small_unchecked"
+            android:fontFamily="@font/notosans_regular"
+            android:includeFontPadding="false"
+            android:text="OFF"
+            android:textColor="@color/tiffany_blue"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/view1" />
+
+        <Button
+            android:id="@+id/btn_lens_exp_date"
+            android:layout_width="60dp"
+            android:layout_height="24dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginRight="24dp"
+            android:background="@drawable/btn_color_small_unchecked"
+            android:fontFamily="@font/notosans_regular"
+            android:includeFontPadding="false"
+            android:text="OFF"
+            android:textColor="@color/tiffany_blue"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/view2" />
+
+        <Button
+            android:id="@+id/btn_lens_clean"
+            android:layout_width="60dp"
+            android:layout_height="24dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginRight="24dp"
+            android:background="@drawable/btn_color_small_unchecked"
+            android:fontFamily="@font/notosans_regular"
+            android:includeFontPadding="false"
+            android:text="OFF"
+            android:textColor="@color/tiffany_blue"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/view3" />
+
+        <Button
+            android:id="@+id/btn_liquid_use_date"
+            android:layout_width="60dp"
+            android:layout_height="24dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginRight="24dp"
+            android:background="@drawable/btn_color_small_unchecked"
+            android:fontFamily="@font/notosans_regular"
+            android:includeFontPadding="false"
+            android:text="OFF"
+            android:textColor="@color/tiffany_blue"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/view4" />
+
+        <Button
+            android:id="@+id/btn_liquid_exp_date"
+            android:layout_width="60dp"
+            android:layout_height="24dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginRight="24dp"
+            android:background="@drawable/btn_color_small_unchecked"
+            android:fontFamily="@font/notosans_regular"
+            android:includeFontPadding="false"
+            android:text="OFF"
+            android:textColor="@color/tiffany_blue"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/view5" />
+
+        <Button
+            android:id="@+id/btn_fin_dust_time"
+            android:layout_width="60dp"
+            android:layout_height="24dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginRight="24dp"
+            android:background="@drawable/btn_color_small_unchecked"
+            android:fontFamily="@font/notosans_regular"
+            android:includeFontPadding="false"
+            android:text="OFF"
+            android:textColor="@color/tiffany_blue"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/view6" />
+
+
+        <Button
+            android:id="@+id/btn_case_replace"
+            android:layout_width="60dp"
+            android:layout_height="24dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginEnd="24dp"
+            android:background="@drawable/btn_color_small_unchecked"
+            android:fontFamily="@font/notosans_regular"
+            android:includeFontPadding="false"
+            android:text="OFF"
+            android:textColor="@color/tiffany_blue"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/view7" />
 
         <ImageButton
             android:id="@+id/btn_back"
@@ -149,19 +149,6 @@
             app:layout_constraintTop_toTopOf="parent"
             app:srcCompat="@drawable/ic_backspace_48dp" />
 
-        <TextView
-            android:id="@+id/noticeset_text"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="24dp"
-            android:layout_marginTop="64dp"
-            android:fontFamily="@font/notosans_medium"
-            android:includeFontPadding="false"
-            android:text="알림 설정"
-            android:textColor="@color/clear_blue"
-            android:textSize="33sp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/lens_wear_over"
@@ -175,105 +162,105 @@
             android:textColor="@color/soft_black"
             android:textSize="16sp"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/noticeset_text" />
+            app:layout_constraintTop_toBottomOf="@+id/btn_back" />
 
         <TextView
             android:id="@+id/lens_use_date"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="24dp"
-            android:layout_marginTop="48dp"
+            android:layout_marginTop="24dp"
             android:fontFamily="@font/notosans_regular"
             android:includeFontPadding="false"
             android:text="렌즈 사용기한 알림"
             android:textColor="@color/soft_black"
             android:textSize="16sp"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/lens_wear_over" />
+            app:layout_constraintTop_toBottomOf="@+id/view1" />
 
         <TextView
             android:id="@+id/lens_exp_date"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="24dp"
-            android:layout_marginTop="48dp"
+            android:layout_marginTop="24dp"
             android:fontFamily="@font/notosans_regular"
             android:includeFontPadding="false"
             android:text="렌즈 유통기한 알림"
             android:textColor="@color/soft_black"
             android:textSize="16sp"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/lens_use_date" />
+            app:layout_constraintTop_toBottomOf="@+id/view2" />
 
         <TextView
             android:id="@+id/lens_clean"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="24dp"
-            android:layout_marginTop="48dp"
+            android:layout_marginTop="24dp"
             android:fontFamily="@font/notosans_regular"
             android:includeFontPadding="false"
             android:text="렌즈 세척 알림"
             android:textColor="@color/soft_black"
             android:textSize="16sp"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/lens_exp_date" />
+            app:layout_constraintTop_toBottomOf="@+id/view3" />
 
         <TextView
             android:id="@+id/liquid_use_date"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="24dp"
-            android:layout_marginTop="48dp"
+            android:layout_marginTop="24dp"
             android:fontFamily="@font/notosans_regular"
             android:includeFontPadding="false"
             android:text="세척액 사용기한 알림"
             android:textColor="@color/soft_black"
             android:textSize="16sp"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/lens_clean" />
+            app:layout_constraintTop_toBottomOf="@+id/view4" />
 
         <TextView
             android:id="@+id/liquid_exp_date"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="24dp"
-            android:layout_marginTop="48dp"
+            android:layout_marginTop="24dp"
             android:fontFamily="@font/notosans_regular"
             android:includeFontPadding="false"
             android:text="세척액 유통기한 알림"
             android:textColor="@color/soft_black"
             android:textSize="16sp"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/liquid_use_date" />
+            app:layout_constraintTop_toBottomOf="@+id/view5" />
 
         <TextView
             android:id="@+id/fin_dust_time"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="28dp"
-            android:layout_marginTop="48dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="24dp"
             android:fontFamily="@font/notosans_regular"
             android:includeFontPadding="false"
             android:text="미세먼지 농도 알림"
             android:textColor="@color/soft_black"
             android:textSize="16sp"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/liquid_exp_date" />
+            app:layout_constraintTop_toBottomOf="@+id/view6" />
 
         <TextView
             android:id="@+id/textView8"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="28dp"
-            android:layout_marginTop="48dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="24dp"
             android:fontFamily="@font/notosans_regular"
             android:includeFontPadding="false"
             android:text="렌즈 케이스 교체 알림"
             android:textColor="@color/soft_black"
             android:textSize="16sp"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/fin_dust_time" />
+            app:layout_constraintTop_toBottomOf="@+id/view7" />
 
         <View
             android:id="@+id/view1"

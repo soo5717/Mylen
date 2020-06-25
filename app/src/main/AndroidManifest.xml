@@ -17,20 +17,19 @@
         android:roundIcon="@drawable/ic_launcher_color"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <!-- 스플래쉬 -->
-        <activity
-            android:name=".feature.others.SplashActivity"
-            android:theme="@style/SplashTheme" />
-        <!-- 네비게이션 -->
-        <activity android:name=".feature.others.NavigationDrawer" />
-        <activity android:name=".feature.others.BottomNavigation">
+        <activity android:name=".feature.eye.exercise.EyeExercise2">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-
         </activity>
+        <!-- 스플래쉬 -->
+        <activity
+            android:name=".feature.others.SplashActivity"
+            android:theme="@style/SplashTheme" /> <!-- 네비게이션 -->
+        <activity android:name=".feature.others.NavigationDrawer" />
+        <activity android:name=".feature.others.BottomNavigation"></activity>
         <activity android:name=".feature.others.ActionBar" />
         <activity android:name=".feature.calendar.FragmentCalendar" />
         <activity android:name=".feature.calendar.CalendarDate" />
@@ -66,19 +65,14 @@
 
         <!-- 눈운동 -->
         <activity android:name=".feature.eye.main.EyeMainFragment" />
-        <activity android:name=".feature.eye.add.EyeAddFriend"></activity>
+        <activity android:name=".feature.eye.add.EyeAddFriend"/>
         <activity android:name=".feature.eye.main.EyeFriendAdapter" />
         <activity android:name=".feature.eye.main.EyeMainFriendItem" />
-        <activity android:name=".feature.eye.exercise.EyeEnd"></activity>
-        <activity android:name=".feature.eye.report.EyeReportFragmentPoint">
-        </activity>
-        <activity android:name=".feature.eye.report.EyeReportMain">
-        </activity>
-        <activity android:name=".feature.eye.exercise.EyeExercise2">
-        </activity>
-        <activity android:name=".feature.eye.exercise.EyeExercise3">
-
-        </activity>
+        <activity android:name=".feature.eye.exercise.EyeEnd"/>
+        <activity android:name=".feature.eye.report.EyeReportFragmentPoint"/>
+        <activity android:name=".feature.eye.report.EyeReportMain"/>
+        <activity android:name=".feature.eye.exercise.EyeExercise2"/>
+        <activity android:name=".feature.eye.exercise.EyeExercise3"/>
 
 
         <!-- 알림 -->
