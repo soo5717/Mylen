@@ -8,7 +8,7 @@ import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
 public class RetrofitClient {
-    private final static String BASE_URL = "http://ec2-3-226-51-250.compute-1.amazonaws.com:3000";
+    private final static String BASE_URL = "http://ec2-52-78-195-255.ap-northeast-2.compute.amazonaws.com:3000";
     private static String authToken = null;
 
     private RetrofitClient() { }
