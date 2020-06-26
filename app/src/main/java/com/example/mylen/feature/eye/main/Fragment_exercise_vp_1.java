@@ -11,8 +11,6 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import com.example.mylen.R;
-import com.example.mylen.feature.eye.exercise.EyeExercise3;
-import com.example.mylen.feature.eye.report.EyeReportMain;
 
 public class Fragment_exercise_vp_1 extends Fragment implements View.OnClickListener {
     @Nullable
@@ -28,8 +26,8 @@ public class Fragment_exercise_vp_1 extends Fragment implements View.OnClickList
 
     @Override
     public void onClick(View view) {
-        Intent intent = new Intent(getActivity(), EyeExercise3.class);
-        startActivity(intent);
+//        Intent intent = new Intent(getActivity(), EyeExercise3.class);
+//        startActivity(intent);
 
     }
 }

@@ -1,7 +1,6 @@
 package com.example.mylen.feature.sign;
 
 import android.annotation.SuppressLint;
-import android.app.AlertDialog;
 import android.app.DatePickerDialog;
 import android.content.Intent;
 import android.os.Bundle;
@@ -15,10 +14,13 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.mylen.R;
 import com.example.mylen.data.user.SignUpData;
-import com.example.mylen.data.user.SignUpResponse;
+import com.example.mylen.data.user.StatusResponse;
 import com.example.mylen.network.RetrofitClient;
 
+import org.jetbrains.annotations.NotNull;
+
 import java.util.Calendar;
+import java.util.Objects;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -44,13 +46,14 @@ public class SignUp2Activity  extends AppCompatActivity {
 
     //회원가입 요청 - POST : Retrofit2
     private void requestSignUp(SignUpData data) {
-        RetrofitClient.service.userSignUp(data).enqueue(new Callback<SignUpResponse>() {
+        RetrofitClient.getService().userSignUp(data).enqueue(new Callback<StatusResponse>() {
             @Override
-            public void onResponse(Call<SignUpResponse> call, Response<SignUpResponse> response) {
-                SignUpResponse result = response.body();
+            public void onResponse(@NotNull Call<StatusResponse> call, @NotNull Response<StatusResponse> response) {
+                StatusResponse result = response.body();
+                assert result != null;
                 Toast.makeText(SignUp2Activity.this, result.getMessage(), Toast.LENGTH_SHORT).show();
                 //회원가입 요청 성공 시
-                if(result.getCode() == 200) {
+                if(result.getSuccess()) {
                     //로그인 페이지로 이동
                     Intent intent = new Intent(SignUp2Activity.this, SignInActivity.class);
                     //회원가입 엑티비티 스택에서 제거하고 로그인만 남김
@@ -60,9 +63,9 @@ public class SignUp2Activity  extends AppCompatActivity {
             }
 
             @Override
-            public void onFailure(Call<SignUpResponse> call, Throwable t) {
-                Toast.makeText(SignUp2Activity.this, "회원가입 에러 발생", Toast.LENGTH_SHORT).show();
-                Log.e("회원가입 에러 발생", t.getMessage());
+            public void onFailure(@NotNull Call<StatusResponse> call, @NotNull Throwable t) {
+                Toast.makeText(SignUp2Activity.this, "회원가입 에러가 발생했습니다", Toast.LENGTH_SHORT).show();
+                Log.e("회원가입 에러 발생", Objects.requireNonNull(t.getMessage()));
             }
         });
     }
@@ -72,7 +75,8 @@ public class SignUp2Activity  extends AppCompatActivity {
         Calendar cal = Calendar.getInstance();
         //DatePicker 사용 : API-24에서는 스피너 작동 안함
         @SuppressLint("SetTextI18n") DatePickerDialog dialog = new DatePickerDialog(this, THEME_HOLO_LIGHT,
-                (view, year, monthOfYear, dayOfMonth) -> btn_birth.setText(year + "/" + monthOfYear + "/" + dayOfMonth)
+                (view, year, monthOfYear, dayOfMonth) ->
+                        btn_birth.setText(year + "-" + (monthOfYear+1) + "-" + dayOfMonth)
                 , cal.get(Calendar.YEAR), cal.get(Calendar.MONTH), cal.get(Calendar.DAY_OF_MONTH));
         dialog.show();
     }
@@ -90,11 +94,8 @@ public class SignUp2Activity  extends AppCompatActivity {
             pwd = intent.getStringExtra("signUpPwd");
 
             //비밀번호 암호화
+            assert pwd != null;
             String encrypt_pwd  = EncryptSHA512.encryptSHA512(pwd);
-//            Log.d("Email    : ", email);
-//            Log.d("Password : ", encrypt_pwd);
-//            Log.d("Name     : ", name);
-//            Log.d("Birth    : ", birth);
 
             //회원가입 요청 메소드 호출
             requestSignUp(new SignUpData(email, encrypt_pwd, name, birth));

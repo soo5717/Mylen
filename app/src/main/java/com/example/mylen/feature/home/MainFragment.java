@@ -1,30 +1,34 @@
 package com.example.mylen.feature.home;
 
+import android.annotation.SuppressLint;
 import android.app.AlertDialog;
 import android.content.Context;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
-import android.widget.Spinner;
-import android.widget.Toast;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 
 import com.example.mylen.R;
+import com.example.mylen.data.user.ProfileResponse;
 import com.example.mylen.feature.home.add.AddLiquid1Activity;
 import com.example.mylen.feature.home.search.SearchLensActivity;
-import com.example.mylen.feature.sign.SignInActivity;
-import com.example.mylen.feature.sign.SignUp1Activity;
+import com.example.mylen.network.RetrofitClient;
 
-import java.util.ArrayList;
-import java.util.Arrays;
+import org.jetbrains.annotations.NotNull;
+
+import java.util.Objects;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class MainFragment extends Fragment implements View.OnClickListener{
 
@@ -32,6 +36,7 @@ public class MainFragment extends Fragment implements View.OnClickListener{
     MainChild1Fragment main_child1;
     MainChild2Fragment main_child2;
     Button btn_open, btn_keep, btn_add;
+    private TextView tv_user_name;
 
     //프래그먼트가 액티비티에 연결되었을 때 호출
     @Override
@@ -43,6 +48,10 @@ public class MainFragment extends Fragment implements View.OnClickListener{
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_main, container, false);
+
+        //사용자 이름 설정
+        tv_user_name = rootView.findViewById(R.id.tv_user_name);
+        setUserName();
 
         //프래그먼트 구현 : 렌즈 등록 전 초기 화면
         main_child1 = new MainChild1Fragment();
@@ -79,6 +88,28 @@ public class MainFragment extends Fragment implements View.OnClickListener{
         btn_keep.setOnClickListener(this);
 
         return rootView;
+    }
+
+    private void setUserName(){
+        RetrofitClient.getService().userProfile().enqueue(new Callback<ProfileResponse>() {
+            @SuppressLint({"DefaultLocale", "SetTextI18n"})
+            @Override
+            public void onResponse(@NotNull Call<ProfileResponse> call, @NotNull Response<ProfileResponse> response) {
+                ProfileResponse result = response.body();
+                assert result != null;
+                //프로필 조회 요청 성공 시
+                if(result.getSuccess()){
+                    tv_user_name.setText(result.getName()+" 님");
+                }else{
+                    //실패 시 처리 코드 추후 추가 예정
+                }
+            }
+
+            @Override
+            public void onFailure(@NotNull Call<ProfileResponse> call, @NotNull Throwable t) {
+                Log.e("메인 이름 조회 에러 발생", Objects.requireNonNull(t.getMessage()));
+            }
+        });
     }
 
     //버튼 이벤트

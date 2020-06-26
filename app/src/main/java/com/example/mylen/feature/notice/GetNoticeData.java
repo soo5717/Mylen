@@ -67,7 +67,7 @@ public class GetNoticeData extends AppCompatActivity {
         final String[] kk = new String[1];
 
         //알림 정보 가져오기
-        RetrofitClient.service.userNotice(data).enqueue(new Callback<NoticeResponse>() {
+        RetrofitClient.getService().userNotice(data).enqueue(new Callback<NoticeResponse>() {
 
             @Override
             public void onResponse(Call<NoticeResponse> call, Response<NoticeResponse> response) {

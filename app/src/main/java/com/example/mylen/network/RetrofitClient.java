@@ -1,24 +1,40 @@
 package com.example.mylen.network;
 
+import com.example.mylen.feature.util.PreferenceManager;
+
+import okhttp3.OkHttpClient;
+import okhttp3.Request;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
 public class RetrofitClient {
     private final static String BASE_URL = "http://ec2-52-78-195-255.ap-northeast-2.compute.amazonaws.com:3000";
-    private static Retrofit retrofit = null;
+    private static String authToken = null;
 
-    private RetrofitClient() {
-    }
+    private RetrofitClient() { }
 
     private static Retrofit getClient() {
-        if (retrofit == null) {
-            retrofit = new Retrofit.Builder()
-                    .baseUrl(BASE_URL)
-                    .addConverterFactory(GsonConverterFactory.create())
+        //모든 API Header -> 토큰 추가
+        authToken = PreferenceManager.getString("user_token");
+        OkHttpClient.Builder okHttpClient = new OkHttpClient.Builder();
+        okHttpClient.addInterceptor(chain -> {
+            Request request = chain.request()
+                    .newBuilder()
+                    .addHeader("authorization", authToken)
                     .build();
-        }
+            return chain.proceed(request);
+        });
+
+        Retrofit retrofit = new Retrofit.Builder()
+                .client(okHttpClient.build())
+                .baseUrl(BASE_URL)
+                .addConverterFactory(GsonConverterFactory.create())
+                .build();
+
         return retrofit;
     }
 
-    public static ServiceApi service = RetrofitClient.getClient().create(ServiceApi.class);
+    public static ServiceApi getService() {
+        return RetrofitClient.getClient().create(ServiceApi.class);
+    }
 }

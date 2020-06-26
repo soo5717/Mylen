@@ -50,7 +50,7 @@ public class AddLiquid2Activity extends AppCompatActivity {
         Calendar cal = Calendar.getInstance();
         //DatePicker 사용 : API-24에서는 스피너 작동 안함
         @SuppressLint("SetTextI18n") DatePickerDialog dialog = new DatePickerDialog(this, THEME_HOLO_LIGHT,
-                (view, year, monthOfYear, dayOfMonth) -> btn.setText(year + "/" + monthOfYear + "/" + dayOfMonth)
+                (view, year, monthOfYear, dayOfMonth) -> btn.setText(year + "-" + (monthOfYear+1) + "-" + dayOfMonth)
                 , cal.get(Calendar.YEAR), cal.get(Calendar.MONTH), cal.get(Calendar.DAY_OF_MONTH));
         dialog.show();
     }

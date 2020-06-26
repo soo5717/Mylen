@@ -10,6 +10,8 @@ import com.example.mylen.data.notice.NoticeData;
 import com.example.mylen.data.notice.AddNoticeData;
 import com.example.mylen.data.notice.AddNoticeResponse;
 import com.example.mylen.data.notice.NoticeResponse;
+import com.example.mylen.data.user.ProfileData;
+import com.example.mylen.data.user.ProfileResponse;
 import com.example.mylen.data.notice.NoticeSetData;
 import com.example.mylen.data.notice.NoticeSetResponse;
 import com.example.mylen.data.notice.UpdateNoticeSetData;
@@ -17,20 +19,33 @@ import com.example.mylen.data.notice.UpdateNoticeSetResponse;
 import com.example.mylen.data.user.SignInData;
 import com.example.mylen.data.user.SignInResponse;
 import com.example.mylen.data.user.SignUpData;
-import com.example.mylen.data.user.SignUpResponse;
+import com.example.mylen.data.user.StatusResponse;
 
 import retrofit2.Call;
 import retrofit2.http.Body;
+import retrofit2.http.GET;
 import retrofit2.http.POST;
+import retrofit2.http.PUT;
 
 public interface ServiceApi {
 
-    //sign-up
-    @POST("/users/sign-up")
-    Call<SignUpResponse> userSignUp(@Body SignUpData data);
-    //sign-in
-    @POST("/users/sign-in")
+    //토큰 검증 요청: 자동 로그인 구현 => 완료
+    @POST("/auth")
+    Call<StatusResponse> userAuth();
+
+    //회원가입 요청 => 완료
+    @POST("/auth/sign-up")
+    Call<StatusResponse> userSignUp(@Body SignUpData data);
+    //로그인 요청 => 완료
+    @POST("/auth/sign-in")
     Call<SignInResponse> userSignIn(@Body SignInData data);
+
+    //프로필 조회 요청 => 완료
+    @GET("/users")
+    Call<ProfileResponse> userProfile();
+    //프로필 수정 요청 => 완료
+    @PUT("/users")
+    Call<StatusResponse> userProfileModify(@Body ProfileData data);
 
     //get noticedata
     @POST("/user/notice")

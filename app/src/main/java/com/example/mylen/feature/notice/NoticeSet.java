@@ -58,7 +58,7 @@ public class NoticeSet extends AppCompatActivity implements View.OnClickListener
 
         NoticeSetData data = new NoticeSetData(userId);
 
-        RetrofitClient.service.userNoticeSet(data).enqueue(new Callback<NoticeSetResponse>() {
+        RetrofitClient.getService().userNoticeSet(data).enqueue(new Callback<NoticeSetResponse>() {
             @Override
             public void onResponse(Call<NoticeSetResponse> call, Response<NoticeSetResponse> response) {
                 NoticeSetResponse result = response.body();

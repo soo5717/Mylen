@@ -15,10 +15,13 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.example.mylen.R;
 import com.example.mylen.data.user.SignInData;
 import com.example.mylen.data.user.SignInResponse;
-import com.example.mylen.data.user.SignUpResponse;
-import com.example.mylen.feature.home.MainFragment;
 import com.example.mylen.feature.others.NavigationDrawer;
+import com.example.mylen.feature.util.PreferenceManager;
 import com.example.mylen.network.RetrofitClient;
+
+import org.jetbrains.annotations.NotNull;
+
+import java.util.Objects;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -82,44 +85,29 @@ public class SignInActivity extends AppCompatActivity {
 
     //로그인 요청 - POST : Retrofit2
     private void requestSignIn(SignInData data){
-        RetrofitClient.service.userSignIn(data).enqueue(new Callback<SignInResponse>() {
+        RetrofitClient.getService().userSignIn(data).enqueue(new Callback<SignInResponse>() {
             @Override
-            public void onResponse(Call<SignInResponse> call, Response<SignInResponse> response) {
+            public void onResponse(@NotNull Call<SignInResponse> call, @NotNull Response<SignInResponse> response) {
                 SignInResponse result = response.body();
+                assert result != null;
                 Toast.makeText(SignInActivity.this, result.getMessage(), Toast.LENGTH_SHORT).show();
                 //회원가입 요청 성공 시
-                if(result.getCode() == 200) {
+                if(result.getSuccess()) {
+                    //Shared Preferences 토큰 저장
                     Log.d("TOKEN    :   ", result.getToken());
+                    PreferenceManager.setString("user_token", result.getToken());
+
                     //메인 페이지로 이동
                     Intent intent = new Intent(SignInActivity.this, NavigationDrawer.class);
-                    //스택 비우고 메인만 남김
-                    intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                     startActivity(intent);
+                    finish();
                 }
-                //네트워킹 부분 추가 예정
-
-                //*서윤*
-                //서버 response.body(=result)로 user_id받기
-                /*
-                Intent getNoticeIntent = new Intent(this, GetNoticeData.class);
-                getNoticeIntent.putExtra("userid", String.valueOf(result.getUserId()));
-                Intent addNoticeIntent = new Intent(this, AddNoticeData.class);
-                addNoticeIntent.putExtra("userid", String.valueOf(result.getUserId()));
-
-                //user_id는 어디든지 다 필요하지 않아..?
-                 */
-
-                //메인 페이지로 이동
-                Intent intent = new Intent(SignInActivity.this, MainFragment.class);
-                //스택 비우고 메인만 남김
-                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-                startActivity(intent);
             }
 
             @Override
-            public void onFailure(Call<SignInResponse> call, Throwable t) {
-                Toast.makeText(SignInActivity.this, "로그인 에러 발생", Toast.LENGTH_SHORT).show();
-                Log.e("로그인 에러 발생", t.getMessage());
+            public void onFailure(@NotNull Call<SignInResponse> call, @NotNull Throwable t) {
+                Toast.makeText(SignInActivity.this, "로그인 에러가 발생했습니다", Toast.LENGTH_SHORT).show();
+                Log.e("로그인 에러 발생", Objects.requireNonNull(t.getMessage()));
             }
         });
     }

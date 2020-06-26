@@ -175,7 +175,7 @@ public class PutNoticeData extends AppCompatActivity {
     //notices 테이블로 넣기
     private void AddData(com.example.mylen.data.notice.AddNoticeData data) {
 
-        RetrofitClient.service.addLensNotice(data).enqueue(new Callback<AddNoticeResponse>() {
+        RetrofitClient.getService().addLensNotice(data).enqueue(new Callback<AddNoticeResponse>() {
             @Override
             public void onResponse(Call<AddNoticeResponse> call, Response<AddNoticeResponse> response) {
                 AddNoticeResponse result = response.body();

@@ -97,22 +97,22 @@ public class EyeAddFriendFragment2 extends Fragment implements View.OnClickListe
 
         AddFriendData data = new AddFriendData(userId, friendId);
 
-        RetrofitClient.service.addFriend(data).enqueue(new Callback<AddFriendResponse>() {
-
-            @Override
-            public void onResponse(Call<AddFriendResponse> call, Response<AddFriendResponse> response) {
-                AddFriendResponse result = response.body();
-
-                String message = result.getMessage();
-                Toast.makeText(getContext(), message, Toast.LENGTH_SHORT).show();
-            }
-
-            @Override
-            public void onFailure(Call<AddFriendResponse> call, Throwable t) {
-                Toast.makeText(getContext(), "가져오기 에러 발생", Toast.LENGTH_SHORT).show();
-                Log.e("가져오기 에러 발생", t.getMessage());
-            }
-        });
+//        RetrofitClient.getService().AddFriendAdd(data).enqueue(new Callback<AddFriendResponse>() {
+//
+//            @Override
+//            public void onResponse(Call<AddFriendResponse> call, Response<AddFriendResponse> response) {
+//                AddFriendResponse result = response.body();
+//
+//                String message = result.getMessage();
+//                Toast.makeText(getContext(), message, Toast.LENGTH_SHORT).show();
+//            }
+//
+//            @Override
+//            public void onFailure(Call<AddFriendResponse> call, Throwable t) {
+//                Toast.makeText(getContext(), "가져오기 에러 발생", Toast.LENGTH_SHORT).show();
+//                Log.e("가져오기 에러 발생", t.getMessage());
+//            }
+//        });
 
     }
 }

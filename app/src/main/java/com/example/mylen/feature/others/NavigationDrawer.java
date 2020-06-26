@@ -1,14 +1,17 @@
 package com.example.mylen.feature.others;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -18,12 +21,25 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.viewpager.widget.ViewPager;
 
 import com.example.mylen.R;
+import com.example.mylen.data.user.ProfileResponse;
 import com.example.mylen.feature.calendar.FragmentCalendar;
 import com.example.mylen.feature.eye.main.EyeMainFragment;
 import com.example.mylen.feature.home.MainFragment;
 import com.example.mylen.feature.profile.ProfileActivity;
+import com.example.mylen.feature.sign.SignInActivity;
+import com.example.mylen.feature.sign.SignUp2Activity;
+import com.example.mylen.feature.util.PreferenceManager;
+import com.example.mylen.network.RetrofitClient;
 import com.google.android.material.navigation.NavigationView;
 import com.google.android.material.tabs.TabLayout;
+
+import org.jetbrains.annotations.NotNull;
+
+import java.util.Objects;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class NavigationDrawer extends AppCompatActivity {
     //필요한 변수 선언
@@ -40,6 +56,7 @@ public class NavigationDrawer extends AppCompatActivity {
     ViewPagerAdapter adapter;
     Menu menu_change;
     MenuInflater menuInflater;
+    TextView navi_name;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -153,9 +170,17 @@ public class NavigationDrawer extends AppCompatActivity {
 
             @Override
             public void onClick(View v) {
-                Toast.makeText(context, "로그아웃", Toast.LENGTH_SHORT).show();
+                PreferenceManager.removeKey("user_token");
+                //로그인 페이지로 이동
+                Intent intent = new Intent(NavigationDrawer.this, SignInActivity.class);
+                startActivity(intent);
+                finish();
             }
         });
+
+        //네비게이션 사용자 이름 설정
+        navi_name = headerview.findViewById(R.id.navi_name);
+        setHeaderName();
 
         //네비게이션 이미지 누르면 프로필 화면으로 전환
         mButton_profile = headerview.findViewById(R.id.btn_navi_pic);
@@ -168,6 +193,29 @@ public class NavigationDrawer extends AppCompatActivity {
             }
         });
 
+    }
+
+    //네비게이션 사용자 이름 설정 메소드
+    public void setHeaderName(){
+        RetrofitClient.getService().userProfile().enqueue(new Callback<ProfileResponse>() {
+            @SuppressLint("DefaultLocale")
+            @Override
+            public void onResponse(@NotNull Call<ProfileResponse> call, @NotNull Response<ProfileResponse> response) {
+                ProfileResponse result = response.body();
+                assert result != null;
+                //프로필 조회 요청 성공 시
+                if(result.getSuccess()){
+                    navi_name.setText(result.getName());
+                }else{
+                    //실패 시 처리 코드 추후 추가 예정
+                }
+            }
+
+            @Override
+            public void onFailure(@NotNull Call<ProfileResponse> call, @NotNull Throwable t) {
+                Log.e("네비게이션 이름 조회 에러 발생", Objects.requireNonNull(t.getMessage()));
+            }
+        });
     }
 
 

@@ -16,17 +16,22 @@
         android:label="@string/app_name"
         android:roundIcon="@drawable/ic_launcher_color"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
+        android:theme="@style/AppTheme"
+        android:name=".feature.util.MyApplication">
+
         <!-- 스플래쉬 -->
         <activity
             android:name=".feature.others.SplashActivity"
-            android:theme="@style/SplashTheme" />
+            android:theme="@style/SplashTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <!-- 네비게이션 -->
         <activity android:name=".feature.others.NavigationDrawer" />
-        <activity android:name=".feature.others.BottomNavigation">
-
-
-        </activity>
+        <activity android:name=".feature.others.BottomNavigation" />
         <activity android:name=".feature.others.ActionBar" />
         <activity android:name=".feature.calendar.FragmentCalendar" />
         <activity android:name=".feature.calendar.CalendarDate" />
@@ -66,32 +71,18 @@
         <activity android:name=".feature.eye.main.EyeFriendAdapter" />
         <activity android:name=".feature.eye.main.EyeMainFriendItem" />
         <activity android:name=".feature.eye.exercise.EyeEnd"></activity>
-        <activity android:name=".feature.eye.report.EyeReportFragmentPoint">
-        </activity>
-        <activity android:name=".feature.eye.report.EyeReportMain">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
-        <activity android:name=".feature.eye.exercise.EyeExercise2">
-        </activity>
-        <activity android:name=".feature.eye.exercise.EyeExercise3">
-
-        </activity>
+        <activity android:name=".feature.eye.report.EyeReportFragmentPoint" />
+        <activity android:name=".feature.eye.report.EyeReportMain" />.
+        <activity android:name=".feature.eye.exercise.EyeExercise2" />
 
 
         <!-- 알림 -->
-        <activity android:name=".feature.notice.main.NoticeMain" >
-        </activity>
-        <activity android:name=".feature.notice.NoticeSet" >
-        </activity>
+        <activity android:name=".feature.notice.main.NoticeMain" />
+        <activity android:name=".feature.notice.NoticeSet" />
 
         <meta-data
             android:name="com.google.firebase.ml.vision.DEPENDENCIES"
             android:value="face" />
-
     </application>
 
 </manifest>
