@@ -23,15 +23,16 @@
         <activity
             android:name=".feature.others.SplashActivity"
             android:theme="@style/SplashTheme">
+        </activity>
+
+        <!-- 네비게이션 -->
+        <activity android:name=".feature.others.NavigationDrawer" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
-        <!-- 네비게이션 -->
-        <activity android:name=".feature.others.NavigationDrawer" />
         <activity android:name=".feature.others.BottomNavigation" />
         <activity android:name=".feature.others.ActionBar" />
         <activity android:name=".feature.calendar.FragmentCalendar" />

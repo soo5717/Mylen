@@ -57,7 +57,7 @@ public class NavigationDrawer extends AppCompatActivity {
     Menu menu_change;
     MenuInflater menuInflater;
     TextView navi_name;
-
+    public int out_position;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -92,8 +92,8 @@ public class NavigationDrawer extends AppCompatActivity {
 
             @Override
             public void onPageSelected(int position) {
+                out_position = position;
                 switch (position) {
-
                     case 0:
                         tl.getTabAt(0).setIcon(R.drawable.ic_home_color);
                         tl.getTabAt(1).setIcon(R.drawable.ic_calendar_grey);
@@ -231,6 +231,14 @@ public class NavigationDrawer extends AppCompatActivity {
         switch (item.getItemId()){
             case android.R.id.home:{ // 왼쪽 상단 버튼 눌렀을 때
                 mDrawerLayout.openDrawer(GravityCompat.START);
+                return true;
+            }
+            case R.id.appbar_right_notice:{
+                Toast.makeText(context, "공지",Toast.LENGTH_LONG).show();
+                return true;
+            }
+            case R.id.action_report:{
+                Toast.makeText(context, "눈운동",Toast.LENGTH_LONG).show();
                 return true;
             }
         }
