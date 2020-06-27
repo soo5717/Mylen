@@ -7,6 +7,7 @@ import com.example.mylen.data.eye.FriendMainResponse;
 import com.example.mylen.data.eye.SearchAddFriendData;
 import com.example.mylen.data.eye.SearchAddFriendResponse;
 import com.example.mylen.data.lens.LensData;
+import com.example.mylen.data.lens.SearchResponse;
 import com.example.mylen.data.liquid.LiquidData;
 import com.example.mylen.data.notice.NoticeData;
 import com.example.mylen.data.notice.AddNoticeData;
@@ -28,6 +29,7 @@ import retrofit2.http.Body;
 import retrofit2.http.GET;
 import retrofit2.http.POST;
 import retrofit2.http.PUT;
+import retrofit2.http.Query;
 
 public interface ServiceApi {
 
@@ -55,6 +57,9 @@ public interface ServiceApi {
     //렌즈 등록 요청
     @POST("/lenses")
     Call<StatusResponse> addLens(@Body LensData data);
+    //렌즈 검색 요청
+    @GET("/search")
+    Call<SearchResponse> searchLens(@Query("name") String name);
 
     //get noticedata
     @POST("/user/notice")

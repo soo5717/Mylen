@@ -24,6 +24,7 @@
     <string name="openactionbar">액션바 열기</string>
     <string name="closeactionbar">액션바 닫기</string>
     <string name="liquid_type">렌즈 세척액</string>
+    <string name="lens_type">콘택트 렌즈</string>
 
     <!--  로그인 페이지 텍스트  -->
     <string name="sign_in">로그인</string>
