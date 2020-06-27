@@ -57,7 +57,7 @@ public interface ServiceApi {
     //렌즈 등록 요청
     @POST("/lenses")
     Call<StatusResponse> addLens(@Body LensData data);
-    //렌즈 검색 요청
+    //렌즈 검색 요청 => 완료
     @GET("/search")
     Call<SearchResponse> searchLens(@Query("name") String name);
 

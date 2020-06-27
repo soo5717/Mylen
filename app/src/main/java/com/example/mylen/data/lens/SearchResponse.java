@@ -26,7 +26,7 @@ public class SearchResponse {
         return success;
     }
 
-    public ArrayList<searchInfo> searchInfo() {
+    public ArrayList<SearchResponse.searchInfo> getSearchInfo() {
         return searchInfo;
     }
 

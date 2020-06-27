@@ -59,7 +59,6 @@ public class ProfileModifyActivity extends AppCompatActivity {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 sph_left = (String)spn_sph_left.getItemAtPosition(position);
-//                Toast.makeText(getApplicationContext(),(String)spn_sph_left.getItemAtPosition(position)+"이 선택되었습니다.",Toast.LENGTH_SHORT).show();
             }
             @Override
             public void onNothingSelected(AdapterView<?> parent) {
@@ -72,7 +71,6 @@ public class ProfileModifyActivity extends AppCompatActivity {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 sph_right = (String)spn_sph_right.getItemAtPosition(position);
-//                Toast.makeText(getApplicationContext(),(String)spn_sph_right.getItemAtPosition(position)+"이 선택되었습니다.",Toast.LENGTH_SHORT).show();
             }
             @Override
             public void onNothingSelected(AdapterView<?> parent) { }

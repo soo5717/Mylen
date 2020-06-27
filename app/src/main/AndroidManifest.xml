@@ -57,7 +57,6 @@
 
         <!-- 렌즈 검색 -->
         <activity android:name=".feature.home.search.SearchLensActivity" />
-        <activity android:name=".feature.home.search.SearchLensItem" />
 
         <!-- 렌즈 추가 -->
         <activity android:name=".feature.home.add.AddLens1Activity" />
