@@ -4,17 +4,27 @@ import android.annotation.SuppressLint;
 import android.app.DatePickerDialog;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.mylen.R;
+import com.example.mylen.data.liquid.LiquidData;
+import com.example.mylen.data.user.StatusResponse;
 import com.example.mylen.feature.others.NavigationDrawer;
+import com.example.mylen.network.RetrofitClient;
+
+import org.jetbrains.annotations.NotNull;
 
 import java.util.Calendar;
+import java.util.Objects;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 import static android.app.AlertDialog.THEME_HOLO_LIGHT;
 
@@ -22,7 +32,7 @@ public class AddLiquid2Activity extends AppCompatActivity {
 
     //전역 변수 선언
     Button btn_exp_date, btn_open_date;
-    String exp_date, open_date;
+    String exp_date=null, open_date=null, name, brand;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,14 +44,28 @@ public class AddLiquid2Activity extends AppCompatActivity {
     }
 
     //세척액 등록 요청 - POST : Retrofit
-    private void requestAddLiquid(){
-        //네트워킹 부분 추가 예정
+    private void requestAddLiquid(LiquidData data){
+        RetrofitClient.getService().addLiquid(data).enqueue(new Callback<StatusResponse>() {
+            @Override
+            public void onResponse(@NotNull Call<StatusResponse> call, @NotNull Response<StatusResponse> response) {
+                StatusResponse result = response.body();
+                assert result != null;
+                if(result.getSuccess()){
+                    //메인 페이지로 이동
+                    Intent intent = new Intent(AddLiquid2Activity.this, NavigationDrawer.class);
+                    //세척액 등록 엑티비티 스택에서 제거하고 메인페이지만 남김
+                    intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                    startActivity(intent);
+                }else{
+                    //실패 시 처리 코드 추후 추가 예정
+                }
+            }
 
-        //메인 페이지로 이동
-        Intent intent = new Intent(this, NavigationDrawer.class);
-        //세척액 등록 엑티비티 스택에서 제거하고 메인페이지만 남김
-        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-        startActivity(intent);
+            @Override
+            public void onFailure(@NotNull Call<StatusResponse> call, @NotNull Throwable t) {
+                Log.e("세척액 등록 에러 발생", Objects.requireNonNull(t.getMessage()));
+            }
+        });
     }
 
 
@@ -60,24 +84,15 @@ public class AddLiquid2Activity extends AppCompatActivity {
         exp_date = btn_exp_date.getText().toString();
         open_date = btn_open_date.getText().toString();
 
-        Intent intent = getIntent();
-
         //유효성 검사 통과
-        if(exp_date.length() > 0 && open_date.length() > 0){ //개봉일 입력
+        if(exp_date.length() > 0){ //개봉일 입력
             //세척액 등록1 페이지 데이터 받기
-            exp_date = intent.getStringExtra("liquidBrand");
-            open_date = intent.getStringExtra("liquidName");
+            Intent intent = getIntent();
+            brand = intent.getStringExtra("liquidBrand");
+            name = intent.getStringExtra("liquidName");
 
-            //세척액 등록 요청 메소드 호출
-            requestAddLiquid();
-        }
-        else if(exp_date.length() > 0){ //개봉일 미입력
-            //세척액 등록1 페이지 데이터 받기
-            exp_date = intent.getStringExtra("liquidBrand");
-            open_date = intent.getStringExtra("liquidName");
-
-            //세척액 등록 요청 메소드 호출
-            requestAddLiquid();
+            //세척액 등록 요청 메소드 호출 : status 는 소지/비소지를 의미함.
+            requestAddLiquid(new LiquidData(brand, name, exp_date, open_date, 1));
         }
         else{ //유효성 검사 실패
             Toast.makeText(getApplicationContext(), "유통기한을 입력해주세요!", Toast.LENGTH_LONG).show();

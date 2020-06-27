@@ -32,7 +32,7 @@ public class AddLiquid1Activity extends AppCompatActivity{
 
         //브랜드, 제품명 유효성 검사 통과
         if(brand.length() > 0 && name.length() > 0){
-            //렌즈 등록2 페이지로 브랜드, 제품명 전달
+            //세척액 등록2 페이지로 브랜드, 제품명 전달
             Intent intent = new Intent(this, AddLiquid2Activity.class);
             intent.putExtra("liquidBrand", brand);
             intent.putExtra("liquidName", name);

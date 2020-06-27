@@ -24,6 +24,18 @@
         <item>컬러렌즈</item>
     </string-array>
 
+    <!-- 렌즈 추가 : 착용 기한 -->
+    <string-array name="lens_wear_date">
+        <item>착용기한을 입력해주세요</item>
+        <item>1일</item>
+        <item>2주</item>
+        <item>1개월</item>
+        <item>2개월</item>
+        <item>3개월</item>
+        <item>6개월</item>
+        <item>1년</item>
+    </string-array>
+
     <!-- 프로필 : SPH -->
     <string-array name="eye_sph">
         <item>0.00</item>
@@ -76,4 +88,5 @@
         <item>-11.75</item>
         <item>-12.00</item>
     </string-array>
+
 </resources>

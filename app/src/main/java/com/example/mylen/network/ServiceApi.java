@@ -6,6 +6,7 @@ import com.example.mylen.data.eye.FriendMainData;
 import com.example.mylen.data.eye.FriendMainResponse;
 import com.example.mylen.data.eye.SearchAddFriendData;
 import com.example.mylen.data.eye.SearchAddFriendResponse;
+import com.example.mylen.data.liquid.LiquidData;
 import com.example.mylen.data.notice.NoticeData;
 import com.example.mylen.data.notice.AddNoticeData;
 import com.example.mylen.data.notice.AddNoticeResponse;
@@ -46,6 +47,10 @@ public interface ServiceApi {
     //프로필 수정 요청 => 완료
     @PUT("/users")
     Call<StatusResponse> userProfileModify(@Body ProfileData data);
+
+    //세척액 등록 요청 => 완료
+    @POST("/liquids")
+    Call<StatusResponse> addLiquid(@Body LiquidData data);
 
     //get noticedata
     @POST("/user/notice")

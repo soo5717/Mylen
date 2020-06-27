@@ -71,9 +71,11 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
         android:layout_marginTop="60dp"
+        android:fontFamily="@font/notosans_demilight"
         android:includeFontPadding="false"
         android:text="@string/lens_quantitiy"
         android:textColor="@color/soft_black"
+        android:textSize="16sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView4" />
 
@@ -84,32 +86,31 @@
         android:layout_marginStart="24dp"
         android:layout_marginEnd="24dp"
         android:background="@drawable/et_underline_valid_success"
-        android:backgroundTint="@color/hint_grey"
-        android:ems="10"
         android:fontFamily="@font/notosans_light"
         android:hint="@string/lens_quantitiy_hint"
-        android:inputType="textPersonName"
+        android:importantForAutofill="no"
+        android:includeFontPadding="false"
+        android:inputType="number"
         android:textColor="@color/deep_grey"
         android:textColorHint="@color/hint_grey"
-        android:includeFontPadding="false"
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView6"
-        android:importantForAutofill="no" />
+        app:layout_constraintTop_toBottomOf="@+id/textView6" />
 
     <TextView
         android:id="@+id/textView7"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
         android:layout_marginTop="24dp"
         android:fontFamily="@font/notosans_demilight"
+        android:includeFontPadding="false"
         android:text="@string/lens_weardate"
         android:textColor="@color/soft_black"
-        android:includeFontPadding="false"
+        android:textSize="16sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/et_quantity"
-        android:layout_marginStart="24dp" />
+        app:layout_constraintTop_toBottomOf="@+id/et_quantity" />
 
 
     <Spinner
@@ -120,9 +121,8 @@
         android:layout_marginEnd="24dp"
         android:background="@drawable/et_underline_valid_success"
         android:fontFamily="@font/notosans_light"
-        android:hint="@string/lens_weardate_hint"
         android:includeFontPadding="false"
-        android:textColor="@color/deep_grey"
+        android:textColor="@color/hint_grey"
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -133,11 +133,12 @@
         android:layout_width="0dp"
         android:layout_height="56dp"
         android:background="@drawable/gradient"
-        android:textColor="@color/white"
         android:fontFamily="@font/notosans_demilight"
-        android:text="@string/next"
-        app:layout_constraintBottom_toBottomOf="parent"
         android:includeFontPadding="false"
+        android:onClick="nextButtonClick"
+        android:text="@string/next"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
