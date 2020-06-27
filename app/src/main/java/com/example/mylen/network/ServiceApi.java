@@ -6,6 +6,7 @@ import com.example.mylen.data.eye.FriendMainData;
 import com.example.mylen.data.eye.FriendMainResponse;
 import com.example.mylen.data.eye.SearchAddFriendData;
 import com.example.mylen.data.eye.SearchAddFriendResponse;
+import com.example.mylen.data.lens.LensData;
 import com.example.mylen.data.liquid.LiquidData;
 import com.example.mylen.data.notice.NoticeData;
 import com.example.mylen.data.notice.AddNoticeData;
@@ -51,6 +52,9 @@ public interface ServiceApi {
     //세척액 등록 요청 => 완료
     @POST("/liquids")
     Call<StatusResponse> addLiquid(@Body LiquidData data);
+    //렌즈 등록 요청
+    @POST("/lenses")
+    Call<StatusResponse> addLens(@Body LensData data);
 
     //get noticedata
     @POST("/user/notice")

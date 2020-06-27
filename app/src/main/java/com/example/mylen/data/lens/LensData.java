@@ -17,4 +17,14 @@ public class LensData {
     String openDate;
     @SerializedName("status")
     int status;
+
+    public LensData(String brand, String name, String quantity, String wearDate, String expDate, String openDate, int status) {
+        this.brand = brand;
+        this.name = name;
+        this.quantity = quantity;
+        this.wearDate = wearDate;
+        this.expDate = expDate;
+        this.openDate = openDate;
+        this.status = status;
+    }
 }

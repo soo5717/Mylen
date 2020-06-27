@@ -92,17 +92,12 @@ public class AddLens2Activity extends AppCompatActivity {
             brand = intent.getStringExtra("lensBrand");
             name = intent.getStringExtra("lensName");
 
-            Log.d("브랜드", brand);
-            Log.d("제품명", name);
-            Log.d("수량", quantity);
-            Log.d("착용기한", wear_date);
-
             //렌즈 등록3 페이지로 브랜드, 제품명, 수량, 착용 기한 전달
             Intent intent2 = new Intent(this, AddLens3Activity.class);
-            intent.putExtra("lensBrand", brand);
-            intent.putExtra("lensName", name);
-            intent.putExtra("lensQuantity", quantity);
-            intent.putExtra("lensWearDate", wear_date);
+            intent2.putExtra("lensBrand", brand);
+            intent2.putExtra("lensName", name);
+            intent2.putExtra("lensQuantity", quantity);
+            intent2.putExtra("lensWearDate", wear_date);
             startActivity(intent2);
 
             //전환 애니메이션 없애기
