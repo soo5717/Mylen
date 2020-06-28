@@ -1,4 +1,4 @@
-package com.example.mylen.feature.home.search;
+package com.example.mylen.feature.home.adapter;
 
 
 import android.annotation.SuppressLint;
@@ -20,11 +20,11 @@ import com.example.mylen.feature.home.add.AddLens3Activity;
 import java.util.ArrayList;
 
 public class SearchLensAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
-    private ArrayList<SearchResponse.searchInfo> searchInfos;
+    private ArrayList<SearchResponse.SearchInfo> searchInfos;
     private Context mContext;
 
     //아이템 뷰 저장하는 뷰 홀더 클래스
-    public static class ViewHolder extends RecyclerView.ViewHolder{
+    static class ViewHolder extends RecyclerView.ViewHolder{
         TextView tv_brand, tv_name, tv_type, tv_quantity, tv_wear_date;
 
         ViewHolder(@NonNull View itemView) {
@@ -40,7 +40,7 @@ public class SearchLensAdapter extends RecyclerView.Adapter<RecyclerView.ViewHol
     }
 
     //생성자에서 데이터 리스트 객체를 전달 받음
-    SearchLensAdapter(Context mContext, ArrayList<SearchResponse.searchInfo> searchInfos) {
+    public SearchLensAdapter(Context mContext, ArrayList<SearchResponse.SearchInfo> searchInfos) {
         this.mContext = mContext;
         this.searchInfos = searchInfos;
     }
@@ -57,7 +57,6 @@ public class SearchLensAdapter extends RecyclerView.Adapter<RecyclerView.ViewHol
     @SuppressLint("SetTextI18n")
     @Override
     public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, int position) {
-        Log.d("이름", searchInfos.get(position).getName());
         ViewHolder viewHolder = (SearchLensAdapter.ViewHolder) holder;
         viewHolder.tv_brand.setText(searchInfos.get(position).getBrand());
         viewHolder.tv_name.setText(searchInfos.get(position).getName());

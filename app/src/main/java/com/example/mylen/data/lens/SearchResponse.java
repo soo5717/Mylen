@@ -12,7 +12,7 @@ public class SearchResponse {
     @SerializedName("success")
     private Boolean success;
     @SerializedName("searchInfo")
-    private ArrayList<searchInfo> searchInfo = null;
+    private ArrayList<SearchInfo> searchInfo = null;
 
     public int getStatus() {
         return status;
@@ -26,11 +26,11 @@ public class SearchResponse {
         return success;
     }
 
-    public ArrayList<SearchResponse.searchInfo> getSearchInfo() {
+    public ArrayList<SearchInfo> getSearchInfo() {
         return searchInfo;
     }
 
-    public class searchInfo{
+    public class SearchInfo{
         @SerializedName("search_brand")
         String brand;
         @SerializedName("search_name")

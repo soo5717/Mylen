@@ -50,10 +50,6 @@
 
         <!-- 메인 -->
         <activity android:name=".feature.home.MainFragment" />
-        <activity android:name=".feature.home.MainLensOpenItem" />
-        <activity android:name=".feature.home.MainLensKeepItem" />
-        <activity android:name=".feature.home.MainLiquidOpenItem" />
-        <activity android:name=".feature.home.MainLiquidKeepItem" />
 
         <!-- 렌즈 검색 -->
         <activity android:name=".feature.home.search.SearchLensActivity" />

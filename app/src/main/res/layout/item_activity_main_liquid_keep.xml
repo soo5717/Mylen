@@ -1,10 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    tools:context=".feature.home.MainLiquidKeepItem">
+    android:layout_height="wrap_content">
 
     <!--그라데이션 필요!-->
     <TextView
@@ -14,7 +12,6 @@
         android:layout_marginStart="24dp"
         android:fontFamily="@font/notosans_regular"
         android:includeFontPadding="false"
-        android:text="바슈롬 (BAUSCH+LOME)"
         android:textColor="@color/clear_blue"
         android:textSize="14sp"
         app:layout_constraintStart_toStartOf="parent"
@@ -28,7 +25,6 @@
         android:layout_marginTop="8dp"
         android:fontFamily="@font/notosans_demilight"
         android:includeFontPadding="false"
-        android:text="리뉴 후레쉬"
         android:textColor="@color/soft_black"
         android:textSize="16sp"
         app:layout_constraintStart_toStartOf="parent"
@@ -69,28 +65,10 @@
         android:layout_marginTop="8dp"
         android:fontFamily="@font/notosans_light"
         android:includeFontPadding="false"
-        android:text="2024.06.21"
         android:textColor="@color/soft_grey"
         android:textSize="14sp"
         app:layout_constraintStart_toEndOf="@+id/tv_type"
         app:layout_constraintTop_toBottomOf="@+id/tv_name" />
-
-    <Button
-        android:id="@+id/btn_open"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="24dp"
-        android:background="@null"
-        android:fontFamily="@font/notosans_regular"
-        android:includeFontPadding="false"
-        android:minWidth="0dp"
-        android:minHeight="0dp"
-        android:text="@string/use"
-        android:textColor="@color/clear_blue"
-        android:textSize="16sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_brand" />
 
     <View
         android:id="@+id/view"

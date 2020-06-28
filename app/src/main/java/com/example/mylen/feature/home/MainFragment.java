@@ -15,15 +15,24 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.mylen.R;
+import com.example.mylen.data.liquid.LiquidResponse;
 import com.example.mylen.data.user.ProfileResponse;
+import com.example.mylen.feature.home.adapter.LensKeepAdpater;
+import com.example.mylen.feature.home.adapter.LensOpenAdapter;
+import com.example.mylen.feature.home.adapter.LiquidKeepAdapter;
+import com.example.mylen.feature.home.adapter.LiquidOpenAdapter;
+import com.example.mylen.feature.home.adapter.SearchLensAdapter;
 import com.example.mylen.feature.home.add.AddLiquid1Activity;
 import com.example.mylen.feature.home.search.SearchLensActivity;
 import com.example.mylen.network.RetrofitClient;
 
 import org.jetbrains.annotations.NotNull;
 
+import java.util.ArrayList;
 import java.util.Objects;
 
 import retrofit2.Call;
@@ -38,6 +47,13 @@ public class MainFragment extends Fragment implements View.OnClickListener{
     Button btn_open, btn_keep, btn_add;
     private TextView tv_user_name;
 
+    RecyclerView rv_main_lens, rv_main_liquid;
+    RecyclerView.LayoutManager layoutManager;
+    LensKeepAdpater lensKeepAdpater;
+    LiquidKeepAdapter liquidKeepAdapter;
+    LensOpenAdapter lensOpenAdapter;
+    LiquidOpenAdapter liquidOpenAdapter;
+
     //프래그먼트가 액티비티에 연결되었을 때 호출
     @Override
     public void onAttach(@NonNull Context context) {
@@ -49,7 +65,7 @@ public class MainFragment extends Fragment implements View.OnClickListener{
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_main, container, false);
 
-        //사용자 이름 설정
+        //메인 이름 요청 메소드 호출
         tv_user_name = rootView.findViewById(R.id.tv_user_name);
         setUserName();
 
@@ -83,13 +99,17 @@ public class MainFragment extends Fragment implements View.OnClickListener{
         //버튼 리스너 등록
         btn_open = rootView.findViewById(R.id.btn_open);
         btn_open.setOnClickListener(this);
-
         btn_keep = rootView.findViewById(R.id.btn_keep);
         btn_keep.setOnClickListener(this);
+
+        //리사이클러뷰
+        rv_main_lens = rootView.findViewById(R.id.rv_main_lens);
+        rv_main_liquid = rootView.findViewById(R.id.rv_main_liquid);
 
         return rootView;
     }
 
+    //메인 이름 요청 - GET  : Retrofit
     private void setUserName(){
         RetrofitClient.getService().userProfile().enqueue(new Callback<ProfileResponse>() {
             @SuppressLint({"DefaultLocale", "SetTextI18n"})
@@ -123,9 +143,56 @@ public class MainFragment extends Fragment implements View.OnClickListener{
             case R.id.btn_keep: //보관함 버튼 클릭 이벤트
                 btn_open.setTextColor(getResources().getColor(R.color.hint_grey));
                 btn_keep.setTextColor(getResources().getColor(R.color.soft_black));
+                requestLensKeep(); //보관함 렌즈 조회 요청
+                requestLiquidKeep(); //보관함 세척액 조회 요청
                 break;
             default:
                 break;
         }
+    }
+
+    //보관함 렌즈 조회 - GET : Retrofit
+    private void requestLensKeep(){
+//        setLensKeepList();
+    }
+
+    //보관함 세척액 조회 - GET : Retrofit
+    private void requestLiquidKeep(){
+        RetrofitClient.getService().liquidKeep().enqueue(new Callback<LiquidResponse>() {
+            @Override
+            public void onResponse(@NotNull Call<LiquidResponse> call, @NotNull Response<LiquidResponse> response) {
+                LiquidResponse result = response.body();
+                assert result != null;
+                if(result.getSuccess()){
+                    //결과값 추출
+                    ArrayList<LiquidResponse.LiquidInfo> liquidInfos = new ArrayList<>(result.getLiquidInfo());
+                    for(LiquidResponse.LiquidInfo data : liquidInfos)
+                        Log.d("결과 확인", data.getName());
+                    //리사이클러 뷰 설정 메소드 호출
+                    setLiquidKeepList(liquidInfos);
+                }
+            }
+
+            @Override
+            public void onFailure(@NotNull Call<LiquidResponse> call, @NotNull Throwable t) {
+                Log.e("보관함 세척액 조회 요청 에러 발생", Objects.requireNonNull(t.getMessage()));
+            }
+        });
+    }
+
+    //보관함 렌즈 리사이클러뷰
+    public void setLensKeepList(){
+//        layoutManager = new LinearLayoutManager(this);
+//        LensKeepAdpater = new LensKeepAdpater(this,searchInfos);
+//        rv_main_lens.setLayoutManager(layoutManager); //레이아웃 매니저 설정
+//        rv_main_lens.setAdapter(LensKeepAdpater); //리사이클러뷰 어댑터 설정
+    }
+
+    //보관함 세척액 리사이클러뷰
+    public void setLiquidKeepList(ArrayList<LiquidResponse.LiquidInfo> liquidInfo){
+        layoutManager = new LinearLayoutManager(getActivity());
+        liquidKeepAdapter = new LiquidKeepAdapter(getActivity(), liquidInfo);
+        rv_main_liquid.setLayoutManager(layoutManager); //레이아웃 매니저 설정
+        rv_main_liquid.setAdapter(liquidKeepAdapter); //리사이클러뷰 어댑터 설정
     }
 }

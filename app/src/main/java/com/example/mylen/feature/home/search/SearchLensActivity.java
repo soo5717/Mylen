@@ -20,6 +20,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.mylen.R;
 import com.example.mylen.data.lens.SearchResponse;
+import com.example.mylen.feature.home.adapter.SearchLensAdapter;
 import com.example.mylen.feature.util.AdapterSpinner;
 import com.example.mylen.network.RetrofitClient;
 
@@ -124,7 +125,7 @@ public class SearchLensActivity extends AppCompatActivity {
                     transaction.remove(SearchLensChild2Fragment).commit();
 
                     //결과 값 추출
-                    ArrayList<SearchResponse.searchInfo> searchInfos = new ArrayList<>(result.getSearchInfo());
+                    ArrayList<SearchResponse.SearchInfo> searchInfos = new ArrayList<>(result.getSearchInfo());
                     //리사이클러 뷰 설정 메소드 호출
                     setItemList(searchInfos);
                 }else {
@@ -143,7 +144,7 @@ public class SearchLensActivity extends AppCompatActivity {
     }
 
     //리사이클러뷰 설정 메소드
-    public void setItemList(ArrayList<SearchResponse.searchInfo> searchInfos){
+    public void setItemList(ArrayList<SearchResponse.SearchInfo> searchInfos){
         rv_lens_list = findViewById(R.id.rv_lens_list);
         layoutManager = new LinearLayoutManager(this);
         searchLensAdapter = new SearchLensAdapter(this,searchInfos);

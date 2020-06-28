@@ -7,8 +7,10 @@ import com.example.mylen.data.eye.FriendMainResponse;
 import com.example.mylen.data.eye.SearchAddFriendData;
 import com.example.mylen.data.eye.SearchAddFriendResponse;
 import com.example.mylen.data.lens.LensData;
+import com.example.mylen.data.lens.LensKeepResponse;
 import com.example.mylen.data.lens.SearchResponse;
 import com.example.mylen.data.liquid.LiquidData;
+import com.example.mylen.data.liquid.LiquidResponse;
 import com.example.mylen.data.notice.NoticeData;
 import com.example.mylen.data.notice.AddNoticeData;
 import com.example.mylen.data.notice.AddNoticeResponse;
@@ -36,7 +38,6 @@ public interface ServiceApi {
     //토큰 검증 요청: 자동 로그인 구현 => 완료
     @POST("/auth")
     Call<StatusResponse> userAuth();
-
     //회원가입 요청 => 완료
     @POST("/auth/sign-up")
     Call<StatusResponse> userSignUp(@Body SignUpData data);
@@ -54,12 +55,23 @@ public interface ServiceApi {
     //세척액 등록 요청 => 완료
     @POST("/liquids")
     Call<StatusResponse> addLiquid(@Body LiquidData data);
-    //렌즈 등록 요청
+    //렌즈 등록 요청 => 완료
     @POST("/lenses")
     Call<StatusResponse> addLens(@Body LensData data);
+
     //렌즈 검색 요청 => 완료
     @GET("/search")
     Call<SearchResponse> searchLens(@Query("name") String name);
+
+    //보관함 세척액 조회 요청
+    @GET("/liquids/keep")
+    Call<LiquidResponse> liquidKeep();
+    //보관함 렌즈 조회 요청
+    @GET("/lenses/keep")
+    Call<LensKeepResponse> lensKeep();
+
+
+
 
     //get noticedata
     @POST("/user/notice")
