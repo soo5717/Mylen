@@ -8,6 +8,7 @@ import com.example.mylen.data.eye.ReportGraphResponse;
 import com.example.mylen.data.eye.ReportResponse;
 import com.example.mylen.data.eye.SearchAddFriendData;
 import com.example.mylen.data.eye.SearchAddFriendResponse;
+import com.example.mylen.data.lens.LensOpenResponse;
 import com.example.mylen.data.notice.notice.AddNoticeData;
 import com.example.mylen.data.notice.notice.AddNoticeResponse;
 import com.example.mylen.data.notice.notice.NoticeResponse;
@@ -83,11 +84,15 @@ public interface ServiceApi {
     //보관함 세척액 조회 요청
     @GET("/liquids/keep")
     Call<LiquidResponse> liquidKeep();
-
     //보관함 렌즈 조회 요청
     @GET("/lenses/keep")
     Call<LensKeepResponse> lensKeep();
-
+    //개봉함 세척액 조회 요청
+    @GET("/liquids/open")
+    Call<LiquidResponse> liquidOpen();
+    //보관함 렌즈 조회 요청
+    @GET("/lenses/open")
+    Call<LensOpenResponse> lensOpen();
 
 
 

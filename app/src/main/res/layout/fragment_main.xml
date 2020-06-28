@@ -92,10 +92,11 @@
                 android:layout_height="24dp"
                 android:layout_marginStart="8dp"
                 android:background="@drawable/btn_color_small_checked"
-                android:textColor="@color/white"
-                android:textSize="14sp"
+                android:fontFamily="@font/notosans_regular"
                 android:includeFontPadding="false"
-                android:fontFamily="@font/notosans_regular" />
+                android:text="D-00"
+                android:textColor="@color/white"
+                android:textSize="14sp" />
         </LinearLayout>
 
         <LinearLayout
@@ -126,6 +127,7 @@
                 android:background="@drawable/btn_color_small_unchecked"
                 android:fontFamily="@font/notosans_regular"
                 android:includeFontPadding="false"
+                android:text="NO"
                 android:textColor="@color/clear_blue"
                 android:textSize="14sp" />
         </LinearLayout>

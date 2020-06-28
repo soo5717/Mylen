@@ -152,6 +152,9 @@ public class MainFragment extends Fragment implements View.OnClickListener{
         rv_main_lens = rootView.findViewById(R.id.rv_main_lens);
         rv_main_liquid = rootView.findViewById(R.id.rv_main_liquid);
 
+        requestLensOpen(); //개봉함 렌즈 조회 요청
+        requestLiquidOpen(); //개봉함 세척액 조회 요청
+
         return rootView;
     }
 
@@ -185,6 +188,8 @@ public class MainFragment extends Fragment implements View.OnClickListener{
             case R.id.btn_open: //개봉함 버튼 클릭 이벤트
                 btn_open.setTextColor(getResources().getColor(R.color.soft_black));
                 btn_keep.setTextColor(getResources().getColor(R.color.hint_grey));
+                requestLensOpen(); //개봉함 렌즈 조회 요청
+                requestLiquidOpen(); //개봉함 세척액 조회 요청
                 break;
             case R.id.btn_keep: //보관함 버튼 클릭 이벤트
                 btn_open.setTextColor(getResources().getColor(R.color.hint_grey));
@@ -195,6 +200,58 @@ public class MainFragment extends Fragment implements View.OnClickListener{
             default:
                 break;
         }
+    }
+
+    //개봉함 렌즈 조회 요청 - GET : Retrofit
+    private void requestLensOpen(){
+
+    }
+
+    //개봉함 렌즈 리사이클러뷰
+    private void setLensOpenList(){
+
+    }
+
+    //개봉함 세척액 조회 요청 - GET : Retrofit
+    private void requestLiquidOpen(){
+        RetrofitClient.getService().liquidOpen().enqueue(new Callback<LiquidResponse>() {
+            @Override
+            public void onResponse(Call<LiquidResponse> call, Response<LiquidResponse> response) {
+                LiquidResponse result = response.body();
+                assert result != null;
+                if(result.getSuccess()){
+                    //결과값 추출
+                    ArrayList<LiquidResponse.LiquidInfo> liquidInfos = new ArrayList<>(result.getLiquidInfo());
+                    for(LiquidResponse.LiquidInfo data : liquidInfos)
+                        Log.d("세척액 결과 확인", data.getName());
+                    //리사이클러 뷰 설정 메소드 호출
+                    setLiquidOpenList(liquidInfos);
+                }
+            }
+
+            @Override
+            public void onFailure(Call<LiquidResponse> call, Throwable t) {
+                Log.e("개봉함 세척액 조회 요청 에러 발생", Objects.requireNonNull(t.getMessage()));
+            }
+        });
+    }
+
+    //개봉함 세척액 리사이클러뷰
+    private void setLiquidOpenList(ArrayList<LiquidResponse.LiquidInfo> liquidInfos){
+        layoutManager = new LinearLayoutManager(getActivity());
+        liquidOpenAdapter = new LiquidOpenAdapter(getActivity(), liquidInfos);
+        rv_main_liquid.setLayoutManager(layoutManager); //레이아웃 매니저 설정
+        rv_main_liquid.setAdapter(liquidOpenAdapter); //리사이클러뷰 어댑터 설정
+
+        liquidOpenAdapter.setOnItemClickListener((v, pos) -> {
+            //선택된 아이템 ID 가져오기
+            getItemId = (int)liquidOpenAdapter.getItemId(pos);
+            //다이얼로그 구현
+            AlertDialog alertDialog = builder2.create();
+            alertDialog.show();
+        });
+
+        liquidOpenAdapter.notifyDataSetChanged();
     }
 
     //보관함 렌즈 조회 요청 - GET : Retrofit
@@ -233,6 +290,8 @@ public class MainFragment extends Fragment implements View.OnClickListener{
             AlertDialog alertDialog = builder3.create();
             alertDialog.show();
         });
+
+        lensKeepAdpater.notifyDataSetChanged();
     }
 
     //보관함 렌즈 삭제 요청 - DELETE : Retrofit
@@ -309,6 +368,8 @@ public class MainFragment extends Fragment implements View.OnClickListener{
             AlertDialog alertDialog = builder2.create();
             alertDialog.show();
         });
+
+        lensKeepAdpater.notifyDataSetChanged();
     }
 
     //세척액 삭제 요청 - DELETE : Retrofit
