@@ -90,9 +90,9 @@ public class EyeAddFriend extends AppCompatActivity {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         menuInflater = getMenuInflater();
-        menuInflater.inflate(R.menu.menu_app_bar_search, menu);
+        menuInflater.inflate(R.menu.menu_app_bar_search2, menu);
         //search 돋보기 아이콘 누르면 검색
-        searchView = (SearchView)menu.findItem(R.id.action_search).getActionView();
+        searchView = (SearchView)menu.findItem(R.id.action_search2).getActionView();
         //확인버튼활성화
         searchView.setSubmitButtonEnabled(true);
         //serchview 검색 이벤트
