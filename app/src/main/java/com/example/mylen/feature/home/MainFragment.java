@@ -11,6 +11,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
@@ -26,6 +27,7 @@ import com.example.mylen.feature.home.adapter.LensOpenAdapter;
 import com.example.mylen.feature.home.adapter.LiquidKeepAdapter;
 import com.example.mylen.feature.home.adapter.LiquidOpenAdapter;
 import com.example.mylen.feature.home.adapter.SearchLensAdapter;
+import com.example.mylen.feature.home.add.AddLens1Activity;
 import com.example.mylen.feature.home.add.AddLiquid1Activity;
 import com.example.mylen.feature.home.search.SearchLensActivity;
 import com.example.mylen.network.RetrofitClient;
@@ -194,5 +196,14 @@ public class MainFragment extends Fragment implements View.OnClickListener{
         liquidKeepAdapter = new LiquidKeepAdapter(getActivity(), liquidInfo);
         rv_main_liquid.setLayoutManager(layoutManager); //레이아웃 매니저 설정
         rv_main_liquid.setAdapter(liquidKeepAdapter); //리사이클러뷰 어댑터 설정
+
+        Log.d("테스트111", String.valueOf(liquidKeepAdapter.getItemCount()));
+
+        liquidKeepAdapter.setOnItemClickListener(new LiquidKeepAdapter.OnItemClickListener() {
+            @Override
+            public void onItemClick(View v, int pos) {
+                Log.d("테스트", String.valueOf(pos));
+            }
+        });
     }
 }

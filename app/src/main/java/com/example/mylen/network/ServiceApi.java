@@ -27,6 +27,7 @@ import com.example.mylen.data.user.StatusResponse;
 
 import retrofit2.Call;
 import retrofit2.http.Body;
+import retrofit2.http.DELETE;
 import retrofit2.http.GET;
 import retrofit2.http.POST;
 import retrofit2.http.PUT;
@@ -58,6 +59,12 @@ public interface ServiceApi {
     //렌즈 등록 요청 => 완료
     @POST("/lenses")
     Call<StatusResponse> addLens(@Body LensData data);
+    //세척액 삭제 요청
+    @DELETE("/liquids")
+    Call<StatusResponse> deleteLiquid(@Query("id") int id);
+    //세척액 수정 요청
+    //세척액 사용 시작 요청
+    //세척액 사용 종료 요청
 
     //렌즈 검색 요청 => 완료
     @GET("/search")
@@ -66,6 +73,7 @@ public interface ServiceApi {
     //보관함 세척액 조회 요청
     @GET("/liquids/keep")
     Call<LiquidResponse> liquidKeep();
+
     //보관함 렌즈 조회 요청
     @GET("/lenses/keep")
     Call<LensKeepResponse> lensKeep();
