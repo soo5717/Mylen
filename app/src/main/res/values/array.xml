@@ -43,6 +43,13 @@
         <item>세척액 삭제</item>
     </string-array>
 
+    <!-- 보관함 렌즈 : 수정, 삭제, 사용 -->
+    <string-array name="lens_keep">
+        <item>렌즈 사용</item>
+        <item>렌즈 수정</item>
+        <item>렌즈 삭제</item>
+    </string-array>
+
     <!-- 프로필 : SPH -->
     <string-array name="eye_sph">
         <item>0.00</item>

@@ -60,14 +60,21 @@ public interface ServiceApi {
     //렌즈 등록 요청 => 완료
     @POST("/lenses")
     Call<StatusResponse> addLens(@Body LensData data);
-    //세척액 삭제 요청
+    //세척액 삭제 요청 => 완료
     @DELETE("/liquids")
     Call<StatusResponse> deleteLiquid(@Query("id") int id);
     //세척액 수정 요청
-    //세척액 사용 시작 요청
+    //세척액 사용 시작 요청 => 완료
     @PATCH("/liquids/open")
     Call<StatusResponse> openLiquid(@Query("id") int id);
     //세척액 사용 종료 요청
+    //렌즈 삭제 요청 => 완료
+    @DELETE("/lenses")
+    Call<StatusResponse> deleteLens(@Query("id") int id);
+    //렌즈 수정 요청
+    //렌즈 사용 시작 요청 => 완료
+    @PATCH("/lenses/open")
+    Call<StatusResponse> openLens(@Query("id") int id);
 
     //렌즈 검색 요청 => 완료
     @GET("/search")

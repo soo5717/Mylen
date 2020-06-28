@@ -20,6 +20,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.mylen.R;
+import com.example.mylen.data.lens.LensKeepResponse;
 import com.example.mylen.data.liquid.LiquidResponse;
 import com.example.mylen.data.user.ProfileResponse;
 import com.example.mylen.data.user.StatusResponse;
@@ -51,7 +52,7 @@ public class MainFragment extends Fragment implements View.OnClickListener{
     Button btn_open, btn_keep, btn_add;
     private TextView tv_user_name;
 
-    AlertDialog.Builder builder, builder2;
+    AlertDialog.Builder builder, builder2, builder3;
     private int getItemId;
 
     RecyclerView rv_main_lens, rv_main_liquid;
@@ -81,7 +82,7 @@ public class MainFragment extends Fragment implements View.OnClickListener{
         FragmentTransaction transaction = getChildFragmentManager().beginTransaction();
         transaction.replace(R.id.container, main_child1).commit();
 
-        //다이얼로그 구현 : 렌즈 등록 / 세척액 등록
+        //다이얼로그 구현 1 : 렌즈 등록 / 세척액 등록
         builder = new AlertDialog.Builder(this.getActivity());
         builder.setItems(R.array.lens_add, (dialog, which) -> {
             Intent intent;
@@ -96,7 +97,7 @@ public class MainFragment extends Fragment implements View.OnClickListener{
                     break;
             }
         });
-        //다이얼로그 구현 : 세척액 사용 / 세척액 수정 / 세척액 삭제
+        //다이얼로그 구현 2 : 세척액 사용 / 세척액 수정 / 세척액 삭제
         builder2 = new AlertDialog.Builder(this.getActivity());
         builder2.setItems(R.array.liquid_keep, (dialog, which) -> {
             Intent intent;
@@ -112,6 +113,25 @@ public class MainFragment extends Fragment implements View.OnClickListener{
                 case 2: //세척액 삭제
                     //세척액 삭제 요청 메소드 호출
                     requestDeleteLiquid(getItemId);
+                    break;
+            }
+        });
+        //다이얼로그 구현 3 : 렌즈 사용 / 렌즈 수정 / 렌즈 삭제
+        builder3 = new AlertDialog.Builder(this.getActivity());
+        builder3.setItems(R.array.lens_keep, (dialog, which) -> {
+            Intent intent;
+            switch (which){
+                case 0: //렌즈 사용
+                    //렌즈 사용 시작 요청 메소드 호출
+                    requestOpenLens(getItemId);
+                    break;
+                case 1: //렌즈 수정 => 수정해야 함
+                    intent = new Intent(getActivity(), AddLens1Activity.class);
+                    startActivity(intent);
+                    break;
+                case 2: //렌즈 삭제
+                    //렌즈 삭제 요청 메소드 호출
+                    requestDeleteLens(getItemId);
                     break;
             }
         });
@@ -179,15 +199,76 @@ public class MainFragment extends Fragment implements View.OnClickListener{
 
     //보관함 렌즈 조회 요청 - GET : Retrofit
     private void requestLensKeep(){
-//        setLensKeepList();
+        RetrofitClient.getService().lensKeep().enqueue(new Callback<LensKeepResponse>() {
+            @Override
+            public void onResponse(Call<LensKeepResponse> call, Response<LensKeepResponse> response) {
+                LensKeepResponse result = response.body();
+                if(result.getSuccess()){
+                    ArrayList<LensKeepResponse.LensInfo> lensInfos = new ArrayList<>(result.getLensInfo());
+                    for(LensKeepResponse.LensInfo data : lensInfos)
+                        Log.d("렌즈 결과 확인", data.getName());
+                    //리사이클러 뷰 설정 메소드 호출
+                    setLensKeepList(lensInfos);
+                }
+            }
+
+            @Override
+            public void onFailure(Call<LensKeepResponse> call, Throwable t) {
+                Log.e("보관함 렌즈 조회 요청 에러 발생", Objects.requireNonNull(t.getMessage()));
+            }
+        });
     }
 
     //보관함 렌즈 리사이클러뷰
-    private void setLensKeepList(){
-//        layoutManager = new LinearLayoutManager(this);
-//        LensKeepAdpater = new LensKeepAdpater(this,searchInfos);
-//        rv_main_lens.setLayoutManager(layoutManager); //레이아웃 매니저 설정
-//        rv_main_lens.setAdapter(LensKeepAdpater); //리사이클러뷰 어댑터 설정
+    private void setLensKeepList(ArrayList<LensKeepResponse.LensInfo> lensInfos){
+        layoutManager = new LinearLayoutManager(getActivity());
+        lensKeepAdpater = new LensKeepAdpater(getActivity(), lensInfos);
+        rv_main_lens.setLayoutManager(layoutManager); //레이아웃 매니저 설정
+        rv_main_lens.setAdapter(lensKeepAdpater); //리사이클러뷰 어댑터 설정
+
+        lensKeepAdpater.setOnItemClickListener((v, pos) -> {
+            //선택된 아이템 ID 가져오기
+            getItemId = (int)lensKeepAdpater.getItemId(pos);
+            //다이얼로그 구현
+            AlertDialog alertDialog = builder3.create();
+            alertDialog.show();
+        });
+    }
+
+    //보관함 렌즈 삭제 요청 - DELETE : Retrofit
+    private void requestDeleteLens(int id){
+        RetrofitClient.getService().deleteLens(id).enqueue(new Callback<StatusResponse>() {
+            @Override
+            public void onResponse(@NotNull Call<StatusResponse> call, @NotNull Response<StatusResponse> response) {
+                StatusResponse result = response.body();
+                assert result != null;
+                if(result.getSuccess())
+                    refresh(); //프래그먼트 새로고침
+            }
+
+            @Override
+            public void onFailure(@NotNull Call<StatusResponse> call, @NotNull Throwable t) {
+                Log.e("렌즈 삭제 에러 발생", Objects.requireNonNull(t.getMessage()));
+            }
+        });
+    }
+
+    //보관함 사용 시작 요청 - PATCH : Retrofit
+    private void requestOpenLens(int id){
+        RetrofitClient.getService().openLens(id).enqueue(new Callback<StatusResponse>() {
+            @Override
+            public void onResponse(Call<StatusResponse> call, Response<StatusResponse> response) {
+                StatusResponse result = response.body();
+                assert result != null;
+                if(result.getSuccess())
+                    refresh(); //프래그먼트 새로고침
+            }
+
+            @Override
+            public void onFailure(Call<StatusResponse> call, Throwable t) {
+                Log.e("렌즈 사용 시작 에러 발생", Objects.requireNonNull(t.getMessage()));
+            }
+        });
     }
 
     //보관함 세척액 조회 요청 - GET : Retrofit
@@ -201,7 +282,7 @@ public class MainFragment extends Fragment implements View.OnClickListener{
                     //결과값 추출
                     ArrayList<LiquidResponse.LiquidInfo> liquidInfos = new ArrayList<>(result.getLiquidInfo());
                     for(LiquidResponse.LiquidInfo data : liquidInfos)
-                        Log.d("결과 확인", data.getName());
+                        Log.d("세척액 결과 확인", data.getName());
                     //리사이클러 뷰 설정 메소드 호출
                     setLiquidKeepList(liquidInfos);
                 }
@@ -224,14 +305,13 @@ public class MainFragment extends Fragment implements View.OnClickListener{
         liquidKeepAdapter.setOnItemClickListener((v, pos) -> {
             //선택된 아이템 ID 가져오기
             getItemId = (int)liquidKeepAdapter.getItemId(pos);
-
             //다이얼로그 구현
             AlertDialog alertDialog = builder2.create();
             alertDialog.show();
         });
     }
 
-    //세척액 삭제 요청 - GET : Retrofit
+    //세척액 삭제 요청 - DELETE : Retrofit
     private void requestDeleteLiquid(int id){
         RetrofitClient.getService().deleteLiquid(id).enqueue(new Callback<StatusResponse>() {
             @Override
@@ -257,10 +337,8 @@ public class MainFragment extends Fragment implements View.OnClickListener{
             public void onResponse(@NotNull Call<StatusResponse> call, @NotNull Response<StatusResponse> response) {
                 StatusResponse result = response.body();
                 assert result != null;
-                if(result.getSuccess()){
+                if(result.getSuccess())
                     refresh(); //프래그먼트 새로고침
-                    Log.d("사용 시작 완료", "사용 사작 완료");
-                }
             }
 
             @Override

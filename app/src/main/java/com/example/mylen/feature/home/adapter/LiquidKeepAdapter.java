@@ -78,31 +78,6 @@ public class LiquidKeepAdapter extends RecyclerView.Adapter<RecyclerView.ViewHol
         viewHolder.tv_name.setText(liquidInfos.get(position).getName());
         viewHolder.tv_d_day.setText(getDDay(liquidInfos.get(position).getExpDate()));
         viewHolder.tv_exp_date.setText(liquidInfos.get(position).getExpDate().substring(0, 10));
-
-//        //아이템 클릭 리스너 : 선택 다이얼로그
-//        viewHolder.itemView.setOnClickListener(v -> {
-//            //다이어로그 구현
-//            AlertDialog.Builder builder = new AlertDialog.Builder(v.getContext());
-//            builder.setItems(R.array.liquid_keep, (dialog, which) -> {
-//                Intent intent;
-//                switch (which){
-//                    case 0: //세척액 사용 => 수정해야 함
-//                        intent = new Intent(v.getContext(), AddLens1Activity.class);
-//                        mContext.startActivity(intent);
-//                        break;
-//                    case 1: //세척액 수정 => 수정해야 함
-//                        intent = new Intent(v.getContext(), AddLiquid1Activity.class);
-//                        mContext.startActivity(intent);
-//                        break;
-//                    case 2: //세척액 삭제 => 수정해야 함
-//                        requestDeleteLiquid(liquidInfos.get(position).getId());
-//                        break;
-//                }
-//            });
-//           //수정 삭제 다이얼로그
-//            AlertDialog alertDialog = builder.create();
-//            alertDialog.show();
-//        });
     }
 
     //전체 데이터 갯수 리턴
@@ -146,29 +121,4 @@ public class LiquidKeepAdapter extends RecyclerView.Adapter<RecyclerView.ViewHol
             return "";
         }
     }
-
-
-//    //세척액 삭제
-//    private void requestDeleteLiquid(int id){
-//        RetrofitClient.getService().deleteLiquid(id).enqueue(new Callback<StatusResponse>() {
-//            @Override
-//            public void onResponse(@NotNull Call<StatusResponse> call, @NotNull Response<StatusResponse> response) {
-//                StatusResponse result = response.body();
-//                if(result.getSuccess()){
-//                    //메인 페이지로 이동
-//                    Intent intent = new Intent(mContext, NavigationDrawer.class);
-//                    intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-//                    mContext.startActivity(intent);
-//                    Log.d("삭제 완료", "삭제 완료");
-//                }else{
-//                    //실패 시 처리 코드 추후 추가 예정
-//                }
-//            }
-//
-//            @Override
-//            public void onFailure(@NotNull Call<StatusResponse> call, @NotNull Throwable t) {
-//                Log.e("세척액 삭제 에러 발생", Objects.requireNonNull(t.getMessage()));
-//            }
-//        });
-//    }
 }
