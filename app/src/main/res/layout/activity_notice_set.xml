@@ -8,17 +8,28 @@
     android:overScrollMode="never"
     android:scrollbars="none">
 
-
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         android:background="@color/white">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/actionbar_underline"
+            android:contentInsetStart="0dp"
+            android:contentInsetLeft="0dp"
+            android:minHeight="?attr/actionBarSize"
+            android:theme="?attr/actionBarTheme"
+            app:contentInsetStartWithNavigation="0dp"
+            tools:ignore="MissingConstraints"
+            />
 
         <Button
             android:id="@+id/btn_lens_wear_over"
             android:layout_width="60dp"
             android:layout_height="24dp"
-            android:layout_marginTop="8dp"
             android:layout_marginEnd="24dp"
             android:background="@drawable/btn_color_small_unchecked"
             android:fontFamily="@font/notosans_regular"
@@ -27,7 +38,8 @@
             android:textColor="@color/tiffany_blue"
             android:textSize="14sp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toBottomOf="@+id/toolbar"
+            android:layout_marginTop="24dp"/>
 
         <Button
             android:id="@+id/btn_lens_use_date"
@@ -141,14 +153,14 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="24dp"
-            android:layout_marginTop="8dp"
             android:fontFamily="@font/notosans_regular"
             android:includeFontPadding="false"
+            android:layout_marginTop="24dp"
             android:text="렌즈 착용시간 초과 알림"
             android:textColor="@color/soft_black"
             android:textSize="16sp"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toBottomOf="@+id/toolbar" />
 
         <TextView
             android:id="@+id/lens_use_date"

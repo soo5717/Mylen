@@ -29,16 +29,14 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-
-
-
         </activity>
         <!-- 네비게이션 -->
         <activity android:name=".feature.others.NavigationDrawer" />
         <activity android:name=".feature.others.BottomNavigation" />
         <activity android:name=".feature.others.ActionBar" />
         <activity android:name=".feature.calendar.FragmentCalendar" />
-        <activity android:name=".feature.calendar.CalendarDate" />
+        <activity android:name=".feature.calendar.CalendarDate" >
+        </activity>
 
         <!-- 로그인/회원가입 -->
         <activity android:name=".feature.sign.SignInActivity" />

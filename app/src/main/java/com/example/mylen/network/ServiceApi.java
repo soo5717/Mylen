@@ -1,5 +1,8 @@
 package com.example.mylen.network;
 
+import com.example.mylen.data.calendar.CalendarData;
+import com.example.mylen.data.calendar.CalendarDateResponse;
+import com.example.mylen.data.calendar.CalendarResponse;
 import com.example.mylen.data.eye.AddFriendData;
 import com.example.mylen.data.eye.FriendCheckData;
 import com.example.mylen.data.eye.FriendCheckResponse;
@@ -137,5 +140,12 @@ public interface ServiceApi {
     @PUT("/eye/friend/add")
     Call<StatusResponse> addFriend(@Body AddFriendData data);
 
+
+    //calendar
+    @POST("/calendar/main")
+    Call<CalendarResponse> addCalendar(@Body CalendarData data);
+
+    @GET("/calendar/date")
+    Call<CalendarDateResponse> addDateCalendar();
 
 }

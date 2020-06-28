@@ -3,11 +3,13 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     android:orientation="vertical"
-    tools:context=".feature.calendar.Calendar$CalendarDateItems">
+    android:background="@color/white"
+    tools:context=".feature.calendar.CalendarDateItems">
 
     <LinearLayout
+        android:layout_marginTop="16dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
@@ -15,6 +17,7 @@
 
         <TextView
             android:id="@+id/calendar_date_date"
+            android:includeFontPadding="false"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:lineSpacingExtra="8sp"
@@ -39,13 +42,15 @@
             android:orientation="vertical">
 
             <TextView
+                android:id="@+id/from"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:lineSpacingExtra="6sp"
                 android:textColor="@color/soft_grey"
                 android:fontFamily="@font/notosans_demilight"
                 android:textSize="14sp"
-                tools:text="From" />
+                tools:text="From"
+                android:includeFontPadding="false"/>
 
             <TextView
                 android:id="@+id/calendar_date_start"
@@ -55,23 +60,27 @@
                 android:textColor="@color/soft_black"
                 android:fontFamily="@font/notosans_regular"
                 android:textSize="16sp"
-                tools:text="오전 10:00" />
+                tools:text="오전 10:00"
+                android:includeFontPadding="false"/>
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:layout_marginLeft="8dp">
 
             <TextView
+                android:id="@+id/to"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:lineSpacingExtra="6sp"
                 android:textColor="@color/soft_grey"
                 android:fontFamily="@font/notosans_demilight"
                 android:textSize="14sp"
-                tools:text="To" />
+                tools:text="To"
+                android:includeFontPadding="false"/>
 
             <TextView
                 android:id="@+id/calendar_date_end"
@@ -81,13 +90,15 @@
                 android:textColor="@color/soft_black"
                 android:fontFamily="@font/notosans_regular"
                 android:textSize="16sp"
-                tools:text="오후 6:00" />
+                tools:text="오후 6:00"
+                android:includeFontPadding="false"/>
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
+            android:layout_marginLeft="8dp"
             android:orientation="vertical">
 
             <TextView
@@ -99,7 +110,18 @@
                 android:textColor="@color/clear_blue"
                 android:fontFamily="@font/notosans_medium"
                 android:textSize="16sp"
-                tools:text="8시간" />
+                tools:text="8시간"
+                android:includeFontPadding="false"/>
         </LinearLayout>
+
     </LinearLayout>
+
+    <View
+        android:id="@+id/view11"
+        android:layout_marginTop="16dp"
+        android:background="@color/linear_grey"
+        android:layout_width="wrap_content"
+        android:layout_height="1dp"
+        android:layout_weight="1"
+        />
 </LinearLayout>

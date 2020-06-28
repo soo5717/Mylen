@@ -103,7 +103,8 @@ public class NoticeMain extends AppCompatActivity implements View.OnClickListene
         btn_all_delete = findViewById(R.id.btn_all_delete);
         btn_all_delete.setOnClickListener(this::onClick);
 
-    }    @Override
+    }
+    @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         menuInflater = getMenuInflater();
         menuInflater.inflate(R.menu.menu_app_bar_setting, menu);
@@ -112,9 +113,14 @@ public class NoticeMain extends AppCompatActivity implements View.OnClickListene
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        switch (item.getItemId()){
+        switch (item.getItemId()) {
             case android.R.id.home: { // 뒤로가기 버튼 눌렀을 때
                 finish();
+                return true;
+            }
+            case R.id.action_setting: {
+                Intent intent = new Intent(NoticeMain.this, NoticeSet.class);
+                startActivity(intent);
                 return true;
             }
         }
@@ -123,12 +129,12 @@ public class NoticeMain extends AppCompatActivity implements View.OnClickListene
 
     @Override
     public void onClick(View v) {
-       // recyclerView.setBackground(getDrawable(R.layout.fragment_notice_emtpy));
-//        Intent intent = new Intent(NoticeMain.this, NotcieEmptyFragment.class);
-//        startActivity(intent);
-//        noitceArrayList.remove(0);
-//        noticeMainAdapter.notifyDataSetChanged();
-//
+
+       // Intent intent = new Intent(NoticeMain.this, NoticeSet.class);
+      //  startActivity(intent);
+     //   noitceArrayList.remove(0);
+     //   noticeMainAdapter.notifyDataSetChanged();
+
 //        //db에도 표시해주어야함
 //        Toast.makeText(NoticeMain.this, "안녕",  Toast.LENGTH_SHORT).show();
 

@@ -13,7 +13,7 @@
         android:layout_marginTop="12dp">
 
         <ImageView
-            android:id="@+id/calendar_dday"
+            android:id="@+id/read_check"
             android:layout_width="48dp"
             android:layout_height="48dp"
             app:srcCompat="@drawable/btn_color_check_48dp"  />
@@ -28,34 +28,35 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginRight="8dp"
-                android:layout_marginBottom="16dp"
-                android:lineSpacingExtra="8sp"
+                android:layout_marginBottom="8dp"
                 android:text="렌즈 유통기한 만료"
                 android:textColor="@color/soft_black"
                 android:fontFamily="@font/notosans_regular"
+                android:includeFontPadding="false"
                 android:textSize="16sp" />
             <!--        TextView textView = (TextView)findViewById(R.id.textView);-->
 
             <TextView
+                android:id="@+id/calendar_date"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:lineSpacingExtra="6sp"
                 android:textColor="@color/soft_grey"
                 android:fontFamily="@font/notosans_demilight"
                 android:textSize="14sp"
+                android:includeFontPadding="false"
                 tools:text="4월22일 수요일" />
             <!--        TextView textView = (TextView)findViewById(R.id.textView);-->
 
         </LinearLayout>
 
         <TextView
-            android:id="@+id/calendar_date"
+            android:id="@+id/calendar_dday"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:lineSpacingExtra="8sp"
             android:text="D-DAY"
             android:textColor="@color/soft_black"
             android:fontFamily="@font/notosans_regular"
+            android:includeFontPadding="false"
             android:textSize="16sp" />
         <!--        TextView textView = (TextView)findViewById(R.id.textView);-->
 

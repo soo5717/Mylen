@@ -49,8 +49,8 @@ public class NoticeMainAdapter extends RecyclerView.Adapter<NoticeMainAdapter.Vi
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
 
-        holder.message.setTextSize(TypedValue.COMPLEX_UNIT_SP, 25);
-        holder.msg_date.setTextSize(TypedValue.COMPLEX_UNIT_SP, 25);
+        holder.message.setTextSize(TypedValue.COMPLEX_UNIT_SP, 14);
+        holder.msg_date.setTextSize(TypedValue.COMPLEX_UNIT_SP, 12);
 
         holder.message.setGravity(Gravity.CENTER);
         holder.msg_date.setGravity(Gravity.CENTER);

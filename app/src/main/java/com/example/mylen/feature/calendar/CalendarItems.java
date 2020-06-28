@@ -1,60 +1,36 @@
 package com.example.mylen.feature.calendar;
 
-import android.content.Context;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.TextView;
+public class CalendarItems {
+    String calendar_comment;
+    String calendar_date;
+    String calendar_dday;
 
-import androidx.recyclerview.widget.RecyclerView;
-
-import com.example.mylen.R;
-
-import java.util.ArrayList;
-
-public class CalendarItems extends RecyclerView.Adapter<CalendarItems.ViewHolder> {
-
-    private ArrayList<String> mData = null;
-
-    // 아이템 뷰를 저장하는 뷰홀더 클래스.
-    public class ViewHolder extends RecyclerView.ViewHolder {
-        TextView textView1;
-
-        ViewHolder(View itemView) {
-            super(itemView);
-
-            // 뷰 객체에 대한 참조. (hold strong reference)
-            textView1 = itemView.findViewById(R.id.calendar_comment);
-        }
+    public CalendarItems(String calendar_comment, String calendar_date, String calendar_dday) {
+        this.calendar_comment = calendar_comment;
+        this.calendar_date = calendar_date;
+        this.calendar_dday = calendar_dday;
     }
 
-    // 생성자에서 데이터 리스트 객체를 전달받음.
-    public CalendarItems(ArrayList<String> list) {
-        mData = list;
+    public String getComment() {
+        return calendar_comment;
     }
 
-    // onCreateViewHolder() - 아이템 뷰를 위한 뷰홀더 객체 생성하여 리턴.
-    @Override
-    public CalendarItems.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        Context context = parent.getContext();
-        LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-
-        View view = inflater.inflate(R.layout.item_activity_calendar, parent, false);
-        CalendarItems.ViewHolder vh = new CalendarItems.ViewHolder(view);
-
-        return vh;
+    public void setComment(String calendar_comment) {
+        this.calendar_comment = calendar_comment;
     }
 
-    // onBindViewHolder() - position에 해당하는 데이터를 뷰홀더의 아이템뷰에 표시.
-    @Override
-    public void onBindViewHolder(CalendarItems.ViewHolder holder, int position) {
-        String text = mData.get(position);
-        holder.textView1.setText(text);
+    public String getDate() {
+        return calendar_date;
     }
 
-    // getItemCount() - 전체 데이터 갯수 리턴.
-    @Override
-    public int getItemCount() {
-        return mData.size();
+    public void setDate(String calendar_date) { this.calendar_date = calendar_date; }
+
+    public String getDday() {
+        return calendar_dday;
     }
+
+    public void setDday(String calendar_dday) {
+        this.calendar_dday = calendar_dday;
+    }
+
 }

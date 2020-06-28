@@ -253,6 +253,7 @@ public class NavigationDrawer extends AppCompatActivity {
                 startActivity(intent);
                 return true;
             }
+
         }
         return super.onOptionsItemSelected(item);
     }

@@ -88,7 +88,7 @@ public class GetNoticeData extends AppCompatActivity {
                 String[] msgArray = result.getMsgArray();
                 String date = result.getDate();
                // String time = result.getTime();
-                String time = "09 43";
+                String time = "00 05";
 
                 Calendar calendar = Calendar.getInstance();
                 calendar.setTimeInMillis(System.currentTimeMillis());

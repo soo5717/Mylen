@@ -1,9 +1,14 @@
 package com.example.mylen.feature.notice.set;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
@@ -12,6 +17,7 @@ import com.example.mylen.R;
 import com.example.mylen.data.notice.set.NoticeSetResponse;
 import com.example.mylen.data.notice.set.UpdateNoticeSetData;
 import com.example.mylen.data.user.StatusResponse;
+import com.example.mylen.feature.notice.main.NoticeMain;
 import com.example.mylen.network.RetrofitClient;
 
 
@@ -36,12 +42,21 @@ public class NoticeSet extends AppCompatActivity implements View.OnClickListener
     int[] onOffArray;
     int[] getOnOffArray;
     Button[] buttonArray;
+    Toolbar myToolbar;
+    MenuInflater menuInflater;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_notice_set);
+//툴바 구현
+        myToolbar = (Toolbar)findViewById(R.id.toolbar);
+        setSupportActionBar(myToolbar);
+        androidx.appcompat.app.ActionBar actionBar = getSupportActionBar();
+        actionBar.setTitle(""); //ㅣ기존 타이틀 지우기
+        actionBar.setDisplayHomeAsUpEnabled(true); // 뒤로가기 버튼 만들기
+        actionBar.setHomeAsUpIndicator(R.drawable.ic_backspace_48dp);
 
         userId = 2;
 
@@ -92,6 +107,16 @@ public class NoticeSet extends AppCompatActivity implements View.OnClickListener
 
     } // end onCreate()
 
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case android.R.id.home: { // 뒤로가기 버튼 눌렀을 때
+                finish();
+                return true;
+            }
+        }
+        return super.onOptionsItemSelected(item);
+    }
     @Override
     public void onClick(View view) {
 

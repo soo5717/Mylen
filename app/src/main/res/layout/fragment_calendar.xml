@@ -12,13 +12,10 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
+        android:layout_marginBottom="8dp"
         android:layout_marginLeft="24dp"
-        android:layout_marginRight="24dp"
-        android:layout_marginBottom="8dp">
+        android:layout_marginRight="24dp">
 
-        <ScrollView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -27,14 +24,12 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="vertical">
-                        <com.prolificinteractive.materialcalendarview.MaterialCalendarView
-                            xmlns:app="http://schemas.android.com/apk/res-auto"
-                            android:id="@+id/calendarView"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            app:mcv_showOtherDates="all"
-                            app:mcv_selectionColor="@color/tiffany_blue"
-                            />
+                    <com.applandeo.materialcalendarview.CalendarView
+                        android:id="@+id/calendarView"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        app:eventsEnabled="true"
+                        />
                 </LinearLayout>
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -46,7 +41,6 @@
                         android:layout_height="match_parent" />
                 </LinearLayout>
             </LinearLayout>
-        </ScrollView>
 
     </LinearLayout>
 
