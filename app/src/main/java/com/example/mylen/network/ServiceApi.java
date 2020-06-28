@@ -29,6 +29,7 @@ import retrofit2.Call;
 import retrofit2.http.Body;
 import retrofit2.http.DELETE;
 import retrofit2.http.GET;
+import retrofit2.http.PATCH;
 import retrofit2.http.POST;
 import retrofit2.http.PUT;
 import retrofit2.http.Query;
@@ -64,6 +65,8 @@ public interface ServiceApi {
     Call<StatusResponse> deleteLiquid(@Query("id") int id);
     //세척액 수정 요청
     //세척액 사용 시작 요청
+    @PATCH("/liquids/open")
+    Call<StatusResponse> openLiquid(@Query("id") int id);
     //세척액 사용 종료 요청
 
     //렌즈 검색 요청 => 완료

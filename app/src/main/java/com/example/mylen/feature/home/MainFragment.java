@@ -22,6 +22,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.mylen.R;
 import com.example.mylen.data.liquid.LiquidResponse;
 import com.example.mylen.data.user.ProfileResponse;
+import com.example.mylen.data.user.StatusResponse;
 import com.example.mylen.feature.home.adapter.LensKeepAdpater;
 import com.example.mylen.feature.home.adapter.LensOpenAdapter;
 import com.example.mylen.feature.home.adapter.LiquidKeepAdapter;
@@ -30,6 +31,7 @@ import com.example.mylen.feature.home.adapter.SearchLensAdapter;
 import com.example.mylen.feature.home.add.AddLens1Activity;
 import com.example.mylen.feature.home.add.AddLiquid1Activity;
 import com.example.mylen.feature.home.search.SearchLensActivity;
+import com.example.mylen.feature.others.NavigationDrawer;
 import com.example.mylen.network.RetrofitClient;
 
 import org.jetbrains.annotations.NotNull;
@@ -48,6 +50,9 @@ public class MainFragment extends Fragment implements View.OnClickListener{
     MainChild2Fragment main_child2;
     Button btn_open, btn_keep, btn_add;
     private TextView tv_user_name;
+
+    AlertDialog.Builder builder, builder2;
+    private int getItemId;
 
     RecyclerView rv_main_lens, rv_main_liquid;
     RecyclerView.LayoutManager layoutManager;
@@ -77,7 +82,7 @@ public class MainFragment extends Fragment implements View.OnClickListener{
         transaction.replace(R.id.container, main_child1).commit();
 
         //다이얼로그 구현 : 렌즈 등록 / 세척액 등록
-        AlertDialog.Builder builder = new AlertDialog.Builder(this.getActivity());
+        builder = new AlertDialog.Builder(this.getActivity());
         builder.setItems(R.array.lens_add, (dialog, which) -> {
             Intent intent;
             switch (which){
@@ -88,6 +93,25 @@ public class MainFragment extends Fragment implements View.OnClickListener{
                 case 1: //세척액 등록1 페이지로 이동
                     intent = new Intent(getActivity(), AddLiquid1Activity.class);
                     startActivity(intent);
+                    break;
+            }
+        });
+        //다이얼로그 구현 : 세척액 사용 / 세척액 수정 / 세척액 삭제
+        builder2 = new AlertDialog.Builder(this.getActivity());
+        builder2.setItems(R.array.liquid_keep, (dialog, which) -> {
+            Intent intent;
+            switch (which){
+                case 0: //세척액 사용
+                    //세척액 사용 시작 요청 메소드 호출
+                    requestOpenLiquid(getItemId);
+                    break;
+                case 1: //세척액 수정 => 수정해야 함
+                    intent = new Intent(getActivity(), AddLiquid1Activity.class);
+                    startActivity(intent);
+                    break;
+                case 2: //세척액 삭제
+                    //세척액 삭제 요청 메소드 호출
+                    requestDeleteLiquid(getItemId);
                     break;
             }
         });
@@ -153,12 +177,20 @@ public class MainFragment extends Fragment implements View.OnClickListener{
         }
     }
 
-    //보관함 렌즈 조회 - GET : Retrofit
+    //보관함 렌즈 조회 요청 - GET : Retrofit
     private void requestLensKeep(){
 //        setLensKeepList();
     }
 
-    //보관함 세척액 조회 - GET : Retrofit
+    //보관함 렌즈 리사이클러뷰
+    private void setLensKeepList(){
+//        layoutManager = new LinearLayoutManager(this);
+//        LensKeepAdpater = new LensKeepAdpater(this,searchInfos);
+//        rv_main_lens.setLayoutManager(layoutManager); //레이아웃 매니저 설정
+//        rv_main_lens.setAdapter(LensKeepAdpater); //리사이클러뷰 어댑터 설정
+    }
+
+    //보관함 세척액 조회 요청 - GET : Retrofit
     private void requestLiquidKeep(){
         RetrofitClient.getService().liquidKeep().enqueue(new Callback<LiquidResponse>() {
             @Override
@@ -182,28 +214,67 @@ public class MainFragment extends Fragment implements View.OnClickListener{
         });
     }
 
-    //보관함 렌즈 리사이클러뷰
-    public void setLensKeepList(){
-//        layoutManager = new LinearLayoutManager(this);
-//        LensKeepAdpater = new LensKeepAdpater(this,searchInfos);
-//        rv_main_lens.setLayoutManager(layoutManager); //레이아웃 매니저 설정
-//        rv_main_lens.setAdapter(LensKeepAdpater); //리사이클러뷰 어댑터 설정
-    }
-
     //보관함 세척액 리사이클러뷰
-    public void setLiquidKeepList(ArrayList<LiquidResponse.LiquidInfo> liquidInfo){
+    private void setLiquidKeepList(ArrayList<LiquidResponse.LiquidInfo> liquidInfo){
         layoutManager = new LinearLayoutManager(getActivity());
         liquidKeepAdapter = new LiquidKeepAdapter(getActivity(), liquidInfo);
         rv_main_liquid.setLayoutManager(layoutManager); //레이아웃 매니저 설정
         rv_main_liquid.setAdapter(liquidKeepAdapter); //리사이클러뷰 어댑터 설정
 
-        Log.d("테스트111", String.valueOf(liquidKeepAdapter.getItemCount()));
+        liquidKeepAdapter.setOnItemClickListener((v, pos) -> {
+            //선택된 아이템 ID 가져오기
+            getItemId = (int)liquidKeepAdapter.getItemId(pos);
 
-        liquidKeepAdapter.setOnItemClickListener(new LiquidKeepAdapter.OnItemClickListener() {
+            //다이얼로그 구현
+            AlertDialog alertDialog = builder2.create();
+            alertDialog.show();
+        });
+    }
+
+    //세척액 삭제 요청 - GET : Retrofit
+    private void requestDeleteLiquid(int id){
+        RetrofitClient.getService().deleteLiquid(id).enqueue(new Callback<StatusResponse>() {
             @Override
-            public void onItemClick(View v, int pos) {
-                Log.d("테스트", String.valueOf(pos));
+            public void onResponse(@NotNull Call<StatusResponse> call, @NotNull Response<StatusResponse> response) {
+                StatusResponse result = response.body();
+                assert result != null;
+                if(result.getSuccess()){
+                    refresh(); //프래그먼트 새로고침
+                }
+            }
+
+            @Override
+            public void onFailure(@NotNull Call<StatusResponse> call, @NotNull Throwable t) {
+                Log.e("세척액 삭제 에러 발생", Objects.requireNonNull(t.getMessage()));
             }
         });
+    }
+
+    //세척액 사용 시작 요청 - PATCH : Retrofit
+    private void requestOpenLiquid(int id){
+        RetrofitClient.getService().openLiquid(id).enqueue(new Callback<StatusResponse>() {
+            @Override
+            public void onResponse(@NotNull Call<StatusResponse> call, @NotNull Response<StatusResponse> response) {
+                StatusResponse result = response.body();
+                assert result != null;
+                if(result.getSuccess()){
+                    refresh(); //프래그먼트 새로고침
+                    Log.d("사용 시작 완료", "사용 사작 완료");
+                }
+            }
+
+            @Override
+            public void onFailure(@NotNull Call<StatusResponse> call, @NotNull Throwable t) {
+                Log.e("세척액 사용 시작 에러 발생", Objects.requireNonNull(t.getMessage()));
+            }
+        });
+    }
+
+
+    //프래그먼트 새로 고침
+    private void refresh(){
+        assert getFragmentManager() != null;
+        FragmentTransaction transaction = getFragmentManager().beginTransaction();
+        transaction.detach(this).attach(this).commit();
     }
 }
