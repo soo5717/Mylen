@@ -5,17 +5,13 @@ import android.util.Log;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
-import androidx.recyclerview.widget.DefaultItemAnimator;
 
 import com.example.mylen.R;
-import com.example.mylen.data.eye.FriendMainResponse;
 import com.example.mylen.data.eye.ReportResponse;
-import com.example.mylen.feature.eye.main.EyeMainFriendItem;
 import com.example.mylen.network.RetrofitClient;
 
 import retrofit2.Call;

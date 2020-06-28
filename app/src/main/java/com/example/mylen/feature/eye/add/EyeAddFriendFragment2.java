@@ -44,9 +44,6 @@ public class EyeAddFriendFragment2 extends Fragment implements View.OnClickListe
     int friendId;
 
 
-    public EyeAddFriendFragment2() {
-    }
-
     //
     public static EyeAddFriendFragment2 newInstance(String param1, String param2, int param3) {
         EyeAddFriendFragment2 fragment = new EyeAddFriendFragment2();
@@ -99,8 +96,8 @@ public class EyeAddFriendFragment2 extends Fragment implements View.OnClickListe
 
                 Boolean check = result.getCheck();
                 if(check){
-                    bt_addfriend.setText(R.string.eye_added_friend);
                     bt_addfriend.setTextColor(getResources().getColor(R.color.soft_grey, null));
+                    bt_addfriend.setText(R.string.eye_added_friend);
                     bt_addfriend.setClickable(false);
                 }
 

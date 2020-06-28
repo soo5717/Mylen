@@ -15,6 +15,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.example.mylen.R;
 import com.example.mylen.data.user.SignInData;
 import com.example.mylen.data.user.SignInResponse;
+import com.example.mylen.feature.notice.GetNoticeData;
+import com.example.mylen.feature.notice.notice.AlarmReceiver;
+import com.example.mylen.feature.notice.notice.GetNotice;
 import com.example.mylen.feature.others.NavigationDrawer;
 import com.example.mylen.feature.util.PreferenceManager;
 import com.example.mylen.network.RetrofitClient;
@@ -34,8 +37,10 @@ public class SignInActivity extends AppCompatActivity {
     String email, pwd;
     Boolean is_valid_email = false, is_valid_pwd = false;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_signin);
 
@@ -91,11 +96,16 @@ public class SignInActivity extends AppCompatActivity {
                 SignInResponse result = response.body();
                 assert result != null;
                 Toast.makeText(SignInActivity.this, result.getMessage(), Toast.LENGTH_SHORT).show();
-                //회원가입 요청 성공 시
+                //로그인 요청 성공 시
                 if(result.getSuccess()) {
                     //Shared Preferences 토큰 저장
                     Log.d("TOKEN    :   ", result.getToken());
                     PreferenceManager.setString("user_token", result.getToken());
+
+                    //알림등록
+                    Intent intent_a = new Intent(SignInActivity.this, GetNoticeData.class);
+                    intent_a.putExtra("check_start", true);
+                    startActivity(intent_a);
 
                     //메인 페이지로 이동
                     Intent intent = new Intent(SignInActivity.this, NavigationDrawer.class);

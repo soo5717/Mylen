@@ -29,6 +29,9 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+
+
+
         </activity>
         <!-- 네비게이션 -->
         <activity android:name=".feature.others.NavigationDrawer" />
@@ -70,7 +73,7 @@
         <activity android:name=".feature.eye.report.EyeReportFragmentPoint" />
         <activity android:name=".feature.eye.report.EyeReportMain" />
         <activity android:name=".feature.eye.exercise.EyeExercise2" />
-
+        <activity android:name=".feature.eye.exercise.EyeExercise3" />
         <!--  레포트      -->
 
 
@@ -86,6 +89,14 @@
         <activity android:name=".feature.notice.GetNoticeData">
 
         </activity>
+        <receiver android:name=".feature.notice.notice.DeviceBootReceiver"
+            android:enabled="false">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+            </intent-filter>
+        </receiver>
+
+        <receiver android:name=".feature.notice.notice.AlarmReceiver" />
 
         <meta-data
             android:name="com.google.firebase.ml.vision.DEPENDENCIES"

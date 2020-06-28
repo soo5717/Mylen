@@ -57,9 +57,9 @@ public class NoticeMain extends AppCompatActivity implements View.OnClickListene
         myToolbar = (Toolbar)findViewById(R.id.toolbar);
         setSupportActionBar(myToolbar);
         androidx.appcompat.app.ActionBar actionBar = getSupportActionBar();
-//        actionBar.setTitle(""); //ㅣ기존 타이틀 지우기
-//        actionBar.setDisplayHomeAsUpEnabled(true); // 뒤로가기 버튼 만들기
-//        actionBar.setHomeAsUpIndicator(R.drawable.ic_backspace_48dp);
+        actionBar.setTitle(""); //ㅣ기존 타이틀 지우기
+        actionBar.setDisplayHomeAsUpEnabled(true); // 뒤로가기 버튼 만들기
+        actionBar.setHomeAsUpIndicator(R.drawable.ic_backspace_48dp);
 
         //알림
         //리사이클러뷰

@@ -24,6 +24,7 @@ import com.example.mylen.data.notice.notice.NoticeResponse;
 import com.example.mylen.feature.notice.notice.AlarmReceiver;
 import com.example.mylen.feature.notice.notice.DeviceBootReceiver;
 import com.example.mylen.network.RetrofitClient;
+import com.google.android.gms.vision.L;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -38,27 +39,38 @@ public class GetNoticeData extends AppCompatActivity {
     private Button bt_getdata;
     private TextView tv_1;
 
+//    Intent intent;
+//    Button btn_bottom;
+
     @Override
     protected void onCreate (@Nullable Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_notice_test);
 
+//       btn_bottom = findViewById(R.id.btn_bottom);
 
+
+//        intent = getIntent();
+//        String check_start = intent.getStringExtra("check_start");
+
+        Log.d("알림받음ㅇㅇㅇㅇㅇㅇ", "알림받음ㅇㅇㅇㅇㅇㅇ");
+
+        //setContentView(R.layout.activity_notice_test);
         bt_getdata = findViewById(R.id.bt_data);
-        tv_1 = findViewById(R.id.tv_1);
+//        tv_1 = findViewById(R.id.tv_1);
 
 
-        bt_getdata.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                StartGet();
-            }
-        });
-        //StartGet();
+        bt_getdata.setOnClickListener(this::onClick);
+    }
+
+    private void onClick(View view) {
+        StartGet();
     }
 
     // db에서 알림 정보 가져오기
     public void StartGet () {
+
+        Log.d("시시ㅣㄱㄱㄱㄱ", "시시ㅣㅣㄱㄱㄱㄱㄱㄱ");
 
         //Intent intent = getIntent();
         //int userId = intent.getIntExtra("user_id");
@@ -76,7 +88,7 @@ public class GetNoticeData extends AppCompatActivity {
                 String[] msgArray = result.getMsgArray();
                 String date = result.getDate();
                // String time = result.getTime();
-                String time = "04 22";
+                String time = "09 43";
 
                 Calendar calendar = Calendar.getInstance();
                 calendar.setTimeInMillis(System.currentTimeMillis());

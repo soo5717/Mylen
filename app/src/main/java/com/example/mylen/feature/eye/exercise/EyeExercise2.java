@@ -13,6 +13,7 @@ import androidx.camera.core.Preview;
 import androidx.camera.core.PreviewConfig;
 
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Camera;
 import android.graphics.SurfaceTexture;
 import android.icu.util.Output;
@@ -28,6 +29,7 @@ import android.view.Surface;
 import android.view.TextureView;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -65,6 +67,8 @@ public class EyeExercise2 extends AppCompatActivity {
     long true_past = System.currentTimeMillis();
     long false_past = System.currentTimeMillis();
 
+    Button bt_bottom;
+
 //    private Executors executor = (Executors) Executors.newSingleThreadExecutor();
 
     @Override
@@ -73,6 +77,14 @@ public class EyeExercise2 extends AppCompatActivity {
         setContentView(R.layout.activity_eye_exercise2);
         startCamera();
 
+        bt_bottom = findViewById(R.id.bt_bottom);
+
+        bt_bottom.setOnClickListener(this::onClick);
+    }
+
+    private void onClick(View view) {
+        Intent intent = new Intent(EyeExercise2.this, EyeEnd.class);
+        startActivity(intent);
     }
 
     private FirebaseVisionFaceDetectorOptions highAccuracyOpts =

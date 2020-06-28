@@ -3,7 +3,7 @@ package com.example.mylen.network;
 import com.example.mylen.data.eye.AddFriendData;
 import com.example.mylen.data.eye.FriendCheckData;
 import com.example.mylen.data.eye.FriendCheckResponse;
-import com.example.mylen.data.eye.FriendMainResponse;
+import com.example.mylen.data.eye.FriendMainResponse1;
 import com.example.mylen.data.eye.ReportGraphResponse;
 import com.example.mylen.data.eye.ReportResponse;
 import com.example.mylen.data.eye.SearchAddFriendData;
@@ -114,8 +114,8 @@ public interface ServiceApi {
     Call<StatusResponse> updateNoticeSet(@Body UpdateNoticeSetData data);
 
     //eye_friend_main_data
-    @GET("/eye/friend/main")
-    Call<FriendMainResponse> rankFriendMain();
+    @GET("/eye/friend/main/first")
+    Call<FriendMainResponse1> rankFriendMain1();
 
     //eye_report => 완료
     @GET("/eye/report")

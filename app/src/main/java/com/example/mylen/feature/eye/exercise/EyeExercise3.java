@@ -1,6 +1,7 @@
 package com.example.mylen.feature.eye.exercise;
 
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.SurfaceTexture;
 import android.media.Image;
 import android.os.Bundle;
@@ -8,7 +9,9 @@ import android.os.Vibrator;
 import android.util.Log;
 import android.util.Size;
 import android.view.TextureView;
+import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -20,6 +23,8 @@ import androidx.camera.core.Preview;
 import androidx.camera.core.PreviewConfig;
 
 import com.example.mylen.R;
+import com.example.mylen.feature.eye.report.EyeReportMain;
+import com.example.mylen.feature.others.NavigationDrawer;
 import com.google.firebase.ml.vision.FirebaseVision;
 import com.google.firebase.ml.vision.common.FirebaseVisionImage;
 import com.google.firebase.ml.vision.common.FirebaseVisionImageMetadata;
@@ -40,12 +45,22 @@ public class EyeExercise3 extends AppCompatActivity {
     long true_past = System.currentTimeMillis();
     long false_past = System.currentTimeMillis();
 
+    Button bt_bottom;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_eyeexercise3);
         startCamera();
 
+        bt_bottom = findViewById(R.id.bt_bottom);
+
+        bt_bottom.setOnClickListener(this::onClick);
+    }
+
+    private void onClick(View view) {
+        Intent intent = new Intent(EyeExercise3.this, EyeEnd.class);
+        startActivity(intent);
     }
 
     private FirebaseVisionFaceDetectorOptions highAccuracyOpts =

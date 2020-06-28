@@ -20,12 +20,12 @@ import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewpager.widget.ViewPager;
 
 import com.example.mylen.R;
-import com.example.mylen.data.eye.FriendMainResponse;
-import com.example.mylen.data.notice.set.NoticeSetResponse;
+import com.example.mylen.data.eye.FriendMainResponse1;
 import com.example.mylen.feature.eye.add.EyeAddFriend;
 import com.example.mylen.network.RetrofitClient;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -49,8 +49,10 @@ public class EyeMainFragment extends Fragment implements View.OnClickListener{
 
     //db에서 가져오기
     String[] nameArray;
-    String[] emailArray;
-    String[] pointArray;
+    int[] friendIdArray;
+    int[] pointArray;
+    int[] sortedPointArray;
+    int[] sortFriendIdArray;
     //String[] pictureArray;
 
 //    @Override
@@ -99,42 +101,91 @@ public class EyeMainFragment extends Fragment implements View.OnClickListener{
         friendlist = new ArrayList<EyeMainFriendItem>();
         adapter_friend = new EyeFriendAdapter(getContext());
 
-        //친구정보 가져오기
-//        RetrofitClient.getService().rankFriendMain().enqueue(new Callback<FriendMainResponse>() {
+//        //친구정보 가져오기
+//        RetrofitClient.getService().rankFriendMain1().enqueue(new Callback<FriendMainResponse1>() {
 //
 //            @Override
-//            public void onResponse(Call<FriendMainResponse> call, Response<FriendMainResponse> response) {
+//            public void onResponse(Call<FriendMainResponse1> call, Response<FriendMainResponse1> response) {
 //
-//                FriendMainResponse result = response.body();
+//                FriendMainResponse1 result = response.body();
 //                assert result != null;
 //
 //                //이름, 이메일, 포인트, 사진 가져옴
-//                nameArray = result.getNameArray();
-//                emailArray = result.getEmailArray();
+//                friendIdArray = result.getFriendIdArray();
 //                pointArray = result.getPointArray();
 //                //pictureArray = result.getpictureArray();
+//                sortedPointArray = pointArray;
 //
-//                if(result.getSuccess()) {
-//                    //친구 수만큼 리사이클러뷰에 넣기
-//                    for (int i = 0; i < nameArray.length; i++) {
-//                        adapter_friend.addItem(new EyeMainFriendItem(i+" 위", nameArray[i], emailArray[i], pointArray[i]+" P"));
+//                for (int i = 0; i < sortedPointArray.length; i++) {
+//                    for (int j = i + 1; j < sortedPointArray.length; j++) {
+//                        if (sortedPointArray[i] < sortedPointArray[j]) {
+//                            int temp = sortedPointArray[i];
+//                            sortedPointArray[i] = sortedPointArray[j];
+//                            sortedPointArray[j] = temp;
+//                        }
 //                    }
-//
-//                    adapter_friend.notifyDataSetChanged();
-//
-//                    recyclerView.setAdapter(adapter_friend);
-//                    recyclerView.setItemAnimator(new DefaultItemAnimator());
 //                }
+//                Log.d("포인트ㅡㅡㅡㅡㅡ", String.valueOf(pointArray));
+//
+//                ArrayList  pointList =  new ArrayList(Arrays.asList(pointArray));
+//
+//                Log.d("포인트ㅡ리스트ㅡㅡㅡㅡ", String.valueOf(sortedPointArray));
+//
+//                sortFriendIdArray = new int[sortedPointArray.length];
+//                for (int i=0; i<pointList.size(); i++){
+//                    int index = pointList.indexOf(sortedPointArray[i]);
+//                    sortFriendIdArray[i] = friendIdArray[index];
+//                }
+//
+//                Log.d("정렬된친구id배열=====", String.valueOf(sortFriendIdArray));
+//
 //            }
-
-
 //
 //            @Override
-//            public void onFailure(Call<FriendMainResponse> call, Throwable t) {
+//            public void onFailure(Call<FriendMainResponse1> call, Throwable t) {
 //                Toast.makeText(getContext(), "가져오기 에러 발생", Toast.LENGTH_SHORT).show();
 //                Log.e("가져오기 에러 발생", t.getMessage());
 //            }
 //        });
+//
+//        for(int i=0; i<sortFriendIdArray.length; i++) {
+//
+//
+//            RetrofitClient.getService().rankFriendMain2().enqueue(new Callback<FriendMainResponse2>() {
+//
+//                @Override
+//                public void onResponse(Call<FriendMainResponse2> call, Response<FriendMainResponse2> response) {
+//
+//                    FriendMainResponse2 result = response.body();
+//                    assert result != null;
+//
+//                    //이름, 이메일, 포인트, 사진 가져옴
+//                    friendIdArray = result.getFriendIdArray();
+//                    pointArray = result.getPointArray();
+//                    //pictureArray = result.getpictureArray();
+//                    sortedPointArray = pointArray;
+//
+//
+//                    if (result.getSuccess()) {
+//                        //친구 수만큼 리사이클러뷰에 넣기
+//                        for (int i = 0; i < nameArray.length; i++) {
+//                            adapter_friend.addItem(new EyeMainFriendItem(i + " 위", nameArray[i], emailArray[i], pointArray[i] + " P"));
+//                        }
+//
+//                        adapter_friend.notifyDataSetChanged();
+//
+//                        recyclerView.setAdapter(adapter_friend);
+//                        recyclerView.setItemAnimator(new DefaultItemAnimator());
+//                    }
+//                }
+//
+//                @Override
+//                public void onFailure(Call<FriendMainResponse2> call, Throwable t) {
+//                    Toast.makeText(getContext(), "가져오기 에러 발생", Toast.LENGTH_SHORT).show();
+//                    Log.e("가져오기 에러 발생", t.getMessage());
+//                }
+//            });
+//        }
 
         adapter_friend.addItem(new EyeMainFriendItem("1", "백서윤", "bsj@naver.com", "120p"));
         adapter_friend.addItem(new EyeMainFriendItem("2", "조수연", "ooo@naver.com", "100p"));
