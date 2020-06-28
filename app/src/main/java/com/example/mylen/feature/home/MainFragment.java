@@ -21,6 +21,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.mylen.R;
 import com.example.mylen.data.lens.LensKeepResponse;
+import com.example.mylen.data.lens.LensOpenResponse;
 import com.example.mylen.data.liquid.LiquidResponse;
 import com.example.mylen.data.user.ProfileResponse;
 import com.example.mylen.data.user.StatusResponse;
@@ -204,12 +205,43 @@ public class MainFragment extends Fragment implements View.OnClickListener{
 
     //개봉함 렌즈 조회 요청 - GET : Retrofit
     private void requestLensOpen(){
+        RetrofitClient.getService().lensOpen().enqueue(new Callback<LensOpenResponse>() {
+            @Override
+            public void onResponse(Call<LensOpenResponse> call, Response<LensOpenResponse> response) {
+                LensOpenResponse result = response.body();
+                if(result.getSuccess()){
+                    ArrayList<LensOpenResponse.LensInfo> lensInfos = new ArrayList<>(result.getLensInfo());
+                    for(LensOpenResponse.LensInfo data : lensInfos)
+                        Log.d("렌즈 결과 확인", data.getName());
+                    //리사이클러 뷰 설정 메소드 호출
+                    setLensOpenList(lensInfos);
+                }
+            }
 
+            @Override
+            public void onFailure(Call<LensOpenResponse> call, Throwable t) {
+                Log.e("개봉함 렌즈 조회 요청 에러 발생", Objects.requireNonNull(t.getMessage()));
+            }
+        });
     }
 
     //개봉함 렌즈 리사이클러뷰
-    private void setLensOpenList(){
+    private void setLensOpenList(ArrayList<LensOpenResponse.LensInfo> lensInfos){
+        layoutManager = new LinearLayoutManager(getActivity());
+        lensOpenAdapter = new LensOpenAdapter(getActivity(), lensInfos);
+        rv_main_lens.setLayoutManager(layoutManager); //레이아웃 매니저 설정
+        rv_main_lens.setAdapter(lensOpenAdapter); //리사이클러뷰 어댑터 설정
 
+        lensOpenAdapter.setOnItemClickListener((v, pos) -> {
+            //선택된 아이템 ID 가져오기
+            getItemId = (int)lensOpenAdapter.getItemId(pos);
+            //다이얼로그 구현
+            AlertDialog alertDialog = builder3.create();
+            alertDialog.show();
+        });
+
+        if(lensOpenAdapter != null)
+            lensOpenAdapter.notifyDataSetChanged();
     }
 
     //개봉함 세척액 조회 요청 - GET : Retrofit
@@ -251,7 +283,8 @@ public class MainFragment extends Fragment implements View.OnClickListener{
             alertDialog.show();
         });
 
-        liquidOpenAdapter.notifyDataSetChanged();
+        if(liquidOpenAdapter != null)
+            liquidOpenAdapter.notifyDataSetChanged();
     }
 
     //보관함 렌즈 조회 요청 - GET : Retrofit
@@ -291,7 +324,8 @@ public class MainFragment extends Fragment implements View.OnClickListener{
             alertDialog.show();
         });
 
-        lensKeepAdpater.notifyDataSetChanged();
+        if(lensKeepAdpater != null)
+            lensKeepAdpater.notifyDataSetChanged();
     }
 
     //보관함 렌즈 삭제 요청 - DELETE : Retrofit
@@ -369,7 +403,8 @@ public class MainFragment extends Fragment implements View.OnClickListener{
             alertDialog.show();
         });
 
-        lensKeepAdpater.notifyDataSetChanged();
+        if(lensKeepAdpater != null)
+            lensKeepAdpater.notifyDataSetChanged(); //여기 null 참고
     }
 
     //세척액 삭제 요청 - DELETE : Retrofit
