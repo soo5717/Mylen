@@ -102,6 +102,11 @@
     <string name="eye_point_total">총 보유 포인트</string>
     <string name="eye_point_average">하루 평균 운동 횟수</string>
     <string name="eye_count_total">총 운동 횟수</string>
+    <string name="eye_add_friend">추가</string>
+    <string name="eye_added_friend">추가됨</string>
 
+    <!-- 알림 페이지  -->
+    <string name="notice_set_off">OFF</string>
+    <string name="notice_set_on">ON</string>
 
 </resources>

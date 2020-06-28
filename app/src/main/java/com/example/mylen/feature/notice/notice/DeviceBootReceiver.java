@@ -1,4 +1,4 @@
-package com.example.mylen.feature.notice;
+package com.example.mylen.feature.notice.notice;
 
 import android.app.AlarmManager;
 import android.app.PendingIntent;
@@ -21,7 +21,6 @@ import java.util.Objects;
 import static android.content.Context.MODE_PRIVATE;
 
 public class DeviceBootReceiver extends BroadcastReceiver {
-    @RequiresApi(api = Build.VERSION_CODES.KITKAT)
     @Override
     public void onReceive(Context context, Intent intent) {
         if (Objects.equals(intent.getAction(), "android.intent.action.BOOT_COMPLETED")) {
@@ -56,5 +55,4 @@ public class DeviceBootReceiver extends BroadcastReceiver {
             }
         }
     }
-
 }

@@ -20,10 +20,10 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.mylen.R;
-import com.example.mylen.data.notice.NoticeData;
-import com.example.mylen.data.notice.NoticeResponse;
+import com.example.mylen.data.notice.notice.NoticeResponse;
+import com.example.mylen.feature.notice.notice.AlarmReceiver;
+import com.example.mylen.feature.notice.notice.DeviceBootReceiver;
 import com.example.mylen.network.RetrofitClient;
-import com.example.mylen.network.ServiceApi;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -63,62 +63,53 @@ public class GetNoticeData extends AppCompatActivity {
         //Intent intent = getIntent();
         //int userId = intent.getIntExtra("user_id");
         int userId = 2;
-        NoticeData data = new NoticeData(userId);
         final String[] kk = new String[1];
 
         //알림 정보 가져오기
-        RetrofitClient.getService().userNotice(data).enqueue(new Callback<NoticeResponse>() {
+        RetrofitClient.getService().userNotice().enqueue(new Callback<NoticeResponse>() {
 
             @Override
             public void onResponse(Call<NoticeResponse> call, Response<NoticeResponse> response) {
                 NoticeResponse result = response.body();
 
                 //알림메시지, 알림날짜, 시간 가져옴
-                String[] msgArray = result.getmsgArray();
-                String[] dateArray = result.getdateArray();
-                String[] timeArray = result.gettimeArray();
+                String[] msgArray = result.getMsgArray();
+                String date = result.getDate();
+               // String time = result.getTime();
+                String time = "04 22";
 
-                Toast.makeText(GetNoticeData.this, "Alarm 예정 " + String.valueOf(timeArray[0]) + "시 "  + "분", Toast.LENGTH_SHORT).show();
+                Calendar calendar = Calendar.getInstance();
+                calendar.setTimeInMillis(System.currentTimeMillis());
+
+                //날짜설정
+                String[] temp_date = date.split(" ");
+                calendar.set(Calendar.YEAR, Integer.parseInt(temp_date[0]));
+                calendar.set(Calendar.MONTH, Integer.parseInt(temp_date[1])-1);
+                calendar.set(Calendar.DATE, Integer.parseInt(temp_date[2])+2);
+
+                //시간설정
+                String[] temp_time = time.split(" ");
+                calendar.set(Calendar.HOUR_OF_DAY, Integer.parseInt(temp_time[0]));
+                calendar.set(Calendar.MINUTE, Integer.parseInt(temp_time[1]));
+                calendar.set(Calendar.SECOND, 0);
+
+                //Toast.makeText(GetNoticeData.this, "Alarm 예정 " + String.valueOf(timeArray[0]) + "시 "  + "분", Toast.LENGTH_SHORT).show();
 
                 //알림 갯수만큼 날짜 및 시간설정, 알림설정
                 for (int i = 0; i < msgArray.length; i++) {
 
-                    Calendar calendar = Calendar.getInstance();
-                    calendar.setTimeInMillis(System.currentTimeMillis());
-
-                    //날짜설정
-                    String[] temp_date = dateArray[i].split(" ");
-                    calendar.set(Calendar.YEAR, Integer.parseInt(temp_date[0]));
-                    calendar.set(Calendar.MONTH, Integer.parseInt(temp_date[1])-1);
-                    calendar.set(Calendar.DATE, Integer.parseInt(temp_date[2]));
-
-                    //시간설정
-                    String[] temp_time = timeArray[i].split(" ");
-                    calendar.set(Calendar.HOUR_OF_DAY, Integer.parseInt(temp_time[0]));
-                    calendar.set(Calendar.MINUTE, Integer.parseInt(temp_time[1]));
-                    calendar.set(Calendar.SECOND, 0);
-
                     //현재 시간 이후 알림, 알림설정
-                    if(!calendar.before(Calendar.getInstance())){
 
-                        Date noticeTime1 = calendar.getTime();
-                        String date_text1 = new SimpleDateFormat("yyyy년 MM월 dd일 EE요일 hh시 mm분\n ", Locale.getDefault()).format(noticeTime1);
-                        kk[0] = kk[0] +  date_text1;
+                    Date noticeTime1 = calendar.getTime();
+                    String date_text1 = new SimpleDateFormat("yyyy년 MM월 dd일 EE요일 hh시 mm분\n ", Locale.getDefault()).format(noticeTime1);
+                    kk[0] = kk[0] +  date_text1;
 
-                        //알림manager실행
-                        StartNotification(calendar, msgArray[i], i);
-
-                    } else{  //현재 시간 이전 알림, 패스
-
-                        Date noticeTime1 = calendar.getTime();
-                        String date_text1 = new SimpleDateFormat("yyyy년 MM월 dd일 EE요일 hh시 mm분\n ", Locale.getDefault()).format(noticeTime1);
-                        kk[0] = kk[0] + "지난 시간의 알림" +date_text1;
-                    }
+                    //알림manager실행
+                    StartNotification(calendar, msgArray[i], i);
                 }
-                tv_1.setText(kk[0]);
+
+                Toast.makeText(GetNoticeData.this, kk[0], Toast.LENGTH_SHORT).show();
             }
-
-
             @Override
             public void onFailure(Call<NoticeResponse> call, Throwable t) {
                 Toast.makeText(GetNoticeData.this, "가져오기 에러 발생", Toast.LENGTH_SHORT).show();
@@ -152,17 +143,17 @@ public class GetNoticeData extends AppCompatActivity {
 
             //알림manager실행
             if (alarmManager != null) {
-                alarmManager.set(AlarmManager.RTC_WAKEUP, calendar.getTimeInMillis(), pendingIntent);
+                alarmManager.setRepeating(AlarmManager.RTC_WAKEUP, calendar.getTimeInMillis(), AlarmManager.INTERVAL_DAY, pendingIntent);
 
                 if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
                     alarmManager.setExactAndAllowWhileIdle(AlarmManager.RTC_WAKEUP, calendar.getTimeInMillis(), pendingIntent);
                 }
             }
 
-            // 부팅 후 실행되는 리시버 사용가능하게 설정
-            pm.setComponentEnabledSetting(receiver,
-                    PackageManager.COMPONENT_ENABLED_STATE_ENABLED,
-                    PackageManager.DONT_KILL_APP);
+//            // 부팅 후 실행되는 리시버 사용가능하게 설정
+//            pm.setComponentEnabledSetting(receiver,
+//                    PackageManager.COMPONENT_ENABLED_STATE_ENABLED,
+//                    PackageManager.DONT_KILL_APP);
 
         }
 //        else { //Disable Daily Notifications

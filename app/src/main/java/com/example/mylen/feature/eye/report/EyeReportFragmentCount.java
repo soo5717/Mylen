@@ -1,9 +1,11 @@
 package com.example.mylen.feature.eye.report;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -11,19 +13,30 @@ import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
 
 import com.example.mylen.R;
+import com.example.mylen.data.eye.ReportGraphResponse;
+import com.example.mylen.data.eye.ReportResponse;
+import com.example.mylen.network.RetrofitClient;
 import com.github.mikephil.charting.charts.LineChart;
 import com.github.mikephil.charting.components.XAxis;
 import com.github.mikephil.charting.data.Entry;
 import com.github.mikephil.charting.data.LineData;
 import com.github.mikephil.charting.data.LineDataSet;
+import com.github.mikephil.charting.formatter.ValueFormatter;
 import com.github.mikephil.charting.interfaces.datasets.ILineDataSet;
 
 import java.util.ArrayList;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class EyeReportFragmentCount extends Fragment {
 
     private LineChart chart;
     private View view;
+    int[] weekCountArray;
+    ArrayList<Entry> values;
+    private String[] mDays = {"월", "화", "수", "목", "금", "토", "일"};
 
     @Nullable
     @Override
@@ -51,13 +64,42 @@ public class EyeReportFragmentCount extends Fragment {
         //chart.getDraw
         //chart.setNoDataTextColor();
 
+        values = new ArrayList<>();
 
-        ArrayList<Entry> values = new ArrayList<>();
-
+//        //일주일치 운동횟수
+//        RetrofitClient.getService().eyeReportGraph().enqueue(new Callback<ReportGraphResponse>() {
+//
+//            @Override
+//            public void onResponse(Call<ReportGraphResponse> call, Response<ReportGraphResponse> response) {
+//
+//                ReportGraphResponse result = response.body();
+//                assert result != null;
+//
+//                if(result.getSuccess()) {
+//                    //포인트가져옴
+//                    weekCountArray = result.getWeekCountArray();
+//
+//                    for (int i = 0; i < weekCountArray.length; i++) {
+//                        Log.e("하하하하하", String.valueOf(weekCountArray[i]));
+//                        values.add(new Entry(i, weekCountArray[i]));
+//                    }
+//
+//                    Log.e("캬캬", String.valueOf(values));
+//                }
+//            }
+//
+//            @Override
+//            public void onFailure(Call<ReportGraphResponse> call, Throwable t) {
+//                Toast.makeText(getContext(), "count graph 에러 발생", Toast.LENGTH_SHORT).show();
+//                Log.e("count graph 에러 발생", t.getMessage());
+//            }
+//        });
+//
         for (int i = 0; i < 7; i++) {
-            float val = (float) (Math.random() * 3);
+            int val = (int) (Math.random() * 3);
             values.add(new Entry(i, val));
         }
+
 
         LineDataSet set;
         set = new LineDataSet(values, "eyeExercise_count");
@@ -72,6 +114,7 @@ public class EyeReportFragmentCount extends Fragment {
         xAxis.setDrawGridLines(true);
         xAxis.setGridColor(getResources().getColor(R.color.white, null));
         xAxis.setGridLineWidth(3);
+        xAxis.setValueFormatter(new GraphAxisValueFormatter(mDays));
 
         //YAxis yAxis = chart.getRendererLeftYAxis();
 
@@ -80,7 +123,15 @@ public class EyeReportFragmentCount extends Fragment {
         //차트 선
         set.setDrawVerticalHighlightIndicator(false);
         set.setDrawHorizontalHighlightIndicator(false);
-        set.setDrawValues(false);
+        set.setDrawValues(true);
+        set.setValueTextColor(getResources().getColor(R.color.soft_grey, null));
+        set.setValueTextSize(13);
+        set.setValueFormatter(new ValueFormatter(){
+            @Override
+            public String getFormattedValue(float value) {
+                return ""+(int)value;
+            }
+        });
         set.setHighlightEnabled(true);
         set.setHighLightColor(getResources().getColor(R.color.clear_blue, null));
         set.setLineWidth(2);

@@ -6,26 +6,26 @@ public class SearchAddFriendResponse {
     //    @SerializedName("pictureArray")
     //    private String[] pictureArray;
 
-    @SerializedName("id")
-    private int userId;
+    @SerializedName("searchId")
+    private int searchId;
 
-    @SerializedName("name")
-    private String userName;
+    @SerializedName("searchName")
+    private String searchName;
 
-    @SerializedName("email")
-    private String userEmail;
+    @SerializedName("searchEmail")
+    private String searchEmail;
 
-//    @SerializedName("img")
-//    private String userImg;
+//    @SerializedName("searchImg")
+//    private String searchImg;
 
 
     public int getUserId() {
-        return userId;
+        return searchId;
     }
 
-    public String getUserName() { return userName; }
+    public String getUserName() { return searchName; }
 
-    public String getUserEmail() { return userEmail; }
+    public String getUserEmail() { return searchEmail; }
 
-    //    public String[] getUserImg() { return userImg; }
+    //    public String[] getUserImg() { return searchImg; }
 }

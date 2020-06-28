@@ -1,8 +1,8 @@
-package com.example.mylen.data.eye;
+package com.example.mylen.data.notice.notice;
 
 import com.google.gson.annotations.SerializedName;
 
-public class AddFriendResponse {
+public class AddNoticeResponse {
     @SerializedName("code")
     private int code;
 
@@ -16,5 +16,4 @@ public class AddFriendResponse {
     public String getMessage() {
         return message;
     }
-
 }

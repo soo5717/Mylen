@@ -24,7 +24,10 @@ import com.example.mylen.R;
 import com.example.mylen.data.user.ProfileResponse;
 import com.example.mylen.feature.calendar.FragmentCalendar;
 import com.example.mylen.feature.eye.main.EyeMainFragment;
+import com.example.mylen.feature.eye.report.EyeReportMain;
 import com.example.mylen.feature.home.MainFragment;
+import com.example.mylen.feature.notice.main.NoticeMain;
+import com.example.mylen.feature.notice.set.NoticeSet;
 import com.example.mylen.feature.profile.ProfileActivity;
 import com.example.mylen.feature.sign.SignInActivity;
 import com.example.mylen.feature.sign.SignUp2Activity;
@@ -58,6 +61,7 @@ public class NavigationDrawer extends AppCompatActivity {
     MenuInflater menuInflater;
     TextView navi_name;
     public int out_position;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -233,12 +237,20 @@ public class NavigationDrawer extends AppCompatActivity {
                 mDrawerLayout.openDrawer(GravityCompat.START);
                 return true;
             }
-            case R.id.appbar_right_notice:{
-                Toast.makeText(context, "공지",Toast.LENGTH_LONG).show();
+            case R.id.appbar_right_notice: {
+                Intent intent = new Intent(NavigationDrawer.this, NoticeMain.class);
+                startActivity(intent);
                 return true;
             }
-            case R.id.action_report:{
-                Toast.makeText(context, "눈운동",Toast.LENGTH_LONG).show();
+            case R.id.action_report: {
+                Intent intent = new Intent(NavigationDrawer.this, EyeReportMain.class);
+                startActivity(intent);
+                return true;
+            }
+
+            case R.id.action_setting: {
+                Intent intent = new Intent(NavigationDrawer.this, NoticeSet.class);
+                startActivity(intent);
                 return true;
             }
         }

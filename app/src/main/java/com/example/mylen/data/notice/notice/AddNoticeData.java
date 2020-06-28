@@ -1,5 +1,5 @@
 //렌즈 등록 시에, DB notice 테이블에 정보입력
-package com.example.mylen.data.notice;
+package com.example.mylen.data.notice.notice;
 
 import com.google.gson.annotations.SerializedName;
 

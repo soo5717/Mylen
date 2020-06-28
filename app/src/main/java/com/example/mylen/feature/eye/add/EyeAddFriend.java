@@ -1,6 +1,7 @@
 package com.example.mylen.feature.eye.add;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -10,6 +11,7 @@ import android.widget.ImageView;
 import android.widget.SearchView;
 import android.widget.SearchView.OnQueryTextListener;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
@@ -19,6 +21,12 @@ import androidx.fragment.app.FragmentTransaction;
 
 import com.example.mylen.R;
 import com.example.mylen.data.eye.SearchAddFriendData;
+import com.example.mylen.data.eye.SearchAddFriendResponse;
+import com.example.mylen.network.RetrofitClient;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 import static android.graphics.Color.*;
 
@@ -45,6 +53,12 @@ public class EyeAddFriend extends AppCompatActivity {
     TextView tv_friend_name;
     TextView tv_friend_email;
     Button bt_addfriend;
+
+
+    int friendId;
+    String friendName;
+    String friendEmail;
+    //String friendPicture;
 
 
     @Override
@@ -85,7 +99,7 @@ public class EyeAddFriend extends AppCompatActivity {
         searchView.setOnQueryTextListener(new OnQueryTextListener() {
             @Override
             public boolean onQueryTextSubmit(String s) {
-               searchFriend(s);
+                searchFriend(s);
                 return false;
             }
 
@@ -123,59 +137,44 @@ public class EyeAddFriend extends AppCompatActivity {
 
 
     private void searchFriend(String search){
-        int friendId = 1;
-        String friendEmail = search;
+        friendId = 1;
+        friendEmail = search;
         SearchAddFriendData data = new SearchAddFriendData(friendEmail);
-
-
-        String friendName = "백서윤";
         //String friendPicture = result.getuserPicture();
 
-        tv_friend_name = findViewById(R.id.tv_user_name);
-        tv_friend_email = findViewById(R.id.tv_user_name);
-        //iv_picture = findViewById(R.id.iv_picture);
+        RetrofitClient.getService().searchAddFriend(data).enqueue(new Callback<SearchAddFriendResponse>() {
 
-        EyeAddFriendFragment2 = ((com.example.mylen.feature.eye.add.EyeAddFriendFragment2) EyeAddFriendFragment2).newInstance(friendName, friendEmail, friendId);
+            @Override
+            public void onResponse(Call<SearchAddFriendResponse> call, Response<SearchAddFriendResponse> response) {
+                SearchAddFriendResponse result = response.body();
 
-        transaction = fragmentManager.beginTransaction();
-        //transaction.remove(EyeAddFriendFragment1).commitNowAllowingStateLoss();
-        transaction.replace(R.id.fl_container, EyeAddFriendFragment2).commitNowAllowingStateLoss();
+                //이름, 이메일, 포인트, 사진 가져옴
+                friendId = result.getUserId();
+                friendName = result.getUserName();
+                friendEmail = result.getUserEmail();
+                //friendPicture = result.getUserPicture();
+                Log.d("이름", friendName);
+                Log.d("이메일", friendEmail);
 
+                //xml도 friend로 바꾸는 게 좋을 듯
+                tv_friend_name = findViewById(R.id.tv_user_name);
+                tv_friend_email = findViewById(R.id.tv_user_name);
+                //iv_picture = findViewById(R.id.iv_picture);
 
-//넣어야함
-//        RetrofitClient.service.SearchFrienAdd(data).enqueue(new Callback<SearchFriendResponse>() {
-//
-//            @Override
-//            public void onResponse(Call<SearchFriendResponse> call, Response<SearchFriendResponse> response) {
-//                SearchFriendResponse result = response.body();
-//
-//                //이름, 이메일, 포인트, 사진 가져옴
-//                int friendId = result.getUserId();
-//                String friendName = result.getuserName();
-//                String friendEmail = result.getuserEmail();
-//                //String friendPicture = result.getuserPicture();
+                //transaction.replace(R.id.fl_container, EyeAddFriendFragment2).commit();
+                EyeAddFriendFragment2 = ((com.example.mylen.feature.eye.add.EyeAddFriendFragment2) EyeAddFriendFragment2).newInstance(friendName, friendEmail, friendId);
 
-//                  //xml도 friend로 바꾸는 게 좋을 듯
-//                tv_friend_name = findViewById(R.id.tv_user_name);
-//                tv_friend_email = findViewById(R.id.tv_user_name);
-//                //iv_picture = findViewById(R.id.iv_picture);
-//
-//                tv_user_name.setText(friendName);
-//                tv_user_email.setText(friendEmail);
-//                //iv_picture = friendPicture;
-//
-//                //transaction.replace(R.id.fl_container, EyeAddFriendFragment2).commit();
-//
-//            }
-//
-//            @Override
-//            public void onFailure(Call<SearchFriendResponse> call, Throwable t) {
-//                Toast.makeText(EyeAddFriend.this, "가져오기 에러 발생", Toast.LENGTH_SHORT).show();
-//                Log.e("가져오기 에러 발생", t.getMessage());
-//            }
-//        });
+                transaction = fragmentManager.beginTransaction();
+                //transaction.remove(EyeAddFriendFragment1).commitNowAllowingStateLoss();
+                transaction.replace(R.id.fl_container, EyeAddFriendFragment2).commitNowAllowingStateLoss();
+
+            }
+
+            @Override
+            public void onFailure(Call<SearchAddFriendResponse> call, Throwable t) {
+                Toast.makeText(EyeAddFriend.this, "가져오기 에러 발생", Toast.LENGTH_SHORT).show();
+                Log.e("가져오기 에러 발생", t.getMessage());
+            }
+        });
     }
-
-
-
 }

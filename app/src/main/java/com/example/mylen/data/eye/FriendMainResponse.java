@@ -4,6 +4,12 @@ import com.google.gson.annotations.SerializedName;
 
 public class FriendMainResponse {
 
+    @SerializedName("status")
+    private int status;
+
+    @SerializedName("success")
+    private Boolean success;
+
 //    @SerializedName("pictureArray")
 //    private String[] pictureArray;
 
@@ -21,9 +27,17 @@ public class FriendMainResponse {
 //        return pictureArray;
 //    }
 
-    public String[] getnameArray() { return nameArray; }
+    public int getStatus() {
+        return status;
+    }
 
-    public String[] getemailArray() { return emailArray; }
+    public Boolean getSuccess() {
+        return success;
+    }
 
-    public String[] getpointArray() { return pointArray; }
+    public String[] getNameArray() { return nameArray; }
+
+    public String[] getEmailArray() { return emailArray; }
+
+    public String[] getPointArray() { return pointArray; }
 }

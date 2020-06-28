@@ -1,15 +1,26 @@
 package com.example.mylen.feature.eye.report;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
+import androidx.recyclerview.widget.DefaultItemAnimator;
 
 import com.example.mylen.R;
+import com.example.mylen.data.eye.FriendMainResponse;
+import com.example.mylen.data.eye.ReportResponse;
+import com.example.mylen.feature.eye.main.EyeMainFriendItem;
+import com.example.mylen.network.RetrofitClient;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class EyeReportMain extends AppCompatActivity {
 
@@ -21,6 +32,9 @@ public class EyeReportMain extends AppCompatActivity {
 
     TextView tv_total_point, tv_average_count, tv_total_count;
 
+    int totalPoint;
+    int totalCount;
+    float averageDailyCount;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,14 +56,32 @@ public class EyeReportMain extends AppCompatActivity {
         tv_average_count = findViewById(R.id.tv_average_count);
         tv_total_count = findViewById(R.id.tv_total_count);
 
-        tv_total_point.setText("123");
-        tv_average_count.setText("234");
-        tv_total_count.setText("345");
+        //친구정보 가져오기
+        RetrofitClient.getService().eyeReport().enqueue(new Callback<ReportResponse>() {
 
+            @Override
+            public void onResponse(Call<ReportResponse> call, Response<ReportResponse> response) {
 
+                ReportResponse result = response.body();
+                assert result != null;
 
+                //포인트가져옴
+                totalPoint = result.getTotalPoint();
+                totalCount = result.getTotalCount();
+                averageDailyCount = result.getAverageDailyCount();
 
+                if(result.getSuccess()) {
+                    tv_total_point.setText(String.valueOf(totalPoint) + 'P');
+                    tv_average_count.setText(String.valueOf(Math.round(averageDailyCount*10)/10.0) + '회');
+                    tv_total_count.setText(String.valueOf(totalCount)+ '회');
+                }
+            }
 
-
+            @Override
+            public void onFailure(Call<ReportResponse> call, Throwable t) {
+                Toast.makeText(EyeReportMain.this, "report 에러 발생", Toast.LENGTH_SHORT).show();
+                Log.e("report 에러 발생", t.getMessage());
+            }
+        });
     }
 }

@@ -5,9 +5,9 @@ import com.google.gson.annotations.SerializedName;
 
 public class SearchAddFriendData {
     @SerializedName("userEmail")
-    String userId;
+    String userEmail;
 
     public SearchAddFriendData(String userEmail) {
-        this.userId = userId;
+        this.userEmail = userEmail;
     }
 }

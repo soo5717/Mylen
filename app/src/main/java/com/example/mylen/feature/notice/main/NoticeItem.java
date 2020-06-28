@@ -1,8 +1,8 @@
-package com.example.mylen.feature.notice;
-
-import androidx.appcompat.app.AppCompatActivity;
+package com.example.mylen.feature.notice.main;
 
 import android.os.Bundle;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.mylen.R;
 

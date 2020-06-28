@@ -16,8 +16,12 @@ import androidx.fragment.app.Fragment;
 
 import com.example.mylen.R;
 import com.example.mylen.data.eye.AddFriendData;
-import com.example.mylen.data.eye.AddFriendResponse;
+import com.example.mylen.data.eye.FriendCheckData;
+import com.example.mylen.data.eye.FriendCheckResponse;
+import com.example.mylen.data.user.StatusResponse;
 import com.example.mylen.network.RetrofitClient;
+
+import java.util.Objects;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -84,6 +88,32 @@ public class EyeAddFriendFragment2 extends Fragment implements View.OnClickListe
         tv_user_name.setText(mParam1);
         tv_user_email.setText(mParam2);
         friendId = mParam3;
+
+        FriendCheckData data = new FriendCheckData(friendId);
+
+        RetrofitClient.getService().checkFriend(data).enqueue(new Callback<FriendCheckResponse>() {
+            @Override
+            public void onResponse(Call<FriendCheckResponse> call, Response<FriendCheckResponse> response) {
+                FriendCheckResponse result = response.body();
+                assert result != null;
+
+                Boolean check = result.getCheck();
+                if(check){
+                    bt_addfriend.setText(R.string.eye_added_friend);
+                    bt_addfriend.setTextColor(getResources().getColor(R.color.soft_grey, null));
+                    bt_addfriend.setClickable(false);
+                }
+
+            }
+
+            @Override
+            public void onFailure(Call<FriendCheckResponse> call, Throwable t) {
+                Toast.makeText(getContext(), "add friend 에러 발생", Toast.LENGTH_SHORT).show();
+                Log.e("add friend 에러 발생", Objects.requireNonNull(t.getMessage()));
+
+            }
+        });
+
         bt_addfriend.setOnClickListener(this);
 
         return view;
@@ -93,26 +123,26 @@ public class EyeAddFriendFragment2 extends Fragment implements View.OnClickListe
     @Override
     public void onClick(View view) {
 
-        int userId = 1;
+        AddFriendData data = new AddFriendData(friendId);
 
-        AddFriendData data = new AddFriendData(userId, friendId);
+        RetrofitClient.getService().addFriend(data).enqueue(new Callback<StatusResponse>() {
+            @Override
+            public void onResponse(Call<StatusResponse> call, Response<StatusResponse> response) {
+                StatusResponse result = response.body();
+                assert result != null;
+                Toast.makeText(getContext(), result.getMessage(), Toast.LENGTH_SHORT).show();
+            }
 
-//        RetrofitClient.getService().AddFriendAdd(data).enqueue(new Callback<AddFriendResponse>() {
-//
-//            @Override
-//            public void onResponse(Call<AddFriendResponse> call, Response<AddFriendResponse> response) {
-//                AddFriendResponse result = response.body();
-//
-//                String message = result.getMessage();
-//                Toast.makeText(getContext(), message, Toast.LENGTH_SHORT).show();
-//            }
-//
-//            @Override
-//            public void onFailure(Call<AddFriendResponse> call, Throwable t) {
-//                Toast.makeText(getContext(), "가져오기 에러 발생", Toast.LENGTH_SHORT).show();
-//                Log.e("가져오기 에러 발생", t.getMessage());
-//            }
-//        });
+            @Override
+            public void onFailure(Call<StatusResponse> call, Throwable t) {
+                Toast.makeText(getContext(), "add friend 에러 발생", Toast.LENGTH_SHORT).show();
+                Log.e("add friend 에러 발생", Objects.requireNonNull(t.getMessage()));
 
+            }
+        });
+
+        bt_addfriend.setText(R.string.eye_added_friend);
+        bt_addfriend.setTextColor(getResources().getColor(R.color.soft_grey, null));
+        bt_addfriend.setClickable(false);
     }
 }

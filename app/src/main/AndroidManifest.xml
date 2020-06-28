@@ -30,10 +30,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
         <!-- 네비게이션 -->
-        <activity android:name=".feature.others.NavigationDrawer" >
-        </activity>
+        <activity android:name=".feature.others.NavigationDrawer" />
         <activity android:name=".feature.others.BottomNavigation" />
         <activity android:name=".feature.others.ActionBar" />
         <activity android:name=".feature.calendar.FragmentCalendar" />
@@ -50,9 +48,14 @@
 
         <!-- 메인 -->
         <activity android:name=".feature.home.MainFragment" />
+        <activity android:name=".feature.home.MainLensOpenItem" />
+        <activity android:name=".feature.home.MainLensKeepItem" />
+        <activity android:name=".feature.home.MainLiquidOpenItem" />
+        <activity android:name=".feature.home.MainLiquidKeepItem" />
 
         <!-- 렌즈 검색 -->
         <activity android:name=".feature.home.search.SearchLensActivity" />
+<!--        <activity android:name=".feature.home.search.SearchLensItem" />-->
 
         <!-- 렌즈 추가 -->
         <activity android:name=".feature.home.add.AddLens1Activity" />
@@ -65,17 +68,30 @@
 
         <!-- 눈운동 -->
         <activity android:name=".feature.eye.main.EyeMainFragment" />
-        <activity android:name=".feature.eye.add.EyeAddFriend" />
+        <activity android:name=".feature.eye.add.EyeAddFriend"></activity>
         <activity android:name=".feature.eye.main.EyeFriendAdapter" />
         <activity android:name=".feature.eye.main.EyeMainFriendItem" />
-        <activity android:name=".feature.eye.exercise.EyeEnd" />
+        <activity android:name=".feature.eye.exercise.EyeEnd"></activity>
         <activity android:name=".feature.eye.report.EyeReportFragmentPoint" />
-        <activity android:name=".feature.eye.report.EyeReportMain" />
+        <activity android:name=".feature.eye.report.EyeReportMain" />.
         <activity android:name=".feature.eye.exercise.EyeExercise2" />
+<!--        <activity android:name=".feature.eye.exercise.EyeExercise3" />-->
+
+        <!--  레포트      -->
+
 
         <!-- 알림 -->
-        <activity android:name=".feature.notice.main.NoticeMain" />
-        <activity android:name=".feature.notice.NoticeSet" />
+        <activity android:name=".feature.notice.main.NoticeMain" >
+
+        </activity>
+        <activity android:name=".feature.notice.set.NoticeSet" >
+        </activity>
+        <activity android:name=".feature.notice.main.NoticeEmptyFragment" >
+        </activity>
+
+        <activity android:name=".feature.notice.GetNoticeData">
+
+        </activity>
 
         <meta-data
             android:name="com.google.firebase.ml.vision.DEPENDENCIES"

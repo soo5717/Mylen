@@ -2,10 +2,12 @@ package com.example.mylen.feature.eye.main;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -18,10 +20,16 @@ import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewpager.widget.ViewPager;
 
 import com.example.mylen.R;
-import com.example.mylen.data.eye.FriendMainData;
+import com.example.mylen.data.eye.FriendMainResponse;
+import com.example.mylen.data.notice.set.NoticeSetResponse;
 import com.example.mylen.feature.eye.add.EyeAddFriend;
+import com.example.mylen.network.RetrofitClient;
 
 import java.util.ArrayList;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class EyeMainFragment extends Fragment implements View.OnClickListener{
 
@@ -38,6 +46,12 @@ public class EyeMainFragment extends Fragment implements View.OnClickListener{
 
     private Button bt_add;
     private View empty_view;
+
+    //db에서 가져오기
+    String[] nameArray;
+    String[] emailArray;
+    String[] pointArray;
+    //String[] pictureArray;
 
 //    @Override
 //    public void onAttach(@NonNull Context context) {
@@ -85,33 +99,35 @@ public class EyeMainFragment extends Fragment implements View.OnClickListener{
         friendlist = new ArrayList<EyeMainFriendItem>();
         adapter_friend = new EyeFriendAdapter(getContext());
 
-        //db에서 가져오기
-        int userId = 2;
-        FriendMainData data = new FriendMainData(userId);
-        final String[] nameArray;
-        final String[] emailArray;
-        final String[] pointArray;
-        //final String[] pictureArray;
-
-//        //친구정보 가져오기
-//        RetrofitClient.service.RankFriendMain(data).enqueue(new Callback<FriendMainResponse>() {
+        //친구정보 가져오기
+//        RetrofitClient.getService().rankFriendMain().enqueue(new Callback<FriendMainResponse>() {
 //
 //            @Override
 //            public void onResponse(Call<FriendMainResponse> call, Response<FriendMainResponse> response) {
+//
 //                FriendMainResponse result = response.body();
+//                assert result != null;
 //
 //                //이름, 이메일, 포인트, 사진 가져옴
-//                String[] nameArray = result.getnameArray();
-//                String[] emailArray = result.getemailArray();
-//                String[] pointArray = result.getpointArray();
-//                //String[] pictureArray = result.getpictureArray();
+//                nameArray = result.getNameArray();
+//                emailArray = result.getEmailArray();
+//                pointArray = result.getPointArray();
+//                //pictureArray = result.getpictureArray();
 //
-//                //알림 갯수만큼 날짜 및 시간설정, 알림설정
-//                for (int i = 0; i < nameArray.length; i++) {
-//                    adapter_friend.addItem(new EyeMainFriendItem(String.valueOf(i)+" 위", nameArray[i], emailArray[i], pointArray[i]+" P"));
+//                if(result.getSuccess()) {
+//                    //친구 수만큼 리사이클러뷰에 넣기
+//                    for (int i = 0; i < nameArray.length; i++) {
+//                        adapter_friend.addItem(new EyeMainFriendItem(i+" 위", nameArray[i], emailArray[i], pointArray[i]+" P"));
+//                    }
+//
+//                    adapter_friend.notifyDataSetChanged();
+//
+//                    recyclerView.setAdapter(adapter_friend);
+//                    recyclerView.setItemAnimator(new DefaultItemAnimator());
 //                }
 //            }
-//
+
+
 //
 //            @Override
 //            public void onFailure(Call<FriendMainResponse> call, Throwable t) {
@@ -120,22 +136,17 @@ public class EyeMainFragment extends Fragment implements View.OnClickListener{
 //            }
 //        });
 
-        adapter_friend.addItem(new EyeMainFriendItem("1", "서윤", "12@naver.com", "120p"));
-        adapter_friend.addItem(new EyeMainFriendItem("2", "수연", "34@naver.com", "100p"));
-        adapter_friend.addItem(new EyeMainFriendItem("3", "윤경", "56@naver.com", "80p"));
-
+        adapter_friend.addItem(new EyeMainFriendItem("1", "백서윤", "bsj@naver.com", "120p"));
+        adapter_friend.addItem(new EyeMainFriendItem("2", "조수연", "ooo@naver.com", "100p"));
+        adapter_friend.addItem(new EyeMainFriendItem("3", "박윤경", "ppp@naver.com", "80p"));
         adapter_friend.notifyDataSetChanged();
 
         recyclerView.setAdapter(adapter_friend);
         recyclerView.setItemAnimator(new DefaultItemAnimator());
 
-
         // empty_view = view_exercise.findViewById(R.id.empty_view);
-
-
         bt_add = view_exercise.findViewById(R.id.bt_add);
         bt_add.setOnClickListener(this);
-
 
         return view_exercise;
     }

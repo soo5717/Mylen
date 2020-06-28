@@ -1,5 +1,5 @@
 //헤드업 알림 띄우기
-package com.example.mylen.feature.notice;
+package com.example.mylen.feature.notice.notice;
 
 import android.app.NotificationChannel;
 import android.app.NotificationManager;
@@ -11,6 +11,7 @@ import android.content.Intent;
 import androidx.core.app.NotificationCompat;
 
 import com.example.mylen.R;
+import com.example.mylen.feature.notice.GetNoticeData;
 
 public class AlarmReceiver extends BroadcastReceiver {
     @Override
@@ -32,13 +33,14 @@ public class AlarmReceiver extends BroadcastReceiver {
 
 
         //OREO API 26 이상에서는 채널 필요
+        //OREO API 26 이상에서는 채널 필요
         if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O) {
 
             builder.setSmallIcon(R.drawable.ic_launcher_foreground); //mipmap 사용시 Oreo 이상에서 시스템 UI 에러남
 
 
             String channelName ="알람 채널";
-            String description = "정해진 시간에 알람을 제공합니다.";
+            String description = "정해진 시간에 알람합니다.";
             int importance = NotificationManager.IMPORTANCE_HIGH; //소리와 알림메시지를 같이 보여줌
 
             NotificationChannel channel = new NotificationChannel("default", channelName, importance);

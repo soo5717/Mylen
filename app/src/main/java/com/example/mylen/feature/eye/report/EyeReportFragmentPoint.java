@@ -29,6 +29,8 @@ public class EyeReportFragmentPoint extends Fragment {
 
     private LineChart chart;
     private View view;
+    int[] weekCountArray;
+    ArrayList<Entry> values;
     private String[] mDays = {"월", "화", "수", "목", "금", "토", "일"};
 
     @Nullable

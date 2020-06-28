@@ -4,14 +4,10 @@ package com.example.mylen.data.eye;
 import com.google.gson.annotations.SerializedName;
 
 public class AddFriendData {
-    @SerializedName("userId")
-    private int userId;
-
     @SerializedName("friendId")
     private int friendId;
 
-    public AddFriendData(int userId, int friendId) {
-        this.userId = userId;
+    public AddFriendData(int friendId) {
         this.friendId = friendId;
     }
 }

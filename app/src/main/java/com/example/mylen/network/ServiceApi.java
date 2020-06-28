@@ -1,26 +1,25 @@
 package com.example.mylen.network;
 
 import com.example.mylen.data.eye.AddFriendData;
-import com.example.mylen.data.eye.AddFriendResponse;
-import com.example.mylen.data.eye.FriendMainData;
+import com.example.mylen.data.eye.FriendCheckData;
+import com.example.mylen.data.eye.FriendCheckResponse;
 import com.example.mylen.data.eye.FriendMainResponse;
+import com.example.mylen.data.eye.ReportGraphResponse;
+import com.example.mylen.data.eye.ReportResponse;
 import com.example.mylen.data.eye.SearchAddFriendData;
 import com.example.mylen.data.eye.SearchAddFriendResponse;
+import com.example.mylen.data.notice.notice.AddNoticeData;
+import com.example.mylen.data.notice.notice.AddNoticeResponse;
+import com.example.mylen.data.notice.notice.NoticeResponse;
 import com.example.mylen.data.lens.LensData;
 import com.example.mylen.data.lens.LensKeepResponse;
 import com.example.mylen.data.lens.SearchResponse;
 import com.example.mylen.data.liquid.LiquidData;
 import com.example.mylen.data.liquid.LiquidResponse;
-import com.example.mylen.data.notice.NoticeData;
-import com.example.mylen.data.notice.AddNoticeData;
-import com.example.mylen.data.notice.AddNoticeResponse;
-import com.example.mylen.data.notice.NoticeResponse;
 import com.example.mylen.data.user.ProfileData;
 import com.example.mylen.data.user.ProfileResponse;
-import com.example.mylen.data.notice.NoticeSetData;
-import com.example.mylen.data.notice.NoticeSetResponse;
-import com.example.mylen.data.notice.UpdateNoticeSetData;
-import com.example.mylen.data.notice.UpdateNoticeSetResponse;
+import com.example.mylen.data.notice.set.NoticeSetResponse;
+import com.example.mylen.data.notice.set.UpdateNoticeSetData;
 import com.example.mylen.data.user.SignInData;
 import com.example.mylen.data.user.SignInResponse;
 import com.example.mylen.data.user.SignUpData;
@@ -38,6 +37,7 @@ public interface ServiceApi {
     //토큰 검증 요청: 자동 로그인 구현 => 완료
     @POST("/auth")
     Call<StatusResponse> userAuth();
+
     //회원가입 요청 => 완료
     @POST("/auth/sign-up")
     Call<StatusResponse> userSignUp(@Body SignUpData data);
@@ -74,32 +74,45 @@ public interface ServiceApi {
 
 
     //get noticedata
-    @POST("/user/notice")
-    Call<NoticeResponse> userNotice(@Body NoticeData data);
+    @GET("/notice/main")
+    Call<NoticeResponse> userNotice();
 
     //insert notice data to notices table
-    @POST("/user/notice/add")
+    @POST("/notice/add")
     Call<AddNoticeResponse> addLensNotice(@Body AddNoticeData data);
 
-    //eye_friend_main_data
-    @POST("/user/eye/friend/main")
-    Call<FriendMainResponse> rankFriendMain(@Body FriendMainData data);
 
-    //eye_friend_search add
-    //변경했음
-    @POST("/user/eye/friend/add/search")
+    //noticeSet setting => 완료
+    @GET("/notice/set")
+    Call<NoticeSetResponse> userNoticeSet();
+
+    //update changes to noticeSet => 완료
+    @PUT("/notice/set/update")
+    Call<StatusResponse> updateNoticeSet(@Body UpdateNoticeSetData data);
+
+    //eye_friend_main_data
+    @GET("/eye/friend/main")
+    Call<FriendMainResponse> rankFriendMain();
+
+    //eye_report => 완료
+    @GET("/eye/report")
+    Call<ReportResponse> eyeReport();
+
+    //eye_report_graph
+    @GET("/eye/report/graph")
+    Call<ReportGraphResponse> eyeReportGraph();
+
+    //친구추가검색 => 완료
+    @POST("/eye/friend/add/search")
     Call<SearchAddFriendResponse> searchAddFriend(@Body SearchAddFriendData data);
 
-    //eye_friend_add
-    @POST("/user/eye/friend/add/add")
-    Call<AddFriendResponse> addFriend(@Body AddFriendData data);
+    //친구추가여부 확인 => 완료
+    @POST("/eye/friend/add/check")
+    Call<FriendCheckResponse> checkFriend(@Body FriendCheckData data);
 
-    //noticeSet setting
-    @POST("/user/notice/set")
-    Call<NoticeSetResponse> userNoticeSet(@Body NoticeSetData data);
+    //친구추가 => 완료
+    @PUT("/eye/friend/add")
+    Call<StatusResponse> addFriend(@Body AddFriendData data);
 
-    //update changes to noticeSet
-    @POST("/user/notice/set")
-    Call<UpdateNoticeSetResponse> updateNoticeSet(@Body UpdateNoticeSetData data);
 
 }

@@ -19,15 +19,14 @@ package com.example.mylen.feature.notice;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.widget.Button;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.mylen.R;
-import com.example.mylen.data.notice.AddNoticeResponse;
+import com.example.mylen.data.notice.notice.AddNoticeData;
+import com.example.mylen.data.notice.notice.AddNoticeResponse;
 import com.example.mylen.network.RetrofitClient;
 
 import java.text.SimpleDateFormat;
@@ -116,7 +115,7 @@ public class PutNoticeData extends AppCompatActivity {
         //서버에서 setId에 맞게 메시지 넣도록 했음
         for (int i=0; i<noticeDatetime.length; i++){
             if (noticeDatetime[i] != null){
-                AddData(new com.example.mylen.data.notice.AddNoticeData(userId, i, noticeDatetime[i]));
+                AddData(new AddNoticeData(userId, i, noticeDatetime[i]));
             }
         }
     }
@@ -167,13 +166,13 @@ public class PutNoticeData extends AppCompatActivity {
         //서버에서 setId에 맞게 메시지 넣도록 했음
         for (int i=0; i<noticeDatetime.length; i++){
             if (noticeDatetime[i] != null){
-                AddData(new com.example.mylen.data.notice.AddNoticeData(userId, i, noticeDatetime[i]));
+                AddData(new AddNoticeData(userId, i, noticeDatetime[i]));
             }
         }
     }
 
     //notices 테이블로 넣기
-    private void AddData(com.example.mylen.data.notice.AddNoticeData data) {
+    private void AddData(AddNoticeData data) {
 
         RetrofitClient.getService().addLensNotice(data).enqueue(new Callback<AddNoticeResponse>() {
             @Override

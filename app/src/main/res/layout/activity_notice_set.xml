@@ -22,7 +22,7 @@
             android:background="@drawable/btn_color_small_unchecked"
             android:fontFamily="@font/notosans_regular"
             android:includeFontPadding="false"
-            android:text="OFF"
+            android:text="@string/notice_set_off"
             android:textColor="@color/tiffany_blue"
             android:textSize="14sp"
             app:layout_constraintEnd_toEndOf="parent"

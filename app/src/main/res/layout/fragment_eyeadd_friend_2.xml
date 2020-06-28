@@ -16,7 +16,7 @@
         android:background="@null"
         android:fontFamily="@font/notosans_demilight"
         android:includeFontPadding="false"
-        android:text="추가"
+        android:text="@string/eye_add_friend"
         android:textColor="@color/clear_blue"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
