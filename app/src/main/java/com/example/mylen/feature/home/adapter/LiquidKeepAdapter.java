@@ -124,4 +124,6 @@ public class LiquidKeepAdapter extends RecyclerView.Adapter<RecyclerView.ViewHol
             return "";
         }
     }
+
+    //
 }

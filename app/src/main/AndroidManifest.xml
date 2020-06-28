@@ -48,14 +48,9 @@
 
         <!-- 메인 -->
         <activity android:name=".feature.home.MainFragment" />
-        <activity android:name=".feature.home.MainLensOpenItem" />
-        <activity android:name=".feature.home.MainLensKeepItem" />
-        <activity android:name=".feature.home.MainLiquidOpenItem" />
-        <activity android:name=".feature.home.MainLiquidKeepItem" />
 
         <!-- 렌즈 검색 -->
         <activity android:name=".feature.home.search.SearchLensActivity" />
-<!--        <activity android:name=".feature.home.search.SearchLensItem" />-->
 
         <!-- 렌즈 추가 -->
         <activity android:name=".feature.home.add.AddLens1Activity" />
@@ -73,9 +68,8 @@
         <activity android:name=".feature.eye.main.EyeMainFriendItem" />
         <activity android:name=".feature.eye.exercise.EyeEnd"></activity>
         <activity android:name=".feature.eye.report.EyeReportFragmentPoint" />
-        <activity android:name=".feature.eye.report.EyeReportMain" />.
+        <activity android:name=".feature.eye.report.EyeReportMain" />
         <activity android:name=".feature.eye.exercise.EyeExercise2" />
-<!--        <activity android:name=".feature.eye.exercise.EyeExercise3" />-->
 
         <!--  레포트      -->
 
